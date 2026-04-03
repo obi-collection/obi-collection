@@ -272,9 +272,9 @@ def git_push(artist: str, album: str):
 # ── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
-    obi_path = INBOX / "obi.jpg"
-    jacket_path = INBOX / "jacket.jpg"
-    combined_path = INBOX / "combined.jpg"
+    obi_path = INBOX / "a.jpg"
+    jacket_path = INBOX / "b.jpg"
+    combined_path = INBOX / "c.jpg"
 
     # Determine mode: combined.jpg alone, or obi.jpg + jacket.jpg
     combined_only = combined_path.exists() and not obi_path.exists() and not jacket_path.exists()
