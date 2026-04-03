@@ -350,6 +350,7 @@ body {
     .collection-container { grid-template-columns: repeat(3, 1fr) !important; gap: 0.4rem; }
     .modal-body { padding: var(--spacing-md); }
 }
+.collection-container.mobile-view { grid-template-columns: repeat(3, 1fr) !important; }
     </style>
 </head>
 <body>
@@ -467,6 +468,7 @@ const viewSizeToggle = document.getElementById('viewSizeToggle');
 
 document.addEventListener('DOMContentLoaded', () => {
     allAlbums = COLLECTION_DATA.albums;
+    if (viewSizeMode === 'mobile') collectionContainer.classList.add('mobile-view');
     const displayCount = viewSizeMode === 'mobile' ? 9 : allAlbums.length;
     filteredAlbums = getRandomAlbumsForTopPage(displayCount);
     applyViewSizeLimit();
@@ -485,7 +487,7 @@ function setupEventListeners() {
             document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentView = btn.dataset.view;
-            collectionContainer.className = `collection-container ${currentView === 'list' ? 'list-view' : ''}`;
+            collectionContainer.className = `collection-container ${currentView === 'list' ? 'list-view' : ''} ${viewSizeMode === 'mobile' ? 'mobile-view' : ''}`.trim();
         });
     });
     document.querySelectorAll('.size-btn').forEach(btn => {
@@ -493,6 +495,7 @@ function setupEventListeners() {
             document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             viewSizeMode = btn.dataset.size;
+            collectionContainer.classList.toggle('mobile-view', viewSizeMode === 'mobile');
             filteredAlbums = [...allAlbums];
             shuffleArray(filteredAlbums);
             applyViewSizeLimit();
