@@ -324,6 +324,8 @@ body {
 .action-btn.yahooauction:hover { background: #5200CC; transform: translateY(-2px); }
 .action-btn.whosampled { background: #E8A000; border-color: #E8A000; color: #000000; }
 .action-btn.whosampled:hover { background: #CC8C00; transform: translateY(-2px); }
+.action-btn.x-share { background: #000000; border-color: #000000; color: var(--white); }
+.action-btn.x-share:hover { background: #333333; transform: translateY(-2px); }
 
 ::-webkit-scrollbar { width: 12px; }
 ::-webkit-scrollbar-track { background: var(--black); }
@@ -706,6 +708,7 @@ function showAlbumModal(album) {
     album.versions.forEach((version, index) => {
         const artist = album.artist.replace(/'/g, "\\'");
         const albumTitle = album.album.replace(/'/g, "\\'");
+        const catalogNo = (version.catalog || '').replace(/'/g, "\\'");
         versionsHTML += `
             <div class="version-section ${index > 0 ? 'version-divider' : ''}">
                 <div class="version-content">
@@ -725,6 +728,7 @@ function showAlbumModal(album) {
                         <button class="action-btn discogs" onclick="searchOnDiscogs('${artist}','${albumTitle}')"><i class="fas fa-record-vinyl"></i> Discogs</button>
                         <button class="action-btn genius" onclick="searchOnGenius('${artist}','${albumTitle}')"><i class="fas fa-music"></i> Genius</button>
                         <button class="action-btn whosampled" onclick="searchOnWhoSampled('${artist}')"><i class="fas fa-headphones"></i> WhoSampled</button>
+                        <button class="action-btn x-share" onclick="shareOnX('${artist}','${albumTitle}','${catalogNo}')"><i class="fab fa-x-twitter"></i> Post</button>
                     </div>
                     <div class="action-buttons">
                         <button class="action-btn mercari" onclick="searchOnMercari('${artist}','${albumTitle}')"><i class="fas fa-tag"></i> Mercari</button>
@@ -792,6 +796,10 @@ function searchOnYahooAuction(artist, album) {
     openSearch(`https://auctions.yahoo.co.jp/search/search?p=${q}`);
 }
 function searchOnWhoSampled(artist) { openSearch(`https://www.whosampled.com/search/?q=${encodeURIComponent(artist)}`); }
+function shareOnX(artist, album, catalog) {
+    const text = catalog ? `${artist} - ${album} [${catalog}]` : `${artist} - ${album}`;
+    openSearch(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}`);
+}
 
 function showLoading(show) { loadingSpinner.style.display = show ? 'block' : 'none'; }
 function showNoResults(show) { noResults.style.display = show ? 'block' : 'none'; }
