@@ -276,18 +276,26 @@ def main():
     jacket_path = INBOX / "jacket.jpg"
     combined_path = INBOX / "combined.jpg"
 
-    if not obi_path.exists() or not jacket_path.exists():
-        log("ERROR: obi.jpg and/or jacket.jpg not found in inbox")
+    # Determine mode: combined.jpg alone, or obi.jpg + jacket.jpg
+    combined_only = combined_path.exists() and not obi_path.exists() and not jacket_path.exists()
+
+    if not combined_only and (not obi_path.exists() or not jacket_path.exists()):
+        log("ERROR: inbox must contain either combined.jpg alone, or both obi.jpg and jacket.jpg")
         sys.exit(1)
 
     try:
-        # 1. Combine images
-        log("Step 1/5 — Combining images (obi left, jacket right)...")
-        combine_images(obi_path, jacket_path, combined_path)
+        if combined_only:
+            log("Step 1/5 — combined.jpg found; skipping image combination.")
+            info_source = combined_path
+        else:
+            # 1. Combine images
+            log("Step 1/5 — Combining images (obi left, jacket right)...")
+            combine_images(obi_path, jacket_path, combined_path)
+            info_source = obi_path
 
-        # 2. Extract album info from the obi image
+        # 2. Extract album info from the obi (or combined) image
         log("Step 2/5 — Reading album info from obi with Claude API...")
-        info = extract_album_info(obi_path)
+        info = extract_album_info(info_source)
         log(f"  → {json.dumps(info, ensure_ascii=False)}")
 
         # 3. Upload combined image to Cloudinary
@@ -305,8 +313,9 @@ def main():
         git_push(info["artist"], info["album"])
 
         # Cleanup inbox
-        obi_path.unlink()
-        jacket_path.unlink()
+        if not combined_only:
+            obi_path.unlink()
+            jacket_path.unlink()
         combined_path.unlink(missing_ok=True)
         log("Inbox cleaned up")
         log(f"SUCCESS: {info['artist']} — {info['album']} added!")
