@@ -81,12 +81,12 @@ def main():
     log(f"    Python:  {sys.executable}")
 
     while True:
-        a = INBOX / "a.jpg"
-        b = INBOX / "b.jpg"
-        c = INBOX / "c.jpg"
+        a = next((p for p in [INBOX / "a.jpg", INBOX / "あ.jpg"] if p.exists()), None)
+        b = next((p for p in [INBOX / "b.jpg", INBOX / "い.jpg"] if p.exists()), None)
+        c = next((p for p in [INBOX / "c.jpg", INBOX / "う.jpg"] if p.exists()), None)
 
-        combined_only = c.exists() and not a.exists() and not b.exists()
-        normal_mode = a.exists() and b.exists()
+        combined_only = c is not None and a is None and b is None
+        normal_mode = a is not None and b is not None
 
         if combined_only or normal_mode:
             if LOCK_FILE.exists():
@@ -95,7 +95,7 @@ def main():
                 continue
 
             if combined_only and file_is_stable(c):
-                log("Found c.jpg — starting process_inbox.py...")
+                log(f"Found {c.name} — starting process_inbox.py...")
                 LOCK_FILE.touch()
                 try:
                     success = run_process()
@@ -107,7 +107,7 @@ def main():
                     LOCK_FILE.unlink(missing_ok=True)
 
             elif normal_mode and file_is_stable(a) and file_is_stable(b):
-                log("Found a.jpg + b.jpg — starting process_inbox.py...")
+                log(f"Found {a.name} + {b.name} — starting process_inbox.py...")
                 LOCK_FILE.touch()
                 try:
                     success = run_process()
