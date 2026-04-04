@@ -522,10 +522,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
     document.querySelectorAll('.size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === viewSizeMode));
     collectionContainer.className = `collection-container ${currentView === 'list' ? 'list-view' : ''} ${viewSizeMode === 'mobile' ? 'mobile-view' : ''}`.trim();
-    const displayCount = viewSizeMode === 'mobile' ? 9 : allAlbums.length;
-    filteredAlbums = getRandomAlbumsForTopPage(displayCount);
-    applyViewSizeLimit();
-    renderAlbums();
+    const savedFilter = localStorage.getItem('obi_filter') || '';
+    if (savedFilter) {
+        alphabetSelect.value = savedFilter;
+        applyAlphabetFilter();
+    } else {
+        const displayCount = viewSizeMode === 'mobile' ? 9 : allAlbums.length;
+        filteredAlbums = getRandomAlbumsForTopPage(displayCount);
+        applyViewSizeLimit();
+        renderAlbums();
+    }
     if (totalCount) totalCount.textContent = allAlbums.length;
     showLoading(false);
     setupEventListeners();
@@ -717,6 +723,7 @@ function applyViewSizeLimit() {
 }
 
 function applyAlphabetFilter() {
+    localStorage.setItem('obi_filter', alphabetSelect.value);
     filteredAlbums = [...allAlbums];
     const alphabetFilter = alphabetSelect.value;
     if (alphabetFilter === 'soundtrack') {
