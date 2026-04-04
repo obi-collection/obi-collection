@@ -458,8 +458,9 @@ const COLLECTION_DATA = {"albums": [{"id":"001","artist":"Nas","album":"Illmatic
 // ===== APP =====
 let allAlbums = [];
 let filteredAlbums = [];
-let currentView = 'grid';
-let viewSizeMode = 'mobile';
+const isMobileUA = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+let currentView = localStorage.getItem('obi_view') || 'grid';
+let viewSizeMode = localStorage.getItem('obi_size') || (isMobileUA ? 'mobile' : 'desktop');
 let shuffleHistory = [];
 let topPageHistory = [];
 let pinnedAlbums = [];
@@ -483,7 +484,10 @@ const viewSizeToggle = document.getElementById('viewSizeToggle');
 
 document.addEventListener('DOMContentLoaded', () => {
     allAlbums = COLLECTION_DATA.albums;
-    if (viewSizeMode === 'mobile') collectionContainer.classList.add('mobile-view');
+    // Restore saved view/size button active states
+    document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === viewSizeMode));
+    collectionContainer.className = `collection-container ${currentView === 'list' ? 'list-view' : ''} ${viewSizeMode === 'mobile' ? 'mobile-view' : ''}`.trim();
     const displayCount = viewSizeMode === 'mobile' ? 9 : allAlbums.length;
     filteredAlbums = getRandomAlbumsForTopPage(displayCount);
     applyViewSizeLimit();
@@ -502,6 +506,7 @@ function setupEventListeners() {
             document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             currentView = btn.dataset.view;
+            localStorage.setItem('obi_view', currentView);
             collectionContainer.className = `collection-container ${currentView === 'list' ? 'list-view' : ''} ${viewSizeMode === 'mobile' ? 'mobile-view' : ''}`.trim();
         });
     });
@@ -510,6 +515,7 @@ function setupEventListeners() {
             document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             viewSizeMode = btn.dataset.size;
+            localStorage.setItem('obi_size', viewSizeMode);
             collectionContainer.classList.toggle('mobile-view', viewSizeMode === 'mobile');
             filteredAlbums = [...allAlbums];
             shuffleArray(filteredAlbums);
