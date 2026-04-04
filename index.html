@@ -387,6 +387,7 @@ body {
     transition: background 0.15s, color 0.15s;
 }
 .alpha-btn:hover:not(:disabled) { background: var(--gold-primary); color: var(--black); }
+.alpha-btn.active { background: var(--gold-primary); color: var(--black); border-color: var(--gold-primary); }
 .alpha-btn:disabled { opacity: 0.2; cursor: default; border-color: var(--silver); color: var(--silver); }
     </style>
 </head>
@@ -641,38 +642,48 @@ function updateAlphaBar() {
     const bar = document.getElementById('alphaIndexBar');
     const inner = document.getElementById('alphaIndexInner');
     if (!bar || !inner) return;
-    const showBar = viewSizeMode === 'desktop' && sortSelect.value === 'artist-asc' && !searchInput.value && alphabetSelect.value === '';
-    if (!showBar) { bar.style.display = 'none'; return; }
     bar.style.display = '';
     if (!inner.children.length) {
+        const allBtn = document.createElement('button');
+        allBtn.className = 'alpha-btn';
+        allBtn.textContent = 'ALL';
+        allBtn.dataset.letter = '';
+        allBtn.addEventListener('click', () => {
+            alphabetSelect.value = '';
+            sortSelect.value = 'artist-asc';
+            applyAlphabetFilter();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        inner.appendChild(allBtn);
         'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(letter => {
             const btn = document.createElement('button');
             btn.className = 'alpha-btn';
             btn.textContent = letter;
             btn.dataset.letter = letter;
             btn.addEventListener('click', () => {
-                const cards = collectionContainer.querySelectorAll('.album-card');
-                for (const card of cards) {
-                    const name = (card.dataset.sortArtist || '').toUpperCase();
-                    if (name.startsWith(letter)) {
-                        const offset = bar.offsetHeight + 8;
-                        const top = card.getBoundingClientRect().top + window.scrollY - offset;
-                        window.scrollTo({ top, behavior: 'smooth' });
-                        return;
-                    }
-                }
+                alphabetSelect.value = (alphabetSelect.value === letter) ? '' : letter;
+                sortSelect.value = 'artist-asc';
+                applyAlphabetFilter();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             inner.appendChild(btn);
         });
     }
-    const cards = collectionContainer.querySelectorAll('.album-card');
     const presentLetters = new Set();
-    cards.forEach(card => {
-        const initial = (card.dataset.sortArtist || '').toUpperCase().charAt(0);
+    allAlbums.forEach(album => {
+        const initial = getSortName(album.artist).toUpperCase().charAt(0);
         if (initial >= 'A' && initial <= 'Z') presentLetters.add(initial);
     });
+    const activeLetter = alphabetSelect.value;
     inner.querySelectorAll('.alpha-btn').forEach(btn => {
-        btn.disabled = !presentLetters.has(btn.dataset.letter);
+        const letter = btn.dataset.letter;
+        if (letter === '') {
+            btn.classList.toggle('active', activeLetter === '' || !/^[A-Z]$/.test(activeLetter));
+            btn.disabled = false;
+        } else {
+            btn.disabled = !presentLetters.has(letter);
+            btn.classList.toggle('active', letter === activeLetter);
+        }
     });
 }
 
