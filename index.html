@@ -747,7 +747,7 @@ function applyAlphabetFilter() {
             if (alphabetFilter === 'number') {
                 filteredAlbums = filteredAlbums.filter(a => /^[0-9]/.test(getSortName(a.artist)));
             } else {
-                filteredAlbums = filteredAlbums.filter(a => getSortName(a.artist) !== "Various Artists" && getSortName(a.artist).toUpperCase().startsWith(alphabetFilter));
+                filteredAlbums = filteredAlbums.filter(a => getSortName(a.artist) !== "Various Artists" && getSortName(a.artist) !== "O.S.T." && getSortName(a.artist).toUpperCase().startsWith(alphabetFilter));
             }
             filteredAlbums.sort((a, b) => {
                 const aa = getSortName(a.artist).toLowerCase(), ab = getSortName(b.artist).toLowerCase();
