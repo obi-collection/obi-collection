@@ -908,7 +908,7 @@ function openClaude(artist, albumTitle, year, catalog) {
 }
 
 function copyAIPrompt(btn, artist, albumTitle, year, catalog) {
-    const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲について：曲名、プロデューサー（知識から補完してください）、客演アーティスト、簡単な聴きどころ\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
+    const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\n回答はテーブル形式を使わず、すべて文章または箇条書きで書いてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲を以下の形式で記載してください：\n曲番号. 曲名\n　・プロデューサー：（知識から補完）\n　・客演：（いる場合のみ）\n　・聴きどころ：\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
     navigator.clipboard.writeText(prompt).then(() => {
         btn.classList.add('copied');
         btn.innerHTML = '<i class="fas fa-check"></i> コピーしました！';
