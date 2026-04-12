@@ -903,7 +903,7 @@ function showAlbumModal(album) {
 function closeModal() { albumModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
 
 function openClaude(artist, albumTitle, year, catalog) {
-    const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲について：曲名、客演アーティスト、簡単な聴きどころ\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
+    const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\nテーブル形式・マークダウンテーブルは絶対に使わないでください。すべて箇条書きか文章で書いてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲を必ず以下のフォーマットで、縦に並べて記載してください：\n\n1. 曲名\nプロデューサー：xxx\n客演：xxx（いない場合は省略）\n聴きどころ：xxx\n\n2. 曲名\nプロデューサー：xxx\n...\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
     window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
 }
 
