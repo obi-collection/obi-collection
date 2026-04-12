@@ -333,6 +333,9 @@ body {
 .action-btn.x-share:hover { background: rgba(255,215,0,0.1); transform: translateY(-2px); }
 .action-btn.claude-ai { background: transparent; border-color: #D97757; color: #D97757; }
 .action-btn.claude-ai:hover { background: rgba(217,119,87,0.15); transform: translateY(-2px); }
+.action-btn.ask-ai { background: transparent; border-color: #D97757; color: #D97757; }
+.action-btn.ask-ai:hover { background: rgba(217,119,87,0.15); transform: translateY(-2px); }
+.action-btn.ask-ai.copied { border-color: #4CAF50; color: #4CAF50; }
 .x-share-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 3000; background: rgba(0,0,0,0.96); flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; gap: 1.2rem; }
 .x-share-overlay.active { display: flex; }
 .x-share-overlay img { max-width: 100%; max-height: 60vh; object-fit: contain; border-radius: 8px; border: 3px solid var(--gold-primary); box-shadow: var(--shadow-lg); }
@@ -874,6 +877,7 @@ function showAlbumModal(album) {
                     </div>
                     <div class="action-buttons">
                         <button class="action-btn claude-ai" onclick="openClaude('${artist}','${albumTitle}','${version.year}','${catalogNo}')"><i class="fas fa-robot"></i> Claude</button>
+                        <button class="action-btn ask-ai" onclick="copyAIPrompt(this,'${artist}','${albumTitle}','${version.year}','${catalogNo}')"><i class="fas fa-copy"></i> AIに聞く</button>
                     </div>
                 </div>
             </div>`;
@@ -901,6 +905,18 @@ function closeModal() { albumModal.classList.remove('active'); document.body.sty
 function openClaude(artist, albumTitle, year, catalog) {
     const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲について：曲名、客演アーティスト、簡単な聴きどころ\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
     window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
+}
+
+function copyAIPrompt(btn, artist, albumTitle, year, catalog) {
+    const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲について：曲名、客演アーティスト、簡単な聴きどころ\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
+    navigator.clipboard.writeText(prompt).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = '<i class="fas fa-check"></i> コピーしました！';
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<i class="fas fa-copy"></i> AIに聞く';
+        }, 2000);
+    });
 }
 
 function togglePin(album, position) {
