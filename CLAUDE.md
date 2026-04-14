@@ -118,7 +118,6 @@ const COLLECTION_DATA = {
 
 ## 既知の問題
 
-- **STATIK SELEKTAH / The Balancing Act:** `data.js` 内に重複エントリが4件存在する可能性あり → 要確認・整理
 - **PHCR-3036~7（All Eyez On Me）:** 別OBIの重複版で画像表示の問題が未解決
 
 ---
