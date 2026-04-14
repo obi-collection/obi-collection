@@ -211,6 +211,21 @@ def find_data_line(lines: list) -> int:
     raise RuntimeError("Could not locate albums JSON array in index.html")
 
 
+def _normalize(s: str) -> str:
+    """Normalize string for loose matching (lowercase, collapse whitespace)."""
+    return re.sub(r"\s+", " ", (s or "").lower().strip())
+
+
+def find_existing_album(albums: list, artist: str, album: str):
+    """Return the first album entry matching artist+title (case-insensitive).
+    Returns None if not found."""
+    na, nb = _normalize(artist), _normalize(album)
+    for a in albums:
+        if _normalize(a.get("artist", "")) == na and _normalize(a.get("album", "")) == nb:
+            return a
+    return None
+
+
 def update_index_html(info: dict, raw_url: str) -> dict:
     html_path = BASE_DIR / "data.js"
     content = html_path.read_text(encoding="utf-8")
@@ -222,8 +237,6 @@ def update_index_html(info: dict, raw_url: str) -> dict:
     arr_end = line.rindex("]") + 1
     albums = json.loads(line[arr_start:arr_end])
 
-    album_id = generate_id(info["artist"], albums)
-
     # Add Cloudinary transformations for optimized delivery
     if "/upload/" in raw_url:
         parts = raw_url.split("/upload/", 1)
@@ -234,28 +247,38 @@ def update_index_html(info: dict, raw_url: str) -> dict:
     year = info.get("year") or info.get("yearJP")
     year_jp = info.get("yearJP") or info.get("year")
 
-    new_album = {
-        "id": album_id,
-        "artist": info["artist"],
-        "album": info["album"],
-        "versions": [
-            {
-                "year": year,
-                "yearJP": year_jp,
-                "catalog": info.get("catalog") or "",
-                "image": image_url,
-                "note": "",
-            }
-        ],
+    new_version = {
+        "year": year,
+        "yearJP": year_jp,
+        "catalog": info.get("catalog") or "",
+        "image": image_url,
+        "note": "",
     }
 
-    albums.append(new_album)
+    existing = find_existing_album(albums, info["artist"], info["album"])
+    if existing:
+        # Add as a new version of the existing album entry
+        existing["versions"].append(new_version)
+        log(f"Added version to existing entry '{existing['id']}': {info['artist']} — {info['album']}")
+        result = existing
+    else:
+        # Create a new album entry
+        album_id = generate_id(info["artist"], albums)
+        new_album = {
+            "id": album_id,
+            "artist": info["artist"],
+            "album": info["album"],
+            "versions": [new_version],
+        }
+        albums.append(new_album)
+        log(f"Added new entry to data.js: id={album_id}, {info['artist']} — {info['album']}")
+        result = new_album
+
     new_json = json.dumps(albums, ensure_ascii=False, separators=(",", ":"))
     lines[data_idx] = line[:arr_start] + new_json + line[arr_end:]
     html_path.write_text("\n".join(lines), encoding="utf-8")
 
-    log(f"Added to data.js: id={album_id}, {info['artist']} — {info['album']}")
-    return new_album
+    return result
 
 
 # ── Git push ─────────────────────────────────────────────────────────────────
