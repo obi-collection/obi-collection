@@ -131,3 +131,5 @@ cd "/Volumes/Extreme SSD/obi-collection" && claude --dangerously-skip-permission
 # data.js 内のアーティスト検索例
 grep -n "STATIK" data.js
 ```
+
+セッション開始時に必ず最初に plan.md を読んでください。
