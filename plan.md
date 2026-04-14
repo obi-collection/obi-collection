@@ -95,3 +95,12 @@ cd "/Volumes/Extreme SSD/obi-collection" && claude --dangerously-skip-permission
 ```
 
 **セッション開始時に必ずこのファイルを読み込むこと。**
+
+---
+
+## 今後の展望
+
+### マルチエージェント自動化
+- タスクを細かく分解し、役割ごとに専門エージェントを配置する構成を検討
+- X自動投稿では「投稿文生成（Claude API）→投稿実行→投稿済み管理」の3段構成が候補
+- 既存のlaunchd + Pythonパイプラインに乗っける形で実装予定
