@@ -42,12 +42,6 @@ COLLECTION_DATA = {
 
 ## 既知の課題・TODO
 
-### 🔴 未解決（優先度高）
-
-#### 1. PHCR-3036~7（All Eyez On Me）画像表示問題
-- 異なるOBIを持つ重複バージョンのうち、片方の画像が正常表示されない
-- **次のアクション:** Cloudinary URL・`versions[]` 構造を確認して修正
-
 ### 🟢 完了済み
 
 - `data.js` へのデータ分離（index.htmlから独立）
@@ -58,6 +52,8 @@ COLLECTION_DATA = {
 - データ修正多数（RUN D.M.C.表記統一、yearJP修正など）
 - STATIK SELEKTAH "The Balancing Act" 重複エントリ整理（`id=ss01` の1件に統合済み）
 - X（Twitter）自動投稿の実装（`post_to_x.py` + `posted.json` による重複防止、launchd連携）
+- PHCR-3036~7（All Eyez On Me）画像表示問題 → 解消済み（VICP-61634~35のimageをvicp_61634_35.jpgに更新）
+- アーティスト表記の統一（House of Pain / N.W.A / N.E.R.D. / OutKast / Souls of Mischief / Just-Ice / DJ Stretch Armstrong）
 
 ---
 
@@ -87,6 +83,7 @@ cd "/Volumes/Extreme SSD/obi-collection" && claude --dangerously-skip-permission
 ### 2026-04-16 VICP-61634~35 二重追加
 - 原因：process_inbox.py が2回実行された（Claude Codeの誤判断で再配置を指示してしまった）
 - 対策：処理後はinboxが空になっているか確認してから再配置する
+- inboxにc.jpgを置く場合、パイプラインが自動処理するため手動でprocess_inbox.pyを実行すると二重登録になる
 
 ---
 
