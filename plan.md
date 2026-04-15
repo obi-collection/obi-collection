@@ -82,6 +82,14 @@ cd "/Volumes/Extreme SSD/obi-collection" && claude --dangerously-skip-permission
 
 ---
 
+## トラブル履歴
+
+### 2026-04-16 VICP-61634~35 二重追加
+- 原因：process_inbox.py が2回実行された（Claude Codeの誤判断で再配置を指示してしまった）
+- 対策：処理後はinboxが空になっているか確認してから再配置する
+
+---
+
 ## 今後の展望
 
 ### マルチエージェント自動化
