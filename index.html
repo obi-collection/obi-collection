@@ -1045,7 +1045,7 @@ function searchOnAppleMusic(artist, album) {
 }
 
 function openSearch(url) { window.open(url, '_blank'); }
-function searchOnDiscogs(artist, album) { openSearch(`https://www.discogs.com/search/?q=${encodeURIComponent(`${artist} ${album}`)}&type=all`); }
+function searchOnDiscogs(artist, album) { const q = artist === 'Various Artists' ? album : `${artist} ${album}`; openSearch(`https://www.discogs.com/search/?q=${encodeURIComponent(q)}&type=all`); }
 function searchOnGenius(artist, album) { openSearch(`https://genius.com/search?q=${encodeURIComponent(`${artist} ${album}`)}`); }
 function searchOnMercari(artist, album) { openSearch(`https://jp.mercari.com/search?keyword=${encodeURIComponent(`${artist} ${album}`)}`); }
 function searchOnYahooAuction(artist, album) {
