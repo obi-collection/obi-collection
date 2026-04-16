@@ -3,3 +3,9 @@
 watch_inbox.log
 inbox/combined.jpg
 upload_to_cloudinary.py
+.DS_Store
+check_results.json
+check_years.py
+post_to_x.py
+posted.json
+run_post_to_x.sh
