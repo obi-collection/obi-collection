@@ -298,6 +298,8 @@ def main():
         # 2. Extract album info from the obi (or combined) image
         log("Step 2/5 — Reading album info from obi with Claude API...")
         info = extract_album_info(info_source)
+        if not info.get("artist"):
+            info["artist"] = "Various Artists"
         log(f"  → {json.dumps(info, ensure_ascii=False)}")
 
         # 3. Upload combined image to Cloudinary
