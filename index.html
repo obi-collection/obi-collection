@@ -406,31 +406,19 @@ body {
 .detail-label { font-family: var(--font-heading); font-weight: 700; color: var(--gold-obi); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; width: 120px; flex-shrink: 0; padding-top: 0.1rem; }
 .detail-value { color: var(--text-primary); flex: 1; font-size: 0.9rem; }
 /* ===== ACTION BUTTONS ===== */
-.action-buttons { margin-top: 0; margin-bottom: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; width: 100%; }
+.version-left-col { display: flex; flex-direction: column; gap: 0.5rem; }
+.version-right-col { display: flex; flex-direction: column; gap: 0; }
+.action-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; width: 100%; }
+.version-right-col .action-buttons { grid-template-columns: 1fr; margin-top: 0.5rem; }
 .action-btn { padding: 0.6rem 1rem; border: 1px solid transparent; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.25s ease; display: flex; align-items: center; gap: 0.5rem; justify-content: center; white-space: nowrap; width: 100%; }
 .action-btn.apple-music { background: var(--gold-obi); border-color: var(--gold-obi); color: var(--black); }
 .action-btn.apple-music:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.3); }
 .action-btn.youtube { background: var(--gold-obi); border-color: var(--gold-obi); color: var(--black); }
 .action-btn.youtube:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.3); }
-.action-btn.discogs { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); }
-.action-btn.discogs:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
-.action-btn.genius { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); }
-.action-btn.genius:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
-.action-btn.mercari { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); }
-.action-btn.mercari:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
-.action-btn.yahooauction { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); }
-.action-btn.yahooauction:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
-.action-btn.whosampled { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); }
-.action-btn.whosampled:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
-.action-btn.x-share { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); }
-.action-btn.x-share:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
-.action-btn.claude-ai { background: transparent; border-color: var(--border-mid); color: #D97757; }
-.action-btn.claude-ai:hover { background: rgba(217,119,87,0.1); transform: translateY(-2px); }
-.action-btn.ask-ai { background: transparent; border-color: var(--border-mid); color: #D97757; }
-.action-btn.ask-ai:hover { background: rgba(217,119,87,0.1); transform: translateY(-2px); }
-.action-btn.ask-ai.copied { border-color: #4CAF50; color: #4CAF50; }
-.action-btn.note { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); grid-column: span 2; }
-.action-btn.note:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
+.action-btn.discogs, .action-btn.genius, .action-btn.mercari, .action-btn.yahooauction, .action-btn.whosampled, .action-btn.ask-ai, .action-btn.claude-ai, .action-btn.note { background: var(--surface-1); border-color: var(--border-mid); color: var(--text-primary); }
+.action-btn.discogs:hover, .action-btn.genius:hover, .action-btn.mercari:hover, .action-btn.yahooauction:hover, .action-btn.whosampled:hover, .action-btn.ask-ai:hover, .action-btn.claude-ai:hover, .action-btn.note:hover { background: var(--surface-2); border-color: var(--gold-dim); transform: translateY(-2px); }
+.action-btn.ask-ai.copied { border-color: #4CAF50; color: #4CAF50; background: transparent; }
+.action-btn-placeholder { height: 2.4rem; }
 .x-share-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 3000; background: rgba(0,0,0,0.96); flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; gap: 1.2rem; }
 .x-share-overlay.active { display: flex; }
 .x-share-overlay img { max-width: 100%; max-height: 60vh; object-fit: contain; border-radius: 6px; border: 1px solid var(--border-mid); box-shadow: var(--shadow-lg); }
@@ -951,25 +939,31 @@ function showAlbumModal(album) {
         versionsHTML += `
             <div class="version-section ${index > 0 ? 'version-divider' : ''}">
                 <div class="version-content">
-                    <div class="version-image-wrapper">
-                        <img src="${version.image}" alt="${album.album}" class="modal-album-image">
+                    <div class="version-left-col">
+                        <div class="version-image-wrapper">
+                            <img src="${version.image}" alt="${album.album}" class="modal-album-image">
+                        </div>
+                        <div class="action-buttons">
+                            <button class="action-btn youtube" onclick="searchOnYouTube('${artist}','${albumTitle}')"><i class="fab fa-youtube"></i> YouTube</button>
+                            <button class="action-btn apple-music" onclick="searchOnAppleMusic('${artist}','${albumTitle}')"><i class="fab fa-apple"></i> Apple Music</button>
+                            <button class="action-btn ask-ai" onclick="copyAIPrompt(this,'${artist}','${albumTitle}','${version.year}','${catalogNo}')"><i class="fas fa-copy"></i> Ask AI</button>
+                            <button onclick="window.open('https://claude.ai', '_blank')" class="action-btn claude-ai"><i class="fas fa-robot"></i> Claude</button>
+                        </div>
                     </div>
-                    <div class="version-details">
-                        ${version.yearJP ? `<div class="detail-row"><span class="detail-label">Japan Release</span><span class="detail-value">${version.yearJP}</span></div>` : ''}
-                        ${version.catalog ? `<div class="detail-row"><span class="detail-label">Catalog No.</span><span class="detail-value">${version.catalog}</span></div>` : ''}
-                        ${version.note ? `<div class="detail-row"><span class="detail-label">Note</span><span class="detail-value">${version.note}</span></div>` : ''}
-                    </div>
-                    <div class="action-buttons">
-                        <button class="action-btn youtube" onclick="searchOnYouTube('${artist}','${albumTitle}')"><i class="fab fa-youtube"></i> YouTube</button>
-                        <button class="action-btn apple-music" onclick="searchOnAppleMusic('${artist}','${albumTitle}')"><i class="fab fa-apple"></i> Apple Music</button>
-                        <button class="action-btn discogs" onclick="searchOnDiscogs('${artist}','${albumTitle}')"><i class="fas fa-record-vinyl"></i> Discogs</button>
-                        <button class="action-btn genius" onclick="searchOnGenius('${artist}','${albumTitle}')"><i class="fas fa-music"></i> Genius</button>
-                        <button class="action-btn whosampled" onclick="searchOnWhoSampled('${artist}')"><i class="fas fa-headphones"></i> WhoSampled</button>
-                        <button class="action-btn x-share" onclick="shareOnX('${artist}','${albumTitle}','${catalogNo}','${imageUrl}')"><i class="fab fa-x-twitter"></i> Post</button>
-                        <button class="action-btn mercari" onclick="searchOnMercari('${artist}','${albumTitle}')"><i class="fas fa-tag"></i> Mercari</button>
-                        <button class="action-btn yahooauction" onclick="searchOnYahooAuction('${artist}','${albumTitle}')"><i class="fas fa-gavel"></i> Yahoo Auction</button>
-                        <button class="action-btn ask-ai" onclick="copyAIPrompt(this,'${artist}','${albumTitle}','${version.year}','${catalogNo}')"><i class="fas fa-copy"></i> Ask AI</button>
-                        <button onclick="window.open('https://claude.ai', '_blank')" class="action-btn claude-ai"><i class="fas fa-robot"></i> Claude</button>
+                    <div class="version-right-col">
+                        <div class="version-details">
+                            ${version.yearJP ? `<div class="detail-row"><span class="detail-label">Japan Release</span><span class="detail-value">${version.yearJP}</span></div>` : ''}
+                            ${version.catalog ? `<div class="detail-row"><span class="detail-label">Catalog No.</span><span class="detail-value">${version.catalog}</span></div>` : ''}
+                            ${version.note ? `<div class="detail-row"><span class="detail-label">Note</span><span class="detail-value">${version.note}</span></div>` : ''}
+                        </div>
+                        <div class="action-buttons">
+                            ${album.note_url ? `<button onclick="window.open('${album.note_url}', '_blank')" class="action-btn note"><i class="fas fa-newspaper"></i> note</button>` : '<div class="action-btn-placeholder"></div>'}
+                            <button class="action-btn discogs" onclick="searchOnDiscogs('${artist}','${albumTitle}')"><i class="fas fa-record-vinyl"></i> Discogs</button>
+                            <button class="action-btn whosampled" onclick="searchOnWhoSampled('${artist}')"><i class="fas fa-headphones"></i> WhoSampled</button>
+                            <button class="action-btn genius" onclick="searchOnGenius('${artist}','${albumTitle}')"><i class="fas fa-music"></i> Genius</button>
+                            <button class="action-btn mercari" onclick="searchOnMercari('${artist}','${albumTitle}')"><i class="fas fa-tag"></i> Mercari</button>
+                            <button class="action-btn yahooauction" onclick="searchOnYahooAuction('${artist}','${albumTitle}')"><i class="fas fa-gavel"></i> Yahoo Auction</button>
+                        </div>
                     </div>
                 </div>
             </div>`;
@@ -981,12 +975,6 @@ function showAlbumModal(album) {
                 <h3>${album.album}${album.versions[0].year ? `  (${album.versions[0].year})` : ''}</h3>
             </div>
             ${versionsHTML}
-            ${album.note_url ? `
-<div class="action-buttons" style="margin-top:8px;">
-  <button onclick="window.open('${album.note_url}', '_blank')" class="action-btn note">
-    <i class="fas fa-newspaper"></i> note
-  </button>
-</div>` : ''}
         </div>`;
 
     modalBody.querySelectorAll('.modal-album-image').forEach(img => {
