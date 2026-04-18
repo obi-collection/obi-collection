@@ -973,6 +973,7 @@ function showAlbumModal(album) {
                     </div>
                     <div class="action-buttons">
                         <button class="action-btn ask-ai" onclick="copyAIPrompt(this,'${artist}','${albumTitle}','${version.year}','${catalogNo}')"><i class="fas fa-copy"></i> Ask AI</button>
+                        <button onclick="window.open('https://claude.ai', '_blank')" class="action-btn claude-ai"><i class="fas fa-robot"></i> Claude</button>
                     </div>
                 </div>
             </div>`;
@@ -984,29 +985,14 @@ function showAlbumModal(album) {
                 <h3>${album.album}${album.versions[0].year ? `  (${album.versions[0].year})` : ''}</h3>
             </div>
             ${versionsHTML}
-            ${album.note_url ? `<div class="note-embed-area" style="margin-top:24px;"><a class="note-embed" href="${album.note_url}" style="display:block; text-align:center;"></a></div>` : ''}
+            ${album.note_url ? `
+<div style="margin-top:16px; padding: 0 0 8px 0;">
+  <button onclick="window.open('${album.note_url}', '_blank')" class="action-btn" style="width:100%;">
+    <i class="fas fa-newspaper"></i> note
+  </button>
+</div>` : ''}
         </div>`;
-    // note_urlがある場合、oEmbed APIでカードを取得して表示
-    if (album.note_url) {
-        const noteArea = modalBody.querySelector('.note-embed-area');
-        if (noteArea) {
-            fetch(`https://note.com/oembed?url=${encodeURIComponent(album.note_url)}&format=json`)
-                .then(r => r.json())
-                .then(data => {
-                    noteArea.innerHTML = data.html;
-                    // oEmbedのhtmlにscriptが含まれる場合は再実行
-                    noteArea.querySelectorAll('script').forEach(s => {
-                        const ns = document.createElement('script');
-                        ns.src = s.src;
-                        ns.async = true;
-                        document.body.appendChild(ns);
-                    });
-                })
-                .catch(() => {
-                    noteArea.innerHTML = `<a href="${album.note_url}" target="_blank" style="color:#FFD700;">noteで読む →</a>`;
-                });
-        }
-    }
+
     modalBody.querySelectorAll('.modal-album-image').forEach(img => {
         let pressTimer;
         img.addEventListener('touchstart', () => { img.dataset.longPress = 'false'; pressTimer = setTimeout(() => { img.dataset.longPress = 'true'; }, 500); });
