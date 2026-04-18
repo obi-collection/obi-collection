@@ -984,6 +984,11 @@ function showAlbumModal(album) {
                 <h3>${album.album}${album.versions[0].year ? `  (${album.versions[0].year})` : ''}</h3>
             </div>
             ${versionsHTML}
+            ${album.note_url ? `
+            <div class="note-embed-area" style="margin-top:24px;">
+              <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+              <a class="note-embed" href="${album.note_url}" style="display:block; text-align:center;"></a>
+            </div>` : ''}
         </div>`;
     modalBody.querySelectorAll('.modal-album-image').forEach(img => {
         let pressTimer;
