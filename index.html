@@ -429,6 +429,8 @@ body {
 .action-btn.ask-ai { background: transparent; border-color: var(--border-mid); color: #D97757; }
 .action-btn.ask-ai:hover { background: rgba(217,119,87,0.1); transform: translateY(-2px); }
 .action-btn.ask-ai.copied { border-color: #4CAF50; color: #4CAF50; }
+.action-btn.note { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); grid-column: span 2; }
+.action-btn.note:hover { border-color: var(--gold-dim); color: var(--gold-obi); background: rgba(245,197,24,0.06); transform: translateY(-2px); }
 .x-share-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 3000; background: rgba(0,0,0,0.96); flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; gap: 1.2rem; }
 .x-share-overlay.active { display: flex; }
 .x-share-overlay img { max-width: 100%; max-height: 60vh; object-fit: contain; border-radius: 6px; border: 1px solid var(--border-mid); box-shadow: var(--shadow-lg); }
@@ -960,18 +962,12 @@ function showAlbumModal(album) {
                     <div class="action-buttons">
                         <button class="action-btn youtube" onclick="searchOnYouTube('${artist}','${albumTitle}')"><i class="fab fa-youtube"></i> YouTube</button>
                         <button class="action-btn apple-music" onclick="searchOnAppleMusic('${artist}','${albumTitle}')"><i class="fab fa-apple"></i> Apple Music</button>
-                    </div>
-                    <div class="action-buttons">
                         <button class="action-btn discogs" onclick="searchOnDiscogs('${artist}','${albumTitle}')"><i class="fas fa-record-vinyl"></i> Discogs</button>
                         <button class="action-btn genius" onclick="searchOnGenius('${artist}','${albumTitle}')"><i class="fas fa-music"></i> Genius</button>
                         <button class="action-btn whosampled" onclick="searchOnWhoSampled('${artist}')"><i class="fas fa-headphones"></i> WhoSampled</button>
                         <button class="action-btn x-share" onclick="shareOnX('${artist}','${albumTitle}','${catalogNo}','${imageUrl}')"><i class="fab fa-x-twitter"></i> Post</button>
-                    </div>
-                    <div class="action-buttons">
                         <button class="action-btn mercari" onclick="searchOnMercari('${artist}','${albumTitle}')"><i class="fas fa-tag"></i> Mercari</button>
                         <button class="action-btn yahooauction" onclick="searchOnYahooAuction('${artist}','${albumTitle}')"><i class="fas fa-gavel"></i> Yahoo Auction</button>
-                    </div>
-                    <div class="action-buttons">
                         <button class="action-btn ask-ai" onclick="copyAIPrompt(this,'${artist}','${albumTitle}','${version.year}','${catalogNo}')"><i class="fas fa-copy"></i> Ask AI</button>
                         <button onclick="window.open('https://claude.ai', '_blank')" class="action-btn claude-ai"><i class="fas fa-robot"></i> Claude</button>
                     </div>
@@ -986,8 +982,8 @@ function showAlbumModal(album) {
             </div>
             ${versionsHTML}
             ${album.note_url ? `
-<div style="margin-top:16px; padding: 0 0 8px 0;">
-  <button onclick="window.open('${album.note_url}', '_blank')" class="action-btn" style="width:100%;">
+<div class="action-buttons" style="margin-top:8px;">
+  <button onclick="window.open('${album.note_url}', '_blank')" class="action-btn note">
     <i class="fas fa-newspaper"></i> note
   </button>
 </div>` : ''}
