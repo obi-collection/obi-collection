@@ -200,10 +200,12 @@ def extract_tracklist(t_path: Path) -> list:
     image_b64 = base64.standard_b64encode(t_path.read_bytes()).decode()
 
     prompt = (
-        "このCDのトラックリスト画像から曲名と曲番号のみを抽出してください。\n"
-        "時間、作曲者、演奏者などの情報は不要です。\n"
+        "このCDのトラックリスト画像から曲名と曲番号を抽出してください。\n"
+        "時間、作曲者などの情報は不要です。\n"
         "曲名は必ず英語の正式タイトルで出力してください。"
         "画像に日本語タイトルが記載されていても、英語の正式タイトルを使用してください。\n"
+        "feat.やft.などの客演情報が曲名に含まれている場合は、それも含めて抽出してください。\n"
+        '例：["4. Czar ft. M.O.P.", "19. Look Over Your Shoulder ft. Kendrick Lamar"]\n\n'
         "必ず以下のJSON配列のみを返してください（前後の説明不要）:\n\n"
         '["1. Track Name", "2. Track Name", ...]\n\n'
         "ローマ数字の曲番号は算用数字に変換してください。"
