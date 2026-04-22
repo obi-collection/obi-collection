@@ -952,9 +952,9 @@ function showAlbumModal(album) {
                         <img src="${version.image}" alt="${album.album}" class="modal-album-image">
                     </div>
                     <div class="version-details">
+                        ${version.catalog ? `<div class="detail-row"><span class="detail-label">Catalog No.</span><span class="detail-value">${version.catalog}</span></div>` : ''}
                         ${index === 0 && album.tracklist ? `<div class="tracklist-accordion"><button class="tracklist-toggle" onclick="this.parentElement.classList.toggle('open')">Track List <i class="fas fa-chevron-down"></i></button><ol class="tracklist-body">${album.tracklist.map(t => `<li>${t.replace(/^\d+\.\s*/, '')}</li>`).join('')}</ol></div>` : ''}
                         ${version.yearJP ? `<div class="detail-row"><span class="detail-label">Japan Release</span><span class="detail-value">${version.yearJP}</span></div>` : ''}
-                        ${version.catalog ? `<div class="detail-row"><span class="detail-label">Catalog No.</span><span class="detail-value">${version.catalog}</span></div>` : ''}
                         ${version.note ? `<div class="detail-row"><span class="detail-label">Note</span><span class="detail-value">${version.note}</span></div>` : ''}
                     </div>
                     <div class="action-buttons action-buttons-left">
