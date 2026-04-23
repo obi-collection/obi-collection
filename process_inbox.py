@@ -205,7 +205,9 @@ def extract_tracklist(t_path: Path) -> list:
         "曲名は必ず英語の正式タイトルで出力してください。"
         "画像に日本語タイトルが記載されていても、英語の正式タイトルを使用してください。\n"
         "feat.やft.などの客演情報が曲名に含まれている場合は、それも含めて抽出してください。\n"
-        '例：["4. Czar ft. M.O.P.", "19. Look Over Your Shoulder ft. Kendrick Lamar"]\n\n'
+        "BONUS DISCや複数ディスクがある場合は、全ディスクの全曲を漏れなく抽出してください。\n"
+        "ディスクの区切りは '[DISC 2: タイトル]' のような形式でリストに含めてください。\n"
+        '例：["1. Track Name", "2. Track Name", "[DISC 2: BONUS DISC]", "1. Bonus Track"]\n\n'
         "必ず以下のJSON配列のみを返してください（前後の説明不要）:\n\n"
         '["1. Track Name", "2. Track Name", ...]\n\n'
         "ローマ数字の曲番号は算用数字に変換してください。\n"
