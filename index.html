@@ -991,7 +991,7 @@ function showAlbumModal(album) {
         img.addEventListener('touchstart', () => { img.dataset.longPress = 'false'; pressTimer = setTimeout(() => { img.dataset.longPress = 'true'; }, 500); });
         img.addEventListener('touchend', () => { clearTimeout(pressTimer); setTimeout(() => { img.dataset.longPress = 'false'; }, 100); });
         img.addEventListener('touchmove', () => clearTimeout(pressTimer));
-        img.addEventListener('click', () => { if (img.dataset.longPress !== 'true') openImageViewer(img.src); });
+        img.addEventListener('click', () => { if (img.dataset.longPress !== 'true') openImageViewer(img.src.replace('f_auto,q_auto,w_600', 'f_auto,q_100,w_2400')); });
     });
     albumModal.classList.add('active');
     document.body.style.overflow = 'hidden';
