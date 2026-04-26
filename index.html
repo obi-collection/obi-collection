@@ -786,7 +786,7 @@ function updateAlphaBar() {
             });
             inner.appendChild(btn);
         });
-        [['COMP', 'compilation'], ['OST', 'soundtrack']].forEach(([label, value]) => {
+        [['V.A.', 'compilation'], ['OST', 'soundtrack']].forEach(([label, value]) => {
             const btn = document.createElement('button');
             btn.className = 'alpha-btn';
             btn.textContent = label;
@@ -836,7 +836,7 @@ function applyAlphabetFilter() {
         filteredAlbums = filteredAlbums.filter(a => a.artist === 'O.S.T.');
         filteredAlbums.sort((a, b) => a.album.toLowerCase().localeCompare(b.album.toLowerCase()));
     } else if (alphabetFilter === 'compilation') {
-        filteredAlbums = filteredAlbums.filter(a => a.artist === 'Various Artists');
+        filteredAlbums = filteredAlbums.filter(a => a.artist === 'V.A.');
         filteredAlbums.sort((a, b) => a.album.toLowerCase().localeCompare(b.album.toLowerCase()));
     } else {
         const isDecade = ['1980s','1990s','2000s','2010s','2020s'].includes(alphabetFilter);
@@ -853,7 +853,7 @@ function applyAlphabetFilter() {
             if (alphabetFilter === 'number') {
                 filteredAlbums = filteredAlbums.filter(a => /^[0-9]/.test(getSortName(a.artist_sort || a.artist)));
             } else {
-                filteredAlbums = filteredAlbums.filter(a => getSortName(a.artist_sort || a.artist) !== "Various Artists" && getSortName(a.artist_sort || a.artist) !== "O.S.T." && getSortName(a.artist_sort || a.artist).toUpperCase().startsWith(alphabetFilter));
+                filteredAlbums = filteredAlbums.filter(a => getSortName(a.artist_sort || a.artist) !== "V.A." && getSortName(a.artist_sort || a.artist) !== "O.S.T." && getSortName(a.artist_sort || a.artist).toUpperCase().startsWith(alphabetFilter));
             }
             filteredAlbums.sort((a, b) => {
                 const aa = getSortName(a.artist_sort || a.artist).toLowerCase(), ab = getSortName(b.artist_sort || b.artist).toLowerCase();
@@ -1052,7 +1052,7 @@ function searchOnAppleMusic(artist, album) {
 }
 
 function openSearch(url) { window.open(url, '_blank'); }
-function searchOnDiscogs(artist, album) { const q = artist === 'Various Artists' ? album : `${artist} ${album}`; openSearch(`https://www.discogs.com/search/?q=${encodeURIComponent(q)}&type=all`); }
+function searchOnDiscogs(artist, album) { const q = artist === 'V.A.' ? album : `${artist} ${album}`; openSearch(`https://www.discogs.com/search/?q=${encodeURIComponent(q)}&type=all`); }
 function searchOnGenius(artist, album) { openSearch(`https://genius.com/search?q=${encodeURIComponent(`${artist} ${album}`)}`); }
 function searchOnMercari(artist, album) { openSearch(`https://jp.mercari.com/search?keyword=${encodeURIComponent(`${artist} ${album}`)}`); }
 function searchOnYahooAuction(artist, album) {
