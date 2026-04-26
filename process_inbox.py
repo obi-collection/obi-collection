@@ -142,6 +142,40 @@ def detect_media_type(path: Path) -> str:
     return "image/jpeg" if path.suffix.lower() in (".jpg", ".jpeg") else "image/png"
 
 
+def prepare_image_for_api(path: Path) -> tuple:
+    """Return (base64_data, media_type), resizing if base64 exceeds 5 MB."""
+    import io
+    media_type = detect_media_type(path)
+    data = path.read_bytes()
+    b64 = base64.standard_b64encode(data).decode()
+    if len(b64) <= 5 * 1024 * 1024:
+        return b64, media_type
+
+    log(f"  Image too large ({len(b64)} bytes base64), resizing...")
+    try:
+        from PIL import Image
+        img = Image.open(io.BytesIO(data)).convert("RGB")
+        img.thumbnail((1800, 1800), Image.LANCZOS)
+        buf = io.BytesIO()
+        img.save(buf, format="JPEG", quality=85)
+        b64 = base64.standard_b64encode(buf.getvalue()).decode()
+        log(f"  Resized to {len(b64)} bytes base64")
+        return b64, "image/jpeg"
+    except ImportError:
+        pass
+
+    result = subprocess.run(
+        ["convert", str(path), "-resize", "1800x1800>", "-quality", "85", "jpeg:-"],
+        capture_output=True,
+    )
+    if result.returncode == 0:
+        b64 = base64.standard_b64encode(result.stdout).decode()
+        log(f"  Resized to {len(b64)} bytes base64 (ImageMagick)")
+        return b64, "image/jpeg"
+
+    raise RuntimeError("Image too large for API and resizing failed (install Pillow or ImageMagick)")
+
+
 # ── Claude API — album info extraction ──────────────────────────────────────
 
 def extract_album_info(obi_path: Path) -> dict:
@@ -149,8 +183,7 @@ def extract_album_info(obi_path: Path) -> dict:
     if not api_key:
         raise EnvironmentError("ANTHROPIC_API_KEY is not set")
 
-    media_type = detect_media_type(obi_path)
-    image_b64 = base64.standard_b64encode(obi_path.read_bytes()).decode()
+    image_b64, media_type = prepare_image_for_api(obi_path)
 
     prompt = (
         "この日本盤CDのOBI（帯）画像からアルバム情報を読み取ってください。\n"
@@ -211,8 +244,7 @@ def extract_tracklist(t_path: Path) -> list:
     if not api_key:
         raise EnvironmentError("ANTHROPIC_API_KEY is not set")
 
-    media_type = detect_media_type(t_path)
-    image_b64 = base64.standard_b64encode(t_path.read_bytes()).decode()
+    image_b64, media_type = prepare_image_for_api(t_path)
 
     prompt = (
         "このCDのトラックリスト画像から曲名と曲番号を抽出してください。\n"
