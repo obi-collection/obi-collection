@@ -146,7 +146,7 @@ def extract_album_info(obi_path: Path) -> dict:
 
     payload = json.dumps(
         {
-            "model": "claude-opus-4-5",
+            "model": "claude-opus-4-6",
             "max_tokens": 512,
             "messages": [
                 {
@@ -216,7 +216,7 @@ def extract_tracklist(t_path: Path) -> list:
 
     payload = json.dumps(
         {
-            "model": "claude-opus-4-5",
+            "model": "claude-opus-4-6",
             "max_tokens": 1024,
             "messages": [
                 {
