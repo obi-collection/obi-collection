@@ -376,6 +376,17 @@ def update_index_html(info: dict, raw_url: str, tracklist: list = None) -> dict:
     return new_album
 
 
+# ── Category validation ──────────────────────────────────────────────────────
+
+def check_category(artist: str, artist_sort: str = None) -> bool:
+    """Return True if the artist matches at least one category filter."""
+    if artist in ("V.A.", "O.S.T."):
+        return True
+    sort_name = artist_sort or artist
+    first_char = sort_name.strip()[0].upper() if sort_name.strip() else ""
+    return first_char.isalpha() or first_char.isdigit()
+
+
 # ── Git push ─────────────────────────────────────────────────────────────────
 
 def git_push(artist: str, album: str):
@@ -444,7 +455,12 @@ def main():
 
         # 4. Update index.html
         log("Step 4/5 — Updating index.html...")
-        update_index_html(info, raw_url, tracklist)
+        new_album = update_index_html(info, raw_url, tracklist)
+
+        # Validate category
+        if not check_category(new_album["artist"], new_album.get("artist_sort")):
+            log(f"[WARNING] '{new_album['artist']}' does not match any category filter "
+                f"(V.A., O.S.T., A-Z, 0-9). Consider adding artist_sort.")
 
         # 5. Commit and push
         log("Step 5/5 — Pushing to GitHub...")
