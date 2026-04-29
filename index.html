@@ -528,7 +528,7 @@ body {
                         <option value="2010s">2010s</option>
                         <option value="2020s">2020s</option>
                         <option disabled>─────</option>
-                        <option value="soundtrack">Soundtrack</option>
+                        <option value="soundtrack">O.S.T.</option>
                         <option value="compilation">Compilation</option>
                         <option value="rnb">R&amp;B</option>
                         <option value="souljazz">Soul &amp; Jazz</option>
@@ -788,7 +788,7 @@ function updateAlphaBar() {
             });
             inner.appendChild(btn);
         });
-        [['V.A.', 'compilation'], ['OST', 'soundtrack'], ['R&B', 'rnb'], ['SOUL & JAZZ', 'souljazz']].forEach(([label, value]) => {
+        [['V.A.', 'compilation'], ['O.S.T.', 'soundtrack'], ['R&B', 'rnb'], ['SOUL & JAZZ', 'souljazz']].forEach(([label, value]) => {
             const btn = document.createElement('button');
             btn.className = 'alpha-btn';
             btn.textContent = label;
