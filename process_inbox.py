@@ -189,7 +189,9 @@ def extract_album_info(obi_path: Path) -> dict:
         "この日本盤CDのOBI（帯）画像からアルバム情報を読み取ってください。\n"
         "必ず以下のJSONのみを返してください（前後の説明不要）:\n\n"
         '{"artist":"アーティスト名（英語）","album":"アルバムタイトル（英語）",'
-        '"year":オリジナル発売年の数字,"yearJP":日本盤発売年の数字,"catalog":"カタログ番号"}\n\n'
+        '"year":オリジナル発売年の数字,"yearJP":日本盤発売年の数字,"catalog":"カタログ番号",'
+        '"genre":"ジャンル"}\n\n'
+        "genreは以下から最も適切なものを1つ選んでください: hiphop, r&b, reggae, funk, soul, jazz, rock, pop, other\n"
         "情報が読み取れない項目はnullにしてください。"
     )
 
@@ -363,6 +365,9 @@ def update_index_html(info: dict, raw_url: str, tracklist: list = None) -> dict:
             }
         ],
     }
+
+    if info.get("genre"):
+        new_album["genre"] = info["genre"]
 
     if tracklist:
         new_album["tracklist"] = tracklist
