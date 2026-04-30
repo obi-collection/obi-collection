@@ -50,7 +50,7 @@ const COLLECTION_DATA = {
 
 ### genre 選択肢
 
-`hiphop` / `r&b` / `souljazz` / `reggae` / `funk` / `rock` / `pop` / `other`
+`hiphop` / `r&b` / `souljazz` / `reggae` / `funk` / `rock` / `pop` / `mix` / `other`
 
 - V.A.・O.S.T. エントリには genre を設定しない
 - `r&b` と `souljazz` のエントリはアルファベット・年代フィルタから除外され、専用カテゴリボタンに表示される
