@@ -301,7 +301,7 @@ function updateAlphaBar() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         inner.appendChild(hashBtn);
-        [['V.A.', 'compilation'], ['O.S.T.', 'soundtrack'], ['R&B', 'r&b'], ['SOUL & JAZZ', 'souljazz']].forEach(([label, value]) => {
+        [['V.A.', 'compilation'], ['O.S.T.', 'soundtrack'], ['R&B', 'r&b'], ['SOUL & JAZZ', 'souljazz'], ['MIX', 'mix']].forEach(([label, value]) => {
             const btn = document.createElement('button');
             btn.className = 'alpha-btn';
             btn.textContent = label;
@@ -325,7 +325,7 @@ function updateAlphaBar() {
         if (letter === '') {
             btn.classList.toggle('active', activeLetter === '');
             btn.disabled = false;
-        } else if (letter === 'compilation' || letter === 'soundtrack' || letter === 'number' || letter === 'r&b' || letter === 'souljazz') {
+        } else if (letter === 'compilation' || letter === 'soundtrack' || letter === 'number' || letter === 'r&b' || letter === 'souljazz' || letter === 'mix') {
             btn.classList.toggle('active', letter === activeLetter);
             btn.disabled = false;
         } else {
@@ -358,21 +358,24 @@ function applyAlphabetFilter() {
     } else if (alphabetFilter === 'souljazz') {
         filteredAlbums = filteredAlbums.filter(a => a.genre === 'souljazz');
         filteredAlbums.sort(compareArtistThenYear);
+    } else if (alphabetFilter === 'mix') {
+        filteredAlbums = filteredAlbums.filter(a => a.genre === 'mix');
+        filteredAlbums.sort(compareArtistThenYear);
     } else {
         const isDecade = ['1980s','1990s','2000s','2010s','2020s'].includes(alphabetFilter);
         if (isDecade) {
             const starts = {'1980s':1980,'1990s':1990,'2000s':2000,'2010s':2010,'2020s':2020};
             const ends = {'1980s':1990,'1990s':2000,'2000s':2010,'2010s':2020,'2020s':2030};
-            filteredAlbums = filteredAlbums.filter(a => { const y = a.versions[0].year; return a.genre !== 'r&b' && a.genre !== 'souljazz' && y >= starts[alphabetFilter] && y < ends[alphabetFilter]; });
+            filteredAlbums = filteredAlbums.filter(a => { const y = a.versions[0].year; return a.genre !== 'r&b' && a.genre !== 'souljazz' && a.genre !== 'mix' && y >= starts[alphabetFilter] && y < ends[alphabetFilter]; });
             filteredAlbums.sort((a, b) => {
                 if (a._year !== b._year) return a._year - b._year;
                 return a._sortKey.localeCompare(b._sortKey);
             });
         } else if (alphabetFilter !== '') {
             if (alphabetFilter === 'number') {
-                filteredAlbums = filteredAlbums.filter(a => a.genre !== 'r&b' && a.genre !== 'souljazz' && /^[0-9]/.test(a._sortName));
+                filteredAlbums = filteredAlbums.filter(a => a.genre !== 'r&b' && a.genre !== 'souljazz' && a.genre !== 'mix' && /^[0-9]/.test(a._sortName));
             } else {
-                filteredAlbums = filteredAlbums.filter(a => a.genre !== 'r&b' && a.genre !== 'souljazz' && a._sortName !== "V.A." && a._sortName !== "O.S.T." && a._sortName.toUpperCase().startsWith(alphabetFilter));
+                filteredAlbums = filteredAlbums.filter(a => a.genre !== 'r&b' && a.genre !== 'souljazz' && a.genre !== 'mix' && a._sortName !== "V.A." && a._sortName !== "O.S.T." && a._sortName.toUpperCase().startsWith(alphabetFilter));
             }
             filteredAlbums.sort(compareArtistThenYear);
         } else {
