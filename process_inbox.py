@@ -305,7 +305,7 @@ def extract_tracklist(t_path: Path) -> list:
     return json.loads(text.strip())
 
 
-# ── index.html update ────────────────────────────────────────────────────────
+# ── data.js update ───────────────────────────────────────────────────────────
 
 def _slug(s: str) -> str:
     if not s:
@@ -320,24 +320,24 @@ def generate_id(artist: str, albums: list) -> str:
     return f"{base}{existing + 1:02d}"
 
 
-def find_data_line(lines: list) -> int:
-    """Return the 0-based index of the line containing the albums JSON array."""
-    for i, line in enumerate(lines):
-        if '"artist"' in line and '"id"' in line and len(line) > 500:
-            return i
-    raise RuntimeError("Could not locate albums JSON array in index.html")
+def load_collection_data() -> dict:
+    data_path = BASE_DIR / "data.js"
+    content = data_path.read_text(encoding="utf-8").strip()
+    match = re.fullmatch(r"const\s+COLLECTION_DATA\s*=\s*(\{.*\});", content, re.DOTALL)
+    if not match:
+        raise RuntimeError("Could not parse COLLECTION_DATA in data.js")
+    return json.loads(match.group(1))
 
 
-def update_index_html(info: dict, raw_url: str, tracklist: list = None) -> dict:
-    html_path = BASE_DIR / "data.js"
-    content = html_path.read_text(encoding="utf-8")
-    lines = content.split("\n")
+def save_collection_data(data: dict):
+    data_path = BASE_DIR / "data.js"
+    content = "const COLLECTION_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";"
+    data_path.write_text(content, encoding="utf-8")
 
-    data_idx = find_data_line(lines)
-    line = lines[data_idx]
-    arr_start = line.index("[")
-    arr_end = line.rindex("]") + 1
-    albums = json.loads(line[arr_start:arr_end])
+
+def update_data_js(info: dict, raw_url: str, tracklist: list = None) -> dict:
+    data = load_collection_data()
+    albums = data["albums"]
 
     album_id = generate_id(info["artist"], albums)
 
@@ -373,9 +373,7 @@ def update_index_html(info: dict, raw_url: str, tracklist: list = None) -> dict:
         new_album["tracklist"] = tracklist
 
     albums.append(new_album)
-    new_json = json.dumps(albums, ensure_ascii=False, separators=(",", ":"))
-    lines[data_idx] = line[:arr_start] + new_json + line[arr_end:]
-    html_path.write_text("\n".join(lines), encoding="utf-8")
+    save_collection_data(data)
 
     log(f"Added to data.js: id={album_id}, {info['artist']} — {info['album']}")
     return new_album
@@ -458,9 +456,9 @@ def main():
         raw_url = upload_to_cloudinary(combined_path, public_id)
         log(f"  → {raw_url}")
 
-        # 4. Update index.html
-        log("Step 4/5 — Updating index.html...")
-        new_album = update_index_html(info, raw_url, tracklist)
+        # 4. Update data.js
+        log("Step 4/5 — Updating data.js...")
+        new_album = update_data_js(info, raw_url, tracklist)
 
         # Validate category
         if not check_category(new_album["artist"], new_album.get("artist_sort")):

@@ -16,6 +16,15 @@
 
 コレクションデータは `data.js` 内の `COLLECTION_DATA` に定義されている（`index.html` ではない）。
 
+## フロントエンド構成
+
+- `index.html`: HTML構造と外部CSS/JSの読み込みのみ
+- `style.css`: サイト全体のスタイル
+- `app.js`: 検索、フィルター、並び替え、カード描画、モーダル、画像ビューアなどのアプリ挙動
+- `data.js`: コレクションデータ。自動追加スクリプトはこのファイルを更新する
+
+表示機能を変更する場合は主に `app.js` と `style.css` を編集し、コレクションデータ追加・修正は `data.js` に限定する。
+
 ```javascript
 const COLLECTION_DATA = {
   albums: [
