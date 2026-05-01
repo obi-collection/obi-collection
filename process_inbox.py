@@ -191,7 +191,7 @@ def extract_album_info(obi_path: Path) -> dict:
         '{"artist":"アーティスト名（英語）","album":"アルバムタイトル（英語）",'
         '"year":オリジナル発売年の数字,"yearJP":日本盤発売年の数字,"catalog":"カタログ番号",'
         '"genre":"ジャンル"}\n\n'
-        "genreは以下から最も適切なものを1つ選んでください: hiphop, r&b, souljazz, reggae, funk, rock, pop, mix, other\n"
+        "genreは以下から最も適切なものを1つ選んでください: hiphop, r&b, souljazz, reggae, funk, rock, pop, mix, japanese, other\n"
         "情報が読み取れない項目はnullにしてください。"
     )
 
