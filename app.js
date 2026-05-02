@@ -259,6 +259,11 @@ function compareAlbumTitle(a, b) {
     return a._albumKey.localeCompare(b._albumKey);
 }
 
+function compareYearThenAlbumTitle(a, b) {
+    if (a._year !== b._year) return a._year - b._year;
+    return a._albumKey.localeCompare(b._albumKey);
+}
+
 function escapeHTML(value) {
     return String(value ?? '').replace(/[&<>"']/g, ch => ({
         '&': '&amp;',
@@ -348,10 +353,10 @@ function applyAlphabetFilter() {
     const alphabetFilter = alphabetSelect.value;
     if (alphabetFilter === 'soundtrack') {
         filteredAlbums = filteredAlbums.filter(a => a.artist === 'O.S.T.');
-        filteredAlbums.sort(compareAlbumTitle);
+        filteredAlbums.sort(compareYearThenAlbumTitle);
     } else if (alphabetFilter === 'compilation') {
         filteredAlbums = filteredAlbums.filter(a => a.artist === 'V.A.');
-        filteredAlbums.sort(compareAlbumTitle);
+        filteredAlbums.sort(compareYearThenAlbumTitle);
     } else if (alphabetFilter === 'r&b') {
         filteredAlbums = filteredAlbums.filter(a => a.genre === 'r&b');
         filteredAlbums.sort(compareArtistThenYear);
