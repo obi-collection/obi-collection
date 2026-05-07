@@ -262,6 +262,19 @@ body {
 .pin-btn i { transform: rotate(45deg); }
 .pin-btn.pinned i { transform: rotate(0deg); }
 .album-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.year-badge {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.55);
+    color: var(--text-secondary);
+    font-size: 0.62rem;
+    padding: 2px 5px;
+    border-radius: 3px;
+    z-index: 3;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+}
 /* album-info hidden in grid view */
 .collection-container:not(.list-view) .album-info { display: none; }
 /* List view */
