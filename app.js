@@ -357,7 +357,14 @@ function applyAlphabetFilter() {
         filteredAlbums.sort(compareYearThenAlbumTitle);
     } else if (alphabetFilter === 'compilation') {
         filteredAlbums = filteredAlbums.filter(a => a.artist === 'V.A.');
-        filteredAlbums.sort(compareYearThenAlbumTitle);
+        const sv = sortSelect.value;
+        if (sv === 'artist-asc') {
+            filteredAlbums.sort(compareAlbumTitle);
+        } else if (sv === 'year-desc') {
+            filteredAlbums.sort((a, b) => b._year !== a._year ? b._year - a._year : a._albumKey.localeCompare(b._albumKey));
+        } else {
+            filteredAlbums.sort(compareYearThenAlbumTitle);
+        }
     } else if (alphabetFilter === 'r&b') {
         filteredAlbums = filteredAlbums.filter(a => a.genre === 'r&b');
         filteredAlbums.sort(compareArtistThenYear);
