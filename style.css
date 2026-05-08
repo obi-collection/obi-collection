@@ -267,7 +267,7 @@ body {
     bottom: 6px;
     right: 6px;
     background: rgba(0,0,0,0.55);
-    color: var(--text-secondary);
+    color: #fff;
     font-size: 0.62rem;
     padding: 2px 5px;
     border-radius: 3px;
