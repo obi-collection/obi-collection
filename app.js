@@ -240,7 +240,7 @@ function prepareAlbums() {
         album._sortName = getSortName(album.artist_sort || album.artist);
         album._sortKey = album._sortName.toLowerCase();
         album._initial = album._sortName.toUpperCase().charAt(0);
-        album._albumKey = album.album.toLowerCase();
+        album._albumKey = (album.album || '').toLowerCase();
         album._year = firstVersion.year || 9999;
         album._yearJP = firstVersion.yearJP || 9999;
         const tracklistText = (album.tracklist || []).join(' ');
@@ -445,7 +445,7 @@ function createAlbumCard(album, index = null, isPinned = false) {
             <img class="album-image lazy-load" data-src="${escapeHTML(firstVersion.image)}" alt="${escapeHTML(album.album)}" loading="lazy" decoding="async">
             ${versionCount > 1 ? `<div class="version-badge">${versionCount} versions</div>` : ''}
             ${index !== null ? `<button class="pin-btn ${isPinned ? 'pinned' : ''}" data-album-id="${escapeHTML(album.id)}" data-position="${index}" title="${isPinned ? 'ピン留め解除' : 'ピン留め'}"><i class="fas fa-thumbtack"></i></button>` : ''}
-            <div class="year-badge">${escapeHTML(String(firstVersion.year))}</div>
+            ${firstVersion.year ? `<div class="year-badge">${escapeHTML(String(firstVersion.year))}</div>` : ''}
         </div>
         <div class="album-info">
             <div class="album-artist">${escapeHTML(album.artist)}</div>
