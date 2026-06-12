@@ -21,7 +21,7 @@ COLLECTION_DATA = {
   albums: [
     {
       id: "",
-      artist: "",       // カテゴリ表示に使用。コンピは "Various Artists"、サントラは "O.S.T."
+      artist: "",       // カテゴリ表示に使用。コンピは "V.A."、サントラは "O.S.T."
       artist_sort: "",  // ソート・フィルタ用（省略可）
       album: "",
       versions: [
@@ -66,7 +66,7 @@ COLLECTION_DATA = {
 
 | ケース | 対応 |
 |---|---|
-| コンピレーション | `artist: "Various Artists"` |
+| コンピレーション | `artist: "V.A."`（"Various Artists" は使わない） |
 | サントラ | `artist: "O.S.T."` |
 | 表示名とソート名が異なる場合 | `artist_sort` フィールドを追加 |
 | `_slug()` で artist が null になりうる場合 | nullセーフフォールバック必須 |

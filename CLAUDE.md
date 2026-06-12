@@ -40,7 +40,7 @@ const COLLECTION_DATA = {
           year: 1995,           // 原盤リリース年（MusicBrainz等で確認）
           yearJP: 1996,         // 日本盤リリース年
           catalog: "XXXX-XXXX", // カタログ番号
-          image: "cloudinary_public_id",
+          image: "https://res.cloudinary.com/dyfylaino/image/upload/f_auto,q_auto,w_600/...", // CloudinaryフルURL（f_auto,q_auto,w_600変換付き）
           note: ""              // 任意メモ
         }
       ]
@@ -65,7 +65,7 @@ const COLLECTION_DATA = {
 - `id` フィールドの変更・重複（既存エントリのIDは絶対に変えない）
 - `data.js` 以外にコレクションデータを書くこと
 - `year` と `yearJP` の混同（year=原盤年、yearJP=日本盤年）
-- `image` フィールドへのフルURLの記入（Cloudinary public_idのみ記入する）
+- `image` フィールドへの変換なしURL・public_idのみの記入（`f_auto,q_auto,w_600` 変換付きのCloudinaryフルURLで統一する。process_inbox.pyが自動付与する形式に合わせる）
 - コンパイル盤に個人名アーティストを設定すること（必ず `"V.A."` を使用）
 - `artist` に `"Various Artists"` を使用すること（`"V.A."` に統一）
 
@@ -185,7 +185,7 @@ index.html のフィルタボタンに以下の特殊カテゴリがある：
 
 ## 既知の問題
 
-- **PHCR-3036~7（All Eyez On Me）:** 別OBIの重複版で画像表示の問題が未解決
+- **PHCR-3036~7（All Eyez On Me）:** 画像表示問題は解消済み。ただし同一アルバムが `id=009` と `id=203` の2エントリに分かれたまま（本来は1エントリの `versions[]` に別OBIとして統合すべき）。統合する場合はどちらかのidを残し、もう片方のversionを移す
 
 ---
 
