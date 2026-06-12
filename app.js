@@ -30,10 +30,12 @@ const modalBody = document.getElementById('modalBody');
 const resultCount = document.getElementById('resultCount');
 const totalCount = document.getElementById('totalCount');
 const viewSizeToggle = document.getElementById('viewSizeToggle');
+const statsBtn = document.getElementById('statsBtn');
 
 document.addEventListener('DOMContentLoaded', () => {
     allAlbums = COLLECTION_DATA.albums;
     prepareAlbums();
+    populateLabelFilter();
     // Restore saved view/size button active states
     document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
     document.querySelectorAll('.size-btn').forEach(b => b.classList.toggle('active', b.dataset.size === viewSizeMode));
@@ -51,7 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (totalCount) totalCount.textContent = allAlbums.length;
     showLoading(false);
     setupEventListeners();
+    const initialAlbumId = getAlbumIdFromHash();
+    if (initialAlbumId) {
+        const initialAlbum = albumById.get(initialAlbumId);
+        if (initialAlbum) showAlbumModal(initialAlbum, false);
+    }
 });
+
+function getAlbumIdFromHash() {
+    const m = location.hash.match(/^#album=(.+)$/);
+    return m ? decodeURIComponent(m[1]) : null;
+}
 
 function setupEventListeners() {
     searchInput.addEventListener('input', debounce(handleSearch, 300));
@@ -104,13 +116,25 @@ function setupEventListeners() {
         renderAlbums();
     });
     randomAlbumBtn.addEventListener('click', showRandomAlbum);
+    if (statsBtn) statsBtn.addEventListener('click', showStatsModal);
     sortSelect.addEventListener('change', applyAlphabetFilter);
     alphabetSelect.addEventListener('change', applyAlphabetFilter);
     modalOverlay.addEventListener('click', closeModal);
     modalClose.addEventListener('click', closeModal);
     albumModal.addEventListener('click', e => { if (e.target === albumModal) closeModal(); });
     collectionContainer.addEventListener('click', handleCollectionClick);
+    const newArrivalsRow = document.getElementById('newArrivalsRow');
+    if (newArrivalsRow) newArrivalsRow.addEventListener('click', handleCollectionClick);
     modalBody.addEventListener('click', handleModalClick);
+    window.addEventListener('hashchange', () => {
+        const id = getAlbumIdFromHash();
+        if (id) {
+            const album = albumById.get(id);
+            if (album) showAlbumModal(album, false);
+        } else if (albumModal.classList.contains('active')) {
+            closeModal(false);
+        }
+    });
 }
 
 function handleCollectionClick(e) {
@@ -145,6 +169,9 @@ function handleModalClick(e) {
     if (!album && actionBtn.dataset.action !== 'claude') return;
 
     switch (actionBtn.dataset.action) {
+        case 'copy-link':
+            copyAlbumLink(actionBtn, album.id);
+            break;
         case 'youtube':
             searchOnYouTube(album.artist, album.album);
             break;
@@ -245,8 +272,31 @@ function prepareAlbums() {
         album._yearJP = firstVersion.yearJP || 9999;
         const tracklistText = (album.tracklist || []).join(' ');
         album._searchText = `${album.artist} ${album.album} ${tracklistText}`.toLowerCase();
+        album._label = extractLabel(firstVersion.catalog);
         albumById.set(album.id, album);
     });
+}
+
+function extractLabel(catalog) {
+    if (!catalog) return null;
+    const m = String(catalog).trim().toUpperCase().match(/^([A-Z]{2,6})[-\s]?\d/);
+    return m ? m[1] : null;
+}
+
+function populateLabelFilter() {
+    const counts = new Map();
+    allAlbums.forEach(a => { if (a._label) counts.set(a._label, (counts.get(a._label) || 0) + 1); });
+    const labels = [...counts.entries()].filter(([, c]) => c >= 5).sort((a, b) => b[1] - a[1]);
+    if (!labels.length) return;
+    const group = document.createElement('optgroup');
+    group.label = '── Labels ──';
+    labels.forEach(([label, count]) => {
+        const opt = document.createElement('option');
+        opt.value = `label:${label}`;
+        opt.textContent = `${label} (${count})`;
+        group.appendChild(opt);
+    });
+    alphabetSelect.appendChild(group);
 }
 
 function compareArtistThenYear(a, b) {
@@ -352,7 +402,14 @@ function applyAlphabetFilter() {
     localStorage.setItem('obi_filter', alphabetSelect.value);
     filteredAlbums = [...allAlbums];
     const alphabetFilter = alphabetSelect.value;
-    if (alphabetFilter === 'soundtrack') {
+    if (alphabetFilter.startsWith('label:')) {
+        const label = alphabetFilter.slice(6);
+        filteredAlbums = filteredAlbums.filter(a => a._label === label);
+        const sv = sortSelect.value;
+        if (sv === 'year-asc') filteredAlbums.sort(compareYearThenAlbumTitle);
+        else if (sv === 'year-desc') filteredAlbums.sort((a, b) => b._year !== a._year ? b._year - a._year : a._albumKey.localeCompare(b._albumKey));
+        else filteredAlbums.sort(compareArtistThenYear);
+    } else if (alphabetFilter === 'soundtrack') {
         filteredAlbums = filteredAlbums.filter(a => a.artist === 'O.S.T.');
         filteredAlbums.sort(compareYearThenAlbumTitle);
     } else if (alphabetFilter === 'compilation') {
@@ -417,7 +474,7 @@ function applySorting() {
 
 function renderAlbums() {
     collectionContainer.innerHTML = '';
-    if (filteredAlbums.length === 0) { showNoResults(true); updateResultCount(0); return; }
+    if (filteredAlbums.length === 0) { showNoResults(true); updateResultCount(0); renderNewArrivals(); return; }
     showNoResults(false);
     const isTopPage = !searchInput.value && !alphabetSelect.value && sortSelect.value === 'artist-asc' && viewSizeMode === 'mobile';
     const pinnedByPosition = new Map(pinnedAlbums.map(p => [p.position, p.album.id]));
@@ -428,8 +485,31 @@ function renderAlbums() {
     });
     collectionContainer.appendChild(fragment);
     updateResultCount(filteredAlbums.length);
+    renderNewArrivals();
     initLazyLoading();
     updateAlphaBar();
+}
+
+function renderNewArrivals() {
+    const section = document.getElementById('newArrivalsSection');
+    const row = document.getElementById('newArrivalsRow');
+    if (!section || !row) return;
+    const isTopPage = !searchInput.value.trim() && !alphabetSelect.value;
+    const dated = allAlbums.filter(a => a.addedAt);
+    if (!isTopPage || !dated.length) { section.style.display = 'none'; return; }
+    dated.sort((a, b) => b.addedAt.localeCompare(a.addedAt) || String(b.id).localeCompare(String(a.id)));
+    row.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    dated.slice(0, 10).forEach(album => {
+        const card = createAlbumCard(album);
+        const badge = document.createElement('div');
+        badge.className = 'added-date-badge';
+        badge.textContent = album.addedAt;
+        card.querySelector('.album-image-container')?.appendChild(badge);
+        fragment.appendChild(card);
+    });
+    row.appendChild(fragment);
+    section.style.display = '';
 }
 
 function createAlbumCard(album, index = null, isPinned = false) {
@@ -480,7 +560,7 @@ function loadLazyImage(img) {
     img.classList.remove('lazy-load');
 }
 
-function showAlbumModal(album) {
+function showAlbumModal(album, updateHash = true) {
     let versionsHTML = '';
     album.versions.forEach((version, index) => {
         versionsHTML += `
@@ -517,6 +597,7 @@ function showAlbumModal(album) {
             <div class="modal-album-header">
                 <h2>${escapeHTML(album.artist)}</h2>
                 <h3>${escapeHTML(album.album)}${album.versions[0].year ? `  (${escapeHTML(album.versions[0].year)})` : ''}</h3>
+                <button class="share-link-btn" data-action="copy-link" data-album-id="${escapeHTML(album.id)}" title="このアルバムへのリンクをコピー"><i class="fas fa-link"></i> Copy Link</button>
             </div>
             ${versionsHTML}
         </div>`;
@@ -530,9 +611,30 @@ function showAlbumModal(album) {
     });
     albumModal.classList.add('active');
     document.body.style.overflow = 'hidden';
+    if (updateHash && getAlbumIdFromHash() !== album.id) {
+        history.pushState(null, '', `#album=${encodeURIComponent(album.id)}`);
+    }
 }
 
-function closeModal() { albumModal.classList.remove('active'); document.body.style.overflow = 'auto'; }
+function closeModal(updateHash = true) {
+    albumModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+    if (updateHash && getAlbumIdFromHash()) {
+        history.pushState(null, '', location.pathname + location.search);
+    }
+}
+
+function copyAlbumLink(btn, albumId) {
+    const url = `${location.origin}${location.pathname}#album=${encodeURIComponent(albumId)}`;
+    navigator.clipboard.writeText(url).then(() => {
+        btn.classList.add('copied');
+        btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<i class="fas fa-link"></i> Copy Link';
+        }, 2000);
+    });
+}
 
 function openClaude(artist, albumTitle, year, catalog) {
     const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\nテーブル形式・マークダウンテーブルは絶対に使わないでください。すべて箇条書きか文章で書いてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲を必ず以下のフォーマットで、縦に並べて記載してください：\n\n1. 曲名\nプロデューサー：xxx\n客演：xxx（いない場合は省略）\n聴きどころ：xxx\n\n2. 曲名\nプロデューサー：xxx\n...\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
@@ -568,6 +670,77 @@ function showRandomAlbum() {
     const random = unshown[Math.floor(Math.random() * unshown.length)];
     shuffleHistory.push(random.id);
     showAlbumModal(random);
+}
+
+// ── Stats dashboard ──────────────────────────────────────────────────────────
+function statsBarRows(entries, total) {
+    const max = entries.length ? Math.max(...entries.map(([, c]) => c)) : 1;
+    return entries.map(([label, count]) => `
+        <div class="stats-bar-row">
+            <span class="stats-bar-label">${escapeHTML(label)}</span>
+            <span class="stats-bar-track"><span class="stats-bar-fill" style="width:${Math.max(2, Math.round(count / max * 100))}%"></span></span>
+            <span class="stats-bar-count">${count}</span>
+        </div>`).join('');
+}
+
+function showStatsModal() {
+    let versionCount = 0;
+    let tracklistCount = 0;
+    const decadeCounts = new Map();
+    const labelCounts = new Map();
+    const genreCounts = new Map();
+    const gapCounts = new Map([['Same year', 0], ['+1 year', 0], ['+2–3 years', 0], ['+4–9 years', 0], ['+10 years (reissue)', 0]]);
+    let gapTotal = 0, gapSum = 0;
+
+    allAlbums.forEach(album => {
+        versionCount += album.versions.length;
+        if (album.tracklist) tracklistCount++;
+        const y = album._year !== 9999 ? album._year : null;
+        if (y) {
+            const decade = `${Math.floor(y / 10) * 10}s`;
+            decadeCounts.set(decade, (decadeCounts.get(decade) || 0) + 1);
+        }
+        if (album._label) labelCounts.set(album._label, (labelCounts.get(album._label) || 0) + 1);
+        let cat;
+        if (album.artist === 'V.A.') cat = 'V.A.';
+        else if (album.artist === 'O.S.T.') cat = 'O.S.T.';
+        else cat = album.genre || 'hiphop';
+        genreCounts.set(cat, (genreCounts.get(cat) || 0) + 1);
+        album.versions.forEach(v => {
+            if (v.year && v.yearJP && v.yearJP >= v.year) {
+                const gap = v.yearJP - v.year;
+                gapTotal++;
+                gapSum += gap;
+                if (gap === 0) gapCounts.set('Same year', gapCounts.get('Same year') + 1);
+                else if (gap === 1) gapCounts.set('+1 year', gapCounts.get('+1 year') + 1);
+                else if (gap <= 3) gapCounts.set('+2–3 years', gapCounts.get('+2–3 years') + 1);
+                else if (gap <= 9) gapCounts.set('+4–9 years', gapCounts.get('+4–9 years') + 1);
+                else gapCounts.set('+10 years (reissue)', gapCounts.get('+10 years (reissue)') + 1);
+            }
+        });
+    });
+
+    const decades = [...decadeCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+    const topLabels = [...labelCounts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+    const genres = [...genreCounts.entries()].sort((a, b) => b[1] - a[1]);
+    const avgGap = gapTotal ? (gapSum / gapTotal).toFixed(1) : '-';
+
+    modalBody.innerHTML = `
+        <div class="stats-container">
+            <h2 class="stats-title"><i class="fas fa-chart-bar"></i> Collection Stats</h2>
+            <div class="stats-summary">
+                <div class="stats-summary-item"><span class="stats-summary-num">${allAlbums.length}</span><span class="stats-summary-label">Albums</span></div>
+                <div class="stats-summary-item"><span class="stats-summary-num">${versionCount}</span><span class="stats-summary-label">Pressings</span></div>
+                <div class="stats-summary-item"><span class="stats-summary-num">${labelCounts.size}</span><span class="stats-summary-label">Labels</span></div>
+                <div class="stats-summary-item"><span class="stats-summary-num">${tracklistCount}</span><span class="stats-summary-label">Tracklists</span></div>
+            </div>
+            <div class="stats-section"><h3>Original Release by Decade</h3>${statsBarRows(decades, allAlbums.length)}</div>
+            <div class="stats-section"><h3>Top 10 Labels (Catalog Prefix)</h3>${statsBarRows(topLabels, allAlbums.length)}</div>
+            <div class="stats-section"><h3>Category</h3>${statsBarRows(genres, allAlbums.length)}</div>
+            <div class="stats-section"><h3>US → Japan Release Gap <span class="stats-note">avg ${avgGap} yrs</span></h3>${statsBarRows([...gapCounts.entries()], gapTotal)}</div>
+        </div>`;
+    albumModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);

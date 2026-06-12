@@ -487,3 +487,118 @@ body {
 .alpha-btn:hover:not(:disabled) { border-color: var(--gold-obi); color: var(--gold-obi); background: rgba(245,197,24,0.08); }
 .alpha-btn.active { background: var(--gold-obi); color: var(--black); border-color: var(--gold-obi); }
 .alpha-btn:disabled { opacity: 0.2; cursor: default; border-color: var(--border-subtle); color: var(--text-muted); }
+
+/* ── Share link button (album modal) ───────────────────────────────────────── */
+.share-link-btn {
+    margin-top: 0.6rem;
+    background: transparent;
+    border: 1px solid var(--border-mid);
+    color: var(--text-secondary);
+    padding: 0.35rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    transition: all 0.2s ease;
+}
+.share-link-btn:hover, .share-link-btn.copied { border-color: var(--gold-obi); color: var(--gold-obi); background: rgba(245,197,24,0.08); }
+
+/* ── Stats dashboard ───────────────────────────────────────────────────────── */
+.stats-container { padding: 0.5rem 0.25rem; }
+.stats-title {
+    font-family: var(--font-heading);
+    color: var(--gold-obi);
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.stats-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+.stats-summary-item {
+    background: var(--surface-1);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.stats-summary-num { font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; color: var(--gold-obi); line-height: 1; }
+.stats-summary-label { font-size: 0.72rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.08em; }
+.stats-section { margin-bottom: 1.25rem; }
+.stats-section h3 {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.3rem;
+}
+.stats-note { font-size: 0.78rem; color: var(--text-secondary); font-weight: 400; margin-left: 0.5rem; }
+.stats-bar-row { display: flex; align-items: center; gap: 0.6rem; margin: 0.35rem 0; }
+.stats-bar-label {
+    width: 140px;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.stats-bar-track { flex: 1; background: var(--surface-2); height: 14px; border-radius: 7px; overflow: hidden; }
+.stats-bar-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold-obi)); border-radius: 7px; }
+.stats-bar-count { width: 42px; flex-shrink: 0; font-size: 0.82rem; color: var(--text-primary); }
+@media (max-width: 600px) {
+    .stats-bar-label { width: 95px; font-size: 0.75rem; }
+    .stats-summary { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── New Arrivals ──────────────────────────────────────────────────────────── */
+.new-arrivals { margin-bottom: var(--spacing-md); }
+.new-arrivals-title {
+    font-family: var(--font-heading);
+    color: var(--gold-obi);
+    font-size: 1.05rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.new-arrivals-row {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+.new-arrivals-row .album-card { flex: 0 0 150px; width: 150px; }
+.new-arrivals-row .album-card .album-info { padding: 0.5rem; }
+.new-arrivals-row .album-card .album-meta { display: none; }
+.added-date-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: var(--gold-obi);
+    color: var(--black);
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.03em;
+    z-index: 2;
+}

@@ -54,6 +54,11 @@ COLLECTION_DATA = {
 - X（Twitter）自動投稿の実装（`post_to_x.py` + `posted.json` による重複防止、launchd連携）
 - PHCR-3036~7（All Eyez On Me）画像表示問題 → 解消済み（VICP-61634~35のimageをvicp_61634_35.jpgに更新）
 - アーティスト表記の統一（House of Pain / N.W.A / N.E.R.D. / OutKast / Souls of Mischief / Just-Ice / DJ Stretch Armstrong）
+- アルバム個別ディープリンク（`#album=<id>` + Copy Linkボタン、2026-06-13）
+- レーベル（カタログ番号プレフィックス）フィルタ（2026-06-13）
+- 統計ダッシュボード（年代分布・レーベル・カテゴリ・日米リリース差、2026-06-13）
+- New Arrivalsセクション（`addedAt` フィールド、process_inbox.py自動付与 + git履歴から147件バックフィル、2026-06-13）
+- トラックリスト検索（`_searchText` に収録済み）
 
 ---
 

@@ -33,6 +33,7 @@ const COLLECTION_DATA = {
       artist: "ARTIST NAME",    // カテゴリ表示に使用
       artist_sort: "Sort Name", // 任意。表示名とソート名が異なる場合のみ設定
       album: "Album Title",
+      addedAt: "2026-06-13",    // 任意。コレクション追加日（process_inbox.pyが自動付与、New Arrivals表示に使用）
       genre: "hiphop",          // 任意。下記選択肢から1つ
       versions: [
         {
@@ -109,6 +110,15 @@ const COLLECTION_DATA = {
 ```
 
 `getSortName()` のすべての呼び出し箇所（17箇所）が `artist_sort || artist` パターンに対応済み。
+
+---
+
+## フロントエンド機能（2026-06-13追加）
+
+- **ディープリンク:** `#album=<id>` でアルバムモーダルを直接開ける。モーダル内の「Copy Link」ボタンでURLコピー。X投稿への活用を想定
+- **レーベルフィルタ:** カタログ番号プレフィックス（SRCS等）から自動生成。`alphabetSelect` に `label:XXX` 値のoptgroupとして動的追加（5枚以上のレーベルのみ）
+- **統計ダッシュボード:** ヘッダーの棒グラフアイコンから表示。年代分布・レーベル上位10・カテゴリ内訳・日米リリース差
+- **New Arrivals:** トップページに `addedAt` 降順で最新10件を横スクロール表示。`addedAt` がないエントリ（初期一括登録分607件）は対象外
 
 ---
 

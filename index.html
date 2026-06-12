@@ -79,6 +79,7 @@
                         <i class="fas fa-compact-disc"></i>
                         <span id="resultCount">0</span>/<span id="totalCount">0</span>
                     </div>
+                    <button class="compact-btn" id="statsBtn" title="Collection Stats"><i class="fas fa-chart-bar"></i></button>
                 </div>
             </div>
         </div>
@@ -88,6 +89,10 @@
         <div class="alpha-index-inner" id="alphaIndexInner"></div>
     </div>
     <main class="main-content">
+        <section class="new-arrivals" id="newArrivalsSection" style="display:none;">
+            <h2 class="new-arrivals-title"><i class="fas fa-compact-disc"></i> New Arrivals</h2>
+            <div class="new-arrivals-row" id="newArrivalsRow"></div>
+        </section>
         <div class="collection-container" id="collectionContainer"></div>
         <div class="view-size-toggle" id="viewSizeToggle">
             <button class="size-btn active" data-size="mobile"><i class="fas fa-mobile-alt"></i> Mobile</button>
