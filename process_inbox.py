@@ -197,7 +197,7 @@ def extract_album_info(obi_path: Path) -> dict:
 
     payload = json.dumps(
         {
-            "model": "claude-opus-4-6",
+            "model": "claude-opus-4-7",
             "max_tokens": 512,
             "messages": [
                 {
@@ -227,8 +227,12 @@ def extract_album_info(obi_path: Path) -> dict:
             "content-type": "application/json",
         },
     )
-    with urllib.request.urlopen(req) as resp:
-        result = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        raise RuntimeError(f"Claude API error {e.code}: {body}") from e
 
     text = result["content"][0]["text"].strip()
 
@@ -265,7 +269,7 @@ def extract_tracklist(t_path: Path) -> list:
 
     payload = json.dumps(
         {
-            "model": "claude-opus-4-6",
+            "model": "claude-opus-4-7",
             "max_tokens": 1024,
             "messages": [
                 {
@@ -295,8 +299,12 @@ def extract_tracklist(t_path: Path) -> list:
             "content-type": "application/json",
         },
     )
-    with urllib.request.urlopen(req) as resp:
-        result = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors="replace")
+        raise RuntimeError(f"Claude API error {e.code}: {body}") from e
 
     text = result["content"][0]["text"].strip()
     text = re.sub(r"^```(?:json)?\s*", "", text)
@@ -360,6 +368,7 @@ def update_data_js(info: dict, raw_url: str, tracklist: list = None) -> dict:
         "id": album_id,
         "artist": artist,
         "album": info["album"],
+        "addedAt": datetime.now().strftime("%Y-%m-%d"),
         "versions": [
             {
                 "year": year,
