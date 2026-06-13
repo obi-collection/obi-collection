@@ -12,6 +12,7 @@ let topPageHistory = [];
 let pinnedAlbums = [];
 let albumById = new Map();
 let lazyImageObserver = null;
+let lastFocusedBeforeModal = null;
 
 const collectionContainer = document.getElementById('collectionContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -123,8 +124,12 @@ function setupEventListeners() {
     modalClose.addEventListener('click', closeModal);
     albumModal.addEventListener('click', e => { if (e.target === albumModal) closeModal(); });
     collectionContainer.addEventListener('click', handleCollectionClick);
+    collectionContainer.addEventListener('keydown', handleCardKeydown);
     const newArrivalsRow = document.getElementById('newArrivalsRow');
-    if (newArrivalsRow) newArrivalsRow.addEventListener('click', handleCollectionClick);
+    if (newArrivalsRow) {
+        newArrivalsRow.addEventListener('click', handleCollectionClick);
+        newArrivalsRow.addEventListener('keydown', handleCardKeydown);
+    }
     modalBody.addEventListener('click', handleModalClick);
     window.addEventListener('hashchange', () => {
         const id = getAlbumIdFromHash();
@@ -149,6 +154,15 @@ function handleCollectionClick(e) {
 
     const card = e.target.closest('.album-card');
     if (!card) return;
+    const album = albumById.get(card.dataset.albumId);
+    if (album) showAlbumModal(album);
+}
+
+function handleCardKeydown(e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const card = e.target.closest('.album-card');
+    if (!card || e.target.closest('.pin-btn')) return;
+    e.preventDefault();
     const album = albumById.get(card.dataset.albumId);
     if (album) showAlbumModal(album);
 }
@@ -517,8 +531,11 @@ function createAlbumCard(album, index = null, isPinned = false) {
     card.className = 'album-card';
     card.dataset.albumId = album.id;
     card.dataset.sortArtist = getSortName(album.artist_sort || album.artist);
-    if (index !== null) card.dataset.position = index;
     const firstVersion = album.versions[0];
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-label', `${album.artist} - ${album.album}${firstVersion.year ? ` (${firstVersion.year})` : ''}`);
+    if (index !== null) card.dataset.position = index;
     const versionCount = album.versions.length;
     card.innerHTML = `
         <div class="album-image-container">
@@ -609,11 +626,19 @@ function showAlbumModal(album, updateHash = true) {
         img.addEventListener('touchmove', () => clearTimeout(pressTimer));
         img.addEventListener('click', () => { if (img.dataset.longPress !== 'true') openImageViewer(img.src.replace('f_auto,q_auto,w_600', 'f_auto,q_100,w_2400')); });
     });
-    albumModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    openModalA11y();
     if (updateHash && getAlbumIdFromHash() !== album.id) {
         history.pushState(null, '', `#album=${encodeURIComponent(album.id)}`);
     }
+}
+
+function openModalA11y() {
+    if (!albumModal.classList.contains('active')) {
+        lastFocusedBeforeModal = document.activeElement;
+    }
+    albumModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
 }
 
 function closeModal(updateHash = true) {
@@ -622,6 +647,10 @@ function closeModal(updateHash = true) {
     if (updateHash && getAlbumIdFromHash()) {
         history.pushState(null, '', location.pathname + location.search);
     }
+    if (lastFocusedBeforeModal && typeof lastFocusedBeforeModal.focus === 'function') {
+        lastFocusedBeforeModal.focus();
+    }
+    lastFocusedBeforeModal = null;
 }
 
 function copyAlbumLink(btn, albumId) {
@@ -634,11 +663,6 @@ function copyAlbumLink(btn, albumId) {
             btn.innerHTML = '<i class="fas fa-link"></i> Copy Link';
         }, 2000);
     });
-}
-
-function openClaude(artist, albumTitle, year, catalog) {
-    const prompt = `このアルバムについて、下記の構成で日本語で教えてください。\nテーブル形式・マークダウンテーブルは絶対に使わないでください。すべて箇条書きか文章で書いてください。\n\n【アルバム紹介】\n・作品の概要（リリース背景、位置づけ）\n・主なプロデューサー陣と全体のサウンドの特徴\n・主な客演ラッパー・シンガー一覧\n・ヒップホップシーンにおける評価・影響\n\n【収録曲ガイド】\n各曲を必ず以下のフォーマットで、縦に並べて記載してください：\n\n1. 曲名\nプロデューサー：xxx\n客演：xxx（いない場合は省略）\n聴きどころ：xxx\n\n2. 曲名\nプロデューサー：xxx\n...\n\nアーティスト：${artist}\nアルバム：${albumTitle}\nリリース：${year}\nレーベル：\nカタログ番号：${catalog}\n収録曲：`;
-    window.open('https://claude.ai/new?q=' + encodeURIComponent(prompt), '_blank');
 }
 
 function copyAIPrompt(btn, artist, albumTitle, year, catalog, albumId) {
@@ -739,8 +763,7 @@ function showStatsModal() {
             <div class="stats-section"><h3>Category</h3>${statsBarRows(genres, allAlbums.length)}</div>
             <div class="stats-section"><h3>US → Japan Release Gap <span class="stats-note">avg ${avgGap} yrs</span></h3>${statsBarRows([...gapCounts.entries()], gapTotal)}</div>
         </div>`;
-    albumModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    openModalA11y();
 }
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -766,19 +789,6 @@ function searchOnYahooAuction(artist, album) {
     openSearch(`https://auctions.yahoo.co.jp/search/search?p=${q}`);
 }
 function searchOnWhoSampled(artist) { openSearch(`https://www.whosampled.com/search/?q=${encodeURIComponent(artist)}`); }
-function shareOnX(artist, album, catalog, imageUrl) {
-    const overlay = document.getElementById('xShareOverlay');
-    const img = document.getElementById('xShareImage');
-    const okBtn = document.getElementById('xShareOkBtn');
-    img.src = imageUrl;
-    overlay.classList.add('active');
-    okBtn.onclick = () => {
-        overlay.classList.remove('active');
-        const text = `${artist} - ${album}`;
-        openSearch(`https://x.com/intent/tweet?text=${encodeURIComponent(text)}`);
-    };
-}
-
 function showLoading(show) { loadingSpinner.style.display = show ? 'block' : 'none'; }
 function showNoResults(show) { noResults.style.display = show ? 'block' : 'none'; }
 function updateResultCount(count) { if (resultCount) resultCount.textContent = count; }
@@ -885,7 +895,23 @@ document.addEventListener('keydown', e => {
         if (imgViewer && imgViewer.style.display !== 'none') { closeImageViewer(); return; }
         if (albumModal.classList.contains('active')) closeModal();
     }
+    if (e.key === 'Tab' && albumModal.classList.contains('active')) { trapModalFocus(e); return; }
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); }
-    if (e.key === 'r' && !searchInput.matches(':focus')) showRandomAlbum();
+    if (e.key === 'r' && !searchInput.matches(':focus') && !albumModal.classList.contains('active')) showRandomAlbum();
 });
+
+function trapModalFocus(e) {
+    const focusable = albumModal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+    const visible = [...focusable].filter(el => el.offsetParent !== null);
+    if (!visible.length) return;
+    const first = visible[0];
+    const last = visible[visible.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+    }
+}
 })();

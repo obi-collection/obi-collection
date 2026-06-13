@@ -110,16 +110,10 @@
         </div>
     </main>
 
-    <div class="x-share-overlay" id="xShareOverlay">
-        <img id="xShareImage" src="" alt="">
-        <p>長押しして画像を保存してください</p>
-        <button class="x-share-ok-btn" id="xShareOkBtn">OK</button>
-    </div>
-
-    <div class="modal" id="albumModal">
+    <div class="modal" id="albumModal" role="dialog" aria-modal="true" aria-label="Album details">
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <button class="modal-close" id="modalClose" aria-label="Close"><i class="fas fa-times"></i></button>
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>

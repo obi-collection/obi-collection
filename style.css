@@ -217,6 +217,11 @@ body {
 .album-card:hover {
     border-color: var(--gold-obi);
 }
+.album-card:focus-visible {
+    outline: 2px solid var(--gold-obi);
+    outline-offset: 2px;
+    border-color: var(--gold-obi);
+}
 .album-image-container {
     position: relative;
     width: 100%;
@@ -423,12 +428,6 @@ body {
 .action-btn.ask-ai:hover, .action-btn.claude-ai:hover { background: #c4663f; border-color: #c4663f; transform: translateY(-2px); }
 .action-btn.ask-ai.copied { border-color: #4CAF50; color: #4CAF50; background: transparent; }
 .action-btn-placeholder { padding: 0.6rem 1rem; visibility: hidden; pointer-events: none; }
-.x-share-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 3000; background: rgba(0,0,0,0.96); flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; gap: 1.2rem; }
-.x-share-overlay.active { display: flex; }
-.x-share-overlay img { max-width: 100%; max-height: 60vh; object-fit: contain; border-radius: 6px; border: 1px solid var(--border-mid); box-shadow: var(--shadow-lg); }
-.x-share-overlay p { color: var(--text-primary); font-family: var(--font-body); font-size: 1.1rem; text-align: center; margin: 0; }
-.x-share-ok-btn { background: var(--surface-1); border: 1px solid var(--border-mid); color: var(--text-primary); font-family: var(--font-heading); font-size: 1rem; font-weight: 700; padding: 0.75rem 2.5rem; border-radius: 4px; cursor: pointer; transition: all 0.2s ease; }
-.x-share-ok-btn:hover { background: var(--surface-2); border-color: var(--gold-obi); }
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
