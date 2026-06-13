@@ -392,7 +392,7 @@ body {
 .modal-album-header h3 { font-family: var(--font-body); font-size: 1.2rem; font-weight: 700; color: var(--text-primary); }
 .version-section { padding: 0.25rem 0; }
 .version-divider { border-top: 1px solid var(--border-subtle); margin-top: var(--spacing-lg); padding-top: var(--spacing-lg); }
-.version-content { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "image details" "left-btns right-btns"; gap: 0.75rem; align-items: start; }
+.version-content { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "image details" "btns btns"; gap: 0.75rem; align-items: start; }
 .version-info { display: flex; flex-direction: column; gap: var(--spacing-sm); }
 .version-image-wrapper { grid-area: image; width: 100%; }
 .modal-album-image { width: 100%; max-height: 45vh; object-fit: contain; border-radius: 6px; border: 1px solid var(--border-mid); box-shadow: var(--shadow-lg); cursor: pointer; -webkit-user-select: none; user-select: none; transition: border-color 0.2s ease; }
@@ -415,8 +415,7 @@ body {
 .detail-value { color: var(--text-primary); flex: 1; font-size: 0.9rem; }
 /* ===== ACTION BUTTONS ===== */
 .action-buttons { display: grid; gap: 0.4rem; width: 100%; align-items: stretch; }
-.action-buttons-left { grid-area: left-btns; grid-template-columns: repeat(2, 1fr); }
-.action-buttons-right { grid-area: right-btns; grid-template-columns: repeat(2, 1fr); }
+.action-buttons-all { grid-area: btns; grid-template-columns: repeat(2, 1fr); }
 .action-btn { padding: 0.6rem 1rem; border: 1px solid transparent; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.25s ease; display: flex; align-items: center; gap: 0.5rem; justify-content: center; white-space: nowrap; width: 100%; }
 .action-btn.apple-music { background: var(--gold-obi); border-color: var(--gold-obi); color: var(--black); }
 .action-btn.apple-music:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.3); }
@@ -449,7 +448,7 @@ body {
     .alpha-btn { padding: 0.5rem 0.6rem; font-size: 0.8rem; min-height: 44px; }
     .action-btn { min-height: 44px; }
     .collection-container { grid-template-columns: repeat(3, 1fr) !important; gap: 0.5rem; }
-    .version-content { grid-template-columns: 1fr; grid-template-areas: "image" "details" "left-btns" "right-btns"; }
+    .version-content { grid-template-columns: 1fr; grid-template-areas: "image" "details" "btns"; }
     .modal-body { padding: 1rem; }
 }
 .collection-container.mobile-view { grid-template-columns: repeat(3, 1fr) !important; }

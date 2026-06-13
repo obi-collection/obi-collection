@@ -589,12 +589,10 @@ function showAlbumModal(album, updateHash = true) {
                         ${version.yearJP ? `<div class="detail-row"><span class="detail-label">Japan Release</span><span class="detail-value">${escapeHTML(version.yearJP)}</span></div>` : ''}
                         ${version.note ? `<div class="detail-row"><span class="detail-label">Note</span><span class="detail-value">${escapeHTML(version.note)}</span></div>` : ''}
                     </div>
-                    <div class="action-buttons action-buttons-left">
+                    <div class="action-buttons action-buttons-all">
                         <button class="action-btn youtube" data-action="youtube" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-youtube"></i> YouTube</button>
                         <button class="action-btn apple-music" data-action="apple-music" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-apple"></i> Apple Music</button>
                         <button class="action-btn ask-ai" data-action="ask-ai" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-copy"></i> Ask AI</button>
-                    </div>
-                    <div class="action-buttons action-buttons-right">
                         <button class="action-btn discogs" data-action="discogs" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-record-vinyl"></i> Discogs</button>
                         <button class="action-btn whosampled" data-action="whosampled" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-headphones"></i> WhoSampled</button>
                         <button class="action-btn genius" data-action="genius" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-music"></i> Genius</button>
