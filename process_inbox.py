@@ -408,7 +408,7 @@ def check_category(artist: str, artist_sort: str = None) -> bool:
 
 def git_push(artist: str, album: str):
     os.chdir(BASE_DIR)
-    subprocess.run(["git", "add", "data.js"], check=True)
+    subprocess.run(["git", "add", "data.js", "albums", "sitemap.xml", "robots.txt"], check=True)
     subprocess.run(
         ["git", "commit", "-m", f"Add {artist} - {album} (via inbox automation)"],
         check=True,
@@ -471,7 +471,7 @@ def main():
         log(f"  → {raw_url}")
 
         # 4. Update data.js
-        log("Step 4/5 — Updating data.js...")
+        log("Step 4/6 — Updating data.js...")
         new_album = update_data_js(info, raw_url, tracklist)
 
         # Validate category
@@ -479,8 +479,16 @@ def main():
             log(f"[WARNING] '{new_album['artist']}' does not match any category filter "
                 f"(V.A., O.S.T., A-Z, 0-9). Consider adding artist_sort.")
 
-        # 5. Commit and push
-        log("Step 5/5 — Pushing to GitHub...")
+        # 5. Regenerate static SEO pages + sitemap
+        log("Step 5/6 — Building static album pages...")
+        try:
+            import build_static
+            build_static.build()
+        except Exception as e:
+            log(f"[WARNING] static page generation failed: {e}")
+
+        # 6. Commit and push
+        log("Step 6/6 — Pushing to GitHub...")
         git_push(info["artist"], info["album"])
 
         # Cleanup inbox

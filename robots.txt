@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://obi-collection.github.io/obi-collection/sitemap.xml
