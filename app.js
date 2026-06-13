@@ -180,7 +180,7 @@ function handleModalClick(e) {
     const album = albumById.get(actionBtn.dataset.albumId);
     const versionIndex = Number(actionBtn.dataset.versionIndex || 0);
     const version = album?.versions?.[versionIndex] || album?.versions?.[0] || {};
-    if (!album && actionBtn.dataset.action !== 'claude') return;
+    if (!album) return;
 
     switch (actionBtn.dataset.action) {
         case 'copy-link':
@@ -194,9 +194,6 @@ function handleModalClick(e) {
             break;
         case 'ask-ai':
             copyAIPrompt(actionBtn, album.artist, album.album, version.year, version.catalog || '', album.id);
-            break;
-        case 'claude':
-            window.open('https://claude.ai', '_blank');
             break;
         case 'note':
             if (album.note_url) window.open(album.note_url, '_blank');
@@ -596,7 +593,6 @@ function showAlbumModal(album, updateHash = true) {
                         <button class="action-btn youtube" data-action="youtube" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-youtube"></i> YouTube</button>
                         <button class="action-btn apple-music" data-action="apple-music" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-apple"></i> Apple Music</button>
                         <button class="action-btn ask-ai" data-action="ask-ai" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-copy"></i> Ask AI</button>
-                        <button class="action-btn claude-ai" data-action="claude"><i class="fas fa-robot"></i> Claude</button>
                     </div>
                     <div class="action-buttons action-buttons-right">
                         ${album.note_url ? `<button class="action-btn note" data-action="note" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-newspaper"></i> note</button>` : '<div class="action-btn-placeholder"></div>'}
