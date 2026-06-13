@@ -653,9 +653,19 @@ function closeModal(updateHash = true) {
     lastFocusedBeforeModal = null;
 }
 
+function albumSlug(albumId) {
+    // Must match slugify() in build_static.py
+    return albumId.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+function albumStaticUrl(albumId) {
+    const baseDir = location.pathname.replace(/[^/]*$/, '');
+    return `${location.origin}${baseDir}albums/${albumSlug(albumId)}.html`;
+}
+
 function copyAlbumLink(btn, albumId) {
-    const url = `${location.origin}${location.pathname}#album=${encodeURIComponent(albumId)}`;
-    navigator.clipboard.writeText(url).then(() => {
+    // Copy the static page URL so X / social shares render an OBI-image preview (OGP)
+    navigator.clipboard.writeText(albumStaticUrl(albumId)).then(() => {
         btn.classList.add('copied');
         btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
         setTimeout(() => {

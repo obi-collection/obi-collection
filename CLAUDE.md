@@ -115,10 +115,22 @@ const COLLECTION_DATA = {
 
 ## フロントエンド機能（2026-06-13追加）
 
-- **ディープリンク:** `#album=<id>` でアルバムモーダルを直接開ける。モーダル内の「Copy Link」ボタンでURLコピー。X投稿への活用を想定
+- **ディープリンク:** `#album=<id>` でアルバムモーダルを直接開ける（サイト内ナビ用）。X/SNS共有用には静的ページURL（下記）を使う
 - **レーベルフィルタ:** カタログ番号プレフィックス（SRCS等）から自動生成。`alphabetSelect` に `label:XXX` 値のoptgroupとして動的追加（5枚以上のレーベルのみ）
 - **統計ダッシュボード:** ヘッダーの棒グラフアイコンから表示。年代分布・レーベル上位10・カテゴリ内訳・日米リリース差
 - **New Arrivals:** トップページに `addedAt` 降順で最新10件を横スクロール表示。`addedAt` がないエントリ（初期一括登録分607件）は対象外
+- **キーボード操作:** アルバムカードはTab移動・Enter/Spaceで開く。モーダルはrole=dialog + フォーカストラップ + 閉じると元のカードにフォーカス復帰
+- **アクセシビリティ:** カードに `:focus-visible` のアウトライン
+
+---
+
+## SEO・静的ページ（2026-06-13追加）
+
+- `build_static.py` が `data.js` から **アルバム1件＝1静的ページ** (`albums/<slug>.html`) を生成。OGP/Twitterカード（帯画像）・JSON-LD（MusicAlbum）・サーバーレンダリング済み本文を持つ。SPA（index.html）はJS描画でクローラに中身が見えないため、検索流入とSNSプレビューを静的ページが担う
+- `slug` 生成規則: `id` を小文字化し `[^a-z0-9]+` を `-` に置換、前後の `-` を除去。**app.js の `albumSlug()`・post_to_x.py の `album_slug()` と必ず一致させること**（共有URLの整合性のため）
+- `sitemap.xml`（トップ＋全アルバム）と `robots.txt` も同時生成
+- `process_inbox.py` は新規追加のたびに `build_static.build()` を呼び、`albums/`・`sitemap.xml`・`robots.txt` を `data.js` と一緒にコミットする
+- **共有リンク:** SPAの「Copy Link」と `post_to_x.py` は静的ページURL（`albums/<slug>.html`）を使う。X等で帯画像プレビュー（OGP）を出すため
 
 ---
 
