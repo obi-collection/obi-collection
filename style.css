@@ -427,7 +427,6 @@ body {
 .action-btn.ask-ai { background: #D97757; border-color: #D97757; color: #ffffff; }
 .action-btn.ask-ai:hover { background: #c4663f; border-color: #c4663f; transform: translateY(-2px); }
 .action-btn.ask-ai.copied { border-color: #4CAF50; color: #4CAF50; background: transparent; }
-.action-btn-placeholder { padding: 0.6rem 1rem; visibility: hidden; pointer-events: none; }
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }

@@ -595,12 +595,12 @@ function showAlbumModal(album, updateHash = true) {
                         <button class="action-btn ask-ai" data-action="ask-ai" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-copy"></i> Ask AI</button>
                     </div>
                     <div class="action-buttons action-buttons-right">
-                        ${album.note_url ? `<button class="action-btn note" data-action="note" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-newspaper"></i> note</button>` : '<div class="action-btn-placeholder"></div>'}
                         <button class="action-btn discogs" data-action="discogs" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-record-vinyl"></i> Discogs</button>
                         <button class="action-btn whosampled" data-action="whosampled" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-headphones"></i> WhoSampled</button>
                         <button class="action-btn genius" data-action="genius" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-music"></i> Genius</button>
                         <button class="action-btn mercari" data-action="mercari" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-tag"></i> Mercari</button>
                         <button class="action-btn yahooauction" data-action="yahooauction" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-gavel"></i> Yahoo Auction</button>
+                        ${album.note_url ? `<button class="action-btn note" data-action="note" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-newspaper"></i> note</button>` : ''}
                     </div>
                 </div>
             </div>`;
