@@ -1,4 +1,5 @@
 .env
+.last_post_at
 .inbox_processing.lock
 watch_inbox.log
 inbox/combined.jpg
