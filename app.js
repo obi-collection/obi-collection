@@ -608,9 +608,11 @@ function showAlbumModal(album, updateHash = true) {
             <div class="modal-album-header">
                 <h2>${escapeHTML(album.artist)}</h2>
                 <h3>${escapeHTML(album.album)}${album.versions[0].year ? `  (${escapeHTML(album.versions[0].year)})` : ''}</h3>
-                <button class="share-link-btn" data-action="copy-link" data-album-id="${escapeHTML(album.id)}" title="このアルバムへのリンクをコピー"><i class="fas fa-link"></i> Copy Link</button>
             </div>
             ${versionsHTML}
+            <div class="modal-album-footer">
+                <button class="share-link-btn" data-action="copy-link" data-album-id="${escapeHTML(album.id)}" title="このアルバムへのリンクをコピー"><i class="fas fa-link"></i> Copy Link</button>
+            </div>
         </div>`;
 
     modalBody.querySelectorAll('.modal-album-image').forEach(img => {
