@@ -189,8 +189,8 @@ function handleModalClick(e) {
         case 'youtube':
             searchOnYouTube(album.artist, album.album);
             break;
-        case 'apple-music':
-            searchOnAppleMusic(album.artist, album.album);
+        case 'spotify':
+            searchOnSpotify(album.artist, album.album);
             break;
         case 'ask-ai':
             copyAIPrompt(actionBtn, album.artist, album.album, version.year, version.catalog || '', album.id);
@@ -591,7 +591,7 @@ function showAlbumModal(album, updateHash = true) {
                     </div>
                     <div class="action-buttons action-buttons-all">
                         <button class="action-btn youtube" data-action="youtube" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-youtube"></i> YouTube</button>
-                        <button class="action-btn apple-music" data-action="apple-music" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-apple"></i> Apple Music</button>
+                        <button class="action-btn spotify" data-action="spotify" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fab fa-spotify"></i> Spotify</button>
                         <button class="action-btn ask-ai" data-action="ask-ai" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-copy"></i> Ask AI</button>
                         <button class="action-btn discogs" data-action="discogs" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-record-vinyl"></i> Discogs</button>
                         <button class="action-btn whosampled" data-action="whosampled" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-headphones"></i> WhoSampled</button>
@@ -780,10 +780,10 @@ function searchOnYouTube(artist, album) {
     else window.open(`https://www.youtube.com/results?search_query=${q}`, '_blank');
 }
 
-function searchOnAppleMusic(artist, album) {
+function searchOnSpotify(artist, album) {
     const q = encodeURIComponent(`${artist} ${album}`);
-    if (isMobile) { window.location.href = `music://music.apple.com/search?term=${q}`; setTimeout(() => window.open(`https://music.apple.com/search?term=${q}`, '_blank'), 1000); }
-    else window.open(`https://music.apple.com/search?term=${q}`, '_blank');
+    if (isMobile) { window.location.href = `spotify:search:${q}`; setTimeout(() => window.open(`https://open.spotify.com/search/${q}`, '_blank'), 1000); }
+    else window.open(`https://open.spotify.com/search/${q}`, '_blank');
 }
 
 function openSearch(url) { window.open(url, '_blank'); }

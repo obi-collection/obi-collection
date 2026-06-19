@@ -418,8 +418,8 @@ body {
 .action-buttons { display: grid; gap: 0.4rem; width: 100%; align-items: stretch; }
 .action-buttons-all { grid-area: btns; grid-template-columns: repeat(2, 1fr); }
 .action-btn { padding: 0.6rem 1rem; border: 1px solid transparent; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; cursor: pointer; border-radius: 4px; transition: all 0.25s ease; display: flex; align-items: center; gap: 0.5rem; justify-content: center; white-space: nowrap; width: 100%; }
-.action-btn.apple-music { background: var(--gold-obi); border-color: var(--gold-obi); color: var(--black); }
-.action-btn.apple-music:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.3); }
+.action-btn.spotify { background: var(--gold-obi); border-color: var(--gold-obi); color: var(--black); }
+.action-btn.spotify:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.3); }
 .action-btn.youtube { background: var(--gold-obi); border-color: var(--gold-obi); color: var(--black); }
 .action-btn.youtube:hover { background: var(--gold-bright); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.3); }
 .action-btn.discogs, .action-btn.genius, .action-btn.mercari, .action-btn.yahooauction, .action-btn.whosampled, .action-btn.note { background: var(--surface-1); border-color: var(--border-mid); color: var(--text-primary); }
