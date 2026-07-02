@@ -63,6 +63,7 @@ COLLECTION_DATA = {
 - モーダル内「More from this artist」関連作品セクション（同一 `_sortKey` の他作品をサムネイル横スクロール表示。V.A./O.S.T.は対象外、2026-07-02）
 - Focus調整モード（`?tune=1` でカードごとにクロップ横位置スライダー → Export JSON → `merge_focus.py` で `data.js` の `focus` フィールドに反映、2026-07-02）
 - Spotify埋め込みプレイヤー（`spotifyId` フィールド + `?spotify=1` 手動登録モード → Export JSON → `merge_spotify.py` で反映。モーダル内でアルバム再生可能、2026-07-03）
+- Spotify候補提示（`fetch_spotify_candidates.py` がAPIで候補を事前生成 → `spotify_candidates.js` → `?spotify=1` モードでクリック選択。確定は常に人間、2026-07-03）
 
 ---
 

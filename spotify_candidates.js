@@ -1,0 +1,1 @@
+const SPOTIFY_CANDIDATES = {};

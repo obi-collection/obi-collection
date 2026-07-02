@@ -126,7 +126,8 @@ const COLLECTION_DATA = {
 - **モーダル前後ナビ（2026-07-02追加）:** アルバムモーダルに前後ボタン（`#modalPrev`/`#modalNext`）と←→キー操作。表示中のフィルタ結果順に移動（該当しない場合はアーティスト順の全件リストにフォールバック）。hash更新は `replaceState` で履歴を汚さない。統計モーダル表示中は非表示
 - **More from this artist（2026-07-02追加）:** モーダル下部に同一アーティスト（`_sortKey` 一致）の他作品をサムネイル表示（w_200変換・年順）。クリックでそのアルバムのモーダルに切替。V.A./O.S.T.は対象外
 - **Focus調整モード（2026-07-02追加）:** URLに `?tune=1` を付けると各カードにスライダーが出て、正方形クロップの横位置を調整できる。調整値はlocalStorage（`obi_tune`）に保存され、画面下部パネルの「Export JSON」でコピー → `python3 merge_focus.py tune.json`（または `pbpaste | python3 merge_focus.py -`）で `data.js` のアルバムレベル `focus` フィールドに反映。focus=50（中央）はフィールド削除扱い
-- **Spotify埋め込み（2026-07-03追加）:** `spotifyId` があるアルバムはモーダルにSpotify埋め込みプレイヤー（352px・トラックリスト付き）を表示。URLに `?spotify=1` を付けると登録モードになり、モーダル内の貼り付け欄にSpotifyアルバムURL（シェアリンク）をペースト→即プレビュー表示。登録値はlocalStorage（`obi_spotify`）に保存され、「Export JSON」→ `python3 merge_spotify.py spotify.json` で `data.js` に反映。空文字は `spotifyId` 削除扱い。手動登録のみ（自動マッチングによる誤登録を避ける設計）
+- **Spotify埋め込み（2026-07-03追加）:** `spotifyId` があるアルバムはモーダルにSpotify埋め込みプレイヤー（352px・トラックリスト付き）を表示。URLに `?spotify=1` を付けると登録モードになり、モーダル内の貼り付け欄にSpotifyアルバムURL（シェアリンク）をペースト→即プレビュー表示。登録値はlocalStorage（`obi_spotify`）に保存され、「Export JSON」→ `python3 merge_spotify.py spotify.json` で `data.js` に反映。空文字は `spotifyId` 削除扱い。**登録の確定は常に手動**（自動マッチングによる誤登録を避ける設計）
+- **Spotify候補提示（2026-07-03追加）:** `python3 fetch_spotify_candidates.py` がSpotify APIで未登録アルバムの候補（上位5件）を検索し `spotify_candidates.js` に書き出す（要 `.env` の `SPOTIFY_CLIENT_ID` / `SPOTIFY_CLIENT_SECRET`）。`?spotify=1` モードで候補がクリック選択でき、各候補に年・曲数・Spotifyで開く確認リンク付き。選択もXX版/Live版などの見極めも人間が行う。V.A./O.S.T.はアルバム名のみで検索
 
 ---
 

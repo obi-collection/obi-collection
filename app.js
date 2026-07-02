@@ -255,6 +255,16 @@ function handleModalClick(e) {
         case 'spotify-apply':
             applySpotifyInput(album);
             break;
+        case 'spotify-pick': {
+            const pickedId = actionBtn.dataset.spotifyId;
+            if (/^[A-Za-z0-9]{22}$/.test(pickedId)) {
+                spotifyOverrides[album.id] = pickedId;
+                localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
+                updateSpotifyCount();
+                showAlbumModal(album, false);
+            }
+            break;
+        }
         case 'spotify-remove':
             spotifyOverrides[album.id] = '';
             localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
@@ -817,13 +827,32 @@ function spotifyEmbedHTML(album) {
         ${player}
         <div class="spotify-reg">
             <div class="spotify-reg-title"><i class="fab fa-spotify"></i> Spotify埋め込み登録 <span class="spotify-reg-state${id ? ' ok' : ''}">${id ? '登録済み' : '未登録'}</span></div>
+            ${spotifyCandidatesHTML(album, id)}
             <div class="spotify-reg-row">
                 <input type="text" class="spotify-input" placeholder="SpotifyアルバムのURLを貼り付け" data-album-id="${escapeHTML(album.id)}">
                 <button class="spotify-reg-btn" data-action="spotify-apply" data-album-id="${escapeHTML(album.id)}">登録</button>
                 ${id ? `<button class="spotify-reg-btn remove" data-action="spotify-remove" data-album-id="${escapeHTML(album.id)}">解除</button>` : ''}
             </div>
-            <div class="spotify-reg-hint">Spotifyのアルバムページ →「…」→ シェア →「アルバムのリンクをコピー」</div>
+            <div class="spotify-reg-hint">候補をクリックで登録。正しい盤がなければSpotifyのアルバムページ →「…」→ シェア →「アルバムのリンクをコピー」して貼り付け</div>
         </div>`;
+}
+
+function spotifyCandidatesHTML(album, currentId) {
+    const cands = (typeof SPOTIFY_CANDIDATES !== 'undefined' && SPOTIFY_CANDIDATES[album.id]) || [];
+    if (!cands.length) return '';
+    const rows = cands.map(c => `
+        <div class="spotify-cand${c.id === currentId ? ' selected' : ''}">
+            <button class="spotify-cand-pick" data-action="spotify-pick" data-album-id="${escapeHTML(album.id)}" data-spotify-id="${escapeHTML(c.id)}">
+                ${c.image ? `<img src="${escapeHTML(c.image)}" alt="" loading="lazy" decoding="async">` : '<span class="spotify-cand-noimg"><i class="fas fa-compact-disc"></i></span>'}
+                <span class="spotify-cand-info">
+                    <span class="spotify-cand-name">${escapeHTML(c.name)}</span>
+                    <span class="spotify-cand-meta">${escapeHTML(c.artist)}${c.year ? ` · ${escapeHTML(c.year)}` : ''}${c.tracks ? ` · ${escapeHTML(String(c.tracks))}曲` : ''}</span>
+                </span>
+                ${c.id === currentId ? '<i class="fas fa-check spotify-cand-check"></i>' : ''}
+            </button>
+            <a class="spotify-cand-open" href="https://open.spotify.com/album/${escapeHTML(c.id)}" target="_blank" rel="noopener" title="Spotifyで確認"><i class="fas fa-external-link-alt"></i></a>
+        </div>`).join('');
+    return `<div class="spotify-cands">${rows}</div>`;
 }
 
 function applySpotifyInput(album) {
