@@ -13,6 +13,9 @@ let pinnedAlbums = [];
 let albumById = new Map();
 let lazyImageObserver = null;
 let lastFocusedBeforeModal = null;
+let modalCurrentAlbum = null;
+let modalNavAlbums = null;
+let sortedAllAlbums = null;
 
 const collectionContainer = document.getElementById('collectionContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -32,6 +35,8 @@ const resultCount = document.getElementById('resultCount');
 const totalCount = document.getElementById('totalCount');
 const viewSizeToggle = document.getElementById('viewSizeToggle');
 const statsBtn = document.getElementById('statsBtn');
+const modalPrev = document.getElementById('modalPrev');
+const modalNext = document.getElementById('modalNext');
 
 document.addEventListener('DOMContentLoaded', () => {
     allAlbums = COLLECTION_DATA.albums;
@@ -122,6 +127,8 @@ function setupEventListeners() {
     alphabetSelect.addEventListener('change', applyAlphabetFilter);
     modalOverlay.addEventListener('click', closeModal);
     modalClose.addEventListener('click', closeModal);
+    modalPrev.addEventListener('click', () => navigateModal(-1));
+    modalNext.addEventListener('click', () => navigateModal(1));
     albumModal.addEventListener('click', e => { if (e.target === albumModal) closeModal(); });
     collectionContainer.addEventListener('click', handleCollectionClick);
     collectionContainer.addEventListener('keydown', handleCardKeydown);
@@ -171,6 +178,13 @@ function handleModalClick(e) {
     const tracklistToggle = e.target.closest('.tracklist-toggle');
     if (tracklistToggle) {
         tracklistToggle.closest('.tracklist-accordion')?.classList.toggle('open');
+        return;
+    }
+
+    const relatedCard = e.target.closest('.related-card');
+    if (relatedCard) {
+        const related = albumById.get(relatedCard.dataset.relatedId);
+        if (related) showAlbumModal(related);
         return;
     }
 
@@ -574,7 +588,7 @@ function loadLazyImage(img) {
     img.classList.remove('lazy-load');
 }
 
-function showAlbumModal(album, updateHash = true) {
+function showAlbumModal(album, updateHash = true, replaceHash = false) {
     let versionsHTML = '';
     album.versions.forEach((version, index) => {
         versionsHTML += `
@@ -610,6 +624,7 @@ function showAlbumModal(album, updateHash = true) {
                 <h3>${escapeHTML(album.album)}${album.versions[0].year ? `  (${escapeHTML(album.versions[0].year)})` : ''}</h3>
             </div>
             ${versionsHTML}
+            ${relatedAlbumsHTML(album)}
             <div class="modal-album-footer">
                 <button class="share-link-btn" data-action="copy-link" data-album-id="${escapeHTML(album.id)}" title="このアルバムへのリンクをコピー"><i class="fas fa-link"></i> Copy Link</button>
             </div>
@@ -622,10 +637,62 @@ function showAlbumModal(album, updateHash = true) {
         img.addEventListener('touchmove', () => clearTimeout(pressTimer));
         img.addEventListener('click', () => { if (img.dataset.longPress !== 'true') openImageViewer(img.src.replace('f_auto,q_auto,w_600', 'f_auto,q_100,w_2400')); });
     });
+    modalCurrentAlbum = album;
+    updateModalNav(album);
     openModalA11y();
+    // Reset scroll position when switching albums within the open modal
+    albumModal.scrollTop = 0;
+    const modalContent = albumModal.querySelector('.modal-content');
+    if (modalContent) modalContent.scrollTop = 0;
     if (updateHash && getAlbumIdFromHash() !== album.id) {
-        history.pushState(null, '', `#album=${encodeURIComponent(album.id)}`);
+        const url = `#album=${encodeURIComponent(album.id)}`;
+        if (replaceHash) history.replaceState(null, '', url);
+        else history.pushState(null, '', url);
     }
+}
+
+function relatedAlbumsHTML(album) {
+    if (album.artist === 'V.A.' || album.artist === 'O.S.T.') return '';
+    const related = allAlbums
+        .filter(a => a !== album && a._sortKey === album._sortKey)
+        .sort(compareYearThenAlbumTitle);
+    if (!related.length) return '';
+    const cards = related.map(a => `
+        <button class="related-card" data-related-id="${escapeHTML(a.id)}" title="${escapeHTML(a.album)}">
+            <img src="${escapeHTML((a.versions[0].image || '').replace('w_600', 'w_200'))}" alt="${escapeHTML(a.album)}" loading="lazy" decoding="async">
+            <span class="related-name">${escapeHTML(a.album)}</span>
+            ${a._year !== 9999 ? `<span class="related-year">${a._year}</span>` : ''}
+        </button>`).join('');
+    return `
+        <div class="related-albums">
+            <h4 class="related-title">More from ${escapeHTML(album._sortName)}</h4>
+            <div class="related-row">${cards}</div>
+        </div>`;
+}
+
+function updateModalNav(album) {
+    const visible = (filteredAlbums || []).filter(Boolean);
+    if (visible.includes(album)) {
+        modalNavAlbums = visible;
+    } else {
+        if (!sortedAllAlbums) sortedAllAlbums = [...allAlbums].sort(compareArtistThenYear);
+        modalNavAlbums = sortedAllAlbums;
+    }
+    const idx = modalNavAlbums.indexOf(album);
+    const show = idx !== -1 && modalNavAlbums.length > 1;
+    modalPrev.style.display = show ? '' : 'none';
+    modalNext.style.display = show ? '' : 'none';
+    if (!show) { modalNavAlbums = null; return; }
+    modalPrev.disabled = idx === 0;
+    modalNext.disabled = idx === modalNavAlbums.length - 1;
+}
+
+function navigateModal(delta) {
+    if (!modalNavAlbums || !modalCurrentAlbum) return;
+    const idx = modalNavAlbums.indexOf(modalCurrentAlbum);
+    if (idx === -1) return;
+    const next = modalNavAlbums[idx + delta];
+    if (next) showAlbumModal(next, true, true);
 }
 
 function openModalA11y() {
@@ -639,6 +706,8 @@ function openModalA11y() {
 
 function closeModal(updateHash = true) {
     albumModal.classList.remove('active');
+    modalCurrentAlbum = null;
+    modalNavAlbums = null;
     document.body.style.overflow = 'auto';
     if (updateHash && getAlbumIdFromHash()) {
         history.pushState(null, '', location.pathname + location.search);
@@ -769,6 +838,10 @@ function showStatsModal() {
             <div class="stats-section"><h3>Category</h3>${statsBarRows(genres, allAlbums.length)}</div>
             <div class="stats-section"><h3>US → Japan Release Gap <span class="stats-note">avg ${avgGap} yrs</span></h3>${statsBarRows([...gapCounts.entries()], gapTotal)}</div>
         </div>`;
+    modalCurrentAlbum = null;
+    modalNavAlbums = null;
+    modalPrev.style.display = 'none';
+    modalNext.style.display = 'none';
     openModalA11y();
 }
 
@@ -902,6 +975,10 @@ document.addEventListener('keydown', e => {
         if (albumModal.classList.contains('active')) closeModal();
     }
     if (e.key === 'Tab' && albumModal.classList.contains('active')) { trapModalFocus(e); return; }
+    if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && albumModal.classList.contains('active') && (!imgViewer || imgViewer.style.display === 'none')) {
+        navigateModal(e.key === 'ArrowLeft' ? -1 : 1);
+        return;
+    }
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); }
     if (e.key === 'r' && !searchInput.matches(':focus') && !albumModal.classList.contains('active')) showRandomAlbum();
 });
