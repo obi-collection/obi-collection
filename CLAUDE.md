@@ -35,6 +35,7 @@ const COLLECTION_DATA = {
       album: "Album Title",
       addedAt: "2026-06-13",    // 任意。コレクション追加日（process_inbox.pyが自動付与、New Arrivals表示に使用）
       genre: "hiphop",          // 任意。下記選択肢から1つ
+      focus: 30,                // 任意。カード正方形クロップの横位置%（0=左端〜100=右端、省略時50=中央）。?tune=1モードで調整→merge_focus.pyで反映
       versions: [
         {
           year: 1995,           // 原盤リリース年（MusicBrainz等で確認）
@@ -123,6 +124,7 @@ const COLLECTION_DATA = {
 - **アクセシビリティ:** カードに `:focus-visible` のアウトライン
 - **モーダル前後ナビ（2026-07-02追加）:** アルバムモーダルに前後ボタン（`#modalPrev`/`#modalNext`）と←→キー操作。表示中のフィルタ結果順に移動（該当しない場合はアーティスト順の全件リストにフォールバック）。hash更新は `replaceState` で履歴を汚さない。統計モーダル表示中は非表示
 - **More from this artist（2026-07-02追加）:** モーダル下部に同一アーティスト（`_sortKey` 一致）の他作品をサムネイル表示（w_200変換・年順）。クリックでそのアルバムのモーダルに切替。V.A./O.S.T.は対象外
+- **Focus調整モード（2026-07-02追加）:** URLに `?tune=1` を付けると各カードにスライダーが出て、正方形クロップの横位置を調整できる。調整値はlocalStorage（`obi_tune`）に保存され、画面下部パネルの「Export JSON」でコピー → `python3 merge_focus.py tune.json`（または `pbpaste | python3 merge_focus.py -`）で `data.js` のアルバムレベル `focus` フィールドに反映。focus=50（中央）はフィールド削除扱い
 
 ---
 

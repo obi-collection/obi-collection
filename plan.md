@@ -61,6 +61,7 @@ COLLECTION_DATA = {
 - トラックリスト検索（`_searchText` に収録済み）
 - アルバムモーダルの前後ナビゲーション（左右シェブロンボタン + ←→キー。表示中のリスト順で移動、hashはreplaceStateで履歴を汚さない、2026-07-02）
 - モーダル内「More from this artist」関連作品セクション（同一 `_sortKey` の他作品をサムネイル横スクロール表示。V.A./O.S.T.は対象外、2026-07-02）
+- Focus調整モード（`?tune=1` でカードごとにクロップ横位置スライダー → Export JSON → `merge_focus.py` で `data.js` の `focus` フィールドに反映、2026-07-02）
 
 ---
 

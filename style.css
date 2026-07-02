@@ -572,6 +572,53 @@ body {
 }
 .related-card .related-year { font-size: 0.6rem; color: var(--text-secondary); margin-top: auto; }
 
+/* ── Focus-tune mode (?tune=1) ─────────────────────────────────────────────── */
+.tune-slider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.4rem 0.5rem;
+    background: rgba(0,0,0,0.7);
+    z-index: 6;
+    cursor: default;
+}
+.tune-slider input {
+    width: 100%;
+    accent-color: var(--gold-obi);
+    cursor: ew-resize;
+    margin: 0;
+    display: block;
+}
+#tunePanel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.6rem 1rem;
+    background: var(--ink, #111);
+    border-top: 2px solid var(--gold-obi);
+    flex-wrap: wrap;
+}
+.tune-panel-label { color: var(--gold-obi); font-family: var(--font-heading); font-size: 0.85rem; letter-spacing: 0.05em; }
+.tune-panel-btn {
+    background: transparent;
+    border: 1px solid var(--border-mid);
+    color: var(--text-primary);
+    padding: 0.35rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    transition: all 0.2s ease;
+}
+.tune-panel-btn:hover { border-color: var(--gold-obi); color: var(--gold-obi); }
+
 /* ── Stats dashboard ───────────────────────────────────────────────────────── */
 .stats-container { padding: 0.5rem 0.25rem; }
 .stats-title {

@@ -16,6 +16,10 @@ let lastFocusedBeforeModal = null;
 let modalCurrentAlbum = null;
 let modalNavAlbums = null;
 let sortedAllAlbums = null;
+// Focus-tune mode: append ?tune=1 to the URL to adjust per-album crop position
+const tuneMode = new URLSearchParams(location.search).has('tune');
+let tuneOverrides = {};
+try { tuneOverrides = JSON.parse(localStorage.getItem('obi_tune') || '{}'); } catch { tuneOverrides = {}; }
 
 const collectionContainer = document.getElementById('collectionContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -59,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (totalCount) totalCount.textContent = allAlbums.length;
     showLoading(false);
     setupEventListeners();
+    if (tuneMode) initTunePanel();
     const initialAlbumId = getAlbumIdFromHash();
     if (initialAlbumId) {
         const initialAlbum = albumById.get(initialAlbumId);
@@ -136,7 +141,9 @@ function setupEventListeners() {
     if (newArrivalsRow) {
         newArrivalsRow.addEventListener('click', handleCollectionClick);
         newArrivalsRow.addEventListener('keydown', handleCardKeydown);
+        if (tuneMode) newArrivalsRow.addEventListener('input', handleTuneInput);
     }
+    if (tuneMode) collectionContainer.addEventListener('input', handleTuneInput);
     modalBody.addEventListener('click', handleModalClick);
     window.addEventListener('hashchange', () => {
         const id = getAlbumIdFromHash();
@@ -150,6 +157,7 @@ function setupEventListeners() {
 }
 
 function handleCollectionClick(e) {
+    if (e.target.closest('.tune-slider')) return;
     const pinBtn = e.target.closest('.pin-btn');
     if (pinBtn) {
         e.stopPropagation();
@@ -168,7 +176,7 @@ function handleCollectionClick(e) {
 function handleCardKeydown(e) {
     if (e.key !== 'Enter' && e.key !== ' ') return;
     const card = e.target.closest('.album-card');
-    if (!card || e.target.closest('.pin-btn')) return;
+    if (!card || e.target.closest('.pin-btn') || e.target.closest('.tune-slider')) return;
     e.preventDefault();
     const album = albumById.get(card.dataset.albumId);
     if (album) showAlbumModal(album);
@@ -548,12 +556,14 @@ function createAlbumCard(album, index = null, isPinned = false) {
     card.setAttribute('aria-label', `${album.artist} - ${album.album}${firstVersion.year ? ` (${firstVersion.year})` : ''}`);
     if (index !== null) card.dataset.position = index;
     const versionCount = album.versions.length;
+    const focus = albumFocus(album);
     card.innerHTML = `
         <div class="album-image-container">
-            <img class="album-image lazy-load" data-src="${escapeHTML(firstVersion.image)}" alt="${escapeHTML(album.album)}" loading="lazy" decoding="async">
+            <img class="album-image lazy-load" data-src="${escapeHTML(firstVersion.image)}" alt="${escapeHTML(album.album)}" loading="lazy" decoding="async"${focus !== 50 ? ` style="object-position:${focus}% 50%"` : ''}>
             ${versionCount > 1 ? `<div class="version-badge">${versionCount} versions</div>` : ''}
             ${index !== null ? `<button class="pin-btn ${isPinned ? 'pinned' : ''}" data-album-id="${escapeHTML(album.id)}" data-position="${index}" title="${isPinned ? 'ピン留め解除' : 'ピン留め'}"><i class="fas fa-thumbtack"></i></button>` : ''}
             ${firstVersion.year ? `<div class="year-badge">${escapeHTML(String(firstVersion.year))}</div>` : ''}
+            ${tuneMode ? `<div class="tune-slider"><input type="range" min="0" max="100" value="${focus}" data-album-id="${escapeHTML(album.id)}" aria-label="Crop position"></div>` : ''}
         </div>
         <div class="album-info">
             <div class="album-artist">${escapeHTML(album.artist)}</div>
@@ -659,7 +669,7 @@ function relatedAlbumsHTML(album) {
     if (!related.length) return '';
     const cards = related.map(a => `
         <button class="related-card" data-related-id="${escapeHTML(a.id)}" title="${escapeHTML(a.album)}">
-            <img src="${escapeHTML((a.versions[0].image || '').replace('w_600', 'w_200'))}" alt="${escapeHTML(a.album)}" loading="lazy" decoding="async">
+            <img src="${escapeHTML((a.versions[0].image || '').replace('w_600', 'w_200'))}" alt="${escapeHTML(a.album)}" loading="lazy" decoding="async"${albumFocus(a) !== 50 ? ` style="object-position:${albumFocus(a)}% 50%"` : ''}>
             <span class="related-name">${escapeHTML(a.album)}</span>
             ${a._year !== 9999 ? `<span class="related-year">${a._year}</span>` : ''}
         </button>`).join('');
@@ -753,6 +763,53 @@ function copyAIPrompt(btn, artist, albumTitle, year, catalog, albumId) {
             btn.innerHTML = '<i class="fas fa-copy"></i> Ask AI';
         }, 2000);
     });
+}
+
+// ── Focus-tune mode (?tune=1) ────────────────────────────────────────────────
+function albumFocus(album) {
+    const v = tuneOverrides[album.id] !== undefined ? tuneOverrides[album.id] : album.focus;
+    return (typeof v === 'number' && v >= 0 && v <= 100) ? v : 50;
+}
+
+function handleTuneInput(e) {
+    const input = e.target.closest('.tune-slider input');
+    if (!input) return;
+    const value = Number(input.value);
+    tuneOverrides[input.dataset.albumId] = value;
+    localStorage.setItem('obi_tune', JSON.stringify(tuneOverrides));
+    const img = input.closest('.album-image-container')?.querySelector('.album-image');
+    if (img) img.style.objectPosition = `${value}% 50%`;
+    updateTuneCount();
+}
+
+function initTunePanel() {
+    const panel = document.createElement('div');
+    panel.id = 'tunePanel';
+    panel.innerHTML = `
+        <span class="tune-panel-label"><i class="fas fa-crop-alt"></i> Focus調整モード — <b id="tuneCount">0</b>件</span>
+        <button class="tune-panel-btn" id="tuneExport"><i class="fas fa-copy"></i> Export JSON</button>
+        <button class="tune-panel-btn" id="tuneClear"><i class="fas fa-trash"></i> Clear</button>`;
+    document.body.appendChild(panel);
+    document.getElementById('tuneExport').addEventListener('click', () => {
+        const btn = document.getElementById('tuneExport');
+        navigator.clipboard.writeText(JSON.stringify(tuneOverrides, null, 2)).then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Export JSON'; }, 2000);
+        });
+    });
+    document.getElementById('tuneClear').addEventListener('click', () => {
+        if (!confirm('調整データをすべて消去しますか？')) return;
+        tuneOverrides = {};
+        localStorage.removeItem('obi_tune');
+        updateTuneCount();
+        renderAlbums();
+    });
+    updateTuneCount();
+}
+
+function updateTuneCount() {
+    const count = document.getElementById('tuneCount');
+    if (count) count.textContent = Object.keys(tuneOverrides).length;
 }
 
 function togglePin(album, position) {
