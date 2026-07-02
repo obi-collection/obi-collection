@@ -16,10 +16,15 @@ let lastFocusedBeforeModal = null;
 let modalCurrentAlbum = null;
 let modalNavAlbums = null;
 let sortedAllAlbums = null;
-// Focus-tune mode: append ?tune=1 to the URL to adjust per-album crop position
-const tuneMode = new URLSearchParams(location.search).has('tune');
+// Focus-tune mode (?tune=1): adjust per-album crop position
+// Spotify registration mode (?spotify=1): paste album links to embed players
+const urlParams = new URLSearchParams(location.search);
+const tuneMode = urlParams.has('tune');
+const spotifyMode = urlParams.has('spotify');
 let tuneOverrides = {};
 try { tuneOverrides = JSON.parse(localStorage.getItem('obi_tune') || '{}'); } catch { tuneOverrides = {}; }
+let spotifyOverrides = {};
+try { spotifyOverrides = JSON.parse(localStorage.getItem('obi_spotify') || '{}'); } catch { spotifyOverrides = {}; }
 
 const collectionContainer = document.getElementById('collectionContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -64,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     showLoading(false);
     setupEventListeners();
     if (tuneMode) initTunePanel();
+    if (spotifyMode) initSpotifyPanel();
     const initialAlbumId = getAlbumIdFromHash();
     if (initialAlbumId) {
         const initialAlbum = albumById.get(initialAlbumId);
@@ -144,6 +150,17 @@ function setupEventListeners() {
         if (tuneMode) newArrivalsRow.addEventListener('input', handleTuneInput);
     }
     if (tuneMode) collectionContainer.addEventListener('input', handleTuneInput);
+    if (spotifyMode) {
+        // Auto-apply pasted Spotify links without needing the 登録 button
+        modalBody.addEventListener('paste', e => {
+            const input = e.target.closest('.spotify-input');
+            if (!input) return;
+            setTimeout(() => {
+                const album = albumById.get(input.dataset.albumId);
+                if (album) applySpotifyInput(album);
+            }, 0);
+        });
+    }
     modalBody.addEventListener('click', handleModalClick);
     window.addEventListener('hashchange', () => {
         const id = getAlbumIdFromHash();
@@ -234,6 +251,15 @@ function handleModalClick(e) {
             break;
         case 'yahooauction':
             searchOnYahooAuction(album.artist, album.album);
+            break;
+        case 'spotify-apply':
+            applySpotifyInput(album);
+            break;
+        case 'spotify-remove':
+            spotifyOverrides[album.id] = '';
+            localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
+            updateSpotifyCount();
+            showAlbumModal(album, false);
             break;
     }
 }
@@ -634,6 +660,7 @@ function showAlbumModal(album, updateHash = true, replaceHash = false) {
                 <h3>${escapeHTML(album.album)}${album.versions[0].year ? `  (${escapeHTML(album.versions[0].year)})` : ''}</h3>
             </div>
             ${versionsHTML}
+            ${spotifyEmbedHTML(album)}
             ${relatedAlbumsHTML(album)}
             <div class="modal-album-footer">
                 <button class="share-link-btn" data-action="copy-link" data-album-id="${escapeHTML(album.id)}" title="このアルバムへのリンクをコピー"><i class="fas fa-link"></i> Copy Link</button>
@@ -765,6 +792,86 @@ function copyAIPrompt(btn, artist, albumTitle, year, catalog, albumId) {
     });
 }
 
+// ── Spotify embed & registration mode (?spotify=1) ───────────────────────────
+function albumSpotifyId(album) {
+    const v = spotifyOverrides[album.id] !== undefined ? spotifyOverrides[album.id] : album.spotifyId;
+    return (typeof v === 'string' && /^[A-Za-z0-9]{22}$/.test(v)) ? v : null;
+}
+
+function extractSpotifyAlbumId(text) {
+    if (!text) return null;
+    const t = text.trim();
+    const m = t.match(/album[/:]([A-Za-z0-9]{22})/);
+    if (m) return m[1];
+    return /^[A-Za-z0-9]{22}$/.test(t) ? t : null;
+}
+
+function spotifyEmbedHTML(album) {
+    const id = albumSpotifyId(album);
+    const player = id ? `
+        <div class="spotify-embed">
+            <iframe src="https://open.spotify.com/embed/album/${escapeHTML(id)}" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify player"></iframe>
+        </div>` : '';
+    if (!spotifyMode) return player;
+    return `
+        ${player}
+        <div class="spotify-reg">
+            <div class="spotify-reg-title"><i class="fab fa-spotify"></i> Spotify埋め込み登録 <span class="spotify-reg-state${id ? ' ok' : ''}">${id ? '登録済み' : '未登録'}</span></div>
+            <div class="spotify-reg-row">
+                <input type="text" class="spotify-input" placeholder="SpotifyアルバムのURLを貼り付け" data-album-id="${escapeHTML(album.id)}">
+                <button class="spotify-reg-btn" data-action="spotify-apply" data-album-id="${escapeHTML(album.id)}">登録</button>
+                ${id ? `<button class="spotify-reg-btn remove" data-action="spotify-remove" data-album-id="${escapeHTML(album.id)}">解除</button>` : ''}
+            </div>
+            <div class="spotify-reg-hint">Spotifyのアルバムページ →「…」→ シェア →「アルバムのリンクをコピー」</div>
+        </div>`;
+}
+
+function applySpotifyInput(album) {
+    const input = modalBody.querySelector('.spotify-input');
+    const id = extractSpotifyAlbumId(input ? input.value : '');
+    if (!id) {
+        if (input) {
+            input.classList.add('error');
+            setTimeout(() => input.classList.remove('error'), 1500);
+        }
+        return;
+    }
+    spotifyOverrides[album.id] = id;
+    localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
+    updateSpotifyCount();
+    showAlbumModal(album, false);
+}
+
+function initSpotifyPanel() {
+    const panel = document.createElement('div');
+    panel.id = 'spotifyPanel';
+    panel.className = 'mode-panel';
+    panel.innerHTML = `
+        <span class="tune-panel-label"><i class="fab fa-spotify"></i> Spotify登録モード — <b id="spotifyCount">0</b>件</span>
+        <button class="tune-panel-btn" id="spotifyExport"><i class="fas fa-copy"></i> Export JSON</button>
+        <button class="tune-panel-btn" id="spotifyClear"><i class="fas fa-trash"></i> Clear</button>`;
+    document.body.appendChild(panel);
+    document.getElementById('spotifyExport').addEventListener('click', () => {
+        const btn = document.getElementById('spotifyExport');
+        navigator.clipboard.writeText(JSON.stringify(spotifyOverrides, null, 2)).then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Export JSON'; }, 2000);
+        });
+    });
+    document.getElementById('spotifyClear').addEventListener('click', () => {
+        if (!confirm('Spotify登録データをすべて消去しますか？')) return;
+        spotifyOverrides = {};
+        localStorage.removeItem('obi_spotify');
+        updateSpotifyCount();
+    });
+    updateSpotifyCount();
+}
+
+function updateSpotifyCount() {
+    const count = document.getElementById('spotifyCount');
+    if (count) count.textContent = Object.keys(spotifyOverrides).length;
+}
+
 // ── Focus-tune mode (?tune=1) ────────────────────────────────────────────────
 function albumFocus(album) {
     const v = tuneOverrides[album.id] !== undefined ? tuneOverrides[album.id] : album.focus;
@@ -785,6 +892,7 @@ function handleTuneInput(e) {
 function initTunePanel() {
     const panel = document.createElement('div');
     panel.id = 'tunePanel';
+    panel.className = 'mode-panel';
     panel.innerHTML = `
         <span class="tune-panel-label"><i class="fas fa-crop-alt"></i> Focus調整モード — <b id="tuneCount">0</b>件</span>
         <button class="tune-panel-btn" id="tuneExport"><i class="fas fa-copy"></i> Export JSON</button>
