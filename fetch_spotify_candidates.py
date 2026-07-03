@@ -5,9 +5,13 @@ Searches the Spotify API for every album in data.js that has no spotifyId yet
 and writes the top matches to spotify_candidates.js, which the site loads to
 show clickable candidates in the registration box. Selection is always manual.
 
+Results are saved incrementally every 25 albums, and albums already present
+in spotify_candidates.js are skipped, so an interrupted run can be resumed by
+simply running the script again.
+
 Usage:
     python3 fetch_spotify_candidates.py          # albums without spotifyId
-    python3 fetch_spotify_candidates.py --all    # every album
+    python3 fetch_spotify_candidates.py --all    # every album (still resumes)
 
 Required environment variables (or entries in .env next to this script):
     SPOTIFY_CLIENT_ID
@@ -27,6 +31,11 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 CANDIDATES_JS = BASE_DIR / "spotify_candidates.js"
 LIMIT = 5
+TIMEOUT = 15  # seconds per HTTP request; without this a stalled read hangs forever
+
+
+def log(msg):
+    print(msg, flush=True)
 
 
 def load_env():
@@ -62,8 +71,16 @@ def get_token(client_id, client_secret):
         data=b"grant_type=client_credentials",
         headers={"Authorization": f"Basic {auth}", "Content-Type": "application/x-www-form-urlencoded"},
     )
-    with urllib.request.urlopen(req) as resp:
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         return json.loads(resp.read().decode("utf-8"))["access_token"]
+
+
+class TokenExpired(Exception):
+    pass
+
+
+class QuotaExhausted(Exception):
+    pass
 
 
 def search_albums(token, query):
@@ -74,7 +91,7 @@ def search_albums(token, query):
     )
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(req) as resp:
+            with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
                 items = json.loads(resp.read().decode("utf-8"))["albums"]["items"]
                 return [
                     {
@@ -90,11 +107,37 @@ def search_albums(token, query):
         except urllib.error.HTTPError as e:
             if e.code == 429:
                 wait = int(e.headers.get("Retry-After", "2")) + 1
-                print(f"  rate limited, waiting {wait}s...")
+                if wait > 600:
+                    # Daily/long quota exhausted — stop cleanly instead of sleeping for hours.
+                    # Progress is saved incrementally, so rerunning later resumes.
+                    resume_at = time.strftime("%Y-%m-%d %H:%M", time.localtime(time.time() + wait))
+                    raise QuotaExhausted(f"Spotify quota exhausted; retry after {resume_at} ({wait}s)")
+                log(f"  rate limited, waiting {wait}s...")
                 time.sleep(wait)
                 continue
+            if e.code == 401:
+                raise TokenExpired()
             raise
-    return []
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            # Stalled/failed connection: back off and retry instead of hanging
+            log(f"  network error ({e}), retry {attempt + 1}/3...")
+            time.sleep(2 * (attempt + 1))
+    raise RuntimeError("giving up after 3 attempts")
+
+
+def load_existing():
+    if not CANDIDATES_JS.exists():
+        return {}
+    content = CANDIDATES_JS.read_text(encoding="utf-8")
+    match = re.fullmatch(r"const\s+SPOTIFY_CANDIDATES\s*=\s*(\{.*\});", content, re.DOTALL)
+    return json.loads(match.group(1)) if match else {}
+
+
+def save_candidates(candidates):
+    CANDIDATES_JS.write_text(
+        "const SPOTIFY_CANDIDATES = " + json.dumps(candidates, ensure_ascii=False, separators=(",", ":")) + ";",
+        encoding="utf-8",
+    )
 
 
 def main():
@@ -102,30 +145,55 @@ def main():
     client_id, client_secret = load_env()
     token = get_token(client_id, client_secret)
     albums = load_albums()
-    targets = [a for a in albums if fetch_all or not a.get("spotifyId")]
-    print(f"Fetching candidates for {len(targets)} of {len(albums)} albums...")
+    candidates = load_existing()
+    targets = [
+        a for a in albums
+        if (fetch_all or not a.get("spotifyId")) and a["id"] not in candidates
+    ]
+    log(f"Fetching candidates for {len(targets)} of {len(albums)} albums"
+        f" ({len(candidates)} already cached)...")
 
-    candidates = {}
+    failed = 0
     for i, album in enumerate(targets, 1):
         artist = album.get("artist") or ""
         title = album.get("album") or ""
         query = title if artist in ("V.A.", "O.S.T.") else f"{artist} {title}"
         try:
             results = search_albums(token, query)
+        except TokenExpired:
+            log("  token expired, refreshing...")
+            token = get_token(client_id, client_secret)
+            try:
+                results = search_albums(token, query)
+            except QuotaExhausted as e:
+                save_candidates(candidates)
+                log(f"STOPPED: {e}")
+                log(f"Progress saved ({len(candidates)} albums cached). Rerun this script later to resume.")
+                sys.exit(2)
+            except Exception as e:
+                log(f"  [{i}/{len(targets)}] {artist} — {title}: FAILED ({e})")
+                failed += 1
+                continue
+        except QuotaExhausted as e:
+            save_candidates(candidates)
+            log(f"STOPPED: {e}")
+            log(f"Progress saved ({len(candidates)} albums cached). Rerun this script later to resume.")
+            sys.exit(2)
         except Exception as e:
-            print(f"  [{i}/{len(targets)}] {artist} — {title}: FAILED ({e})")
+            log(f"  [{i}/{len(targets)}] {artist} — {title}: FAILED ({e})")
+            failed += 1
             continue
-        if results:
-            candidates[album["id"]] = results
+        # Store empty results too so resume doesn't re-query no-match albums
+        candidates[album["id"]] = results
         if i % 25 == 0 or i == len(targets):
-            print(f"  [{i}/{len(targets)}] done (matches so far: {len(candidates)})")
+            save_candidates(candidates)
+            log(f"  [{i}/{len(targets)}] saved ({len(candidates)} albums cached)")
         time.sleep(0.15)
 
-    CANDIDATES_JS.write_text(
-        "const SPOTIFY_CANDIDATES = " + json.dumps(candidates, ensure_ascii=False, separators=(",", ":")) + ";",
-        encoding="utf-8",
-    )
-    print(f"Wrote {CANDIDATES_JS.name}: candidates for {len(candidates)} albums")
+    save_candidates(candidates)
+    with_matches = sum(1 for v in candidates.values() if v)
+    log(f"Wrote {CANDIDATES_JS.name}: {with_matches} albums with candidates, "
+        f"{len(candidates) - with_matches} with no match, {failed} failed")
 
 
 if __name__ == "__main__":
