@@ -18,13 +18,17 @@ let modalNavAlbums = null;
 let sortedAllAlbums = null;
 // Focus-tune mode (?tune=1): adjust per-album crop position
 // Spotify registration mode (?spotify=1): paste album links to embed players
+// note registration mode (?note=1): paste note article URLs
 const urlParams = new URLSearchParams(location.search);
 const tuneMode = urlParams.has('tune');
 const spotifyMode = urlParams.has('spotify');
+const noteMode = urlParams.has('note');
 let tuneOverrides = {};
 try { tuneOverrides = JSON.parse(localStorage.getItem('obi_tune') || '{}'); } catch { tuneOverrides = {}; }
 let spotifyOverrides = {};
 try { spotifyOverrides = JSON.parse(localStorage.getItem('obi_spotify') || '{}'); } catch { spotifyOverrides = {}; }
+let noteOverrides = {};
+try { noteOverrides = JSON.parse(localStorage.getItem('obi_note') || '{}'); } catch { noteOverrides = {}; }
 
 const collectionContainer = document.getElementById('collectionContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -70,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     if (tuneMode) initTunePanel();
     if (spotifyMode) initSpotifyPanel();
+    if (noteMode) initNotePanel();
     const initialAlbumId = getAlbumIdFromHash();
     if (initialAlbumId) {
         const initialAlbum = albumById.get(initialAlbumId);
@@ -161,6 +166,16 @@ function setupEventListeners() {
             }, 0);
         });
     }
+    if (noteMode) {
+        modalBody.addEventListener('paste', e => {
+            const input = e.target.closest('.note-input');
+            if (!input) return;
+            setTimeout(() => {
+                const album = albumById.get(input.dataset.albumId);
+                if (album) applyNoteInput(album);
+            }, 0);
+        });
+    }
     modalBody.addEventListener('click', handleModalClick);
     window.addEventListener('hashchange', () => {
         const id = getAlbumIdFromHash();
@@ -234,8 +249,19 @@ function handleModalClick(e) {
         case 'ask-ai':
             copyAIPrompt(actionBtn, album.artist, album.album, version.year, version.catalog || '', album.id);
             break;
-        case 'note':
-            if (album.note_url) window.open(album.note_url, '_blank');
+        case 'note': {
+            const noteUrl = albumNoteUrl(album);
+            if (noteUrl) window.open(noteUrl, '_blank');
+            break;
+        }
+        case 'note-apply':
+            applyNoteInput(album);
+            break;
+        case 'note-remove':
+            noteOverrides[album.id] = '';
+            localStorage.setItem('obi_note', JSON.stringify(noteOverrides));
+            updateNoteCount();
+            showAlbumModal(album, false);
             break;
         case 'discogs':
             searchOnDiscogs(album.artist, album.album);
@@ -658,7 +684,7 @@ function showAlbumModal(album, updateHash = true, replaceHash = false) {
                         <button class="action-btn genius" data-action="genius" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-music"></i> Genius</button>
                         <button class="action-btn mercari" data-action="mercari" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-tag"></i> Mercari</button>
                         <button class="action-btn yahooauction" data-action="yahooauction" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-gavel"></i> Yahoo Auction</button>
-                        ${album.note_url ? `<button class="action-btn note" data-action="note" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-newspaper"></i> note</button>` : ''}
+                        ${albumNoteUrl(album) ? `<button class="action-btn note" data-action="note" data-album-id="${escapeHTML(album.id)}" data-version-index="${index}"><i class="fas fa-newspaper"></i> note</button>` : ''}
                     </div>
                 </div>
             </div>`;
@@ -671,6 +697,7 @@ function showAlbumModal(album, updateHash = true, replaceHash = false) {
             </div>
             ${versionsHTML}
             ${spotifyEmbedHTML(album)}
+            ${noteRegHTML(album)}
             ${relatedAlbumsHTML(album)}
             <div class="modal-album-footer">
                 <button class="share-link-btn" data-action="copy-link" data-album-id="${escapeHTML(album.id)}" title="このアルバムへのリンクをコピー"><i class="fas fa-link"></i> Copy Link</button>
@@ -899,6 +926,74 @@ function initSpotifyPanel() {
 function updateSpotifyCount() {
     const count = document.getElementById('spotifyCount');
     if (count) count.textContent = Object.keys(spotifyOverrides).length;
+}
+
+// ── note article registration mode (?note=1) ─────────────────────────────────
+function albumNoteUrl(album) {
+    const v = noteOverrides[album.id] !== undefined ? noteOverrides[album.id] : album.note_url;
+    return (typeof v === 'string' && /^https:\/\/note\.com\/\S+$/.test(v)) ? v : null;
+}
+
+function noteRegHTML(album) {
+    if (!noteMode) return '';
+    const url = albumNoteUrl(album);
+    return `
+        <div class="note-reg">
+            <div class="note-reg-title"><i class="fas fa-newspaper"></i> note記事登録 <span class="note-reg-state${url ? ' ok' : ''}">${url ? '登録済み' : '未登録'}</span></div>
+            ${url ? `<a class="note-reg-current" href="${escapeHTML(url)}" target="_blank" rel="noopener">${escapeHTML(url)}</a>` : ''}
+            <div class="note-reg-row">
+                <input type="text" class="note-input" placeholder="note記事のURLを貼り付け（https://note.com/...）" data-album-id="${escapeHTML(album.id)}">
+                <button class="note-reg-btn" data-action="note-apply" data-album-id="${escapeHTML(album.id)}">登録</button>
+                ${url ? `<button class="note-reg-btn remove" data-action="note-remove" data-album-id="${escapeHTML(album.id)}">解除</button>` : ''}
+            </div>
+            <div class="note-reg-hint">Ask AIで記事を生成 → noteに投稿 → 記事URLをここに貼る</div>
+        </div>`;
+}
+
+function applyNoteInput(album) {
+    const input = modalBody.querySelector('.note-input');
+    const url = (input ? input.value : '').trim();
+    if (!/^https:\/\/note\.com\/\S+$/.test(url)) {
+        if (input) {
+            input.classList.add('error');
+            setTimeout(() => input.classList.remove('error'), 1500);
+        }
+        return;
+    }
+    noteOverrides[album.id] = url;
+    localStorage.setItem('obi_note', JSON.stringify(noteOverrides));
+    updateNoteCount();
+    showAlbumModal(album, false);
+}
+
+function initNotePanel() {
+    const panel = document.createElement('div');
+    panel.id = 'notePanel';
+    panel.className = 'mode-panel';
+    panel.innerHTML = `
+        <span class="tune-panel-label"><i class="fas fa-newspaper"></i> note記事登録モード — <b id="noteCount">0</b>件</span>
+        <button class="tune-panel-btn" id="noteExport"><i class="fas fa-copy"></i> Export JSON</button>
+        <button class="tune-panel-btn" id="noteClear"><i class="fas fa-trash"></i> Clear</button>`;
+    document.body.appendChild(panel);
+    document.getElementById('noteExport').addEventListener('click', () => {
+        const btn = document.getElementById('noteExport');
+        navigator.clipboard.writeText(JSON.stringify(noteOverrides, null, 2)).then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Export JSON'; }, 2000);
+        });
+    });
+    document.getElementById('noteClear').addEventListener('click', () => {
+        if (!confirm('note登録データをすべて消去しますか？')) return;
+        noteOverrides = {};
+        localStorage.removeItem('obi_note');
+        updateNoteCount();
+    });
+    updateNoteCount();
+}
+
+function updateNoteCount() {
+    const count = document.getElementById('noteCount');
+    if (count) count.textContent = Object.keys(noteOverrides).length;
 }
 
 // ── Focus-tune mode (?tune=1) ────────────────────────────────────────────────

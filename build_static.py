@@ -108,6 +108,12 @@ def render_page(album: dict) -> str:
         meta_rows += f'<div class="row"><span class="k">Catalog No.</span><span class="val">{esc(v["catalog"])}</span></div>'
 
     deep_link = f"../index.html#album={esc(album['id'])}"
+    note_url = album.get("note_url") or ""
+    note_link = (
+        f'<a class="note-link" href="{esc(note_url)}" target="_blank" rel="noopener">'
+        f'解説記事を読む（note） →</a>'
+        if note_url else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -140,6 +146,7 @@ def render_page(album: dict) -> str:
 .album-page .k {{ width: 130px; flex-shrink: 0; color: var(--text-secondary); font-family: var(--font-body); }}
 .album-page .val {{ color: var(--text-primary); font-family: var(--font-body); }}
 .album-page .open-spa {{ display: inline-block; margin: 1.5rem 0; background: var(--gold-obi); color: var(--black); font-family: var(--font-heading); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 4px; text-decoration: none; }}
+.album-page .note-link {{ display: inline-block; margin: 1.5rem 0 1.5rem 0.75rem; background: transparent; color: #41C9B4; border: 1px solid #41C9B4; font-family: var(--font-heading); font-weight: 700; padding: 0.7rem 1.5rem; border-radius: 4px; text-decoration: none; }}
 .album-page ol.tl {{ margin: 0.5rem 0 0 1.25rem; color: var(--text-primary); font-family: var(--font-body); line-height: 1.7; }}
 .album-page ol.tl li.disc {{ list-style: none; margin: 0.5rem 0 0.25rem -1.25rem; color: var(--gold-obi); font-weight: 700; }}
 .album-page h3 {{ font-family: var(--font-heading); color: var(--text-primary); margin-top: 1.5rem; font-size: 1.05rem; }}
@@ -152,7 +159,7 @@ def render_page(album: dict) -> str:
 <h1>{esc(album['artist'])}</h1>
 <h2>{esc(album['album'])}{f" ({esc(year)})" if year else ""}</h2>
 <div class="meta">{meta_rows}</div>
-<a class="open-spa" href="{deep_link}">コレクションで開く →</a>
+<a class="open-spa" href="{deep_link}">コレクションで開く →</a>{note_link}
 {f"<h3>Track List</h3>{render_tracklist(album.get('tracklist'))}" if album.get('tracklist') else ""}
 </main>
 </body>

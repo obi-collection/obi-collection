@@ -718,6 +718,57 @@ body {
 }
 .spotify-cand-open:hover { border-color: #1DB954; color: #1DB954; }
 
+/* ── note article registration mode (?note=1) ──────────────────────────────── */
+.note-reg {
+    border: 1px dashed var(--border-mid);
+    border-radius: 6px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.note-reg-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: #41C9B4;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.note-reg-state { color: var(--text-secondary); margin-left: 0.5rem; text-transform: none; }
+.note-reg-state.ok { color: #41C9B4; }
+.note-reg-current { color: #41C9B4; font-size: 0.8rem; word-break: break-all; }
+.note-reg-row { display: flex; gap: 0.5rem; }
+.note-input {
+    flex: 1;
+    min-width: 0;
+    background: var(--surface-2);
+    border: 1px solid var(--border-mid);
+    color: var(--text-primary);
+    padding: 0.45rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+.note-input:focus { outline: none; border-color: #41C9B4; }
+.note-input.error { border-color: #e05252; }
+.note-reg-btn {
+    background: #41C9B4;
+    border: 1px solid #41C9B4;
+    color: #000;
+    padding: 0.45rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+.note-reg-btn:hover { filter: brightness(1.15); }
+.note-reg-btn.remove { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); font-weight: 400; }
+.note-reg-btn.remove:hover { border-color: #e05252; color: #e05252; filter: none; }
+.note-reg-hint { font-size: 0.72rem; color: var(--text-secondary); }
+
 /* ── Stats dashboard ───────────────────────────────────────────────────────── */
 .stats-container { padding: 0.5rem 0.25rem; }
 .stats-title {
