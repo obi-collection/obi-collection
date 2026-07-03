@@ -16,13 +16,14 @@ let lastFocusedBeforeModal = null;
 let modalCurrentAlbum = null;
 let modalNavAlbums = null;
 let sortedAllAlbums = null;
-// Focus-tune mode (?tune=1): adjust per-album crop position
-// Spotify registration mode (?spotify=1): paste album links to embed players
-// note registration mode (?note=1): paste note article URLs
+// Edit modes are URL-only (never persisted), so PC and phone behave identically:
+//   ?edit=1    — everything at once (crop sliders + Spotify + note)
+//   ?tune=1 / ?spotify=1 / ?note=1 — individual modes (legacy URLs, still work)
 const urlParams = new URLSearchParams(location.search);
-const tuneMode = urlParams.has('tune');
-const spotifyMode = urlParams.has('spotify');
-const noteMode = urlParams.has('note');
+const editMode = urlParams.has('edit');
+const tuneMode = editMode || urlParams.has('tune');
+const spotifyMode = editMode || urlParams.has('spotify');
+const noteMode = editMode || urlParams.has('note');
 let tuneOverrides = {};
 try { tuneOverrides = JSON.parse(localStorage.getItem('obi_tune') || '{}'); } catch { tuneOverrides = {}; }
 let spotifyOverrides = {};
@@ -72,9 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (totalCount) totalCount.textContent = allAlbums.length;
     showLoading(false);
     setupEventListeners();
-    if (tuneMode) initTunePanel();
-    if (spotifyMode) initSpotifyPanel();
-    if (noteMode) initNotePanel();
+    if (editMode) {
+        initEditPanel();
+    } else {
+        if (tuneMode) initTunePanel();
+        if (spotifyMode) initSpotifyPanel();
+        if (noteMode) initNotePanel();
+    }
     const initialAlbumId = getAlbumIdFromHash();
     if (initialAlbumId) {
         const initialAlbum = albumById.get(initialAlbumId);
@@ -994,6 +999,45 @@ function initNotePanel() {
 function updateNoteCount() {
     const count = document.getElementById('noteCount');
     if (count) count.textContent = Object.keys(noteOverrides).length;
+}
+
+// ── Unified edit mode (?edit=1) ──────────────────────────────────────────────
+function initEditPanel() {
+    const panel = document.createElement('div');
+    panel.id = 'editPanel';
+    panel.className = 'mode-panel';
+    panel.innerHTML = `
+        <span class="tune-panel-label"><i class="fas fa-pen"></i> 編集モード —
+            Focus <b id="tuneCount">0</b> ·
+            Spotify <b id="spotifyCount">0</b> ·
+            note <b id="noteCount">0</b></span>
+        <button class="tune-panel-btn" id="editExport"><i class="fas fa-copy"></i> Export JSON</button>
+        <button class="tune-panel-btn" id="editClear"><i class="fas fa-trash"></i> Clear</button>`;
+    document.body.appendChild(panel);
+    document.getElementById('editExport').addEventListener('click', () => {
+        const btn = document.getElementById('editExport');
+        const payload = { focus: tuneOverrides, spotify: spotifyOverrides, note: noteOverrides };
+        navigator.clipboard.writeText(JSON.stringify(payload, null, 2)).then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Export JSON'; }, 2000);
+        });
+    });
+    document.getElementById('editClear').addEventListener('click', () => {
+        if (!confirm('編集データ（Focus・Spotify・note）をすべて消去しますか？')) return;
+        tuneOverrides = {};
+        spotifyOverrides = {};
+        noteOverrides = {};
+        localStorage.removeItem('obi_tune');
+        localStorage.removeItem('obi_spotify');
+        localStorage.removeItem('obi_note');
+        updateTuneCount();
+        updateSpotifyCount();
+        updateNoteCount();
+        renderAlbums();
+    });
+    updateTuneCount();
+    updateSpotifyCount();
+    updateNoteCount();
 }
 
 // ── Focus-tune mode (?tune=1) ────────────────────────────────────────────────

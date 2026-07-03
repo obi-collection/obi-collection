@@ -65,6 +65,7 @@ COLLECTION_DATA = {
 - Spotify埋め込みプレイヤー（`spotifyId` フィールド + `?spotify=1` 手動登録モード → Export JSON → `merge_spotify.py` で反映。モーダル内でアルバム再生可能、2026-07-03）
 - Spotify候補提示（`fetch_spotify_candidates.py` がAPIで候補を事前生成 → `spotify_candidates.js` → `?spotify=1` モードでクリック選択。確定は常に人間、2026-07-03）
 - note記事登録モード（`?note=1` でnote記事URLを貼り付け登録 → `merge_note.py` で `note_url` 反映＋静的ページ再生成。Ask AI→note投稿→URL登録のワークフロー、2026-07-04）
+- 統合編集モード（`?edit=1` で3編集モード同時ON・統合パネル・複合Export → `merge_all.py` で一括反映。モード状態はURLのみ・デバイス間で挙動不変、2026-07-04）
 
 ---
 
