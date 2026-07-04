@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (spotifyMode) initSpotifyPanel();
         if (noteMode) initNotePanel();
     }
+    if (spotifyMode) loadSpotifyCandidates();
     const initialAlbumId = getAlbumIdFromHash();
     if (initialAlbumId) {
         const initialAlbum = albumById.get(initialAlbumId);
@@ -841,6 +842,22 @@ function copyAIPrompt(btn, artist, albumTitle, year, catalog, albumId) {
 }
 
 // ── Spotify embed & registration mode (?spotify=1) ───────────────────────────
+// spotify_candidates.js is ~650KB, so it is only loaded when an edit mode is
+// active — normal visitors never download it.
+function loadSpotifyCandidates() {
+    if (typeof SPOTIFY_CANDIDATES !== 'undefined' || document.getElementById('spotifyCandidatesScript')) return;
+    const script = document.createElement('script');
+    script.id = 'spotifyCandidatesScript';
+    script.src = 'spotify_candidates.js';
+    script.onload = () => {
+        // Refresh the open modal so freshly loaded candidates appear
+        if (modalCurrentAlbum && albumModal.classList.contains('active')) {
+            showAlbumModal(modalCurrentAlbum, false);
+        }
+    };
+    document.head.appendChild(script);
+}
+
 function albumSpotifyId(album) {
     const v = spotifyOverrides[album.id] !== undefined ? spotifyOverrides[album.id] : album.spotifyId;
     return (typeof v === 'string' && /^[A-Za-z0-9]{22}$/.test(v)) ? v : null;
@@ -1015,6 +1032,7 @@ function setEditMode(on) {
     const panel = document.getElementById('editPanel');
     if (on) {
         if (!panel) initEditPanel();
+        loadSpotifyCandidates();
     } else if (panel) {
         panel.remove();
     }
