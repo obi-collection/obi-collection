@@ -16,14 +16,16 @@ let lastFocusedBeforeModal = null;
 let modalCurrentAlbum = null;
 let modalNavAlbums = null;
 let sortedAllAlbums = null;
-// Edit modes are URL-only (never persisted), so PC and phone behave identically:
+// Edit modes are never persisted, so PC and phone behave identically:
 //   ?edit=1    — everything at once (crop sliders + Spotify + note)
 //   ?tune=1 / ?spotify=1 / ?note=1 — individual modes (legacy URLs, still work)
+//   No URL: triple-tap the header counter or press E — toggles for this page
+//   view only and resets on reload
 const urlParams = new URLSearchParams(location.search);
-const editMode = urlParams.has('edit');
-const tuneMode = editMode || urlParams.has('tune');
-const spotifyMode = editMode || urlParams.has('spotify');
-const noteMode = editMode || urlParams.has('note');
+let editMode = urlParams.has('edit');
+let tuneMode = editMode || urlParams.has('tune');
+let spotifyMode = editMode || urlParams.has('spotify');
+let noteMode = editMode || urlParams.has('note');
 let tuneOverrides = {};
 try { tuneOverrides = JSON.parse(localStorage.getItem('obi_tune') || '{}'); } catch { tuneOverrides = {}; }
 let spotifyOverrides = {};
@@ -157,28 +159,32 @@ function setupEventListeners() {
     if (newArrivalsRow) {
         newArrivalsRow.addEventListener('click', handleCollectionClick);
         newArrivalsRow.addEventListener('keydown', handleCardKeydown);
-        if (tuneMode) newArrivalsRow.addEventListener('input', handleTuneInput);
+        // Registered unconditionally so the gesture-toggled edit mode works too;
+        // the slider elements only exist while tune mode is on.
+        newArrivalsRow.addEventListener('input', handleTuneInput);
     }
-    if (tuneMode) collectionContainer.addEventListener('input', handleTuneInput);
-    if (spotifyMode) {
-        // Auto-apply pasted Spotify links without needing the 登録 button
-        modalBody.addEventListener('paste', e => {
-            const input = e.target.closest('.spotify-input');
-            if (!input) return;
-            setTimeout(() => {
-                const album = albumById.get(input.dataset.albumId);
-                if (album) applySpotifyInput(album);
-            }, 0);
-        });
-    }
-    if (noteMode) {
-        modalBody.addEventListener('paste', e => {
-            const input = e.target.closest('.note-input');
-            if (!input) return;
-            setTimeout(() => {
-                const album = albumById.get(input.dataset.albumId);
-                if (album) applyNoteInput(album);
-            }, 0);
+    collectionContainer.addEventListener('input', handleTuneInput);
+    // Auto-apply pasted Spotify/note links without needing the 登録 button
+    modalBody.addEventListener('paste', e => {
+        const spotifyInput = e.target.closest('.spotify-input');
+        const noteInput = e.target.closest('.note-input');
+        if (!spotifyInput && !noteInput) return;
+        setTimeout(() => {
+            const album = albumById.get((spotifyInput || noteInput).dataset.albumId);
+            if (!album) return;
+            if (spotifyInput) applySpotifyInput(album);
+            else applyNoteInput(album);
+        }, 0);
+    });
+    // Hidden edit-mode switch: triple-tap the header counter (mobile) or press E
+    const countChip = document.querySelector('.compact-count');
+    if (countChip) {
+        let taps = 0, tapTimer = null;
+        countChip.addEventListener('click', () => {
+            taps++;
+            clearTimeout(tapTimer);
+            tapTimer = setTimeout(() => { taps = 0; }, 600);
+            if (taps >= 3) { taps = 0; setEditMode(!editMode); }
         });
     }
     modalBody.addEventListener('click', handleModalClick);
@@ -1002,6 +1008,23 @@ function updateNoteCount() {
 }
 
 // ── Unified edit mode (?edit=1) ──────────────────────────────────────────────
+function setEditMode(on) {
+    if (on === editMode) return;
+    editMode = on;
+    tuneMode = spotifyMode = noteMode = on;
+    const panel = document.getElementById('editPanel');
+    if (on) {
+        if (!panel) initEditPanel();
+    } else if (panel) {
+        panel.remove();
+    }
+    renderAlbums();
+    // Refresh the open modal so the registration boxes appear/disappear
+    if (modalCurrentAlbum && albumModal.classList.contains('active')) {
+        showAlbumModal(modalCurrentAlbum, false);
+    }
+}
+
 function initEditPanel() {
     const panel = document.createElement('div');
     panel.id = 'editPanel';
@@ -1314,6 +1337,10 @@ document.addEventListener('keydown', e => {
     }
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); searchInput.focus(); }
     if (e.key === 'r' && !searchInput.matches(':focus') && !albumModal.classList.contains('active')) showRandomAlbum();
+    if ((e.key === 'e' || e.key === 'E') && !e.ctrlKey && !e.metaKey && !e.altKey
+        && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
+        setEditMode(!editMode);
+    }
 });
 
 function trapModalFocus(e) {
