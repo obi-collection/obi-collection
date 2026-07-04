@@ -20,6 +20,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 SITE_URL = "https://obi-collection.github.io/obi-collection/"
 ALBUMS_DIR = BASE_DIR / "albums"
+REVIEWS_DIR = BASE_DIR / "reviews"
 
 
 def load_collection_data() -> dict:
@@ -54,6 +55,62 @@ def render_tracklist(tracklist) -> str:
             track_name = re.sub(r"^[0-9]+[.]?\s*", "", t)
             items.append(f"<li>{esc(track_name)}</li>")
     return '<ol class="tl">' + "".join(items) + "</ol>"
+
+
+def render_markdown(md: str) -> str:
+    """Minimal markdown → HTML for the Ask AI review format. Must mirror
+    renderMarkdown() in app.js: #-#### headings, --- rules, - lists,
+    **bold**, blank-line paragraphs (line breaks kept inside paragraphs)."""
+    def inline(s: str) -> str:
+        return re.sub(r"\*\*([^*]+)\*\*", r"<strong>\1</strong>", esc(s))
+
+    out: list[str] = []
+    para: list[str] = []
+    lst: list[str] = []
+
+    def flush_para():
+        if para:
+            out.append("<p>" + "<br>".join(para) + "</p>")
+            para.clear()
+
+    def flush_list():
+        if lst:
+            out.append("<ul>" + "".join(lst) + "</ul>")
+            lst.clear()
+
+    for raw in md.replace("\r\n", "\n").split("\n"):
+        t = raw.strip()
+        if not t:
+            flush_para()
+            flush_list()
+            continue
+        m = re.match(r"^(#{1,4})\s+(.*)$", t)
+        if m:
+            flush_para()
+            flush_list()
+            level = min(len(m.group(1)) + 2, 6)
+            out.append(f'<h{level} class="review-h{len(m.group(1))}">{inline(m.group(2))}</h{level}>')
+            continue
+        if re.fullmatch(r"-{3,}|\*{3,}", t):
+            flush_para()
+            flush_list()
+            out.append("<hr>")
+            continue
+        m = re.match(r"^[-*]\s+(.*)$", t)
+        if m:
+            flush_para()
+            lst.append(f"<li>{inline(m.group(1))}</li>")
+            continue
+        flush_list()
+        para.append(inline(t))
+    flush_para()
+    flush_list()
+    return "".join(out)
+
+
+def review_markdown(album: dict) -> str:
+    path = REVIEWS_DIR / f"{slugify(album['id'])}.md"
+    return path.read_text(encoding="utf-8") if path.exists() else ""
 
 
 def json_ld(album: dict, v: dict, image_og: str) -> str:
@@ -114,6 +171,11 @@ def render_page(album: dict) -> str:
         f'解説記事を読む（note） →</a>'
         if note_url else ""
     )
+    review_md = review_markdown(album)
+    review_html = (
+        f'<section class="review-body"><h3>Review</h3>{render_markdown(review_md)}</section>'
+        if review_md else ""
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -160,6 +222,7 @@ def render_page(album: dict) -> str:
 <h2>{esc(album['album'])}{f" ({esc(year)})" if year else ""}</h2>
 <div class="meta">{meta_rows}</div>
 <a class="open-spa" href="{deep_link}">コレクションで開く →</a>{note_link}
+{review_html}
 {f"<h3>Track List</h3>{render_tracklist(album.get('tracklist'))}" if album.get('tracklist') else ""}
 </main>
 </body>

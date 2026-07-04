@@ -26,12 +26,15 @@ let editMode = urlParams.has('edit');
 let tuneMode = editMode || urlParams.has('tune');
 let spotifyMode = editMode || urlParams.has('spotify');
 let noteMode = editMode || urlParams.has('note');
+let reviewMode = editMode || urlParams.has('review');
 let tuneOverrides = {};
 try { tuneOverrides = JSON.parse(localStorage.getItem('obi_tune') || '{}'); } catch { tuneOverrides = {}; }
 let spotifyOverrides = {};
 try { spotifyOverrides = JSON.parse(localStorage.getItem('obi_spotify') || '{}'); } catch { spotifyOverrides = {}; }
 let noteOverrides = {};
 try { noteOverrides = JSON.parse(localStorage.getItem('obi_note') || '{}'); } catch { noteOverrides = {}; }
+let reviewOverrides = {};
+try { reviewOverrides = JSON.parse(localStorage.getItem('obi_review') || '{}'); } catch { reviewOverrides = {}; }
 
 const collectionContainer = document.getElementById('collectionContainer');
 const loadingSpinner = document.getElementById('loadingSpinner');
@@ -81,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (tuneMode) initTunePanel();
         if (spotifyMode) initSpotifyPanel();
         if (noteMode) initNotePanel();
+        if (reviewMode) initReviewPanel();
     }
     if (spotifyMode) loadSpotifyCandidates();
     const initialAlbumId = getAlbumIdFromHash();
@@ -229,7 +233,14 @@ function handleCardKeydown(e) {
 function handleModalClick(e) {
     const tracklistToggle = e.target.closest('.tracklist-toggle');
     if (tracklistToggle) {
-        tracklistToggle.closest('.tracklist-accordion')?.classList.toggle('open');
+        const accordion = tracklistToggle.closest('.tracklist-accordion');
+        accordion?.classList.toggle('open');
+        // Reviews are fetched lazily the first time the accordion opens
+        if (accordion?.classList.contains('open') && tracklistToggle.classList.contains('review-toggle')) {
+            const body = accordion.querySelector('.review-body');
+            const reviewAlbum = albumById.get(tracklistToggle.dataset.albumId);
+            if (body && reviewAlbum && body.dataset.loaded === '0') loadReview(reviewAlbum, body);
+        }
         return;
     }
 
@@ -273,6 +284,15 @@ function handleModalClick(e) {
             noteOverrides[album.id] = '';
             localStorage.setItem('obi_note', JSON.stringify(noteOverrides));
             updateNoteCount();
+            showAlbumModal(album, false);
+            break;
+        case 'review-apply':
+            applyReviewInput(album);
+            break;
+        case 'review-remove':
+            reviewOverrides[album.id] = '';
+            localStorage.setItem('obi_review', JSON.stringify(reviewOverrides));
+            updateReviewCount();
             showAlbumModal(album, false);
             break;
         case 'discogs':
@@ -708,7 +728,9 @@ function showAlbumModal(album, updateHash = true, replaceHash = false) {
                 <h3>${escapeHTML(album.album)}${album.versions[0].year ? `  (${escapeHTML(album.versions[0].year)})` : ''}</h3>
             </div>
             ${versionsHTML}
+            ${reviewSectionHTML(album)}
             ${spotifyEmbedHTML(album)}
+            ${reviewRegHTML(album)}
             ${noteRegHTML(album)}
             ${relatedAlbumsHTML(album)}
             <div class="modal-album-footer">
@@ -978,6 +1000,143 @@ function updateSpotifyCount() {
     if (count) count.textContent = Object.keys(spotifyOverrides).length;
 }
 
+// ── On-site reviews (reviews/<slug>.md + ?review=1 registration) ─────────────
+function albumHasPublishedReview(album) {
+    return typeof REVIEWS_INDEX !== 'undefined' && REVIEWS_INDEX.includes(album.id);
+}
+
+function albumReviewDraft(album) {
+    const v = reviewOverrides[album.id];
+    return (typeof v === 'string' && v.trim()) ? v : null;
+}
+
+function reviewSectionHTML(album) {
+    const draft = albumReviewDraft(album);
+    if (!draft && !albumHasPublishedReview(album)) return '';
+    return `
+        <div class="tracklist-accordion review-accordion">
+            <button class="tracklist-toggle review-toggle" type="button" data-album-id="${escapeHTML(album.id)}">Review${draft ? '（下書きプレビュー）' : ''} <i class="fas fa-chevron-down"></i></button>
+            <div class="tracklist-body review-body" data-loaded="0"></div>
+        </div>`;
+}
+
+function loadReview(album, body) {
+    body.dataset.loaded = '1';
+    const draft = albumReviewDraft(album);
+    if (draft) {
+        body.innerHTML = renderMarkdown(draft);
+        return;
+    }
+    body.innerHTML = '<p class="review-loading">Loading...</p>';
+    fetch(`reviews/${albumSlug(album.id)}.md`)
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(md => { body.innerHTML = renderMarkdown(md); })
+        .catch(() => {
+            body.innerHTML = '<p class="review-loading">レビューを読み込めませんでした</p>';
+            body.dataset.loaded = '0';
+        });
+}
+
+// Minimal markdown renderer for the Ask AI review format:
+// #-#### headings, --- rules, - lists, **bold**, blank-line paragraphs
+function renderMarkdown(md) {
+    const inline = s => escapeHTML(s).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    let html = '';
+    let para = [];
+    let list = null;
+    const flushPara = () => { if (para.length) { html += `<p>${para.join('<br>')}</p>`; para = []; } };
+    const flushList = () => { if (list) { html += `<ul>${list.join('')}</ul>`; list = null; } };
+    md.replace(/\r\n/g, '\n').split('\n').forEach(raw => {
+        const t = raw.trim();
+        if (!t) { flushPara(); flushList(); return; }
+        const heading = t.match(/^(#{1,4})\s+(.*)$/);
+        if (heading) {
+            flushPara(); flushList();
+            const level = Math.min(heading[1].length + 2, 6);
+            html += `<h${level} class="review-h${heading[1].length}">${inline(heading[2])}</h${level}>`;
+            return;
+        }
+        if (/^(-{3,}|\*{3,})$/.test(t)) { flushPara(); flushList(); html += '<hr>'; return; }
+        const item = t.match(/^[-*]\s+(.*)$/);
+        if (item) { flushPara(); if (!list) list = []; list.push(`<li>${inline(item[1])}</li>`); return; }
+        flushList();
+        para.push(inline(t));
+    });
+    flushPara();
+    flushList();
+    return html;
+}
+
+function reviewRegHTML(album) {
+    if (!reviewMode) return '';
+    const draft = albumReviewDraft(album);
+    const removed = reviewOverrides[album.id] === '';
+    const published = albumHasPublishedReview(album);
+    const state = draft
+        ? '<span class="review-reg-state draft">下書きあり（未反映）</span>'
+        : removed
+            ? '<span class="review-reg-state removed">削除予定</span>'
+            : published
+                ? '<span class="review-reg-state ok">公開済み</span>'
+                : '<span class="review-reg-state">未登録</span>';
+    return `
+        <div class="review-reg">
+            <div class="review-reg-title"><i class="fas fa-file-alt"></i> Review登録 ${state}</div>
+            <textarea class="review-input" data-album-id="${escapeHTML(album.id)}" placeholder="Ask AIで生成したレビュー（Markdown）をここに貼り付け" rows="6">${draft ? escapeHTML(draft) : ''}</textarea>
+            <div class="review-reg-row">
+                <button class="review-reg-btn" data-action="review-apply" data-album-id="${escapeHTML(album.id)}">保存</button>
+                ${(draft || published) ? `<button class="review-reg-btn remove" data-action="review-remove" data-album-id="${escapeHTML(album.id)}">削除</button>` : ''}
+            </div>
+            <div class="review-reg-hint">保存すると上のReviewアコーディオンで即プレビューできる。Export → merge後に全訪問者へ公開＆静的ページにも掲載</div>
+        </div>`;
+}
+
+function applyReviewInput(album) {
+    const input = modalBody.querySelector('.review-input');
+    const text = (input ? input.value : '').trim();
+    if (!text) {
+        if (input) {
+            input.classList.add('error');
+            setTimeout(() => input.classList.remove('error'), 1500);
+        }
+        return;
+    }
+    reviewOverrides[album.id] = text;
+    localStorage.setItem('obi_review', JSON.stringify(reviewOverrides));
+    updateReviewCount();
+    showAlbumModal(album, false);
+}
+
+function initReviewPanel() {
+    const panel = document.createElement('div');
+    panel.id = 'reviewPanel';
+    panel.className = 'mode-panel';
+    panel.innerHTML = `
+        <span class="tune-panel-label"><i class="fas fa-file-alt"></i> Review登録モード — <b id="reviewCount">0</b>件</span>
+        <button class="tune-panel-btn" id="reviewExport"><i class="fas fa-copy"></i> Export JSON</button>
+        <button class="tune-panel-btn" id="reviewClear"><i class="fas fa-trash"></i> Clear</button>`;
+    document.body.appendChild(panel);
+    document.getElementById('reviewExport').addEventListener('click', () => {
+        const btn = document.getElementById('reviewExport');
+        navigator.clipboard.writeText(JSON.stringify(reviewOverrides, null, 2)).then(() => {
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Export JSON'; }, 2000);
+        });
+    });
+    document.getElementById('reviewClear').addEventListener('click', () => {
+        if (!confirm('Review下書きをすべて消去しますか？')) return;
+        reviewOverrides = {};
+        localStorage.removeItem('obi_review');
+        updateReviewCount();
+    });
+    updateReviewCount();
+}
+
+function updateReviewCount() {
+    const count = document.getElementById('reviewCount');
+    if (count) count.textContent = Object.keys(reviewOverrides).length;
+}
+
 // ── note article registration mode (?note=1) ─────────────────────────────────
 function albumNoteUrl(album) {
     const v = noteOverrides[album.id] !== undefined ? noteOverrides[album.id] : album.note_url;
@@ -1050,7 +1209,7 @@ function updateNoteCount() {
 function setEditMode(on) {
     if (on === editMode) return;
     editMode = on;
-    tuneMode = spotifyMode = noteMode = on;
+    tuneMode = spotifyMode = noteMode = reviewMode = on;
     const panel = document.getElementById('editPanel');
     if (on) {
         if (!panel) initEditPanel();
@@ -1073,34 +1232,39 @@ function initEditPanel() {
         <span class="tune-panel-label"><i class="fas fa-pen"></i> 編集モード —
             Focus <b id="tuneCount">0</b> ·
             Spotify <b id="spotifyCount">0</b> ·
-            note <b id="noteCount">0</b></span>
+            note <b id="noteCount">0</b> ·
+            Review <b id="reviewCount">0</b></span>
         <button class="tune-panel-btn" id="editExport"><i class="fas fa-copy"></i> Export JSON</button>
         <button class="tune-panel-btn" id="editClear"><i class="fas fa-trash"></i> Clear</button>`;
     document.body.appendChild(panel);
     document.getElementById('editExport').addEventListener('click', () => {
         const btn = document.getElementById('editExport');
-        const payload = { focus: tuneOverrides, spotify: spotifyOverrides, note: noteOverrides };
+        const payload = { focus: tuneOverrides, spotify: spotifyOverrides, note: noteOverrides, review: reviewOverrides };
         navigator.clipboard.writeText(JSON.stringify(payload, null, 2)).then(() => {
             btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
             setTimeout(() => { btn.innerHTML = '<i class="fas fa-copy"></i> Export JSON'; }, 2000);
         });
     });
     document.getElementById('editClear').addEventListener('click', () => {
-        if (!confirm('編集データ（Focus・Spotify・note）をすべて消去しますか？')) return;
+        if (!confirm('編集データ（Focus・Spotify・note・Review）をすべて消去しますか？')) return;
         tuneOverrides = {};
         spotifyOverrides = {};
         noteOverrides = {};
+        reviewOverrides = {};
         localStorage.removeItem('obi_tune');
         localStorage.removeItem('obi_spotify');
         localStorage.removeItem('obi_note');
+        localStorage.removeItem('obi_review');
         updateTuneCount();
         updateSpotifyCount();
         updateNoteCount();
+        updateReviewCount();
         renderAlbums();
     });
     updateTuneCount();
     updateSpotifyCount();
     updateNoteCount();
+    updateReviewCount();
 }
 
 // ── Focus-tune mode (?tune=1) ────────────────────────────────────────────────

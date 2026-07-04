@@ -5,8 +5,9 @@ Usage:
     python3 merge_all.py edit.json
     pbpaste | python3 merge_all.py -
 
-The input is a JSON object with up to three sections:
-    {"focus": {album_id: 0-100}, "spotify": {album_id: id_or_url}, "note": {album_id: url}}
+The input is a JSON object with up to four sections:
+    {"focus": {album_id: 0-100}, "spotify": {album_id: id_or_url},
+     "note": {album_id: url}, "review": {album_id: markdown_text}}
 
 Rules per section match the individual merge scripts:
     focus   — 50 (center) removes the field; values are rounded and clamped to 0-100
@@ -112,10 +113,10 @@ def main():
     payload = json.loads(src)
     if not isinstance(payload, dict):
         raise ValueError("Input must be a JSON object with focus/spotify/note sections")
-    unknown = set(payload) - set(SECTIONS)
+    unknown = set(payload) - set(SECTIONS) - {"review"}
     if unknown:
-        raise ValueError(f"Unknown sections {sorted(unknown)}; expected focus/spotify/note "
-                         "(individual exports go through merge_focus.py / merge_spotify.py / merge_note.py)")
+        raise ValueError(f"Unknown sections {sorted(unknown)}; expected focus/spotify/note/review "
+                         "(individual exports go through the merge_*.py scripts)")
 
     data = load_data()
     albums_by_id = {a["id"]: a for a in data["albums"]}
@@ -138,7 +139,13 @@ def main():
         print(f"{section}: {stats['set']} set, {stats['removed']} removed, {stats['skipped']} skipped")
 
     save_data(data)
-    if note_changed:
+
+    review_overrides = payload.get("review") or {}
+    if review_overrides:
+        import merge_review
+        merge_review.apply_reviews(review_overrides, data["albums"])
+
+    if note_changed or review_overrides:
         import build_static
         build_static.build()
         print("Static pages rebuilt.")
