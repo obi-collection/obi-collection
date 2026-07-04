@@ -5,9 +5,12 @@ Usage:
     python3 merge_spotify.py spotify.json
     pbpaste | python3 merge_spotify.py -
 
-The input is a JSON object of {album_id: spotify_album_id_or_url}. Values may be
-a bare 22-character album ID, an open.spotify.com album URL, or a spotify:album:
-URI. An empty string removes the spotifyId field from that album.
+The input is a JSON object of {album_id: value}. A value may be:
+  - a bare 22-character album ID, an open.spotify.com album URL, or a
+    spotify:album: URI
+  - a list of the above (multi-disc sets that Spotify splits into albums)
+  - the string "none" (checked — the album is not on Spotify)
+  - an empty string, which removes the spotifyId field from that album
 """
 import json
 import re
@@ -62,12 +65,24 @@ def main():
             if album.pop("spotifyId", None) is not None:
                 removed += 1
             continue
-        spotify_id = extract_spotify_album_id(value)
-        if spotify_id is None:
-            print(f"WARNING: invalid Spotify id/URL for album {album_id!r}: {value!r}, skipped")
+        if value == "none":
+            album["spotifyId"] = "none"
+            updated += 1
+            continue
+        values = value if isinstance(value, list) else [value]
+        ids = []
+        for item in values:
+            spotify_id = extract_spotify_album_id(item)
+            if spotify_id is None:
+                print(f"WARNING: invalid Spotify id/URL for album {album_id!r}: {item!r}, entry skipped")
+                ids = None
+                break
+            if spotify_id not in ids:
+                ids.append(spotify_id)
+        if not ids:
             skipped += 1
             continue
-        album["spotifyId"] = spotify_id
+        album["spotifyId"] = ids[0] if len(ids) == 1 else ids
         updated += 1
 
     save_data(data)

@@ -294,20 +294,20 @@ function handleModalClick(e) {
             applySpotifyInput(album);
             break;
         case 'spotify-pick': {
+            // Toggle candidate membership (multi-select supports 2-disc sets)
             const pickedId = actionBtn.dataset.spotifyId;
             if (/^[A-Za-z0-9]{22}$/.test(pickedId)) {
-                spotifyOverrides[album.id] = pickedId;
-                localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
-                updateSpotifyCount();
-                showAlbumModal(album, false);
+                const { ids } = albumSpotifyIds(album);
+                const next = ids.includes(pickedId) ? ids.filter(x => x !== pickedId) : [...ids, pickedId];
+                setSpotifyOverride(album, next);
             }
             break;
         }
+        case 'spotify-none':
+            setSpotifyOverride(album, 'none');
+            break;
         case 'spotify-remove':
-            spotifyOverrides[album.id] = '';
-            localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
-            updateSpotifyCount();
-            showAlbumModal(album, false);
+            setSpotifyOverride(album, '');
             break;
     }
 }
@@ -858,9 +858,23 @@ function loadSpotifyCandidates() {
     document.head.appendChild(script);
 }
 
-function albumSpotifyId(album) {
+// spotifyId can be a 22-char id, an array of ids (multi-disc sets that Spotify
+// splits into separate albums), or "none" (checked — not on Spotify).
+function albumSpotifyIds(album) {
     const v = spotifyOverrides[album.id] !== undefined ? spotifyOverrides[album.id] : album.spotifyId;
-    return (typeof v === 'string' && /^[A-Za-z0-9]{22}$/.test(v)) ? v : null;
+    if (v === 'none') return { ids: [], none: true };
+    const arr = Array.isArray(v) ? v : (typeof v === 'string' ? [v] : []);
+    return { ids: arr.filter(x => typeof x === 'string' && /^[A-Za-z0-9]{22}$/.test(x)), none: false };
+}
+
+function setSpotifyOverride(album, value) {
+    if (Array.isArray(value)) {
+        value = value.length === 0 ? '' : value.length === 1 ? value[0] : value;
+    }
+    spotifyOverrides[album.id] = value;
+    localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
+    updateSpotifyCount();
+    showAlbumModal(album, false);
 }
 
 function extractSpotifyAlbumId(text) {
@@ -872,41 +886,50 @@ function extractSpotifyAlbumId(text) {
 }
 
 function spotifyEmbedHTML(album) {
-    const id = albumSpotifyId(album);
-    const player = id ? `
+    const { ids, none } = albumSpotifyIds(album);
+    const players = ids.map(id => `
         <div class="spotify-embed">
             <iframe src="https://open.spotify.com/embed/album/${escapeHTML(id)}" width="100%" height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify player"></iframe>
-        </div>` : '';
-    if (!spotifyMode) return player;
+        </div>`).join('');
+    if (!spotifyMode) return players;
+    const state = none
+        ? '<span class="spotify-reg-state none">Spotifyになし（確認済み）</span>'
+        : ids.length
+            ? `<span class="spotify-reg-state ok">登録済み${ids.length > 1 ? `（${ids.length}件）` : ''}</span>`
+            : '<span class="spotify-reg-state">未登録</span>';
     return `
-        ${player}
+        ${players}
         <div class="spotify-reg">
-            <div class="spotify-reg-title"><i class="fab fa-spotify"></i> Spotify埋め込み登録 <span class="spotify-reg-state${id ? ' ok' : ''}">${id ? '登録済み' : '未登録'}</span></div>
-            ${spotifyCandidatesHTML(album, id)}
+            <div class="spotify-reg-title"><i class="fab fa-spotify"></i> Spotify埋め込み登録 ${state}</div>
+            ${spotifyCandidatesHTML(album, ids)}
             <div class="spotify-reg-row">
                 <input type="text" class="spotify-input" placeholder="SpotifyアルバムのURLを貼り付け" data-album-id="${escapeHTML(album.id)}">
                 <button class="spotify-reg-btn" data-action="spotify-apply" data-album-id="${escapeHTML(album.id)}">登録</button>
-                ${id ? `<button class="spotify-reg-btn remove" data-action="spotify-remove" data-album-id="${escapeHTML(album.id)}">解除</button>` : ''}
+                ${!none && !ids.length ? `<button class="spotify-reg-btn none-btn" data-action="spotify-none" data-album-id="${escapeHTML(album.id)}">なし</button>` : ''}
+                ${(none || ids.length) ? `<button class="spotify-reg-btn remove" data-action="spotify-remove" data-album-id="${escapeHTML(album.id)}">解除</button>` : ''}
             </div>
-            <div class="spotify-reg-hint">候補をクリックで登録。正しい盤がなければSpotifyのアルバムページ →「…」→ シェア →「アルバムのリンクをコピー」して貼り付け</div>
+            <div class="spotify-reg-hint">候補をクリックで選択、もう一度クリックで外す（複数選択可＝2枚組対応）。Spotifyに存在しない盤は「なし」で確認済みとして記録</div>
         </div>`;
 }
 
-function spotifyCandidatesHTML(album, currentId) {
+function spotifyCandidatesHTML(album, selectedIds) {
     const cands = (typeof SPOTIFY_CANDIDATES !== 'undefined' && SPOTIFY_CANDIDATES[album.id]) || [];
     if (!cands.length) return '';
-    const rows = cands.map(c => `
-        <div class="spotify-cand${c.id === currentId ? ' selected' : ''}">
+    const rows = cands.map(c => {
+        const selected = selectedIds.includes(c.id);
+        return `
+        <div class="spotify-cand${selected ? ' selected' : ''}">
             <button class="spotify-cand-pick" data-action="spotify-pick" data-album-id="${escapeHTML(album.id)}" data-spotify-id="${escapeHTML(c.id)}">
                 ${c.image ? `<img src="${escapeHTML(c.image)}" alt="" loading="lazy" decoding="async">` : '<span class="spotify-cand-noimg"><i class="fas fa-compact-disc"></i></span>'}
                 <span class="spotify-cand-info">
                     <span class="spotify-cand-name">${escapeHTML(c.name)}</span>
                     <span class="spotify-cand-meta">${escapeHTML(c.artist)}${c.year ? ` · ${escapeHTML(c.year)}` : ''}${c.tracks ? ` · ${escapeHTML(String(c.tracks))}曲` : ''}</span>
                 </span>
-                ${c.id === currentId ? '<i class="fas fa-check spotify-cand-check"></i>' : ''}
+                ${selected ? '<i class="fas fa-check spotify-cand-check"></i>' : ''}
             </button>
             <a class="spotify-cand-open" href="https://open.spotify.com/album/${escapeHTML(c.id)}" target="_blank" rel="noopener" title="Spotifyで確認"><i class="fas fa-external-link-alt"></i></a>
-        </div>`).join('');
+        </div>`;
+    }).join('');
     return `<div class="spotify-cands">${rows}</div>`;
 }
 
@@ -920,10 +943,9 @@ function applySpotifyInput(album) {
         }
         return;
     }
-    spotifyOverrides[album.id] = id;
-    localStorage.setItem('obi_spotify', JSON.stringify(spotifyOverrides));
-    updateSpotifyCount();
-    showAlbumModal(album, false);
+    const { ids } = albumSpotifyIds(album);
+    if (!ids.includes(id)) setSpotifyOverride(album, [...ids, id]);
+    else showAlbumModal(album, false);
 }
 
 function initSpotifyPanel() {

@@ -10,8 +10,9 @@ The input is a JSON object with up to three sections:
 
 Rules per section match the individual merge scripts:
     focus   — 50 (center) removes the field; values are rounded and clamped to 0-100
-    spotify — accepts bare 22-char IDs, open.spotify.com URLs, or spotify: URIs;
-              empty string removes spotifyId
+    spotify — accepts bare 22-char IDs, open.spotify.com URLs, spotify: URIs,
+              a list of those (multi-disc sets), or "none" (checked — not on
+              Spotify); empty string removes spotifyId
     note    — must start with https://note.com/ ; empty string removes note_url
 
 Static album pages are rebuilt afterwards when note URLs changed.
@@ -66,12 +67,24 @@ def merge_spotify(album, value, stats):
         if album.pop("spotifyId", None) is not None:
             stats["removed"] += 1
         return
-    spotify_id = extract_spotify_album_id(value)
-    if spotify_id is None:
-        print(f"WARNING: invalid Spotify id/URL for id {album['id']!r}: {value!r}, skipped")
+    if value == "none":
+        album["spotifyId"] = "none"
+        stats["set"] += 1
+        return
+    values = value if isinstance(value, list) else [value]
+    ids = []
+    for item in values:
+        spotify_id = extract_spotify_album_id(item)
+        if spotify_id is None:
+            print(f"WARNING: invalid Spotify id/URL for id {album['id']!r}: {item!r}, entry skipped")
+            stats["skipped"] += 1
+            return
+        if spotify_id not in ids:
+            ids.append(spotify_id)
+    if not ids:
         stats["skipped"] += 1
         return
-    album["spotifyId"] = spotify_id
+    album["spotifyId"] = ids[0] if len(ids) == 1 else ids
     stats["set"] += 1
 
 

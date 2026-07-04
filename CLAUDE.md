@@ -36,7 +36,7 @@ const COLLECTION_DATA = {
       addedAt: "2026-06-13",    // 任意。コレクション追加日（process_inbox.pyが自動付与、New Arrivals表示に使用）
       genre: "hiphop",          // 任意。下記選択肢から1つ
       focus: 30,                // 任意。カード正方形クロップの横位置%（0=左端〜100=右端、省略時50=中央）。?tune=1モードで調整→merge_focus.pyで反映
-      spotifyId: "3kEtdS2pH6hKcMU9Wioob1", // 任意。SpotifyアルバムID（22文字）。?spotify=1モードで登録→merge_spotify.pyで反映。設定するとモーダルに埋め込みプレイヤー表示
+      spotifyId: "3kEtdS2pH6hKcMU9Wioob1", // 任意。SpotifyアルバムID（22文字）。2枚組等でSpotify側が複数アルバムに分かれる場合は配列、Spotifyに存在しない確認済みの盤は "none"。?spotify=1モードで登録→merge_spotify.pyで反映。IDがあるとモーダルに埋め込みプレイヤー表示（複数なら複数台）
       versions: [
         {
           year: 1995,           // 原盤リリース年（MusicBrainz等で確認）

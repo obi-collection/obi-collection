@@ -640,6 +640,9 @@ body {
 }
 .spotify-reg-state { color: var(--text-secondary); margin-left: 0.5rem; text-transform: none; }
 .spotify-reg-state.ok { color: #1DB954; }
+.spotify-reg-state.none { color: #d9a441; }
+.spotify-reg-btn.none-btn { background: transparent; border-color: var(--border-mid); color: var(--text-secondary); font-weight: 400; }
+.spotify-reg-btn.none-btn:hover { border-color: #d9a441; color: #d9a441; filter: none; }
 .spotify-reg-row { display: flex; gap: 0.5rem; }
 .spotify-input {
     flex: 1;
