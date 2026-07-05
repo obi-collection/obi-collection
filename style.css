@@ -527,7 +527,10 @@ body {
 .modal-nav-btn:hover:not(:disabled) { border-color: var(--gold-obi); color: var(--gold-obi); }
 .modal-nav-btn:disabled { opacity: 0.25; cursor: default; }
 @media (max-width: 600px) {
-    .modal-nav-btn { top: auto; bottom: 0.75rem; transform: none; background: rgba(20,20,20,0.9); }
+    /* Sit just above the edit-mode panel (its height is measured into
+       --mode-panel-h) so the nav buttons stay tappable in edit modes;
+       falls back to 0 when no panel is present. */
+    .modal-nav-btn { top: auto; bottom: calc(var(--mode-panel-h, 0px) + 0.75rem); transform: none; background: rgba(20,20,20,0.9); z-index: 3100; }
     .modal-nav-btn.prev { left: 0.75rem; }
     .modal-nav-btn.next { right: 0.75rem; }
 }

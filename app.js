@@ -87,12 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (reviewMode) initReviewPanel();
     }
     if (spotifyMode) loadSpotifyCandidates();
+    syncModePanelHeight();
+    window.addEventListener('resize', syncModePanelHeight);
     const initialAlbumId = getAlbumIdFromHash();
     if (initialAlbumId) {
         const initialAlbum = albumById.get(initialAlbumId);
         if (initialAlbum) showAlbumModal(initialAlbum, false);
     }
 });
+
+// Measure the fixed bottom edit-mode panel so the mobile modal nav buttons can
+// sit above it (see --mode-panel-h in style.css).
+function syncModePanelHeight() {
+    const panel = document.querySelector('.mode-panel');
+    const h = panel ? panel.offsetHeight : 0;
+    document.documentElement.style.setProperty('--mode-panel-h', `${h}px`);
+}
 
 function getAlbumIdFromHash() {
     const m = location.hash.match(/^#album=(.+)$/);
@@ -1222,6 +1232,7 @@ function setEditMode(on) {
     if (modalCurrentAlbum && albumModal.classList.contains('active')) {
         showAlbumModal(modalCurrentAlbum, false);
     }
+    syncModePanelHeight();
 }
 
 function initEditPanel() {
