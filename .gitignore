@@ -10,3 +10,5 @@ check_years.py
 post_to_x.py
 posted.json
 run_post_to_x.sh
+post_scheduled.py
+posted_schedule.json

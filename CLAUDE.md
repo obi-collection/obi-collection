@@ -133,6 +133,16 @@ const COLLECTION_DATA = {
 
 ---
 
+## X予約投稿（年次スケジュール投稿、2026-07-15追加）
+
+毎年同じ月日に同じ内容（YouTube URL＋紹介文）を投稿する仕組み。リリース日・アーティスト誕生日などの記念日投稿用。
+
+- **データ:** `schedule.js` の `SCHEDULE_DATA.posts[]`（公開・Git管理）。エントリは `{id, month, day, kind: "release"|"birthday"|"other", title, text, youtube, image?, enabled}`。年は持たず**毎年繰り返し**（2/29はうるう年のみ発火）
+- **管理UI:** `schedule.html`（公開ページ・noindex・サイトからリンクなし）。月カレンダー表示・追加・編集・日付変更・削除。下書きはlocalStorage（`obi_schedule`、`{id: entry|null}`形式、nullは削除指示）→「Export JSON」→ `pbpaste | python3 merge_schedule.py -` で schedule.js に反映（既存の?edit=1系と同じワークフロー）。エディタに投稿プレビュー＋X加重文字数カウンタ（URL=23字、CJK=2字、上限280）付き
+- **投稿:** `post_scheduled.py`（**ローカル限定・.gitignore登録**。post_to_x.py と同様Git管理外）。`run_post_to_x.sh` が post_to_x.py の**前に**実行し、今日の月日に一致する有効エントリがあれば投稿。YouTubeサムネイル（maxres→sd→hq の順で自動取得、`image` があればそれを優先）をネイティブ画像として添付し、本文は `text + 空行 + youtube URL`。**YouTube URLはXでは埋め込み再生されない**ため、サムネ添付が最もリーチが出る形（ユーザー確認済み設計）
+- **重複防止:** `posted_schedule.json`（ローカル・Git外）に `{id: [投稿済み年,...]}` を記録し、同一年内の再投稿を防ぐ
+- **ランダム投稿との関係:** 予定投稿が成功すると `.last_post_at` を更新するので、既存のランダム帯投稿（post_to_x.py）はその日クールダウンで抑止される。予定がない日はランダム投稿がそのまま動く＝**予定投稿＋ランダム投稿で365日カバー**
+
 ## SEO・静的ページ（2026-06-13追加）
 
 - `build_static.py` が `data.js` から **アルバム1件＝1静的ページ** (`albums/<slug>.html`) を生成。OGP/Twitterカード（帯画像）・JSON-LD（MusicAlbum）・サーバーレンダリング済み本文を持つ。SPA（index.html）はJS描画でクローラに中身が見えないため、検索流入とSNSプレビューを静的ページが担う
