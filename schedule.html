@@ -177,6 +177,24 @@ a { color: var(--gold-obi); }
 .tag.k-draft { color: var(--gold-obi); border: 1px dashed var(--gold-dim); background: transparent; }
 .empty-note { color: var(--text-muted); font-size: 0.85rem; padding: 0.5rem 0 1rem; }
 
+/* ── archive candidates ── */
+.cand-section { margin-top: 1.6rem; }
+.cand-section h2 {
+    font-family: var(--font-title); font-size: 1.15rem;
+    letter-spacing: 0.06em; border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.3rem; margin-bottom: 0.6rem;
+}
+.cand-section h2 .sub { color: var(--text-muted); font-size: 0.8rem; font-family: var(--font-body); letter-spacing: 0; }
+.cand-controls { display: flex; gap: 0.5rem; margin-bottom: 0.6rem; }
+.cand-controls select, .cand-controls input {
+    background: var(--surface-0); color: var(--text-primary);
+    border: 1px solid var(--border-mid); border-radius: 6px;
+    padding: 0.4rem 0.5rem; font-size: 16px; font-family: var(--font-body);
+}
+.cand-controls input { flex: 1; min-width: 0; }
+.entry-row .stats { color: var(--text-muted); font-size: 0.72rem; margin-top: 2px; }
+.tag.registered { color: #7EC87E; }
+
 /* ── editor modal ── */
 .modal-backdrop {
     position: fixed; inset: 0; background: rgba(0,0,0,0.75);
@@ -285,6 +303,18 @@ body.modal-open { overflow: hidden; }
         <h2 id="listHeading"></h2>
         <div id="entryList"></div>
     </div>
+
+    <div class="cand-section" id="candSection" style="display:none">
+        <h2>過去ポストからの候補 <span class="sub" id="candCount"></span></h2>
+        <div class="cand-controls">
+            <select id="candSort">
+                <option value="engagement">反響順</option>
+                <option value="date">日付順</option>
+            </select>
+            <input type="text" id="candFilter" placeholder="キーワードで絞り込み">
+        </div>
+        <div id="candList"></div>
+    </div>
 </div>
 
 <div class="modal-backdrop" id="editorBackdrop">
@@ -351,6 +381,7 @@ body.modal-open { overflow: hidden; }
 </div>
 
 <script src="schedule.js"></script>
+<script src="schedule_candidates.js"></script>
 <script>
 (() => {
 const LS_KEY = 'obi_schedule';
@@ -443,6 +474,7 @@ function render() {
     renderMonthNav(entries);
     renderCalendar(entries);
     renderList(entries);
+    renderCandidates(entries);
     renderPanel();
 }
 
@@ -538,6 +570,61 @@ function renderList(entries) {
     });
 }
 
+// ── archive candidates ──
+const CANDIDATES = (typeof SCHEDULE_CANDIDATES !== 'undefined') ? SCHEDULE_CANDIDATES : [];
+let candSort = 'engagement';
+let candFilter = '';
+
+function renderCandidates(entries) {
+    if (!CANDIDATES.length) return;
+    document.getElementById('candSection').style.display = '';
+    const registered = new Set(entries.map(e => youtubeId(e.youtube)).filter(Boolean));
+    let list = CANDIDATES;
+    if (candFilter) {
+        const q = candFilter.toLowerCase();
+        list = list.filter(c => (c.text + ' ' + c.youtube).toLowerCase().includes(q));
+    }
+    list = [...list].sort((a, b) => candSort === 'date'
+        ? (a.month - b.month) || (a.day - b.day) || (b.favs + b.rts) - (a.favs + a.rts)
+        : (b.favs + b.rts) - (a.favs + a.rts));
+    const nReg = CANDIDATES.filter(c => registered.has(youtubeId(c.youtube))).length;
+    document.getElementById('candCount').textContent =
+        `${list.length}/${CANDIDATES.length}件表示 ・ 登録済み ${nReg}件 ・ タップで転記`;
+    const box = document.getElementById('candList');
+    box.innerHTML = '';
+    list.forEach(c => {
+        const vid = youtubeId(c.youtube);
+        const isReg = registered.has(vid);
+        const row = document.createElement('div');
+        row.className = 'entry-row' + (isReg ? ' disabled' : '');
+        row.innerHTML = `
+            <div class="datebadge">${c.month}/${c.day}</div>
+            ${vid ? `<img class="thumb" src="https://img.youtube.com/vi/${vid}/hqdefault.jpg" alt="" loading="lazy">` : ''}
+            <div class="body">
+                <div class="snippet">${escapeHTML(c.text)}</div>
+                <div class="stats">♥ ${c.favs.toLocaleString()} ・ RT ${c.rts.toLocaleString()} ・ ${c.year}年の投稿</div>
+                <div class="tags">${isReg ? '<span class="tag registered">登録済み</span>' : ''}</div>
+            </div>`;
+        row.addEventListener('click', () => {
+            openEditor(null, c.month, c.day, {
+                title: c.text.length > 24 ? c.text.slice(0, 24) + '…' : c.text,
+                text: c.text,
+                youtube: c.youtube,
+            });
+        });
+        box.appendChild(row);
+    });
+}
+
+document.getElementById('candSort').addEventListener('change', ev => {
+    candSort = ev.target.value;
+    renderCandidates(effectiveEntries());
+});
+document.getElementById('candFilter').addEventListener('input', ev => {
+    candFilter = ev.target.value.trim();
+    renderCandidates(effectiveEntries());
+});
+
 function renderPanel() {
     const n = Object.keys(overrides).length;
     document.getElementById('pendingLabel').innerHTML =
@@ -561,7 +648,7 @@ function fillDayOptions(month, selected) {
     sel.value = Math.min(selected || 1, max);
 }
 
-function openEditor(id, month, day) {
+function openEditor(id, month, day, prefill) {
     editingId = id;
     let e;
     if (id) {
@@ -571,8 +658,11 @@ function openEditor(id, month, day) {
         document.getElementById('editorTitle').textContent = '投稿を編集';
         document.getElementById('btnDelete').style.display = '';
     } else {
-        e = { month, day, kind: 'release', title: '', text: '', youtube: '', image: '', enabled: true };
-        document.getElementById('editorTitle').textContent = `投稿を追加 — ${month}/${day}`;
+        e = Object.assign(
+            { month, day, kind: 'release', title: '', text: '', youtube: '', image: '', enabled: true },
+            prefill || {});
+        document.getElementById('editorTitle').textContent =
+            prefill ? `候補から追加 — ${month}/${day}` : `投稿を追加 — ${month}/${day}`;
         document.getElementById('btnDelete').style.display = 'none';
     }
     const mSel = document.getElementById('fMonth');
