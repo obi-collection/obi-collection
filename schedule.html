@@ -729,6 +729,10 @@ document.getElementById('btnSave').addEventListener('click', () => {
     const e = readForm();
     if (!e.text) { alert('紹介文を入力してください'); return; }
     if (!youtubeId(e.youtube)) { alert('有効なYouTube URLを入力してください'); return; }
+    const len = weightedLength(composeTweet(e));
+    if (len > 280 && !confirm(
+        `文字数オーバーです（${len}/280）。このままだと当日Xに弾かれて投稿されません。` +
+        '\n下書きとして保存しますか？（あとで短く直せます）')) return;
     if (!e.image) delete e.image;
     const id = editingId || ('sp' + Date.now().toString(36));
     overrides[id] = e;

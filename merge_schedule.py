@@ -24,6 +24,19 @@ SCHEDULE_JS = BASE_DIR / "schedule.js"
 DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 KINDS = {"release", "birthday", "other"}
 
+URL_RE = re.compile(r"https?://\S+")
+
+
+def weighted_length(text: str) -> int:
+    """X's weighted tweet length: URL=23, CJK/emoji=2, latin=1 (limit 280)."""
+    length = 23 * len(URL_RE.findall(text))
+    for ch in URL_RE.sub("", text):
+        cp = ord(ch)
+        light = (cp <= 0x10FF or 0x2000 <= cp <= 0x200D
+                 or 0x2010 <= cp <= 0x201F or 0x2032 <= cp <= 0x2037)
+        length += 1 if light else 2
+    return length
+
 
 def load_schedule():
     content = SCHEDULE_JS.read_text(encoding="utf-8")
@@ -61,6 +74,10 @@ def normalize(entry_id, value):
     kind = value.get("kind", "other")
     if kind not in KINDS:
         kind = "other"
+    tweet_len = weighted_length(f"{text}\n\n{youtube}")
+    if tweet_len > 280:
+        print(f"WARNING: entry {entry_id!r} exceeds the tweet limit "
+              f"({tweet_len}/280) — merged anyway, but X will reject it as-is")
     entry = {
         "id": str(entry_id),
         "month": month,
