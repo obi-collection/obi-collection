@@ -140,7 +140,9 @@ const COLLECTION_DATA = {
 - **データ:** `schedule.js` の `SCHEDULE_DATA.posts[]`（公開・Git管理）。エントリは `{id, month, day, title, text, youtube, image?, enabled}`。年は持たず**毎年繰り返し**（2/29はうるう年のみ発火）。種別（kind）フィールドは2026-07-16に廃止済み
 - **管理UI:** `schedule.html`（公開ページ・noindex・サイトからリンクなし）。月カレンダー表示・追加・編集・日付変更・削除。下書きはlocalStorage（`obi_schedule`、`{id: entry|null}`形式、nullは削除指示）→「Export JSON」→ `pbpaste | python3 merge_schedule.py -` で schedule.js に反映（既存の?edit=1系と同じワークフロー）。エディタに投稿プレビュー＋X加重文字数カウンタ（URL=23字、CJK=2字、上限280）付き
 - **投稿:** `post_scheduled.py`（**ローカル限定・.gitignore登録**。post_to_x.py と同様Git管理外）。`run_post_to_x.sh` が post_to_x.py の**前に**実行し、今日の月日に一致する有効エントリがあれば投稿。YouTubeサムネイル（maxres→sd→hq の順で自動取得、`image` があればそれを優先）をネイティブ画像として添付し、本文は `text + 空行 + youtube URL`。**YouTube URLはXでは埋め込み再生されない**ため、サムネ添付が最もリーチが出る形（ユーザー確認済み設計）
-- **重複防止:** `posted_schedule.json`（ローカル・Git外）に `{id: [投稿済み年,...]}` を記録し、同一年内の再投稿を防ぐ
+- **お披露目投稿（2026-07-16追加）:** 一度も投稿されたことのないエントリは、次の**土日（1日1件・登録の古い順）**に「お披露目」として投稿され、以降は毎年指定日に投稿される。お披露目から14日以内に指定日が来る場合、その年の年次分はスキップ（近接二重投稿の防止、`DEBUT_COOLDOWN_DAYS`）
+- **投稿時間帯（2026-07-16追加）:** post_scheduled.py・post_to_x.py 両方に `POST_FROM_HOUR = 20` の時刻ガードがあり、cronの5時/12時枠は見送って**20時枠でのみ投稿**（日本のXは20〜22時が最も活発）。変更する場合は両ファイルの定数を揃えること。テスト用に `--today=YYYY-MM-DD` で日付偽装可（--dry-run併用）
+- **重複防止:** `posted_schedule.json`（ローカル・Git外）に `{id: {"debut": "YYYY-MM-DD", "years": [2026,...]}}` を記録し、お披露目済み・同一年内の再投稿を防ぐ
 - **ランダム投稿との関係:** 予定投稿が成功すると `.last_post_at` を更新するので、既存のランダム帯投稿（post_to_x.py）はその日クールダウンで抑止される。予定がない日はランダム投稿がそのまま動く＝**予定投稿＋ランダム投稿で365日カバー**
 - **過去ポスト候補（2026-07-16追加）:** `python3 extract_tweet_candidates.py <Xアーカイブのフォルダ>` がアーカイブのツイートからYouTubeリンク付き投稿（RT・リプライ除く、動画ID重複排除）を抽出し `schedule_candidates.js` に書き出す。schedule.html 下部に候補リスト（反響順/日付順・キーワード絞り込み・元投稿の月日を提案日付として表示）が出て、タップするとエディタに転記された状態で開く→編集して保存＝通常の下書きフロー。登録済み（同一動画IDがscheduleに存在）はグレー表示。**選択・確定は常に人間**（Spotify候補と同じ設計思想）
 
