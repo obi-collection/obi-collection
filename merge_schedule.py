@@ -7,7 +7,8 @@ Usage:
 
 The input is a JSON object of {entry_id: entry_or_null}.
   - entry: {"month": 1-12, "day": 1-31, "title": str, "text": str,
-            "youtube": str, "image": str (optional), "enabled": bool}
+            "youtube": str, "image": str (optional), "enabled": bool,
+            "debut": "none" | "YYYY-MM-DD" (optional; absent = next weekend)}
   - null (or "") removes the entry from schedule.js
 Entries are recurring: they fire every year on month/day (2/29 fires only
 in leap years). After merging, posts are sorted by (month, day, id).
@@ -15,6 +16,7 @@ in leap years). After merging, posts are sorted by (month, day, id).
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -85,6 +87,17 @@ def normalize(entry_id, value):
     image = str(value.get("image", "")).strip()
     if image:
         entry["image"] = image
+    debut = str(value.get("debut", "")).strip()
+    if debut == "none":
+        entry["debut"] = "none"
+    elif debut:
+        try:
+            date.fromisoformat(debut)
+        except ValueError:
+            print(f"WARNING: entry {entry_id!r} has an invalid debut date {debut!r}, "
+                  f"falling back to the next weekend")
+        else:
+            entry["debut"] = debut
     return entry
 
 

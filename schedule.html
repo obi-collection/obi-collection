@@ -335,6 +335,20 @@ body.modal-open { overflow: hidden; }
             <label for="fImage">カスタム画像URL（任意・省略時はYouTubeサムネイルを添付）</label>
             <input type="url" id="fImage" placeholder="https://res.cloudinary.com/...">
         </div>
+        <div class="field-row">
+            <div class="field">
+                <label for="fDebutMode">お披露目投稿（初回のみ）</label>
+                <select id="fDebutMode">
+                    <option value="auto">次の週末に自動</option>
+                    <option value="date">日付を指定</option>
+                    <option value="none">しない（毎年の指定日のみ）</option>
+                </select>
+            </div>
+            <div class="field" id="fDebutDateField" style="display:none">
+                <label for="fDebutDate">お披露目日</label>
+                <input type="date" id="fDebutDate">
+            </div>
+        </div>
         <div class="check-field">
             <input type="checkbox" id="fEnabled" checked>
             <label for="fEnabled" style="margin:0">有効（OFFにすると日付が来ても投稿しない）</label>
@@ -357,9 +371,10 @@ body.modal-open { overflow: hidden; }
 
 <div class="export-panel">
     <div class="pending" id="pendingLabel"></div>
-    <button class="panel-btn primary" id="btnExport">Export JSON</button>
+    <button class="panel-btn primary" id="btnSend">保存して反映</button>
+    <button class="panel-btn" id="btnExport">Export JSON</button>
     <button class="panel-btn" id="btnClear">Clear</button>
-    <div class="hint">Macで反映: pbpaste | python3 merge_schedule.py - → コミット＆プッシュ</div>
+    <div class="hint" id="panelHint">「保存して反映」= JSONをダウンロード → Macの監視スクリプトが自動でmerge＋プッシュ（Mac以外ではExport JSON → pbpaste | python3 merge_schedule.py -）</div>
 </div>
 
 <script src="schedule.js"></script>
@@ -381,7 +396,7 @@ function normEntry(e) {
     return JSON.stringify({
         month: e.month, day: e.day,
         title: e.title || '', text: e.text || '', youtube: e.youtube || '',
-        image: e.image || '', enabled: e.enabled !== false,
+        image: e.image || '', debut: e.debut || '', enabled: e.enabled !== false,
     });
 }
 // merge済みの下書きは自動掃除（公開データと一致したら消す）
@@ -521,6 +536,13 @@ function renderCalendar(entries) {
     }
 }
 
+function debutLabel(e) {
+    const d = e.debut || '';
+    if (d === 'none') return 'お披露目なし';
+    if (d) return `お披露目 ${d.slice(5).replace('-', '/')}`;
+    return 'お披露目 次の週末';
+}
+
 function renderList(entries) {
     document.getElementById('listHeading').textContent = `${viewMonth}月の投稿予定`;
     const list = document.getElementById('entryList');
@@ -541,6 +563,7 @@ function renderList(entries) {
                 <div class="title">${escapeHTML(e.title || '(無題)')}</div>
                 <div class="snippet">${escapeHTML(e.text || '')}</div>
                 <div class="tags">
+                    <span class="tag">${debutLabel(e)}</span>
                     ${e.enabled === false ? '<span class="tag">無効</span>' : ''}
                     ${e.id in overrides ? '<span class="tag k-draft">下書き</span>' : ''}
                 </div>
@@ -639,7 +662,7 @@ function openEditor(id, month, day, prefill) {
         document.getElementById('btnDelete').style.display = '';
     } else {
         e = Object.assign(
-            { month, day, title: '', text: '', youtube: '', image: '', enabled: true },
+            { month, day, title: '', text: '', youtube: '', image: '', debut: '', enabled: true },
             prefill || {});
         document.getElementById('editorTitle').textContent =
             prefill ? `候補から追加 — ${month}/${day}` : `投稿を追加 — ${month}/${day}`;
@@ -658,6 +681,11 @@ function openEditor(id, month, day, prefill) {
     document.getElementById('fText').value = e.text || '';
     document.getElementById('fYoutube').value = e.youtube || '';
     document.getElementById('fImage').value = e.image || '';
+    const debut = e.debut || '';
+    document.getElementById('fDebutMode').value =
+        debut === 'none' ? 'none' : (debut ? 'date' : 'auto');
+    document.getElementById('fDebutDate').value = (debut && debut !== 'none') ? debut : '';
+    syncDebutField();
     document.getElementById('fEnabled').checked = e.enabled !== false;
     updatePreview();
     backdrop.classList.add('open');
@@ -671,7 +699,13 @@ function closeEditor() {
     editingId = null;
 }
 
+function syncDebutField() {
+    const mode = document.getElementById('fDebutMode').value;
+    document.getElementById('fDebutDateField').style.display = mode === 'date' ? '' : 'none';
+}
+
 function readForm() {
+    const debutMode = document.getElementById('fDebutMode').value;
     return {
         month: parseInt(document.getElementById('fMonth').value, 10),
         day: parseInt(document.getElementById('fDay').value, 10),
@@ -679,6 +713,8 @@ function readForm() {
         text: document.getElementById('fText').value.trim(),
         youtube: document.getElementById('fYoutube').value.trim(),
         image: document.getElementById('fImage').value.trim(),
+        debut: debutMode === 'none' ? 'none'
+             : debutMode === 'date' ? document.getElementById('fDebutDate').value : '',
         enabled: document.getElementById('fEnabled').checked,
     };
 }
@@ -700,18 +736,26 @@ function updatePreview() {
                    parseInt(document.getElementById('fDay').value, 10));
     updatePreview();
 }));
-['fDay','fTitle','fText','fYoutube','fImage','fEnabled'].forEach(id =>
+['fDay','fTitle','fText','fYoutube','fImage','fDebutDate','fEnabled'].forEach(id =>
     document.getElementById(id).addEventListener('input', updatePreview));
+document.getElementById('fDebutMode').addEventListener('change', () => {
+    syncDebutField();
+    updatePreview();
+});
 
 document.getElementById('btnSave').addEventListener('click', () => {
     const e = readForm();
     if (!e.text) { alert('紹介文を入力してください'); return; }
     if (!youtubeId(e.youtube)) { alert('有効なYouTube URLを入力してください'); return; }
+    if (document.getElementById('fDebutMode').value === 'date' && !e.debut) {
+        alert('お披露目日を選ぶか、「次の週末に自動」に切り替えてください'); return;
+    }
     const len = weightedLength(composeTweet(e));
     if (len > 280 && !confirm(
         `文字数オーバーです（${len}/280）。このままだと当日Xに弾かれて投稿されません。` +
         '\n下書きとして保存しますか？（あとで短く直せます）')) return;
     if (!e.image) delete e.image;
+    if (!e.debut) delete e.debut;
     const id = editingId || ('sp' + Date.now().toString(36));
     overrides[id] = e;
     // 公開データと同一なら下書き扱いにしない
@@ -742,6 +786,29 @@ document.getElementById('yearPrev').addEventListener('click', () => { viewYear--
 document.getElementById('yearNext').addEventListener('click', () => { viewYear++; render(); });
 
 // ── export panel ──
+// 「保存して反映」: JSONをダウンロードフォルダに落とす。Macで動いている
+// watch_schedule.py が拾って merge_schedule.py → git push まで自動実行する。
+document.getElementById('btnSend').addEventListener('click', () => {
+    const btn = document.getElementById('btnSend');
+    if (!Object.keys(overrides).length) {
+        alert('反映する下書きがありません');
+        return;
+    }
+    const blob = new Blob([JSON.stringify(overrides, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `obi-schedule-${Date.now()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    btn.textContent = '送信しました';
+    document.getElementById('panelHint').textContent =
+        '数十秒後にMac側で反映されます。反映後にこのページを再読み込みすると下書きは自動で片付きます。';
+    setTimeout(() => { btn.textContent = '保存して反映'; }, 3000);
+});
+
 document.getElementById('btnExport').addEventListener('click', () => {
     const btn = document.getElementById('btnExport');
     navigator.clipboard.writeText(JSON.stringify(overrides, null, 2)).then(() => {

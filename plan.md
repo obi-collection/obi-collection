@@ -69,6 +69,7 @@ COLLECTION_DATA = {
 - オンサイトReview（`reviews/<slug>.md` + `?review=1` 貼り付け登録。モーダルのアコーディオン表示＋静的ページ焼き込み。フック歌詞はマージ時自動除去、2026-07-04）
 - 編集モードの隠しスイッチ（カウンター3回タップ or Eキーでトグル。リロードでOFFに戻る、2026-07-04）
 - X予約投稿システム（`schedule.js` + `schedule.html` カレンダー管理UI + `merge_schedule.py` + ローカルの `post_scheduled.py`。毎年同じ月日にYouTube URL＋紹介文＋サムネ画像を投稿。予定がない日は既存ランダム帯投稿にフォールバック＝365日カバー、2026-07-15）
+- 予約投稿の自動反映（schedule.html「保存して反映」→ Downloadsに落ちたJSONを `watch_schedule.py`（launchd常駐）が検出 → merge → コミット＆プッシュまで無人化。お披露目日の指定・お披露目なし設定も追加、2026-07-17）
 
 ---
 
