@@ -26,9 +26,6 @@
     --text-primary: #F0EDE6;
     --text-secondary: #9A9080;
     --text-muted: #5C5650;
-    --kind-release: #F5C518;
-    --kind-birthday: #7EC8E3;
-    --kind-other: #9A9080;
     --font-title: 'Barlow Condensed', Impact, sans-serif;
     --font-body: 'Roboto Condensed', sans-serif;
 }
@@ -121,14 +118,11 @@ a { color: var(--gold-obi); }
     font-size: 0.68rem; line-height: 1.25;
     padding: 2px 4px; border-radius: 4px;
     background: var(--surface-2);
-    border-left: 3px solid var(--kind-other);
+    border-left: 3px solid var(--gold-obi);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     cursor: pointer;
 }
 .chip:hover { background: var(--border-mid); }
-.chip.k-release  { border-left-color: var(--kind-release); }
-.chip.k-birthday { border-left-color: var(--kind-birthday); }
-.chip.k-other    { border-left-color: var(--kind-other); }
 .chip.disabled { opacity: 0.4; text-decoration: line-through; }
 .chip.draft { outline: 1px dashed var(--gold-dim); }
 
@@ -172,8 +166,6 @@ a { color: var(--gold-obi); }
     display: inline-block; padding: 1px 6px; border-radius: 3px;
     background: var(--surface-2); color: var(--text-secondary); margin-right: 4px;
 }
-.tag.k-release  { color: var(--kind-release); }
-.tag.k-birthday { color: var(--kind-birthday); }
 .tag.k-draft { color: var(--gold-obi); border: 1px dashed var(--gold-dim); background: transparent; }
 .empty-note { color: var(--text-muted); font-size: 0.85rem; padding: 0.5rem 0 1rem; }
 
@@ -293,9 +285,6 @@ body.modal-open { overflow: hidden; }
     <div class="cal-grid" id="calGrid"></div>
 
     <div class="legend">
-        <span><span class="dot" style="background:var(--kind-release)"></span>リリース日</span>
-        <span><span class="dot" style="background:var(--kind-birthday)"></span>誕生日</span>
-        <span><span class="dot" style="background:var(--kind-other)"></span>その他</span>
         <span style="color:var(--text-muted)">空欄の日はランダム帯投稿</span>
     </div>
 
@@ -328,14 +317,6 @@ body.modal-open { overflow: hidden; }
             <div class="field">
                 <label for="fDay">日</label>
                 <select id="fDay"></select>
-            </div>
-            <div class="field">
-                <label for="fKind">種別</label>
-                <select id="fKind">
-                    <option value="release">リリース日</option>
-                    <option value="birthday">誕生日</option>
-                    <option value="other">その他</option>
-                </select>
             </div>
         </div>
         <div class="field">
@@ -386,7 +367,6 @@ body.modal-open { overflow: hidden; }
 (() => {
 const LS_KEY = 'obi_schedule';
 const DAYS_IN_MONTH = [31,29,31,30,31,30,31,31,30,31,30,31];
-const KIND_LABEL = { release: 'リリース日', birthday: '誕生日', other: 'その他' };
 const DOW = ['日','月','火','水','木','金','土'];
 
 const published = new Map(
@@ -398,7 +378,7 @@ try { overrides = JSON.parse(localStorage.getItem(LS_KEY) || '{}'); } catch { ov
 
 function normEntry(e) {
     return JSON.stringify({
-        month: e.month, day: e.day, kind: e.kind || 'other',
+        month: e.month, day: e.day,
         title: e.title || '', text: e.text || '', youtube: e.youtube || '',
         image: e.image || '', enabled: e.enabled !== false,
     });
@@ -527,7 +507,7 @@ function renderCalendar(entries) {
         cell.innerHTML = `<span class="daynum">${d}</span>`;
         (byDay[d] || []).forEach(e => {
             const chip = document.createElement('div');
-            chip.className = `chip k-${e.kind || 'other'}`
+            chip.className = 'chip'
                 + (e.enabled === false ? ' disabled' : '')
                 + (e.id in overrides ? ' draft' : '');
             chip.textContent = e.title || e.text || e.youtube;
@@ -560,7 +540,6 @@ function renderList(entries) {
                 <div class="title">${escapeHTML(e.title || '(無題)')}</div>
                 <div class="snippet">${escapeHTML(e.text || '')}</div>
                 <div class="tags">
-                    <span class="tag k-${e.kind || 'other'}">${KIND_LABEL[e.kind] || 'その他'}</span>
                     ${e.enabled === false ? '<span class="tag">無効</span>' : ''}
                     ${e.id in overrides ? '<span class="tag k-draft">下書き</span>' : ''}
                 </div>
@@ -659,7 +638,7 @@ function openEditor(id, month, day, prefill) {
         document.getElementById('btnDelete').style.display = '';
     } else {
         e = Object.assign(
-            { month, day, kind: 'release', title: '', text: '', youtube: '', image: '', enabled: true },
+            { month, day, title: '', text: '', youtube: '', image: '', enabled: true },
             prefill || {});
         document.getElementById('editorTitle').textContent =
             prefill ? `候補から追加 — ${month}/${day}` : `投稿を追加 — ${month}/${day}`;
@@ -674,7 +653,6 @@ function openEditor(id, month, day, prefill) {
     }
     mSel.value = e.month;
     fillDayOptions(e.month, e.day);
-    document.getElementById('fKind').value = e.kind || 'other';
     document.getElementById('fTitle').value = e.title || '';
     document.getElementById('fText').value = e.text || '';
     document.getElementById('fYoutube').value = e.youtube || '';
@@ -696,7 +674,6 @@ function readForm() {
     return {
         month: parseInt(document.getElementById('fMonth').value, 10),
         day: parseInt(document.getElementById('fDay').value, 10),
-        kind: document.getElementById('fKind').value,
         title: document.getElementById('fTitle').value.trim(),
         text: document.getElementById('fText').value.trim(),
         youtube: document.getElementById('fYoutube').value.trim(),
@@ -722,7 +699,7 @@ function updatePreview() {
                    parseInt(document.getElementById('fDay').value, 10));
     updatePreview();
 }));
-['fDay','fKind','fTitle','fText','fYoutube','fImage','fEnabled'].forEach(id =>
+['fDay','fTitle','fText','fYoutube','fImage','fEnabled'].forEach(id =>
     document.getElementById(id).addEventListener('input', updatePreview));
 
 document.getElementById('btnSave').addEventListener('click', () => {

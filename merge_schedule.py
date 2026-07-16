@@ -6,9 +6,8 @@ Usage:
     pbpaste | python3 merge_schedule.py -
 
 The input is a JSON object of {entry_id: entry_or_null}.
-  - entry: {"month": 1-12, "day": 1-31, "kind": "release"|"birthday"|"other",
-            "title": str, "text": str, "youtube": str,
-            "image": str (optional), "enabled": bool}
+  - entry: {"month": 1-12, "day": 1-31, "title": str, "text": str,
+            "youtube": str, "image": str (optional), "enabled": bool}
   - null (or "") removes the entry from schedule.js
 Entries are recurring: they fire every year on month/day (2/29 fires only
 in leap years). After merging, posts are sorted by (month, day, id).
@@ -22,7 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent
 SCHEDULE_JS = BASE_DIR / "schedule.js"
 
 DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-KINDS = {"release", "birthday", "other"}
 
 URL_RE = re.compile(r"https?://\S+")
 
@@ -71,9 +69,6 @@ def normalize(entry_id, value):
     if not text or not youtube.startswith("http"):
         print(f"WARNING: entry {entry_id!r} is missing text or a valid YouTube URL, skipped")
         return None
-    kind = value.get("kind", "other")
-    if kind not in KINDS:
-        kind = "other"
     tweet_len = weighted_length(f"{text}\n\n{youtube}")
     if tweet_len > 280:
         print(f"WARNING: entry {entry_id!r} exceeds the tweet limit "
@@ -82,7 +77,6 @@ def normalize(entry_id, value):
         "id": str(entry_id),
         "month": month,
         "day": day,
-        "kind": kind,
         "title": str(value.get("title", "")).strip(),
         "text": text,
         "youtube": youtube,
