@@ -58,8 +58,13 @@ def main():
         sys.exit(1)
     tweets = []
     for arg in sys.argv[1:]:
-        batch = load_tweets(Path(arg))
-        print(f"{arg}: {len(batch)} tweets")
+        path = Path(arg)
+        batch = load_tweets(path)
+        # deleted-tweets.js 由来は候補に「削除済み」フラグを付ける
+        from_deleted = "deleted" in (path.name if path.is_file() else "")
+        print(f"{arg}: {len(batch)} tweets" + (" (deleted)" if from_deleted else ""))
+        for t in batch:
+            t["_deleted"] = from_deleted
         tweets.extend(batch)
 
     candidates = []
@@ -83,7 +88,7 @@ def main():
             continue
         seen_videos.add(video_id)
         created = datetime.strptime(t["created_at"], "%a %b %d %H:%M:%S %z %Y")
-        candidates.append({
+        cand = {
             "id": t["id_str"],
             "month": created.month,
             "day": created.day,
@@ -92,7 +97,10 @@ def main():
             "youtube": f"https://youtu.be/{video_id}",
             "favs": int(t.get("favorite_count", 0)),
             "rts": int(t.get("retweet_count", 0)),
-        })
+        }
+        if t.get("_deleted"):
+            cand["deleted"] = True
+        candidates.append(cand)
 
     candidates.sort(key=lambda c: (-(c["favs"] + c["rts"]), c["id"]))
     OUT_FILE.write_text(

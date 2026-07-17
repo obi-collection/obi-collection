@@ -300,6 +300,9 @@ body.modal-open { overflow: hidden; }
                 <option value="engagement">反響順</option>
                 <option value="date">日付順</option>
             </select>
+            <label style="display:flex;align-items:center;gap:4px;font-size:0.8rem;color:var(--text-secondary);white-space:nowrap">
+                <input type="checkbox" id="candDeletedOnly" style="accent-color:var(--gold-obi)">復元のみ
+            </label>
             <input type="text" id="candFilter" placeholder="キーワードで絞り込み">
         </div>
         <div id="candList"></div>
@@ -583,6 +586,9 @@ function renderCandidates(entries) {
     document.getElementById('candSection').style.display = '';
     const registered = new Set(entries.map(e => youtubeId(e.youtube)).filter(Boolean));
     let list = CANDIDATES;
+    if (document.getElementById('candDeletedOnly').checked) {
+        list = list.filter(c => c.deleted);
+    }
     if (candFilter) {
         const q = candFilter.toLowerCase();
         list = list.filter(c => (c.text + ' ' + c.youtube).toLowerCase().includes(q));
@@ -605,8 +611,11 @@ function renderCandidates(entries) {
             ${vid ? `<img class="thumb" src="https://img.youtube.com/vi/${vid}/hqdefault.jpg" alt="" loading="lazy">` : ''}
             <div class="body">
                 <div class="snippet">${escapeHTML(c.text)}</div>
-                <div class="stats">♥ ${c.favs.toLocaleString()} ・ RT ${c.rts.toLocaleString()} ・ ${c.year}年の投稿</div>
-                <div class="tags">${isReg ? '<span class="tag registered">登録済み</span>' : ''}</div>
+                <div class="stats">${c.deleted ? '反響記録なし' : `♥ ${c.favs.toLocaleString()} ・ RT ${c.rts.toLocaleString()}`} ・ ${c.year}年の投稿</div>
+                <div class="tags">
+                    ${c.deleted ? '<span class="tag k-draft">削除済みから復元</span>' : ''}
+                    ${isReg ? '<span class="tag registered">登録済み</span>' : ''}
+                </div>
             </div>`;
         row.addEventListener('click', () => {
             openEditor(null, c.month, c.day, {
@@ -625,6 +634,9 @@ document.getElementById('candSort').addEventListener('change', ev => {
 });
 document.getElementById('candFilter').addEventListener('input', ev => {
     candFilter = ev.target.value.trim();
+    renderCandidates(effectiveEntries());
+});
+document.getElementById('candDeletedOnly').addEventListener('change', () => {
     renderCandidates(effectiveEntries());
 });
 
