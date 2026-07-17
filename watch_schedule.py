@@ -15,7 +15,6 @@ watch-inbox one).
 """
 
 import os
-import re
 import signal
 import subprocess
 import sys
@@ -26,6 +25,7 @@ from pathlib import Path
 BASE_DIR = Path("/Volumes/Extreme SSD/obi-collection")
 DOWNLOADS = Path.home() / "Downloads"
 PROCESSED_DIR = DOWNLOADS / "obi-schedule-processed"
+FAILED_DIR = DOWNLOADS / "obi-schedule-failed"
 PATTERN = "obi-schedule-*.json"
 POLL_INTERVAL = 5   # seconds between checks
 STABLE_WAIT = 2     # seconds to confirm the file size is stable
@@ -55,7 +55,12 @@ def merge_file(path: Path) -> bool:
     for line in output.splitlines():
         log(f"  {line}")
     if result.returncode != 0:
-        log("merge_schedule.py が失敗しました。ファイルは残します（再試行可能）。")
+        # 壊れたJSONは何度やっても失敗する。無限リトライせず退避して止める。
+        FAILED_DIR.mkdir(exist_ok=True)
+        stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        path.rename(FAILED_DIR / f"{stamp}-{path.name}")
+        log(f"merge_schedule.py が失敗しました。{FAILED_DIR.name}/ に退避しました"
+            f"（内容を直して Downloads に戻せば再処理されます）。")
         return False
 
     status = run(["git", "status", "--porcelain", "schedule.js"])
@@ -63,8 +68,11 @@ def merge_file(path: Path) -> bool:
         log("schedule.js に変更はありませんでした（反映済みの内容）。")
         return True
 
-    run(["git", "add", "schedule.js"])
-    commit = run(["git", "commit", "-m", "Update scheduled X posts from the schedule editor"])
+    # pathspec 指定で schedule.js だけをコミットする（他プロセスが
+    # ステージ中のファイルを巻き込まないため。add は不要になる）
+    commit = run(["git", "commit", "-m",
+                  "Update scheduled X posts from the schedule editor",
+                  "--", "schedule.js"])
     if commit.returncode != 0:
         log(f"git commit が失敗しました: {(commit.stdout + commit.stderr).strip()}")
         return False
