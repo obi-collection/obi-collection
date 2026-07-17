@@ -380,8 +380,12 @@ body.modal-open { overflow: hidden; }
     <div class="hint" id="panelHint">「保存して反映」= JSONをダウンロード → Macの監視スクリプトが自動でmerge＋プッシュ（Mac以外ではExport JSON → pbpaste | python3 merge_schedule.py -）</div>
 </div>
 
-<script src="schedule.js"></script>
-<script src="schedule_candidates.js"></script>
+<script>
+// GitHub Pages / Safari のキャッシュで古いデータが見え続けないよう、
+// データファイルは毎回キャッシュバスター付きで読み込む
+document.write(`<script src="schedule.js?v=${Date.now()}"><\/script>`);
+document.write(`<script src="schedule_candidates.js?v=${Date.now()}"><\/script>`);
+</script>
 <script>
 (() => {
 const LS_KEY = 'obi_schedule';
