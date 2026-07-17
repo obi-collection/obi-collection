@@ -186,6 +186,12 @@ a { color: var(--gold-obi); }
 .cand-controls input { flex: 1; min-width: 0; }
 .entry-row .stats { color: var(--text-muted); font-size: 0.72rem; margin-top: 2px; }
 .tag.registered { color: #7EC87E; }
+.video-link {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    background: var(--surface-2); border: 1px solid var(--border-mid);
+    color: var(--text-primary); font-size: 0.72rem; text-decoration: none;
+}
+.video-link:hover { border-color: var(--gold-obi); color: var(--gold-obi); }
 
 /* ── editor modal ── */
 .modal-backdrop {
@@ -357,7 +363,7 @@ body.modal-open { overflow: hidden; }
             <label for="fEnabled" style="margin:0">有効（OFFにすると日付が来ても投稿しない）</label>
         </div>
         <div class="preview-box">
-            <div class="pv-label">投稿プレビュー</div>
+            <div class="pv-label">投稿プレビュー <a class="video-link" id="pvVideoLink" href="#" target="_blank" rel="noopener" style="display:none">▶ 動画を開く</a></div>
             <img id="pvThumb" alt="" style="display:none">
             <div class="pv-text" id="pvText"></div>
             <div class="pv-count" id="pvCount"></div>
@@ -617,10 +623,12 @@ function renderCandidates(entries) {
                 <div class="snippet">${escapeHTML(c.text)}</div>
                 <div class="stats">${c.deleted ? '反響記録なし' : `♥ ${c.favs.toLocaleString()} ・ RT ${c.rts.toLocaleString()}`} ・ ${c.year}年の投稿</div>
                 <div class="tags">
+                    <a class="video-link" href="${escapeHTML(c.youtube)}" target="_blank" rel="noopener">▶ 動画を開く</a>
                     ${c.deleted ? '<span class="tag k-draft">削除済みから復元</span>' : ''}
                     ${isReg ? '<span class="tag registered">登録済み</span>' : ''}
                 </div>
             </div>`;
+        row.querySelector('.video-link').addEventListener('click', ev => ev.stopPropagation());
         row.addEventListener('click', () => {
             openEditor(null, c.month, c.day, {
                 title: c.text.length > 24 ? c.text.slice(0, 24) + '…' : c.text,
@@ -740,6 +748,9 @@ function updatePreview() {
     const t = thumbUrl(e);
     const img = document.getElementById('pvThumb');
     if (t) { img.src = t; img.style.display = ''; } else { img.style.display = 'none'; }
+    const vlink = document.getElementById('pvVideoLink');
+    if (youtubeId(e.youtube)) { vlink.href = e.youtube; vlink.style.display = ''; }
+    else { vlink.style.display = 'none'; }
     document.getElementById('pvText').textContent = composeTweet(e);
     const len = weightedLength(composeTweet(e));
     const cnt = document.getElementById('pvCount');
