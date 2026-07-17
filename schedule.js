@@ -1,6 +1,15 @@
 const SCHEDULE_DATA = {
   "posts": [
     {
+      "id": "spmrpe1sep",
+      "month": 2,
+      "day": 3,
+      "title": "OMA - The Ultimate Hip-Hop Instrumental Concert (OMA Covers Live 2023)",
+      "text": "ヒップホップ･クラシックのビートをバンドで次々とカバーしていく激アツなライブがたっぷり1時間弱。以前紹介したMF Doomオンリーのセットよりも幅広い選曲で個人的にはこちらの方が好み。Breakestra『The Live Mix part.2』の現代バージョンとも解釈できそう。",
+      "youtube": "https://youtu.be/7siRp2tqN14",
+      "enabled": true
+    },
+    {
       "id": "spmrnffgx6",
       "month": 3,
       "day": 3,
