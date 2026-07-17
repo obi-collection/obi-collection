@@ -1,13 +1,13 @@
 const SCHEDULE_CANDIDATES = [
  {
-  "id": "1647193047833415681",
-  "month": 4,
-  "day": 15,
-  "year": 2023,
-  "text": "DJ ShadowとCut Chemistがタンテ６台を駆使して、Afrika Bambaataaの私物レコードコレクションを擦りまくり繋ぎまくる２時間弱のパフォーマンス！！DVD化されてもおかしくないレベルの映像が公式から無料でアップされています。永久保存版の動画。",
-  "youtube": "https://youtu.be/kHViKdHdIk0",
-  "favs": 2176,
-  "rts": 502
+  "id": "1798293687686025717",
+  "month": 6,
+  "day": 5,
+  "year": 2024,
+  "text": "PUNPEEといえば、Number_iに提供した「SQUARE_ONE」は衝撃でしたね。リリックもフロウも完全にPUNPEE節で、サビ終わりのフレーズなんて完全に「Award Tour」でしょ！Dev Large x 森田剛を思い出させる熱いコラボでした。こういうのもっとやってくれ〜！！",
+  "youtube": "https://youtu.be/_Ol549ViSrY",
+  "favs": 2459,
+  "rts": 364
  },
  {
   "id": "1647177947214921728",
@@ -30,6 +30,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 274
  },
  {
+  "id": "1691283570675920896",
+  "month": 8,
+  "day": 15,
+  "year": 2023,
+  "text": "DJ ShadowとCut Chemistがタンテ6台を駆使して、Afrika Bambaataaの私物レコードコレクションを擦りまくり繋ぎまくる、2時間弱のパフォーマンス！DVD化されてもおかしくないクオリティの映像が公式から無料でアップされています。永久保存版の動画です。",
+  "youtube": "https://youtu.be/kHViKdHdIk0",
+  "favs": 1525,
+  "rts": 334
+ },
+ {
   "id": "1624679699749257217",
   "month": 2,
   "day": 12,
@@ -48,6 +58,26 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/ySzDaWiSjJ8",
   "favs": 1359,
   "rts": 232
+ },
+ {
+  "id": "1917883431129956450",
+  "month": 5,
+  "day": 1,
+  "year": 2025,
+  "text": "RIP SLYMEは昔から、クラシックなヒップホップへの入口を、さりげなく用意している。",
+  "youtube": "https://youtu.be/qORYO0atB6g",
+  "favs": 1319,
+  "rts": 119
+ },
+ {
+  "id": "1787309607901347990",
+  "month": 5,
+  "day": 6,
+  "year": 2024,
+  "text": "Rip SlymeのDJ Fumiyaが「楽園ベイベー」のビートをパーツごとに鳴らしたりしながら解説する最高な動画がアップされました！！今後も是非続いてほしい企画です！これを機にリップのインストを集めたアルバムとか出ないかな〜",
+  "youtube": "https://youtu.be/AdX-dyzeEos",
+  "favs": 1049,
+  "rts": 162
  },
  {
   "id": "1635603105894244353",
@@ -80,6 +110,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 66
  },
  {
+  "id": "1701551226822009162",
+  "month": 9,
+  "day": 12,
+  "year": 2023,
+  "text": "RUN DMCが1987年に出演した日本のテレビ番組『ベストヒットUSA』\n小林克也の「君達はヘビー･メタルっぽいね？」という質問にカチンときたRUNとJAM MASTER JAY。全然喋らないDMC。",
+  "youtube": "https://youtu.be/V46qIVzN0Mo",
+  "favs": 863,
+  "rts": 150
+ },
+ {
   "id": "1633418634633830400",
   "month": 3,
   "day": 8,
@@ -110,6 +150,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 80
  },
  {
+  "id": "1695707723508384192",
+  "month": 8,
+  "day": 27,
+  "year": 2023,
+  "text": "今となってはテレビCMにラッパーが起用されることも珍しくないけど、1997年にTOYOTAのCMに出ていたBuddha Brandって改めてすごいな。",
+  "youtube": "https://youtu.be/o9U4wimaoxU",
+  "favs": 726,
+  "rts": 81
+ },
+ {
   "id": "1636327442725076992",
   "month": 3,
   "day": 16,
@@ -128,6 +178,46 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/yZrK39H5zp4",
   "favs": 616,
   "rts": 115
+ },
+ {
+  "id": "1761677419893731354",
+  "month": 2,
+  "day": 25,
+  "year": 2024,
+  "text": "De La Soulオンリーで50分間のミックス。DJがShortkutなのでスキルは申し分なし。新旧の楽曲を違和感なく織り交ぜた選曲と構成もお見事。De La Soul ミックスの決定版。超おすすめ🔥🔥🔥",
+  "youtube": "https://youtu.be/WsyGcx2iWv4",
+  "favs": 628,
+  "rts": 89
+ },
+ {
+  "id": "1981338656628756871",
+  "month": 10,
+  "day": 23,
+  "year": 2025,
+  "text": "J Dillaのインタビューに日本語訳をつけた動画がアップされてる！！！！",
+  "youtube": "https://youtu.be/6Vf50LV9VqM",
+  "favs": 627,
+  "rts": 81
+ },
+ {
+  "id": "1691374177519898624",
+  "month": 8,
+  "day": 15,
+  "year": 2023,
+  "text": "HIP HOP 50で一番感動したシーンは、CLARK KENTが自分の出番を亡くなったラッパーの曲を流すことだけに使い、最後に \"Tribute to my brother from Brooklyn!!\" とシャウトして「Juicy」をかけた瞬間。スタジアム大合唱、CLARK KENTのキャップにはビギーのワッペンが。泣けた。",
+  "youtube": "https://youtu.be/RgGyYGPTXCg",
+  "favs": 570,
+  "rts": 103
+ },
+ {
+  "id": "1689584878768029697",
+  "month": 8,
+  "day": 10,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【1位】Wu-Tang Clan「C.R.E.A.M.」(1993年)\n\nRolling Stoneは「Dr. DreとSnoop DoggのG-Funkに支配されていた90年代初頭のヒップホップシーンに衝撃を与え、ニューヨークに再び焦点を当てた」と評価した。",
+  "youtube": "https://youtu.be/PBwAxmrE194",
+  "favs": 562,
+  "rts": 108
  },
  {
   "id": "1632304947164217345",
@@ -150,6 +240,26 @@ const SCHEDULE_CANDIDATES = [
   "rts": 96
  },
  {
+  "id": "1726074323801444658",
+  "month": 11,
+  "day": 19,
+  "year": 2023,
+  "text": "Wu-Tang Clan「C.R.E.A.M.」のリリックを50分かけて徹底的に解説する動画。対訳を読むだけでは伝わらない歌詞の持つ深い意味まで知ることができる内容で、荒んだストリートの日常を生き抜く彼らの姿をより具体的にイメージできました。今後も応援したいコンテンツです。",
+  "youtube": "https://youtu.be/s-hZtH5XA2o",
+  "favs": 579,
+  "rts": 60
+ },
+ {
+  "id": "1774360995156390314",
+  "month": 3,
+  "day": 31,
+  "year": 2024,
+  "text": "ゲーム音楽をサンプリングしたヒップホップだけで構成された55分間のミックス。ストリートファイター、ファイナルファンタジー、ゼルダの伝説など、ゲームに詳しくない私でも当たり前に知っている有名タイトルのBGMを使った曲が多数収録されています。好内容です🔥🔥🔥",
+  "youtube": "https://youtu.be/VU7U01TVku0",
+  "favs": 553,
+  "rts": 86
+ },
+ {
   "id": "1642361209210167296",
   "month": 4,
   "day": 2,
@@ -160,14 +270,14 @@ const SCHEDULE_CANDIDATES = [
   "rts": 71
  },
  {
-  "id": "1623985130510635011",
-  "month": 2,
-  "day": 10,
+  "id": "1690966486108774401",
+  "month": 8,
+  "day": 14,
   "year": 2023,
-  "text": "OMSBのワンマンライブ、54分間の動画がまさかの無料公開。マジで全編最高だったけど、まさかPUNPEE名義の「Life Goes On」まで見れるなんて！！MadvillainのTシャツを着て、Madvillain同ネタのビートでラップするP UNPEEにニヤリ。O&PのコンビでEP作ってほしい。",
-  "youtube": "https://youtu.be/ia5oZu9NGDA",
-  "favs": 500,
-  "rts": 73
+  "text": "The Notorious B.I.G.が1996年にレコーディングした、ペプシのCMのためのフリースタイルが、ヒップホップ50周年を記念して動画付きで公開。概要欄には「もっとあるとしたら？お楽しみに。」と今後を期待させる一文が。キレッキレのラップに興奮しますよ。",
+  "youtube": "https://youtu.be/fQqtHYWF6wA",
+  "favs": 481,
+  "rts": 97
  },
  {
   "id": "1635219152125263874",
@@ -210,6 +320,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 45
  },
  {
+  "id": "1702970583980347899",
+  "month": 9,
+  "day": 16,
+  "year": 2023,
+  "text": "Kanye Westの最高傑作では？と言いたくなるほどの美しいビート。Just Blaze作の「Girls, Girls, Girls」「Song Cry」路線で、このビートがJay-Zに提供されていたら確実に代表曲の一つになっていたでしょう。曲後半の感動的なトラック展開が絶品です。\nSaigon「It's Alright」",
+  "youtube": "https://youtu.be/Ej7eLPAkBXQ",
+  "favs": 490,
+  "rts": 25
+ },
+ {
   "id": "1637038636528193536",
   "month": 3,
   "day": 18,
@@ -230,6 +350,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 45
  },
  {
+  "id": "1708406406238601637",
+  "month": 10,
+  "day": 1,
+  "year": 2023,
+  "text": "5lack「Girl if you」から元ネタへの繋ぎで始まるDJプレイ。その後もPSG・MONJUなどの日本のHip Hop・70年代のSoul・さらには椎名林檎まで幅広く選曲。脈絡のないプレイになりそうなところを絶妙なバランス感覚で成立させるセンスに脱帽。DJはN PACINO、サイドMCにGapper。",
+  "youtube": "https://youtu.be/Jrz8CA_Wzjo",
+  "favs": 444,
+  "rts": 26
+ },
+ {
   "id": "1624694806155755520",
   "month": 2,
   "day": 12,
@@ -240,14 +370,34 @@ const SCHEDULE_CANDIDATES = [
   "rts": 49
  },
  {
-  "id": "1628358696941256706",
-  "month": 2,
-  "day": 22,
+  "id": "1667456573407645697",
+  "month": 6,
+  "day": 10,
   "year": 2023,
-  "text": "1999年2月23日リリース、The Roots『Things Fall Apart』収録の「Dynamite!」はJ Dillaビートですが、サンプリングのギターループをよく聴くと、いや、よく聴かなくても明らかに「プツッ」とノイズが乗っている。それでも気にせず使っちゃう。そんなラフさがかっこいい。",
-  "youtube": "https://youtu.be/f-YF924NWFg",
-  "favs": 426,
-  "rts": 33
+  "text": "SEEDA「花と雨」POP YOURS 2023でのライブ映像がアップ。「姉ちゃん見てっかよ」「あなたの声が恋しいよ」と亡くなったお姉さんに言葉をかける姿に泣ける。アウトロではSTICKY・FEBB・TAMU・DEV LARGE・ECDへのシャウトも。永久保存版の動画をありがとう @POP__YOURS",
+  "youtube": "https://youtu.be/DQhbfDZoeqc",
+  "favs": 401,
+  "rts": 58
+ },
+ {
+  "id": "1687780492735610880",
+  "month": 8,
+  "day": 5,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2017年のヒップホップ\nPUNPEE『MODERN TIMES』\n\n2017年リリース。大ネタ使いのNottzビートにISSUGIが客演で参加した「Pride」がとにかく熱い🔥🔥🔥Budamunkビートで原島宙芳がラップする「夢のつづき」のゆるさも最高〜",
+  "youtube": "https://youtu.be/PTg674K8UKU",
+  "favs": 414,
+  "rts": 34
+ },
+ {
+  "id": "1784133987600117864",
+  "month": 4,
+  "day": 27,
+  "year": 2024,
+  "text": "ヒップホップバンドOMAが『illmatic』を丸ごとカバーした動画をアップ！シングル曲だけでなく、冒頭の「The Genesis」から影の薄い「One Time 4 Your Mind」までもれなく再現しています。トータル28分と短めの動画なので、その後はElzhi『Elmatic』を聴くのがおすすめです！",
+  "youtube": "https://youtu.be/6EMb23H9Kd0",
+  "favs": 389,
+  "rts": 59
  },
  {
   "id": "1650439441364951041",
@@ -280,6 +430,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 55
  },
  {
+  "id": "1696455148678103112",
+  "month": 8,
+  "day": 29,
+  "year": 2023,
+  "text": "民家を訪ねて古いレコードを見せてもらっていた男・45 KINGによる1時間のDJ動画。手さばきが上手いわけでもないし、微妙な繋ぎも全然あるのに、めちゃくちゃヒップホップを感じさせるDJイング。ここから学ぶことは多い。",
+  "youtube": "https://youtu.be/eCd_6NIEVBo",
+  "favs": 373,
+  "rts": 46
+ },
+ {
   "id": "1631257579069542400",
   "month": 3,
   "day": 2,
@@ -290,14 +450,44 @@ const SCHEDULE_CANDIDATES = [
   "rts": 40
  },
  {
-  "id": "1638843036611543040",
-  "month": 3,
-  "day": 23,
+  "id": "1725646245090500652",
+  "month": 11,
+  "day": 17,
   "year": 2023,
-  "text": "車のトランクを開け、真顔でDJを始める45 Kingに思わず笑ってしまうKid Capri。いきなりのバトンタッチにもかかわらず、バッチリ決めてくるカプリは流石です🔥🔥🔥",
-  "youtube": "https://youtu.be/lsP6eeVMyrk",
-  "favs": 324,
-  "rts": 41
+  "text": "CommonとDJ Premierのタッグ再び🔥🔥🔥プリモのインスト集『Beats That Collected Dust, Volume 3』収録の「In Moe」にコモンがラップを乗せたバージョンの公式MVがアップされました！！BPM73のゆったりとしたビートに、馴染みのある落ち着いたラップが重なる瞬間は感動的😭",
+  "youtube": "https://youtu.be/W4r4SJ_UOZA",
+  "favs": 348,
+  "rts": 48
+ },
+ {
+  "id": "1737083844115980313",
+  "month": 12,
+  "day": 19,
+  "year": 2023,
+  "text": "亡くなったAmp Fiddlerは、かつて自宅スタジオに近所の若者たちを招いて機材を触らせていた。そこにいたのが若きJ Dilla。才能を見抜いたAmpがQ-Tipに紹介したことでDillaのキャリアは加速した。その恩を返すようにDillaはAmpのソロデビュー作に3曲もビートを提供している。",
+  "youtube": "https://youtu.be/4WIk68affvU",
+  "favs": 323,
+  "rts": 63
+ },
+ {
+  "id": "1741420083765993534",
+  "month": 12,
+  "day": 31,
+  "year": 2023,
+  "text": "大晦日の夜は紅白歌合戦の代わりにこれを観るのが恒例行事！\nWu-Tang・ATCQ・Gang Starrなど、90年代を象徴するアーティストが数多く参加した伝説のマイクリレーを味わいながら年越しです🔥🔥🔥",
+  "youtube": "https://youtu.be/Fo-vJFr0P-k",
+  "favs": 322,
+  "rts": 47
+ },
+ {
+  "id": "1982403922653565107",
+  "month": 10,
+  "day": 26,
+  "year": 2025,
+  "text": "J Dillaが語っていた、自分のビートを2Pac「Do For Love」でマネされたという話。\nこれまで知らなかったし、気付いてなかったけど、確かに似ている。\n\nY? (Be Like That) [Jay Dee Remix] / The Pharcyde\n\n⬇️\nDo For Love / 2Pac",
+  "youtube": "https://youtu.be/bneXt72MimM",
+  "favs": 349,
+  "rts": 19
  },
  {
   "id": "1627231518572830720",
@@ -310,6 +500,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 51
  },
  {
+  "id": "1809784402962207197",
+  "month": 7,
+  "day": 7,
+  "year": 2024,
+  "text": "7月7日はさんピンCampの日🌧️\nさんピンや90年代国産ヒップホップに関するポストがたくさん見られると嬉しいな〜\n\nさんピンCampは違法アップロードされた動画しかなかったので、公式にアップされている LAMP EYE「証言」のビデオをどうぞ。画質がすごく良い！！",
+  "youtube": "https://youtu.be/9ogF14OxKL0",
+  "favs": 289,
+  "rts": 70
+ },
+ {
   "id": "1644278855677427721",
   "month": 4,
   "day": 7,
@@ -318,6 +518,26 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/DmsFZGPS2GY",
   "favs": 317,
   "rts": 39
+ },
+ {
+  "id": "1776537451114480116",
+  "month": 4,
+  "day": 6,
+  "year": 2024,
+  "text": "DJ Premierプロデュース曲のみで2時間45分の特盛ミックス！80年代後半から90年代にかけてのプリモクラシックを総ざらいするような内容で、一曲一曲を長めにプレイしつつ丁寧に繋いでいくスタイルなのでBGMに最適。ジャケットのチープさで敬遠したらもったいないですよ〜",
+  "youtube": "https://youtu.be/0h6hd8xGNGo",
+  "favs": 320,
+  "rts": 36
+ },
+ {
+  "id": "1756625746318278977",
+  "month": 2,
+  "day": 11,
+  "year": 2024,
+  "text": "PUNPEE「Stray Bullets」のあのフロウは、Memphis Bleek「Do My...」からのサンプリングでした！比較動画👇ちなみに「Do My...」のMVにはテニス選手のSerena WilliamsがJay-Zと試合をする豪華なシーンがあります。",
+  "youtube": "https://youtu.be/qyZafwHamfw",
+  "favs": 326,
+  "rts": 28
  },
  {
   "id": "1634856766134525954",
@@ -330,14 +550,24 @@ const SCHEDULE_CANDIDATES = [
   "rts": 29
  },
  {
-  "id": "1625797065010806784",
-  "month": 2,
-  "day": 15,
-  "year": 2023,
-  "text": "2月15日にこの世を去ったもう一人の若き天才、Big Lはデビュー作のジャケットに写るこのエリアで凶弾に倒れた。兄のいざこざに巻き込まれたという話が有名だが、どうやら何も知らないBig Lが撃たれたというわけでもないらしい... ちなみに享年もFebbと同じ24歳。",
-  "youtube": "https://youtu.be/yoPcocgW_dw",
-  "favs": 298,
-  "rts": 43
+  "id": "1825101556800434673",
+  "month": 8,
+  "day": 18,
+  "year": 2024,
+  "text": "これはすごい！Q-Tipのライブに飛び入り参加するPrince。突如現れ、あっという間に去っていく。そのままライブが続くので、観客は「えっ？いまの本物？！」と混乱したはず。これを撮影した人も、まさかこんな奇跡の瞬間が撮れるとは思わなかったことでしょう。必見！",
+  "youtube": "https://youtu.be/Jdw7wzNB-qg",
+  "favs": 285,
+  "rts": 46
+ },
+ {
+  "id": "1773651320454484063",
+  "month": 3,
+  "day": 29,
+  "year": 2024,
+  "text": "来日中のJay-Zに認められたと話題のDJ KEKKEが、野外でDJする動画。自然の風景に馴染むゆったりとした選曲が最高に気持ち良く、グルーヴを保ち続ける繋ぎと構成力が圧倒的。後半の展開も見事。これだけのクオリティのDJミックス動画は中々ありません🔥🔥🔥",
+  "youtube": "https://youtu.be/EP0nN-usmF8",
+  "favs": 303,
+  "rts": 27
  },
  {
   "id": "1637370828215185409",
@@ -350,6 +580,36 @@ const SCHEDULE_CANDIDATES = [
   "rts": 28
  },
  {
+  "id": "1772916763740750217",
+  "month": 3,
+  "day": 27,
+  "year": 2024,
+  "text": "ヒップホップビートをバンドカバーするスタイルで話題になり、遂に来日を果たしたOMA。東京公演の模様が1時間の長尺でアップされました。1曲目、タイムリーなあの人の「Bad Boy 4 Life」がこんなにもバンド演奏に向いているとは意外でした。生で観られた人がうらやましい！",
+  "youtube": "https://youtu.be/cx5DO0c9cv4",
+  "favs": 273,
+  "rts": 53
+ },
+ {
+  "id": "1695035376782766495",
+  "month": 8,
+  "day": 25,
+  "year": 2023,
+  "text": "わけあってPharrell Williamsについて調べてたら、SWV “Right Here (Remix)” の出だしのシャウトがファレルの声だと知って上がった🔥🔥🔥",
+  "youtube": "https://youtu.be/vHwXoY0LiQk",
+  "favs": 269,
+  "rts": 55
+ },
+ {
+  "id": "1772585297009651836",
+  "month": 3,
+  "day": 26,
+  "year": 2024,
+  "text": "Dr. Dre, Snoop Dogg, 50 Centが登場する病院コント。「アメリカらしいノリだな〜」と思いながら真顔で観てたけど、思わぬ急展開につい笑ってしまった。最後にはEminemも登場します。",
+  "youtube": "https://youtu.be/mUBXUyRoQco",
+  "favs": 283,
+  "rts": 40
+ },
+ {
   "id": "1646090794493673473",
   "month": 4,
   "day": 12,
@@ -358,6 +618,26 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/ooK0yt1bnUk",
   "favs": 282,
   "rts": 34
+ },
+ {
+  "id": "1801910017144033651",
+  "month": 6,
+  "day": 15,
+  "year": 2024,
+  "text": "Rip Slyme「真昼に見た夢 Remix」レコーディング時の様子。リップのメンバーは若いし、宇多丸さんはイケイケなノリだし、DさんはQ-Tipっぽい見た目だし、いま見ると非常に新鮮です。SP-1200とS950のセットがテレビで流れたなんて熱い🔥🔥🔥",
+  "youtube": "https://youtu.be/QJyoitvKXWc",
+  "favs": 277,
+  "rts": 27
+ },
+ {
+  "id": "1693211916494385219",
+  "month": 8,
+  "day": 20,
+  "year": 2023,
+  "text": "DJ Premierが擦り倒す “Big L『The Big Picture』のイントロ曲” を選ぶセンスが最高👏👏\nバトルDJとして結果を残し、その後はKanye WestのライブDJも務めたA-Trakによる、90年代後期のHIP HOP MIX。Common「Go!」のアウトロで聴けるシャープなスクラッチもこの人の仕事。",
+  "youtube": "https://youtu.be/JMr9GVylNbQ",
+  "favs": 265,
+  "rts": 38
  },
  {
   "id": "1638508825786617856",
@@ -380,6 +660,26 @@ const SCHEDULE_CANDIDATES = [
   "rts": 27
  },
  {
+  "id": "1767863229328535721",
+  "month": 3,
+  "day": 13,
+  "year": 2024,
+  "text": "Mummy-Dソロアルバムの1曲目を聴いて、213「Another Summer」を思い出した。Snoop Dogg・Nate Dogg・Warren Gの3人がゆったりとフロウするビートを手がけたのは、当時勢いに乗っていたKanye West。サブスクで聴けない2004年の名曲。",
+  "youtube": "https://youtu.be/jq1xLS5p_uo",
+  "favs": 263,
+  "rts": 27
+ },
+ {
+  "id": "1754792048060661898",
+  "month": 2,
+  "day": 6,
+  "year": 2024,
+  "text": "Dev Largeの1周忌にSPACE SHOWER TVで放送されたドキュメンタリー番組も良かったんだよなぁ。スペシャさん、どうか公式Youtubeにアップしてください🙇‍♂️🙇‍♂️🙇‍♂️",
+  "youtube": "https://youtu.be/wvkPkqVt5qM",
+  "favs": 253,
+  "rts": 36
+ },
+ {
   "id": "1650077051255406592",
   "month": 4,
   "day": 23,
@@ -388,6 +688,16 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/lXZlhZlqrr4",
   "favs": 246,
   "rts": 42
+ },
+ {
+  "id": "1793205164587037096",
+  "month": 5,
+  "day": 22,
+  "year": 2024,
+  "text": "Pete RockとCommonのコラボ曲「Wise Up」のMVが公開されました！MC Shan「The Bridge」を大胆にサンプリングしたビートがリリックにどれぐらい関係しているのかはShotGunDandyさんの解説を待ちますが、Pete Rockがこの感じのビートで来てくれたことがとにかく嬉しい！！",
+  "youtube": "https://youtu.be/qEdop3Wc-jc",
+  "favs": 245,
+  "rts": 40
  },
  {
   "id": "1631261384448307200",
@@ -400,6 +710,66 @@ const SCHEDULE_CANDIDATES = [
   "rts": 56
  },
  {
+  "id": "1962102940744962136",
+  "month": 8,
+  "day": 31,
+  "year": 2025,
+  "text": "Raekwon、Wu-Tangクラシックを交えた20分間のスタジオライブ。ラッパー然とした佇まいに引き込まれる。ここまで濃密なライブはなかなか見かけませんよ。",
+  "youtube": "https://youtu.be/lkiUlPOARXg",
+  "favs": 249,
+  "rts": 28
+ },
+ {
+  "id": "1710595828992151901",
+  "month": 10,
+  "day": 7,
+  "year": 2023,
+  "text": "Yo! MTV Rapsでの Wu-Tang Clan「C.R.E.A.M.」のライブ映像。MTVの公式チャンネルがアップしているので高画質。これぞWu-Tangなステージ上のワサワサ感も最高。フック一発で存在感を示すMethod Manはさすがです。O.D.B.もいますよ。",
+  "youtube": "https://youtu.be/BbLMBErCABY",
+  "favs": 225,
+  "rts": 51
+ },
+ {
+  "id": "1663515543394213888",
+  "month": 5,
+  "day": 30,
+  "year": 2023,
+  "text": "Nas「The World Is Yours」を元ネタから再構築した動画。Ahmad Jamal Trio「I Love Music」の使い方よりも、フックでしつこいぐらい鳴ってるのに馴染みすぎて全く気付けないホーンのサンプルの存在にビビった… Pete Rockやばい。",
+  "youtube": "https://youtu.be/LTRgXmPN3RM",
+  "favs": 239,
+  "rts": 33
+ },
+ {
+  "id": "1827573993970569275",
+  "month": 8,
+  "day": 25,
+  "year": 2024,
+  "text": "The Alchemistが東京・名古屋・大阪を巡った昨年のジャパンツアーの映像がYouTubeで公開されています！Muroが登場し、2人でレコードを掘るシーンが最高でした🔥🔥🔥",
+  "youtube": "https://youtu.be/B9l6plklpHk",
+  "favs": 237,
+  "rts": 34
+ },
+ {
+  "id": "1702978129629786341",
+  "month": 9,
+  "day": 16,
+  "year": 2023,
+  "text": "Common・ATCQ・The Pharcyde・Pete Rock & C.L. Smoothなど、定番どころを押さえた90s Mellow Hip Hop Mix！外しのない選曲と丁寧な繋ぎでBGMに最適。サンプリングソースを挟む構成もGOODです👍",
+  "youtube": "https://youtu.be/pVYuztsdhRc",
+  "favs": 252,
+  "rts": 17
+ },
+ {
+  "id": "1721822298636734776",
+  "month": 11,
+  "day": 7,
+  "year": 2023,
+  "text": "Wu-Tang ClanとBoot Camp Clikについて、ダースレイダーとMEGA-GとOMSBが語る動画。ヒップホップすべらない話が満載の2時間。動画後半、3人が黙々と首を振りながらShadez Of Brooklyn「Change」を聴いているだけのシーンが最高でした。",
+  "youtube": "https://youtu.be/xm36EmeeQiE",
+  "favs": 248,
+  "rts": 21
+ },
+ {
   "id": "1638103152691138561",
   "month": 3,
   "day": 21,
@@ -407,6 +777,26 @@ const SCHEDULE_CANDIDATES = [
   "text": "THA BLUE HERBのBOSSとSHINGO★西成のコラボ曲。こんなにも言葉が胸に刺さるのは、リリックの「結局、残るやつは人間力」の通り、SHINGO★西成の人間力がありまくるからなんだろうなぁ。2人が4小節ずつマイクを渡し合う3rdヴァースも最高なので、ぜひYouTubeで。",
   "youtube": "https://youtu.be/bjSXcynjowQ",
   "favs": 236,
+  "rts": 32
+ },
+ {
+  "id": "1728337734215840147",
+  "month": 11,
+  "day": 25,
+  "year": 2023,
+  "text": "なぜ「証言」のRinoヴァースは、アナログとCDでリリックが違うのか。その理由を本人が語っています。他にも「証言」にまつわるレアな話がいくつも聞ける最高な動画。このシリーズは本当に良いですね。RinoとRhymesterの距離感の話も面白かったです。",
+  "youtube": "https://youtu.be/pOrZRD0UPOg",
+  "favs": 240,
+  "rts": 28
+ },
+ {
+  "id": "1771461889735753876",
+  "month": 3,
+  "day": 23,
+  "year": 2024,
+  "text": "DJ KEN-BOがプレイする、2000年代前半のHIP HOP / R&Bセット！フロア映えするメインストリームヒット曲の連続に興奮しっぱなしの80分間。Just Blaze、Swizz Beatz、The Neptunes... いま聴いても全然古臭くないクラシックばかり。永久保存版です🔥🔥🔥",
+  "youtube": "https://youtu.be/JIRsEGP6iOk",
+  "favs": 235,
   "rts": 32
  },
  {
@@ -418,6 +808,26 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/7G86vqq2O1Y",
   "favs": 238,
   "rts": 27
+ },
+ {
+  "id": "1733056320985870608",
+  "month": 12,
+  "day": 8,
+  "year": 2023,
+  "text": "A Tribe Called Questのアカペラを使った、Cookin Soulのクリスマスアルバム。泣けるメロディーのジャズサンプルが魅力の7曲目「Holiday Booty」と、TLC「Sleigh Ride」をサンプリングした11曲目「Sleigh Dawg」がおすすめ。Bandcampでデータも買えるので冬のDJ用にぜひ。",
+  "youtube": "https://youtu.be/45ZFjiABLwI",
+  "favs": 238,
+  "rts": 26
+ },
+ {
+  "id": "1822467987913523494",
+  "month": 8,
+  "day": 11,
+  "year": 2024,
+  "text": "オリンピックブレイキン男子、SHIGEKIX🇯🇵が登場したオープニングマッチ。あのウッドベースのループでバトルが始まった瞬間にブチ上がったのは自分だけじゃないはず🔥🔥🔥久々に聴いたらやっぱり最高だったその曲、Black Sheep「The Choice Is Yours」をどうぞ！！",
+  "youtube": "https://youtu.be/K9F5xcpjDMU",
+  "favs": 219,
+  "rts": 40
  },
  {
   "id": "1638850576846028802",
@@ -438,6 +848,26 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/-kSsqWNSQqs",
   "favs": 217,
   "rts": 40
+ },
+ {
+  "id": "1695740945927696697",
+  "month": 8,
+  "day": 27,
+  "year": 2023,
+  "text": "DMC JAPAN FINAL 2023 バトル部門で見事優勝したDJ BUNTAによる、ヒップホップ50周年の夏にピッタリなオールドスクール･ミックス！圧巻の技術とセンス溢れる選曲で50分間グルーヴをキープし続ける永久保存版の内容です🔥🔥🔥",
+  "youtube": "https://youtu.be/TlXtRleKt9s",
+  "favs": 227,
+  "rts": 30
+ },
+ {
+  "id": "1728254684136415389",
+  "month": 11,
+  "day": 25,
+  "year": 2023,
+  "text": "NIKE JAPANに勤めていた女性が自身のスニーカーコレクションの中から思い入れのある数足を紹介する動画を見ていたら、突然にNitro Microphone Undergroundとのコラボモデルの話が出てきて最高だった。ニトロのCDをNIKEの靴箱型にして本国から怒られた話も聞けます。",
+  "youtube": "https://youtu.be/_ImGpg9SRkw",
+  "favs": 233,
+  "rts": 23
  },
  {
   "id": "1552232893488828417",
@@ -480,6 +910,26 @@ const SCHEDULE_CANDIDATES = [
   "rts": 39
  },
  {
+  "id": "1839953196329922984",
+  "month": 9,
+  "day": 28,
+  "year": 2024,
+  "text": "Commonが「They Reminisce Over You」のリリックをJ Dillaバージョンに替えてパフォーマンス！！日本語字幕が欲しい...",
+  "youtube": "https://youtu.be/l5PPOPCBcf0",
+  "favs": 216,
+  "rts": 28
+ },
+ {
+  "id": "1801021735786913827",
+  "month": 6,
+  "day": 12,
+  "year": 2024,
+  "text": "これ知ってほしいんですが、CommonとPete Rockの新曲「Dreamin’」は正規の音源よりもこっちのスタジオライブのバージョンの方が、ビートが太くてPete Rockの声もデカいので最高です。自分はこっちばっかり聴いてます。",
+  "youtube": "https://youtu.be/WX1oqItQOqg",
+  "favs": 219,
+  "rts": 23
+ },
+ {
   "id": "1624001010686631936",
   "month": 2,
   "day": 10,
@@ -490,14 +940,74 @@ const SCHEDULE_CANDIDATES = [
   "rts": 33
  },
  {
-  "id": "1640292578934370306",
-  "month": 3,
-  "day": 27,
+  "id": "1706637199071232089",
+  "month": 9,
+  "day": 26,
   "year": 2023,
-  "text": "ヒップホップの名盤がそこらじゅうに置かれた Gang Starr「Skillz」のビデオ。どこに何があるのかじっくり見てみたいな〜と思ったので編集してみました。D'Angelo「Devil's Pie」があることに初めて気付いた...",
-  "youtube": "https://youtu.be/8KgtGs1ny0k",
-  "favs": 222,
-  "rts": 17
+  "text": "US産New School Hip Hopのミックスを聴いていたら、何の違和感もなくMuro「Don’t Forget To My Men」が流れてビックリ。さらに驚いたのは、他の収録曲の多くと同じ1993年リリースだったこと。USに全く遅れを取らず、日本でこのスタイルでかましてたわけか。ハンパない🔥🔥🔥",
+  "youtube": "https://youtu.be/w8BVMqi-J5k",
+  "favs": 208,
+  "rts": 21
+ },
+ {
+  "id": "1958456484381217124",
+  "month": 8,
+  "day": 21,
+  "year": 2025,
+  "text": "Alicia KeysによるJay-Zメドレー。先日紹介した2Pacメドレーよりこっちの方がヤバい。Jackson 5「I Want You Back」から「Izzo」への展開に鳥肌！",
+  "youtube": "https://youtu.be/mCODwB_MKPU",
+  "favs": 203,
+  "rts": 22
+ },
+ {
+  "id": "1756966371810836527",
+  "month": 2,
+  "day": 12,
+  "year": 2024,
+  "text": "NYにあるDJ KAORIの私物が収められた倉庫に潜入する動画。Big L『The Big Picture』のゴールドディスクなど、90年代ヒップホップ好きにはたまらないお宝がゴロゴロ転がっていて最高でした。Nasの特大ステッカー👇を含む数点が視聴者プレゼントになっているのでお見逃しなく！",
+  "youtube": "https://youtu.be/hygH2ohK214",
+  "favs": 197,
+  "rts": 27
+ },
+ {
+  "id": "1822440434913947869",
+  "month": 8,
+  "day": 11,
+  "year": 2024,
+  "text": "オリンピックブレイキン男子、出場選手が次々に登場するオープニングのBGMに使われていたのはDJ Premierのビートでした🔥🔥🔥\n映画『8mile』のサントラ収録曲、Gang Starr「Battle」です！まさにバトル！！！",
+  "youtube": "https://youtu.be/dcp4iB7ePQo",
+  "favs": 190,
+  "rts": 32
+ },
+ {
+  "id": "1987475502924460083",
+  "month": 11,
+  "day": 9,
+  "year": 2025,
+  "text": "Method Man feat. D’Angelo\n“Break Ups 2 Make Ups (DJ Krush Remix)”\n\nブートを除けば、おそらく日本盤CDにしか収録されていないめちゃくちゃカッコいい曲。こないだもブックオフで見かけたし、探せば1000円以下で買えると思います。",
+  "youtube": "https://youtu.be/9YVu2YCKGx8",
+  "favs": 200,
+  "rts": 20
+ },
+ {
+  "id": "1688142877023686656",
+  "month": 8,
+  "day": 6,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2018年のヒップホップ\nSTUTS『Changes feat. JJJ』\n\n2018年リリース。この年に亡くなったFebbの生き生きとした姿が映されたMVが胸にくる。JJJのリリックも、Kid Fresinoが赤ちゃんを抱っこするシーンも、すべてが意味深い名曲。",
+  "youtube": "https://youtu.be/3fAu79uJOx8",
+  "favs": 196,
+  "rts": 20
+ },
+ {
+  "id": "1781287685723971918",
+  "month": 4,
+  "day": 19,
+  "year": 2024,
+  "text": "Nas『illmatic』のリリースからちょうど30年が経った今日、DJ Premierとのコラボ曲「Define My Name」が公開🔥🔥\nせっかくのお祭りなのでどんな曲かは聴いてからのお楽しみ！アウトロで言われている「アルバム💿」とは、NAS & DJ PREMIER名義でのアルバムなのでしょうか？",
+  "youtube": "https://youtu.be/WPF1X58IOFA",
+  "favs": 191,
+  "rts": 25
  },
  {
   "id": "1622120336270540801",
@@ -520,14 +1030,164 @@ const SCHEDULE_CANDIDATES = [
   "rts": 26
  },
  {
-  "id": "1638501986504183808",
-  "month": 3,
-  "day": 22,
+  "id": "1739249264256237684",
+  "month": 12,
+  "day": 25,
   "year": 2023,
-  "text": "㊗️WBC優勝⚾️\n野球選手時代のマイケル･ジョーダンから黒人初の大リーガー・ジャッキー･ロビンソンにスイッチして始まるビデオ。\nA Tribe Called Questプロデュースのビートに乗るのは、 Special Ed, Masta Ace, Buckshotの3人！まさに今回の代表のようなドリームチーム！",
-  "youtube": "https://youtu.be/a2pzmty3LVs",
+  "text": "【年間ベスト その①】\nDUSTY HUSKYがレコードを掘りながらひたすら喋るだけの動画。これがもうほんとに最高。一生見ていられる。この調子のラジオやポッドキャストがあったら毎回欠かさずチェックするんだけどな〜。実現しないかな〜。",
+  "youtube": "https://youtu.be/iKZASfKWLK8",
+  "favs": 194,
+  "rts": 19
+ },
+ {
+  "id": "1739941692311265328",
+  "month": 12,
+  "day": 27,
+  "year": 2023,
+  "text": "【年間ベスト その③】\nDJ Kocoの超絶スキル！Mohawks「The Champ」の2枚使いから、一気にピッチを落として KRS-One「Step Into A World」のフレーズを構築！からのJames Brown〜The Notorious B.I.G.への繋ぎでブッ飛ばされました！！たっぷり１時間のDJプレイです🔥🔥🔥",
+  "youtube": "https://youtu.be/XGwZalaSHT4",
+  "favs": 180,
+  "rts": 33
+ },
+ {
+  "id": "1761586817243996492",
+  "month": 2,
+  "day": 25,
+  "year": 2024,
+  "text": "Big L「Holdin' It Down」のMVには、右手でLサインを作るDJ KAORIの姿が！！\nこの曲、Pete RockのビートとA.G.のラップの相性が抜群に良い。このタッグって他にもありました？",
+  "youtube": "https://youtu.be/SVbaMSlnNP4",
+  "favs": 191,
+  "rts": 20
+ },
+ {
+  "id": "1700086579224576422",
+  "month": 9,
+  "day": 8,
+  "year": 2023,
+  "text": "KREVA自身が語る、MACCHOとの共演曲『Players' Player 』について。濃密な40分間のインタビュー。\n「ディスられている事を知らなかった」という衝撃の真相がSNSで話題ですが、曲の制作過程についての話も面白かったので要チェック。謎の女性ボーカルのことも語られています。",
+  "youtube": "https://youtu.be/ZQCCnoEgMlY",
+  "favs": 182,
+  "rts": 28
+ },
+ {
+  "id": "1850489919808188600",
+  "month": 10,
+  "day": 27,
+  "year": 2024,
+  "text": "Clark Kent、極上サンプリングループ。アットホームな雰囲気のDJパーティーで聴けると最高に心地良い曲、Patrice Rushen「Remind Me」の中盤にある、美し過ぎて逆に使いづらいエレピのフレーズをほんの少し組み換えて見事にループさせたのが、",
+  "youtube": "https://youtu.be/zjUUx9iSMmE",
+  "favs": 191,
+  "rts": 15
+ },
+ {
+  "id": "1706982867316945048",
+  "month": 9,
+  "day": 27,
+  "year": 2023,
+  "text": "・93年前後リリース\n・BPM100以上\n・ネタ感の強いファンキーなビート\n・ガヤと合唱するフック\n・大手レーベルから出た「非レア盤」\nこの辺をまとめたミックスは貴重かと。繋ぎや展開も良い。昨日ツイートしたMuroがかかるミックスはコレです。\nたぶん日本人女性DJ。おすすめ👍",
+  "youtube": "https://youtu.be/WITu7i9naIc",
+  "favs": 191,
+  "rts": 14
+ },
+ {
+  "id": "1755182393093407195",
+  "month": 2,
+  "day": 7,
+  "year": 2024,
+  "text": "Rip Slymeがいなければ、今の自分もこのアカウントもなかったです。いつかまた５人揃った姿が見たい！",
+  "youtube": "https://youtu.be/Q-aQT9lsX7I",
+  "favs": 194,
+  "rts": 11
+ },
+ {
+  "id": "1660193710989012999",
+  "month": 5,
+  "day": 21,
+  "year": 2023,
+  "text": "このDJミックス動画、画質の悪さを理由にスルーしたら勿体無いです。定番どころから絶妙にズラした選曲、インスト・アカペラの使い方、終始グルーヴをキープする構成、どれもハイレベルです。2枚使いでせわしなく切り替わるジャケット画像に笑ってください。DJ LUTER ONE🔥",
+  "youtube": "https://youtu.be/yByQC8zI1oM",
+  "favs": 188,
+  "rts": 14
+ },
+ {
+  "id": "1756241603625124111",
+  "month": 2,
+  "day": 10,
+  "year": 2024,
+  "text": "ヒップホップ･クラシックのビートをバンドで次々とカバーしていく激アツなライブがたっぷり1時間弱。以前紹介したMF Doomオンリーのセットよりも幅広い選曲で個人的にはこちらの方が好み。Breakestra『The Live Mix part.2』の現代バージョンとも解釈できそう。",
+  "youtube": "https://youtu.be/7siRp2tqN14",
+  "favs": 174,
+  "rts": 27
+ },
+ {
+  "id": "1822592488424767655",
+  "month": 8,
+  "day": 11,
+  "year": 2024,
+  "text": "4年後のオリンピック開催地はロサンゼルス🇺🇸2028年なので『ヒップホップ生誕55周年＆Wild Style公開45周年』の年なのに、ブレイキンが競技にないのは残念過ぎる😢70歳になるGrandmaster FlashにBobJamesで2枚使いしてもらって、Wildstyleオマージュなセレモニーやろうよ〜",
+  "youtube": "https://youtu.be/3gDL6XDcpss",
+  "favs": 168,
+  "rts": 26
+ },
+ {
+  "id": "1652598666593701888",
+  "month": 4,
+  "day": 30,
+  "year": 2023,
+  "text": "KID FRESINOが2015年にビートメイカーのLinn Moriと組んでフランスのレーベルからリリースしていた幻の楽曲が、リマスタリングされて再配信開始！ピアノの高音をフリップした上ネタに、くぐもったドラムが力を添える美しい一曲。",
+  "youtube": "https://youtu.be/HKCjtpT4Xgc",
   "favs": 177,
-  "rts": 18
+  "rts": 16
+ },
+ {
+  "id": "1750112955897897313",
+  "month": 1,
+  "day": 24,
+  "year": 2024,
+  "text": "Nas『Illmatic』がリリースされた翌年に、相方のDJ Premierが「Memory Lane」でサンプリングしたReuben Wilsonや「N.Y. State of Mind」でサンプリングしたDonald Byrdをゲストに招いてアルバムを作るGuru。めちゃ面白い動きだな。",
+  "youtube": "https://youtu.be/0_nXO_lMcks",
+  "favs": 182,
+  "rts": 8
+ },
+ {
+  "id": "1958831523932656006",
+  "month": 8,
+  "day": 22,
+  "year": 2025,
+  "text": "Alicia Keysのライブ動画をいくつか見た中で、先日のサマソニ配信の感動を超えてきたのはこれだけ。1時間半のライブにNas、Jay-Z、Q-Tipが登場するなんて！！！",
+  "youtube": "https://youtu.be/dUL90MIs13Y",
+  "favs": 165,
+  "rts": 25
+ },
+ {
+  "id": "1787044568145506399",
+  "month": 5,
+  "day": 5,
+  "year": 2024,
+  "text": "この7インチ盤オンリーのDJプレイはマジでヤバい！！ヒップホップはほとんどかからないのに、明らかにヒップホップを感じさせる30分間！不安定なブースでビシッと決める２枚使い、外しのないソウルフルな選曲と展開、これぞグッドDJ。Tsucchi Raida！",
+  "youtube": "https://youtu.be/3rOal4xJ-Z8",
+  "favs": 167,
+  "rts": 22
+ },
+ {
+  "id": "1700721981744918953",
+  "month": 9,
+  "day": 10,
+  "year": 2023,
+  "text": "A Tribe Called Quest「Check the Rhime」のQ-Tipのフレーズをサンプリングし、ゴツいドラム・ブリブリのベース・不穏なシンセを重ねて、仕上げにスヌープのラップを乗せた、破壊力抜群の一曲！！！\n\nSnoop Dogg「Bacc In Da Dayz」",
+  "youtube": "https://youtu.be/L_K1pneYWmk",
+  "favs": 176,
+  "rts": 12
+ },
+ {
+  "id": "1793929945774968962",
+  "month": 5,
+  "day": 24,
+  "year": 2024,
+  "text": "Lupe Fiascoの新曲「Samurai」がめちゃくちゃ気持ちいい。幼少期に武道を習っていたり、日本のオタクカルチャーが好きだったりする親日家の彼らしいタイトルの曲。カッコいい歳の取り方をしてるな〜。スウェットに書かれた「NISHIGAWA」は「WEST SIDE」のこと？",
+  "youtube": "https://youtu.be/AcoRc2ieFzE",
+  "favs": 163,
+  "rts": 25
  },
  {
   "id": "1648989890632351744",
@@ -540,6 +1200,16 @@ const SCHEDULE_CANDIDATES = [
   "rts": 12
  },
  {
+  "id": "1806291176691290339",
+  "month": 6,
+  "day": 27,
+  "year": 2024,
+  "text": "本当にカッコいいものを見ると思わず笑ってしまう時があるのですが、Common, Pete Rockの３発目もまさにそれでした。このまま行くとヒップホップ史に遺る名盤が生まれるのでは？\nところでこのフィルターがかったビート、Pete Rockらしさもあり、Dillaっぽさもありますよね！",
+  "youtube": "https://youtu.be/LBjMJ_AIi3E",
+  "favs": 170,
+  "rts": 17
+ },
+ {
   "id": "1625811077601841152",
   "month": 2,
   "day": 15,
@@ -548,6 +1218,56 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/qmj1q67NDAk",
   "favs": 164,
   "rts": 21
+ },
+ {
+  "id": "2014646779288158426",
+  "month": 1,
+  "day": 23,
+  "year": 2026,
+  "text": "DJ Premierの2000年代のビートをまとめた動画。\nPitch Black「It’s All Real」とかやっぱりむちゃくちゃカッコいい。\nいつかこの辺りのプリモ曲をDJ SEIJIさんがネタ振りミックスCDにしてくれることを願ってる…",
+  "youtube": "https://youtu.be/9Skd5QqPCs8",
+  "favs": 161,
+  "rts": 23
+ },
+ {
+  "id": "1701536131622339040",
+  "month": 9,
+  "day": 12,
+  "year": 2023,
+  "text": "2001年のFUJI ROCK FESTIVAL、Mos Def・Nitro Microphone Underground・Muro・Breakestra & Peanut Butter Wolf・Kick The Can Crew・ラッパ我リヤ...\nすごいメンツだな〜と思ったら、EminemとXzibitまで来てた！！！",
+  "youtube": "https://youtu.be/Ojok_-kp4HM",
+  "favs": 166,
+  "rts": 17
+ },
+ {
+  "id": "1730527169254723627",
+  "month": 12,
+  "day": 1,
+  "year": 2023,
+  "text": "MF Doom関連曲をバンドカバーする44分間のライブ。元ネタの良さを活かしたループを作るDoomの音源はバンドカバーに非常に向いており、極上のグルーヴを生んでいます。カバーした曲のタイトル・収録アルバム・元ネタ情報までテロップが入る動画の作り込み具合も完璧です。",
+  "youtube": "https://youtu.be/sossVHoi2R4",
+  "favs": 155,
+  "rts": 23
+ },
+ {
+  "id": "1705526664971927657",
+  "month": 9,
+  "day": 23,
+  "year": 2023,
+  "text": "The Neptunesによる印象的なビートが有名な N.O.R.E.「Superthug」冒頭のシャウト「What!! What!!」は、N.O.R.E.がレコーディング前のウォーミングアップで出した声を使ったそうなので、実際は「ワッ！ワッ！」という特に意味のない声なのかもしれない。",
+  "youtube": "https://youtu.be/gs9ngd-uq6I",
+  "favs": 154,
+  "rts": 21
+ },
+ {
+  "id": "1730357287250976863",
+  "month": 11,
+  "day": 30,
+  "year": 2023,
+  "text": "舐達麻のディス曲が出たので、今朝はこのCDをチョイス。Roxanne Wars、Bridge Wars、Kool Moe Dee vs LL Cool Jなど、ヒップホップ史に残る名ビーフが生んだディス曲の数々をDJ Red Alertがミックスしたコンピレーション。国内盤は嬉しい対訳付きです。",
+  "youtube": "https://youtu.be/HchacyAk0HM",
+  "favs": 162,
+  "rts": 13
  },
  {
   "id": "1623622735107862528",
@@ -560,6 +1280,66 @@ const SCHEDULE_CANDIDATES = [
   "rts": 19
  },
  {
+  "id": "1671832638846537729",
+  "month": 6,
+  "day": 22,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【100位】Naughty by Nature「O.P.P.」(1991年)\n\nJackson 5「ABC」をサンプリングしたキャッチーなビートについて、米Rolling Stoneはその後のThe HitmenやTrackmastersの作風との関係性を指摘。一理ある。",
+  "youtube": "https://youtu.be/idx3GSL2KWs",
+  "favs": 153,
+  "rts": 20
+ },
+ {
+  "id": "1804836930854756399",
+  "month": 6,
+  "day": 23,
+  "year": 2024,
+  "text": "DJ PremierやPete Rockが活動的な今年、Da Beatminerzのアルバムまで出ました🔥🔥🔥客演にBlack Moonが参加した曲は、Souls Of Mischief「93 ‘Til Infinity」同ネタ使い！！Smif-N-WessunのSteeleも参加しており、久々にBoot Camp Clik関連作を聴きなおしたくなる新譜です🙌",
+  "youtube": "https://youtu.be/vHwLf15W5cA",
+  "favs": 160,
+  "rts": 13
+ },
+ {
+  "id": "1822936070859915662",
+  "month": 8,
+  "day": 12,
+  "year": 2024,
+  "text": "オリンピック閉会式、ロサンゼルスからの生中継でSnoop Doggのライヴかと思いきや、なんとDr. Dreまで登場して「The Next Episode」を披露！NFLハーフタイムショー🏈ではカットされたドレーのヴァースまで聴けて大興奮！オリンピックは4年後のネクストエピソードに続く🔥🔥🔥",
+  "youtube": "https://youtu.be/QZXc39hT8t4",
+  "favs": 156,
+  "rts": 17
+ },
+ {
+  "id": "1650832030786256899",
+  "month": 4,
+  "day": 25,
+  "year": 2023,
+  "text": "Mummy-Dとtha BOSSの対談動画。インタビュー記事が先に出ていましたが、本人たちの声で聞くとまた良い。BOSSの「かつてこんなオチだったビーフがあっただろうか」という発言が大袈裟ではないほど、衝撃的な「ウワサの真相」の真相。",
+  "youtube": "https://youtu.be/PDB7yyBfoS4",
+  "favs": 146,
+  "rts": 26
+ },
+ {
+  "id": "1700114566657814535",
+  "month": 9,
+  "day": 8,
+  "year": 2023,
+  "text": "The Beatnuts「Hit Me With That」のMV、初めて見たかも。イケメンすぎるPsycho Lesのヴァースは放送に乗らない単語連発で消されまくっています。",
+  "youtube": "https://youtu.be/nsisHmYd3hc",
+  "favs": 161,
+  "rts": 11
+ },
+ {
+  "id": "1837449784027914518",
+  "month": 9,
+  "day": 21,
+  "year": 2024,
+  "text": "MC Lyteの新作アルバム、CommonとPete Rockのアルバムみたいな「90年代ヒップホップに魅了された大人がいま聴くべき作品」って感じで最高だった。ゲストの豪華さも凄いけど、そうでなくても繰り返し聴いてたと思う。LLのアルバム同様、Q-Tipらしさ全開の曲をどうぞ👇",
+  "youtube": "https://youtu.be/1rhj_uIqarE",
+  "favs": 155,
+  "rts": 16
+ },
+ {
   "id": "1623279569267724288",
   "month": 2,
   "day": 8,
@@ -570,6 +1350,46 @@ const SCHEDULE_CANDIDATES = [
   "rts": 10
  },
  {
+  "id": "1704065291628712165",
+  "month": 9,
+  "day": 19,
+  "year": 2023,
+  "text": "Nas『It Was Written'』収録曲を元ネタと繋いでミックス。Nasの作品の中で最も売れたアルバム。こうして聴くと渋くて良い曲多いな〜。Lupe Fiascoが「Illmatic より It Was Written' に影響を受けた」って言ってたような。",
+  "youtube": "https://youtu.be/-gZDGVY-MVQ",
+  "favs": 155,
+  "rts": 15
+ },
+ {
+  "id": "1733795743281152124",
+  "month": 12,
+  "day": 10,
+  "year": 2023,
+  "text": "どっちのドジャースもいいんだよなぁ⚾️\n\n1994年版：Special Ed, Masta Ace, Buckshot (pro. Q-Tip)\n\n\n1995年版：Chubb Rock, O.C., Jeru The Damaja (pro. DJ Premier)",
+  "youtube": "https://youtu.be/a2pzmty3LVs",
+  "favs": 156,
+  "rts": 13
+ },
+ {
+  "id": "1689964020701499393",
+  "month": 8,
+  "day": 11,
+  "year": 2023,
+  "text": "Universal Music Japan InternationalのYouTubeチャンネルでヒップホップMV特集が放送中！！\n現在はPublic Enemy「Fight The Power」が流れており、このまま23:40までレーベル所属アーティストのMVが流れ続けます👇",
+  "youtube": "https://youtu.be/CyusiFQymQ4",
+  "favs": 143,
+  "rts": 25
+ },
+ {
+  "id": "1834516408467890295",
+  "month": 9,
+  "day": 13,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は2002年リリースの6thアルバム『God’s Son』です。Nelly「Dilemma」が出たこの年に「最近のラッパーはみんなR&Bばっかりやってる。俺は1996年にやったから基本に戻るぜ」とJames Brownまんま使いの曲で始まるアルバムを出すNas、カッコいい！",
+  "youtube": "https://youtu.be/toHPcVT-PiY",
+  "favs": 147,
+  "rts": 20
+ },
+ {
   "id": "1635951472528572418",
   "month": 3,
   "day": 15,
@@ -578,6 +1398,196 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/4lfLcWV-APY",
   "favs": 146,
   "rts": 18
+ },
+ {
+  "id": "1743920407928086758",
+  "month": 1,
+  "day": 7,
+  "year": 2024,
+  "text": "テレビ番組『ASAYAN』に雷が出演した伝説回「若きラッパーのど自慢大会」(1994年) の収録ではライブだけでなくインタビューも撮影されていたが、司会の出川哲郎の顔に空気銃を突きつけるなどしていたため、放送では全カットされていた、というエピソードをRINOが語る動画。",
+  "youtube": "https://youtu.be/0TH2V32Zrws",
+  "favs": 143,
+  "rts": 16
+ },
+ {
+  "id": "1767154211438178789",
+  "month": 3,
+  "day": 11,
+  "year": 2024,
+  "text": "3月11日は、Gagleを聴く。",
+  "youtube": "https://youtu.be/x3xSwXN7WbE",
+  "favs": 141,
+  "rts": 18
+ },
+ {
+  "id": "1768601321932980701",
+  "month": 3,
+  "day": 15,
+  "year": 2024,
+  "text": "Mummy-Dアルバム、10曲目のタイトルが「Spread Love」だったので期待してたら、やっぱりあの声ネタが来てブチ上がり！！その流れで45Kingの同名曲を聴き、最後はRhymesterのこの曲に着地。Take 6をパロったゴスペラーズのコーラスが最高です！",
+  "youtube": "https://youtu.be/aK0qPsJSAUU",
+  "favs": 145,
+  "rts": 14
+ },
+ {
+  "id": "1853394301327454327",
+  "month": 11,
+  "day": 4,
+  "year": 2024,
+  "text": "Quincy Jonesといえば、BuckwildがサンプリングしたO.C.ネタ「Tomorrow」が極上の一曲なので、知らなかった人はマジでマジで聴いてほしい。明け方のクラブで大音量で浴びたら、涙出ちゃうんじゃないかなってレベルのやつ。MV見つけたけど、子どもたちの頑張る姿がヤバい😭",
+  "youtube": "https://youtu.be/ZNeC7Tm5M5U",
+  "favs": 150,
+  "rts": 8
+ },
+ {
+  "id": "1697912250432925746",
+  "month": 9,
+  "day": 2,
+  "year": 2023,
+  "text": "D.L.i.P.のマジでかっこ良すぎるスタジオ･ライブ。グダッた身内ノリで誤魔化さず、ビシッと決める永久保存版の24分間。2010年から一度も外さずに渋い。ヒップホップ･アーティストとしてのキャリアの重ね方の正解を示すクルー。明日の大阪は全員集合なのか？！",
+  "youtube": "https://youtu.be/z3QdXd8XB9o",
+  "favs": 135,
+  "rts": 19
+ },
+ {
+  "id": "1745742397357826205",
+  "month": 1,
+  "day": 12,
+  "year": 2024,
+  "text": "Soul・Disco・Jazz Funkが聴けるDJミックス動画。サンプリングネタとして有名な曲は少なめで、あくまで楽曲として優れた、誰もが「良い曲！」と感じるような素敵な音源が集められています。コメント欄を見る限り、どうやら海外でも受けている様子。お部屋のBGMに最適かと。",
+  "youtube": "https://youtu.be/ZwIIiBD0ho0",
+  "favs": 139,
+  "rts": 15
+ },
+ {
+  "id": "1757698698346443113",
+  "month": 2,
+  "day": 14,
+  "year": 2024,
+  "text": "Usherのハーフタイムショー、Alicia Keysとの「My Boo」がやっぱり最高でした。見た目がだいぶ大人しくなったLil Jonの姿にもビックリ。今年でUsherのアルバム『Confessions』から20年だったんですね〜。ハーフタイムショー、まだ見ていない方はこちらから👇",
+  "youtube": "https://youtu.be/7hYbrdC_-s8",
+  "favs": 135,
+  "rts": 18
+ },
+ {
+  "id": "1739582765690126348",
+  "month": 12,
+  "day": 26,
+  "year": 2023,
+  "text": "【年間ベスト その②】\nチリ人のDJ🇨🇱が良い感じにグルーヴをキープするミックス動画。Souls of Mischief「93 'til Infinity」からFKJ「Monday Jam」への繋ぎがハイライト。tofubeats「水星」がチリまで届いていることにも感動。随所でキレのあるスクラッチも魅せる36分間。",
+  "youtube": "https://youtu.be/eZMgjtZdl0o",
+  "favs": 137,
+  "rts": 15
+ },
+ {
+  "id": "1651184396563787778",
+  "month": 4,
+  "day": 26,
+  "year": 2023,
+  "text": "仙人掌の密着動画。冒頭の「好きなヒップホップをやってるだけだから。オーセンティックとか90年代っぽいとか、そういうつもりは全然ない」という発言に痺れた。アカペラでかますライブの様子もヤバい🔥🔥🔥",
+  "youtube": "https://youtu.be/pZbPPagg2KM",
+  "favs": 144,
+  "rts": 7
+ },
+ {
+  "id": "1735955424891875528",
+  "month": 12,
+  "day": 16,
+  "year": 2023,
+  "text": "Marco Poloが自身の未発表インストのみをプレイする1時間のビートライブ。未発表なのが信じられないクオリティのビートが次々と飛び出す驚異的な内容です。この2年後にMasta Aceとのタッグ曲「Breukelen “Brooklyn”」としてリリースされたインストもプレイしています。",
+  "youtube": "https://youtu.be/Ck0M7fsJeMs",
+  "favs": 136,
+  "rts": 14
+ },
+ {
+  "id": "1685607901229117440",
+  "month": 7,
+  "day": 30,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2011年のヒップホップ\nSIMI LAB 『Page 1: ANATOMY OF INSANE』\n\nSIMI LABの1stアルバムは2011年11月11日リリース。「普通って何？常識って何？んなもんガソリンぶっかけ火付けちまえ」の衝撃は凄かった。ちなみにSUMMITの発足もこの年。",
+  "youtube": "https://youtu.be/C7oCTSf6cuk",
+  "favs": 133,
+  "rts": 16
+ },
+ {
+  "id": "1703604767766069428",
+  "month": 9,
+  "day": 18,
+  "year": 2023,
+  "text": "DJ Premierビート多めの、DJ Melo-DによるAll Vinyl Set。\n全曲で安定感抜群の2枚使い。手元がずっと映っているので、真似して練習すれば上達できそう。選曲の意外性はあまりないな〜と思っていたら、〆の一曲が『Muroのプロモオンリーインスト盤』でブチ上がりました🔥🔥🔥",
+  "youtube": "https://youtu.be/jIejYoNolQ8",
+  "favs": 131,
+  "rts": 18
+ },
+ {
+  "id": "1781971132993716380",
+  "month": 4,
+  "day": 21,
+  "year": 2024,
+  "text": "怒涛のPete Rockメドレーから始まる90年代ヒップホップセット！こういう王道の選曲は並のDJがプレイすると面白味のないダレたプレイになりがちですが、百戦錬磨の現場感で最後までテンションをキープして見せるDJ Hasebeはやはりレジェンド🔥🔥🔥",
+  "youtube": "https://youtu.be/egciurB_3yA",
+  "favs": 131,
+  "rts": 17
+ },
+ {
+  "id": "1785251424965960039",
+  "month": 4,
+  "day": 30,
+  "year": 2024,
+  "text": "Mary J. Bligeのライブパフォーマンスにゲストで登場する1997年のNasが笑っちゃうぐらいカッコいいので是非チェックしてください。『QB’s Finest』のジャケットに写っているブリンブリンを身につけているのも熱い🔥🔥🔥",
+  "youtube": "https://youtu.be/wFoBXCI_gPQ",
+  "favs": 137,
+  "rts": 11
+ },
+ {
+  "id": "1822905867827614191",
+  "month": 8,
+  "day": 12,
+  "year": 2024,
+  "text": "オリンピックブレイキン男子、SHIGEKIXとHIRO10の日本人対決🇯🇵2本目のビートはWu-Tang Clan「Protect Ya Neck」でした！この曲のビデオはマイクリレーに合わせて1人ずつ名前が表示される親切な仕様でWu-Tang初心者に最適な教材となっております！",
+  "youtube": "https://youtu.be/R0IUR4gkPIE",
+  "favs": 132,
+  "rts": 14
+ },
+ {
+  "id": "1716386480900415530",
+  "month": 10,
+  "day": 23,
+  "year": 2023,
+  "text": "ANARCHYがリリースした、全曲Statik SelektahプロデュースのEP『My Mind』から「Reach (feat. C.O.S.A.)」のMVが公開。Anarchyのリリック「東京･成田から密輸、機内に持ち込んだ凶器はSKILL」がカッコ良すぎる。C.O.S.A.の「遂にKINGからCallだぜ」も熱い🔥🔥🔥",
+  "youtube": "https://youtu.be/4dcnoi5fatQ",
+  "favs": 125,
+  "rts": 19
+ },
+ {
+  "id": "1833336045947252802",
+  "month": 9,
+  "day": 10,
+  "year": 2024,
+  "text": "Nasが日本に来てるタイミングで、Large Professorも日本にいる。突然現れて「Live At The Barbeque」やってくれないかな… 2016年の↓みたいな感じで。",
+  "youtube": "https://youtu.be/vJj7ZThcnxU",
+  "favs": 126,
+  "rts": 18
+ },
+ {
+  "id": "1756992262670778588",
+  "month": 2,
+  "day": 12,
+  "year": 2024,
+  "text": "Snoop Doggy Dogg「Murder Was The Case」ってコナンのBGMっぽいな〜と思ったので、試しに重ねてみたらやっぱり馴染んだ。(コナンのURL貼っときます)",
+  "youtube": "https://youtu.be/QeTQhkVYVHg",
+  "favs": 128,
+  "rts": 15
+ },
+ {
+  "id": "1812054597382357464",
+  "month": 7,
+  "day": 13,
+  "year": 2024,
+  "text": "LL Cool Jの新曲のビートに食らった。ATCQの4,5作目とソロ名義の1作目でJay Deeとの共作をやり終えたQ-Tipが辿り着いた『Kamaal The Abstract』期のサウンドだ。当時の未発表ビートが基になっているんじゃないかと思うほどその特徴が出ている。LL & Q-Tipのアルバムも来るか？",
+  "youtube": "https://youtu.be/03I2Dse1B3Y",
+  "favs": 129,
+  "rts": 13
  },
  {
   "id": "1624363142087323649",
@@ -600,14 +1610,94 @@ const SCHEDULE_CANDIDATES = [
   "rts": 10
  },
  {
-  "id": "1634164119724232704",
-  "month": 3,
+  "id": "1698633834273861928",
+  "month": 9,
+  "day": 4,
+  "year": 2023,
+  "text": "ドイツ🇩🇪のビートメイカー・Hydrogeniiによる、Method Man & Redman「How High」のリミックスがメロウかつドラマティックな雰囲気でヤバい！！Bandcampでデータが買えるようです。(詳細はリプ欄)",
+  "youtube": "https://youtu.be/aLaJXdX1jDM",
+  "favs": 117,
+  "rts": 16
+ },
+ {
+  "id": "2050807654055067818",
+  "month": 5,
+  "day": 3,
+  "year": 2026,
+  "text": "GREEN ASSASSIN DOLLARによる25分のビートライブ。メロウで太いグルーヴが気持ちいい。\n「良い音のDJミキサーが欲しい」と調べたことがある人なら必ずその名を知っている名機、ALLEN & HEATHのXONE:96を使用しているのも注目ポイント。",
+  "youtube": "https://youtu.be/Dg6ZPgoOCz4",
+  "favs": 119,
+  "rts": 14
+ },
+ {
+  "id": "1860520142423359574",
+  "month": 11,
+  "day": 24,
+  "year": 2024,
+  "text": "おすすめのミックス、Kanye Westの初期ワークスだけで2時間の内容。スイスのDJによる作品で、過去作のJ DillaやDJ Premierの回もリピートするほど良かったのですが、今作もそれに並ぶほどの出来。Serato Stemsを活かした繋ぎが新鮮でカッコいいです。この時期のカニエが好き！",
+  "youtube": "https://youtu.be/6ASAQ6MbHFc",
+  "favs": 118,
+  "rts": 14
+ },
+ {
+  "id": "1689592435406688256",
+  "month": 8,
   "day": 10,
   "year": 2023,
-  "text": "明日は3月11日。忘れちゃいけない、忘れられない日。\nGAGLE - うぶこえ（See the light of day）に字幕を付けました。",
-  "youtube": "https://youtu.be/x3xSwXN7WbE",
-  "favs": 107,
-  "rts": 20
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2022年のヒップホップ\nOMSB「LASTBBOYOMSB」\n\nOMSBが自身のヒップホップ史を辿るリリックは、今回のカウントダウン企画の締めにピッタリです。明日はヒップホップ生誕50周年の記念日。色んな人からヒップホップの話を聞けるのが楽しみ！",
+  "youtube": "https://youtu.be/yrbazHleM_g",
+  "favs": 116,
+  "rts": 15
+ },
+ {
+  "id": "1749749788575469737",
+  "month": 1,
+  "day": 23,
+  "year": 2024,
+  "text": "『ダサい元ネタから生まれたカッコいいDJ Premierビート』のランキングを作ったら、この曲は上位に入りそう。元ネタのスタジオライブを↓に貼っておきます。この他にランクインしそうな曲はありますか？",
+  "youtube": "https://youtu.be/18HuiRyEUBM",
+  "favs": 122,
+  "rts": 9
+ },
+ {
+  "id": "1796738442832793901",
+  "month": 6,
+  "day": 1,
+  "year": 2024,
+  "text": "祝・再アップ🔥めちゃくちゃカッコいいのに、なぜか数日で削除された動画がまた見れるようになりました！選曲・繋ぎ・構成、その全てにおいて圧倒的なセンスとオリジナリティーを感じさせるDJプレイ。特にジャンルのまたぎ方が抜群に上手いのでそこに注目してみてください。",
+  "youtube": "https://youtu.be/Xo5aC9gsHXk",
+  "favs": 119,
+  "rts": 10
+ },
+ {
+  "id": "1746859738334380351",
+  "month": 1,
+  "day": 15,
+  "year": 2024,
+  "text": "DJ Premierのインタビュー記事に「Chopの手法はShowbizに教えてもらった」と書いてあるのを発見！ありがとうショウビズ〜！！\n\nDJ PremierとShowbizといえばこの曲。",
+  "youtube": "https://youtu.be/bosr3eOfYFE",
+  "favs": 119,
+  "rts": 9
+ },
+ {
+  "id": "1874036559676313991",
+  "month": 12,
+  "day": 31,
+  "year": 2024,
+  "text": "宇多丸さんとBoseさんの対談。40:30〜の話が特に面白かった。\n\n宇「有象無象を経た上で、だからATCQは尊いが分かるんで」\nB「あんな洗練されたもの、他になかった、一個も」\n宇「これどんなジャンルにも言えて、突出した部分だけ見ても…（続く）」",
+  "youtube": "https://youtu.be/7qAS9mjvdC0",
+  "favs": 121,
+  "rts": 7
+ },
+ {
+  "id": "1841437587824910432",
+  "month": 10,
+  "day": 2,
+  "year": 2024,
+  "text": "Common「Take It EZ」といえば、クセ強フロウのラップ入りバージョンより、インスト上でサックスを吹きまくる「Jazz Instrumental」ですよね！データで欲しいな〜と思って調べたら、日本盤のボーナストラックに入ってました！！持ってるラッキー！",
+  "youtube": "https://youtu.be/yZOJ0zVpQck",
+  "favs": 113,
+  "rts": 13
  },
  {
   "id": "1641379753574928385",
@@ -620,6 +1710,56 @@ const SCHEDULE_CANDIDATES = [
   "rts": 5
  },
  {
+  "id": "1705476742385963141",
+  "month": 9,
+  "day": 23,
+  "year": 2023,
+  "text": "これはおすすめ！Aru-2のビートライブ。自身が手掛けたKid Fresino・仙人掌・JJJの曲をプレイし、終盤にはマイクを握って生歌まで聴かせる、ファン大満足な30分間。「彼は本当に音楽が好きなんだな〜」と感じる温かいライブ。",
+  "youtube": "https://youtu.be/Go-4-jJ-oIc",
+  "favs": 116,
+  "rts": 9
+ },
+ {
+  "id": "1785612874720969181",
+  "month": 5,
+  "day": 1,
+  "year": 2024,
+  "text": "Nas「Street Dreams」のライブパフォーマンス、なんとメロウなRemixバージョンを披露しています！フックを担当したR. Kellyの登場はありませんが、小さなテレビスタジオでゆったりとラップするNasの姿だけでも十分楽しめます🔥🔥🔥",
+  "youtube": "https://youtu.be/YEi8JGpvzLI",
+  "favs": 117,
+  "rts": 8
+ },
+ {
+  "id": "1801547629681139930",
+  "month": 6,
+  "day": 14,
+  "year": 2024,
+  "text": "Common, Pete Rockで思い出したAretha Franklin「Daydreaming」使い。Rip Slyme「真昼に見た夢 Mummy-D Remix」のまどろんだビートが気持ち良い。Who Sampledを見る限り、これ以前にアレサのこの曲をそのまま使ったビートはUSにはなかったようです。目を付けるのが早い。",
+  "youtube": "https://youtu.be/WcRDWrSkHsM",
+  "favs": 114,
+  "rts": 11
+ },
+ {
+  "id": "1718553261299667405",
+  "month": 10,
+  "day": 29,
+  "year": 2023,
+  "text": "Kid Capri『Soundtrack To The Streets』のアウトロは久保田利伸のアカペラ。でも歌ってるわけじゃなくて、喋ってるだけ。しかもだいぶふざけた調子で。これをやった久保田利伸も、採用したキッド･カプリもどうかしてる...",
+  "youtube": "https://youtu.be/NnoM6txcWbc",
+  "favs": 113,
+  "rts": 11
+ },
+ {
+  "id": "1789974585791639640",
+  "month": 5,
+  "day": 13,
+  "year": 2024,
+  "text": "「Dev LargeとMitsu the Beatsのプロジェクトがあった？！」とポストしたら、ご本人から貴重な補足が。D.LとHungerがラップした曲がリリースされていたら語り継がれる名曲になっていただろうし、↓にRINO・TWIGY・ZEEBRA・DEV LARGEが揃って参加していたことになるのかな？",
+  "youtube": "https://youtu.be/wkST7dOICuw",
+  "favs": 114,
+  "rts": 9
+ },
+ {
   "id": "1633407217197088770",
   "month": 3,
   "day": 8,
@@ -628,6 +1768,56 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/URIr3K9g4rw",
   "favs": 101,
   "rts": 20
+ },
+ {
+  "id": "1687765389500108801",
+  "month": 8,
+  "day": 5,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【12位】Nas「N.Y. State of Mind」(1994年)\n\nRolling Stoneは「この曲と『Illmatic』によって、彼は90年代にラキムの王冠を受け継ぐ者として認められた」と紹介している。",
+  "youtube": "https://youtu.be/hI8A14Qcv68",
+  "favs": 102,
+  "rts": 18
+ },
+ {
+  "id": "1957387423807160561",
+  "month": 8,
+  "day": 18,
+  "year": 2025,
+  "text": "昨日の衝撃から今日もYouTubeでAlicia Keysのライブ映像ばっかり観てる。これは2Pacの名曲をピアノでカバーしたライブ。ヒップホップとの距離感が素敵ですよね〜",
+  "youtube": "https://youtu.be/CMv2I5ZLYc4",
+  "favs": 108,
+  "rts": 12
+ },
+ {
+  "id": "1752300846732468714",
+  "month": 1,
+  "day": 30,
+  "year": 2024,
+  "text": "DJ Premier好きならきっと知っている、Arrested Development「Ease My Mind (Premier’s Remix)」ですが、この日本盤CDにも収録されています。データでDJする人は探してみては？",
+  "youtube": "https://youtu.be/lVPSGZ-TWCU",
+  "favs": 108,
+  "rts": 11
+ },
+ {
+  "id": "1825076914320740430",
+  "month": 8,
+  "day": 18,
+  "year": 2024,
+  "text": "Q-TipがPharrellのビートでラップする曲って、いっぱいありそうであんまりないよな〜と思って調べたら、Princeの曲をThe Neptunesがリミックスし、客演のQ-Tipがラップする曲を見つけた。1999年リリースなのでQ-Tipのソロ1st『Amplified』と同時期だ。良い発見ができた💡",
+  "youtube": "https://youtu.be/0rrTbrpGkmo",
+  "favs": 108,
+  "rts": 10
+ },
+ {
+  "id": "1746457126376288395",
+  "month": 1,
+  "day": 14,
+  "year": 2024,
+  "text": "Da BeatminerzのビートをもらったRinoがD&D STUDIOでRECしている時にDJ Premierがやって来て、Rinoがラップする姿をガラス越しの至近距離からじっと見つめていた話のオチが最高だった🔥🔥🔥そのあとのRedmanとBIGZAMの話も熱かった... US 90's好きにもおすすめしたい動画。",
+  "youtube": "https://youtu.be/yldFM1Lbvm8",
+  "favs": 96,
+  "rts": 19
  },
  {
   "id": "1548995226248704000",
@@ -640,6 +1830,26 @@ const SCHEDULE_CANDIDATES = [
   "rts": 15
  },
  {
+  "id": "1814631349430423936",
+  "month": 7,
+  "day": 20,
+  "year": 2024,
+  "text": "ZEEBRA「真っ昼間」フックのフレーズ「Hey Yo！」は、Original Flavor「Whatchawant」からの引用かな？\nこのアルバムも1993年リリースの良質サンプリングビーツが聴ける名盤。2006年発売の日本盤の帯には「ジャジー･ヒップホップの最高峰」と書かれていますね。",
+  "youtube": "https://youtu.be/MLHuGsYVqGw",
+  "favs": 103,
+  "rts": 11
+ },
+ {
+  "id": "1937459830563963061",
+  "month": 6,
+  "day": 24,
+  "year": 2025,
+  "text": "Slick Rick「La Di Da Di」のフロウを日本語で再現するKREVA。\nKREVAのライブを観てから、KREVA聴き直し週間が始まっています🎧",
+  "youtube": "https://youtu.be/GtqT4qLcY90",
+  "favs": 100,
+  "rts": 12
+ },
+ {
   "id": "1649714670566256644",
   "month": 4,
   "day": 22,
@@ -648,6 +1858,46 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/RzEBh4iz3tU",
   "favs": 104,
   "rts": 7
+ },
+ {
+  "id": "1713132539051909338",
+  "month": 10,
+  "day": 14,
+  "year": 2023,
+  "text": "RakimとLL Cool Jが行なった、Marley Marlへのトリビュートパフォーマンス。「Eric B Is President」「Paid In Full」「Around the Way Girl」「Mama Said Knock You Out」など、クラシック連発の8分間。最前列で見つめるマーリー･マールの表情も良い。",
+  "youtube": "https://youtu.be/-pmL1FMhj6g",
+  "favs": 98,
+  "rts": 13
+ },
+ {
+  "id": "1685228674067628032",
+  "month": 7,
+  "day": 29,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【26位】Gang Starr「Mass Appeal」(1994年)\n\nRolling Stoneは「他のラッパーたちほどタフでストリート志向ではない\"ジャズ・ラッパー\"という誤解を完全に打ち破った曲」と紹介している。",
+  "youtube": "https://youtu.be/y9lNbNGbo24",
+  "favs": 91,
+  "rts": 17
+ },
+ {
+  "id": "1708799202464264387",
+  "month": 10,
+  "day": 2,
+  "year": 2023,
+  "text": "BudamunkとYotaroの気持ちよすぎるビートライブ。メロウでグルーヴィーな曲の連続で、統一感のある１つの作品のよう。自宅にてほどよい音量で流すと極上の気分を味わえました。もちろんクラブの爆音で聴くのも最高なんですけどね〜",
+  "youtube": "https://youtu.be/dn1lJPhQNn0",
+  "favs": 103,
+  "rts": 5
+ },
+ {
+  "id": "1863136015780818978",
+  "month": 12,
+  "day": 1,
+  "year": 2024,
+  "text": "DJ Premierのことが大好きなのがよく分かる2人組によるバック・トゥ・バック。仲の良さとヒップホップ愛に溢れたプレイは清々しくて最高でした。プリモ関連以外の選曲に渋いオリジナリティが感じられたので、その路線でもう1プレイ聴きたいな〜",
+  "youtube": "https://youtu.be/2Y0ZlbuBuok",
+  "favs": 96,
+  "rts": 12
  },
  {
   "id": "1627636609154973696",
@@ -670,6 +1920,126 @@ const SCHEDULE_CANDIDATES = [
   "rts": 9
  },
  {
+  "id": "1716401579908071778",
+  "month": 10,
+  "day": 23,
+  "year": 2023,
+  "text": "名物企画『Rhythm Roulette』のStatik Selektah編で、70年代SoulをサンプリングしてJay-Zの声ネタを擦った激ヤバビートが完成するんだけど、その後しばらくして出たANARCHYのフリーダウンロードアルバムにそのビートが使われていて「これはあの時の！」と興奮した。10年前。",
+  "youtube": "https://youtu.be/3_QTDaynDhg",
+  "favs": 97,
+  "rts": 9
+ },
+ {
+  "id": "1833099256992833601",
+  "month": 9,
+  "day": 9,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は2012年リリースの10thアルバム『Life is Good』です。この後、NasはKanye West、そしてHit Boyとタッグを組んでアルバムを作ることになるので、現時点でこれが複数プロデューサーを招いた最後の作品。推し曲は「Bye Baby」です！",
+  "youtube": "https://youtu.be/R1f4R3owxkI",
+  "favs": 97,
+  "rts": 9
+ },
+ {
+  "id": "1700448972522090585",
+  "month": 9,
+  "day": 9,
+  "year": 2023,
+  "text": "レコードを買う90年代ヒップホップ好きならきっと知っている、ホワイト盤でしか聴けない名曲。\nRoy Ayers & Wayne Hendersonネタの鍵盤の音色が美しいビートとLL Cool Jのラップが相性抜群。良い音で聴いてみたい...\nCrimedanch Cartel「Money Is The Key feat. LL Cool J」",
+  "youtube": "https://youtu.be/mb9mDsheT0s",
+  "favs": 91,
+  "rts": 13
+ },
+ {
+  "id": "1658777213091840000",
+  "month": 5,
+  "day": 17,
+  "year": 2023,
+  "text": "Pete Rockが手がけた、Lady Wrayというシンガーの「Joy & Pain (Remix)」のインストバージョン。上ネタが抜けてドラムとベースだけになる瞬間の気持ち良さはインストならでは。後半にはPete Rockらしいホーンのフレーズも差し込まれています。",
+  "youtube": "https://youtu.be/aD_3qw8ONfg",
+  "favs": 100,
+  "rts": 3
+ },
+ {
+  "id": "1664590134258573315",
+  "month": 6,
+  "day": 2,
+  "year": 2023,
+  "text": "さっき紹介したイケてるチリ人DJがかけていた90sフレイバーなインスト物、Smuff Tha Quiz「Dawn」\nフィルターがかったベースラインに乾いたドラムが乗っただけでブチ上がれる人にオススメします🔥",
+  "youtube": "https://youtu.be/I6OQpqDDZVI",
+  "favs": 93,
+  "rts": 10
+ },
+ {
+  "id": "1763888480286134582",
+  "month": 3,
+  "day": 2,
+  "year": 2024,
+  "text": "ScHoolBoy Qのジャケットを見て、Tha Alkaholiks「Daaam!」を思い出したのは自分だけではないはず...\nというわけで、Cal Tjaderネタが気持ちよすぎるBuckwild Remixをどうぞ。\n⚠️このジャケの12インチには未収録なのでご注意を！",
+  "youtube": "https://youtu.be/7jd9zn5_i1U",
+  "favs": 96,
+  "rts": 6
+ },
+ {
+  "id": "1771845103356666223",
+  "month": 3,
+  "day": 24,
+  "year": 2024,
+  "text": "Zeebra「Slow Down」は、本人曰く「Street Dreamsの出だし8小節を一曲にしたような内容」とのことで、80年代後半から90年代にかけてのUSヒップホップが好きな人には確実に刺さるリリックになっています。ちなみに1stヴァースはこんな感じ。",
+  "youtube": "https://youtu.be/COS0X8bLwyw",
+  "favs": 91,
+  "rts": 9
+ },
+ {
+  "id": "1796738445672423789",
+  "month": 6,
+  "day": 1,
+  "year": 2024,
+  "text": "スチャダラパー & STUTS「Pointless 5 feat. PUNPEE」はMVも魚眼で最高でした！！いまさら気づきましたが、フックのフレーズ「Right~ True~」は Lord Finesse「Hip 2 Da Game」の引用ですね！Punpeeが履いてるリヴァプールのジャージもカッコいい〜",
+  "youtube": "https://youtu.be/8zzbiHyKUj8",
+  "favs": 91,
+  "rts": 9
+ },
+ {
+  "id": "1846498824443068591",
+  "month": 10,
+  "day": 16,
+  "year": 2024,
+  "text": "A Tribe Called QuestのAli Shaheed MuhammadがプロデュースしたR&Bといえば、D'Angelo「Brown Sugar」が有名ですが、同時期にFaith Evans「You Used To Love Me」のリミックスも手掛けていたんですね。こちらのビートは翌年出る『Beats, Rhymes And Life』っぽさがあるかも。",
+  "youtube": "https://youtu.be/f3TMeUL6hdY",
+  "favs": 89,
+  "rts": 11
+ },
+ {
+  "id": "1687055711228788736",
+  "month": 8,
+  "day": 3,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2015年のヒップホップ\nOMSB『Think Good』\n\n2015年リリース、OMSBの2ndアルバム。フックなしで6分間スピットし続けるタイトル曲が熱過ぎる。3rdアルバム『ALONE』のリリパ（55分間）がアップされてる👇の知ってました？",
+  "youtube": "https://youtu.be/ia5oZu9NGDA",
+  "favs": 86,
+  "rts": 13
+ },
+ {
+  "id": "1715341788389786027",
+  "month": 10,
+  "day": 20,
+  "year": 2023,
+  "text": "車のトランクをおもむろに開けてDJを始める45Kingと、それを見て爆笑するKid Capri。45Kingはウケを狙うつもりなど全くなく真剣な表情。そこがまた良い。",
+  "youtube": "https://youtu.be/lsP6eeVMyrk",
+  "favs": 83,
+  "rts": 14
+ },
+ {
+  "id": "1993636288314868222",
+  "month": 11,
+  "day": 26,
+  "year": 2025,
+  "text": "R-指定のヴァースに「Genius」ってフレーズがあったから、「まさかWu-Tang主要メンバー全員の名前をリリックに忍ばせてる？！」と思って確かめたけど、そういうわけではなさそう。でもR-指定のことだし、もしかすると…",
+  "youtube": "https://youtu.be/dhL3s85t09U",
+  "favs": 97,
+  "rts": 0
+ },
+ {
   "id": "1622150536261926912",
   "month": 2,
   "day": 5,
@@ -678,6 +2048,16 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/NH3Br1F45Ac",
   "favs": 89,
   "rts": 7
+ },
+ {
+  "id": "1816795034777190665",
+  "month": 7,
+  "day": 26,
+  "year": 2024,
+  "text": "Rakimの新作が全7曲だったことで、改めてCommon & Pete Rockの凄さを感じた。あの出来で15曲も収録して続編まで匂わせるなんて…\nPete RockとRakimも相性抜群なのでまた組んでほしい。それが無理ならNick Wizと！",
+  "youtube": "https://youtu.be/gYThGKxnsu0",
+  "favs": 92,
+  "rts": 4
  },
  {
   "id": "1625266064971161600",
@@ -690,6 +2070,96 @@ const SCHEDULE_CANDIDATES = [
   "rts": 4
  },
  {
+  "id": "1733781097916543163",
+  "month": 12,
+  "day": 10,
+  "year": 2023,
+  "text": "プロモテープ止まりだった1995年作のKAMAKAZEのアルバム が、Marley MarlのDATに残された音源をもとに正規リリース🔥🔥🔥\n注目はタイトル曲「Head On」で、なんとこれまで12インチ等で聴けたバージョンとビートが違っているのです。メロウな90sが好きな人はハマる仕上がり！",
+  "youtube": "https://youtu.be/sn4jlL1bSPQ",
+  "favs": 88,
+  "rts": 6
+ },
+ {
+  "id": "1982024338678378866",
+  "month": 10,
+  "day": 25,
+  "year": 2025,
+  "text": "The Neptunesプロデュース曲を“これでもか！”というほど詰め込んだミックスが公開されました。\n食傷気味になるほどのネプチューンズ攻め、ぜひどうぞ。",
+  "youtube": "https://youtu.be/u3MQ5sGXiE8",
+  "favs": 83,
+  "rts": 11
+ },
+ {
+  "id": "1750126870883184840",
+  "month": 1,
+  "day": 24,
+  "year": 2024,
+  "text": "書籍📖『DJプレミア完全版』 の発売に向けて、このDVDを見直し。2010年に揃って来日したレジェンド2人が自身の手掛けたクラシックについて語るインタビューが最高です。気になる方は中古を探してみてください。(↓はパーティー開催時の告知動画)",
+  "youtube": "https://youtu.be/RZPIuVK8ioY",
+  "favs": 83,
+  "rts": 10
+ },
+ {
+  "id": "1824749256659566701",
+  "month": 8,
+  "day": 17,
+  "year": 2024,
+  "text": "N*E*R*D「She Wants To Move」といえば、De La SoulとQ-Tipが参加した「Native Tongue Remix」もありますね！この曲にはCommonとMos Defも客演しているので両者もネイティヴ・タンの一員と捉えてOK？どこまでがネイティヴ・タンかは諸説ありですね〜",
+  "youtube": "https://youtu.be/5q4FHKciKdI",
+  "favs": 84,
+  "rts": 9
+ },
+ {
+  "id": "1652236283341668352",
+  "month": 4,
+  "day": 29,
+  "year": 2023,
+  "text": "KOJOE feat. MUD & FEBB「Salud (illmore Remix)」のビデオが、アルバム『here』のアナログ化に合わせて再アップ！illmoreの揺らめくビートが、リミックスとは思えないフィット感を見せるドラマティックな雰囲気の一曲。このたび発売されるLP盤にボーナストラックとして収録🔥",
+  "youtube": "https://youtu.be/ZPIC-a_3iQw",
+  "favs": 83,
+  "rts": 9
+ },
+ {
+  "id": "1720714284504899711",
+  "month": 11,
+  "day": 4,
+  "year": 2023,
+  "text": "10月30日はJam Master Jayの命日。亡くなったのは2002年。めざましテレビで軽部アナが訃報を伝えていたのを覚えています。\nそれではDJ Premier・Grandmaster Flash・DJ Jazzy Jeff・Kid Capriによる激アツなJMJトリビュートパフォーマンスをどうぞ。(←ツイートし忘れてた)",
+  "youtube": "https://youtu.be/cg57xVQUbhQ",
+  "favs": 78,
+  "rts": 14
+ },
+ {
+  "id": "1767684314370867427",
+  "month": 3,
+  "day": 12,
+  "year": 2024,
+  "text": "GagleのHungerをゲストに招いたトークセッション『リリックにみる震災からの10年』がかなり面白かった。ラップ・ヒップホップの持つパワーを再認識。概要欄にはHungerが選んだ「震災の影響がリリックにあらわれていると思われる楽曲」のリストもあります。",
+  "youtube": "https://youtu.be/qh4lymiNH6M",
+  "favs": 80,
+  "rts": 11
+ },
+ {
+  "id": "1689222491645067265",
+  "month": 8,
+  "day": 9,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【3位】The Notorious B.I.G.「Juicy」(1994年)\n\nRolling Stoneは「西海岸の優位が数年間続いた後、東海岸が商業的栄光を取り戻すきっかけとなった。才能あるストーリーテリングが存分に発揮されている」と評価した。",
+  "youtube": "https://youtu.be/_JZom_gVfuw",
+  "favs": 79,
+  "rts": 11
+ },
+ {
+  "id": "1784502205506347283",
+  "month": 4,
+  "day": 28,
+  "year": 2024,
+  "text": "「初めてラップしたビートはDJ Premierのインスト」というIO の話を受けてD.Oが語り出した、来日していたGang Starrと対峙したエピソードがヤバかった。D.Oの語り口で「小道からGuruとDJ Premierが出てきたんだ」は強烈すぎるパンチライン🔥🔥🔥",
+  "youtube": "https://youtu.be/4lIfT3ORCf4",
+  "favs": 80,
+  "rts": 9
+ },
+ {
   "id": "1554446758142349312",
   "month": 8,
   "day": 2,
@@ -698,6 +2168,56 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/-3SDCqn7zio",
   "favs": 78,
   "rts": 10
+ },
+ {
+  "id": "1723288350063497616",
+  "month": 11,
+  "day": 11,
+  "year": 2023,
+  "text": "和物レコードにハマっていた時期、値段が安くて内容も良い大橋純子のレコードをたくさん買いました。推し曲「クリスタル・シティー」をクローズDJでかけた時は気持ち良かったな〜。嫌いな人なんていないんじゃないかと思える ”The 良い曲” をこの機会にぜひ。追悼。",
+  "youtube": "https://youtu.be/cnyXUzG6gEw",
+  "favs": 83,
+  "rts": 5
+ },
+ {
+  "id": "1791792083260555333",
+  "month": 5,
+  "day": 18,
+  "year": 2024,
+  "text": "Nasの東京公演では、George Clinton「Atomic Dog」をサンプリングした「American Way」に期待したい。Q-Tipプロデュースの極太ビートが刺激的な一曲。2004年リリース『Street’s Disciple』に収録。",
+  "youtube": "https://youtu.be/3srP-sLthxs",
+  "favs": 82,
+  "rts": 5
+ },
+ {
+  "id": "1670036730970529792",
+  "month": 6,
+  "day": 17,
+  "year": 2023,
+  "text": "The Notorious B.I.G.「Machine Gun Funk」のビートをガッツリと使用した、The SameOlds「Funky Town」MVの雰囲気が往年のThe Pharcydeを彷彿とさせるバイブスでGOODです🔥🔥🔥 @The_SameOlds",
+  "youtube": "https://youtu.be/KfANvPtKXuE",
+  "favs": 77,
+  "rts": 9
+ },
+ {
+  "id": "1822528381004763306",
+  "month": 8,
+  "day": 11,
+  "year": 2024,
+  "text": "オリンピックブレイキン男子、Original Flavor「Can I Get Open」が流れたのにもアガりましたね🔥🔥🔥3rdヴァースで炸裂するソロデビュー前のJay-Zによる早口フロウも聴けました！Jay-Zはオリンピック観てたかな？",
+  "youtube": "https://youtu.be/npYPPvgVzZQ",
+  "favs": 78,
+  "rts": 8
+ },
+ {
+  "id": "1692760240754966830",
+  "month": 8,
+  "day": 19,
+  "year": 2023,
+  "text": "ZEN-LA-ROCK @ZENLAROCK による先日の配信DJが最高だったのでシェア！\nヤンキー・スタジアムで行われたHIP HOP 50 LIVEの感想も交えながら、ヒップホップクラシック連発の3時間。かなり長いのにトークが面白いので飽きずに聴けます。アーカイブでお楽しみください👇",
+  "youtube": "https://youtu.be/MyvUAFBBqag",
+  "favs": 69,
+  "rts": 16
  },
  {
   "id": "1550050805662699520",
@@ -710,6 +2230,96 @@ const SCHEDULE_CANDIDATES = [
   "rts": 13
  },
  {
+  "id": "1672550523059437568",
+  "month": 6,
+  "day": 24,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【95位】Nas「Made You Look」(2002年)\n\nRolling Stoneは２つのパンチラインを引用し「Illmaticで完成させたラップの更なる進化形」と評価。さらに「Miles Davis『Kind of Blue』を思わせる」ともコメントしている。",
+  "youtube": "https://youtu.be/DhPtRA7zieE",
+  "favs": 75,
+  "rts": 9
+ },
+ {
+  "id": "1818212885132390409",
+  "month": 7,
+  "day": 30,
+  "year": 2024,
+  "text": "J DillaプロデュースのChino XL「Don’t Say a Word」は正規シングルが出ていないために他のディラワークスに比べて認知度は低めですが、上ネタもドラムもベースも「これぞディラビート！」って感じの最高な仕上がりなので、知らなかった方は要チェックです。",
+  "youtube": "https://youtu.be/ozuNUzMmTgI",
+  "favs": 76,
+  "rts": 6
+ },
+ {
+  "id": "1700464595868279210",
+  "month": 9,
+  "day": 9,
+  "year": 2023,
+  "text": "公開されたばかりのRYKEY DADDY DIRTYのインタビュー。MTRで作ったデモテープを配る話が4分30秒ぐらいから始まるのですが、そのデモをばら撒く手段がめちゃくちゃ面白かった。RYKEYは本屋さんで何をしたのか。動画の4:30〜です！",
+  "youtube": "https://youtu.be/TnX3oWqafYI",
+  "favs": 76,
+  "rts": 5
+ },
+ {
+  "id": "1727640845116195082",
+  "month": 11,
+  "day": 23,
+  "year": 2023,
+  "text": "Organized Konfusion『Stress: The Extinction Agenda』を元ネタとセットで味わえる動画。こうしてみると割と有名アーティストの曲もサンプリングしていることに気付く。それでもアルバムにベタな印象が全くないのはサンプルの抜きどころが絶妙だからだと思う。やはり名盤。",
+  "youtube": "https://youtu.be/YgS_729nDsI",
+  "favs": 73,
+  "rts": 8
+ },
+ {
+  "id": "1761316938817401274",
+  "month": 2,
+  "day": 24,
+  "year": 2024,
+  "text": "The Roots『Do You Want More?!!!??!』のリリースって1995年なの？日本盤は94年に出てるけど。USではプロモ盤が94年、正規盤が95年ってこと？",
+  "youtube": "https://youtu.be/Vj8R69KOb8U",
+  "favs": 73,
+  "rts": 7
+ },
+ {
+  "id": "1827181092895649979",
+  "month": 8,
+  "day": 24,
+  "year": 2024,
+  "text": "Kanye Westのリスニングパーティーin韓国🇰🇷のアーカイブが公式YouTubeチャンネルで観れます！2時間28分頃から始まる、彼のキャリアを振り返るメドレーライブに感激！当時は仰々しい雰囲気だと思っていた「Jesus Walks」が、今のカニエのスケール感にはしっくり来ますね…",
+  "youtube": "https://youtu.be/CumXofq7EHY",
+  "favs": 67,
+  "rts": 12
+ },
+ {
+  "id": "1847957778859758001",
+  "month": 10,
+  "day": 20,
+  "year": 2024,
+  "text": "Wu-Tang Clanの1stアルバムに入っていそうなチープで荒んだビートに、キレまくりのGuruが参加した「Stop Lookin’ At Me」がめちゃくちゃカッコいい！Cutthroatsというほぼリリースのない謎のグループ名義の曲。このサントラでしか聴けない90sクラシックです💿",
+  "youtube": "https://youtu.be/CAv2Hcz1ag8",
+  "favs": 76,
+  "rts": 3
+ },
+ {
+  "id": "2029103952529395927",
+  "month": 3,
+  "day": 4,
+  "year": 2026,
+  "text": "Wu-Tang Clan「C.R.E.A.M. (Cash Rules Everything Around Me)」のアカペラが公式から配信されていることは、ビートメイカーやDJに知られてほしい。",
+  "youtube": "https://youtu.be/UwlJvOdyJjE",
+  "favs": 73,
+  "rts": 6
+ },
+ {
+  "id": "1742478405625610321",
+  "month": 1,
+  "day": 3,
+  "year": 2024,
+  "text": "名企画『Tiny Desk Concert』にScarfaceが登場。開始1分「On My Block」のイントロが流れた瞬間に当たり回であることを確信しました。ラッパーのライブというよりミュージシャンのコンサートといった雰囲気で全編通して心地が良い。Scarfaceを知らない人でも楽しめるかと！",
+  "youtube": "https://youtu.be/ajNYTJcF6rE",
+  "favs": 74,
+  "rts": 3
+ },
+ {
   "id": "1526525748734963713",
   "month": 5,
   "day": 17,
@@ -718,6 +2328,326 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/ase_wtvNitE",
   "favs": 68,
   "rts": 8
+ },
+ {
+  "id": "1697226272152473713",
+  "month": 8,
+  "day": 31,
+  "year": 2023,
+  "text": "9月3日に大阪の服部緑地野外音楽堂で開催されるフェス『AIR CONTROLLER』\nOlive Oil・鎮座DOPENESS・RICCHO・DLiP・KEIZOmachine!といった全国各地の人気アクトを無料🆓で観れる太っ腹なフェスを企画した、WARAJI・チプルソ・HCCにリスペクト👏",
+  "youtube": "https://youtu.be/91UsDaaWZ6Q",
+  "favs": 66,
+  "rts": 10
+ },
+ {
+  "id": "1701543678173700474",
+  "month": 9,
+  "day": 12,
+  "year": 2023,
+  "text": "2000年のFUJI ROCK FESTIVALは、RUN DMC・BUDDHA BRAND & EL DORADO ALL STARS (FLICK・Fusion Core・Lunch Time Speax・SUIKEN)・THA BLUE HERBが出演。ヒップホップ勢は少ないけど濃い。\n\nEL DORADO ALL STARS👇\n\n\nTHA BLUE HERB👇",
+  "youtube": "https://youtu.be/JBq3emYGgcs",
+  "favs": 71,
+  "rts": 5
+ },
+ {
+  "id": "1734543416858685947",
+  "month": 12,
+  "day": 12,
+  "year": 2023,
+  "text": "Rascoのラップが聴きたくて、Peanut Butter Wolfのベスト盤をチョイス。このCDの良いところは「Run The Line (Lord Finesse Remix)」が収録されているところ。オリジナル･バージョンをさらにクールにしたようなビートがめちゃ渋い。曲中のスクラッチはDJ Q-Bertによるもの。",
+  "youtube": "https://youtu.be/XbthCGf60Zs",
+  "favs": 69,
+  "rts": 7
+ },
+ {
+  "id": "1654425711938084866",
+  "month": 5,
+  "day": 5,
+  "year": 2023,
+  "text": "👶5月5日は子どもの日🎏\nキッズラップグループ、Kris Kross「Jump」のビートは元ネタの混ぜ合わせ方が絶妙！\n「I Want You Back」「Impeach The President」など、一つひとつは定番ネタなのにそれらが重なると斬新な仕上がりに🔥\n元ネタからの再構築動画で堪能してください⬇️",
+  "youtube": "https://youtu.be/5KzISlMoxUE",
+  "favs": 70,
+  "rts": 5
+ },
+ {
+  "id": "1666766962293354502",
+  "month": 6,
+  "day": 8,
+  "year": 2023,
+  "text": "先ほどのヤフオク放出も瞬殺だった 90s Hip Hop のビジュアルアート冊子『Never Get Enough』その内容について制作者のKoichiroさん自身が語るライブ配信のアーカイブが残されています。動画では今回の掲載が見送られたレアな広告まで紹介されています🔥🔥🔥",
+  "youtube": "https://youtu.be/nWD-96cvZyk",
+  "favs": 65,
+  "rts": 10
+ },
+ {
+  "id": "1651560631479463948",
+  "month": 4,
+  "day": 27,
+  "year": 2023,
+  "text": "全曲BACHLOGICプロデュースによるアルバムをリリースしたRefugeecampのFRME。アルバム11曲目の「Shoujin River」は、Bobbi Humphrey「Please Set Me At Ease」をサンプリングしたかのようなメロウビートが心地よい一曲。",
+  "youtube": "https://youtu.be/l1_-ii252UI",
+  "favs": 65,
+  "rts": 9
+ },
+ {
+  "id": "1731974964637766044",
+  "month": 12,
+  "day": 5,
+  "year": 2023,
+  "text": "鎮座Dopenessが参加した、Max3の「Stay Gold」という曲。ビートメイカーのNariskによる、丸っこいキックと軽やかな上ネタが心地よいビートは個人的にすごく好み。後日、MVもアップされるようでそちらも楽しみです。",
+  "youtube": "https://youtu.be/gBlqIT_py-M",
+  "favs": 69,
+  "rts": 5
+ },
+ {
+  "id": "1662792312601333760",
+  "month": 5,
+  "day": 28,
+  "year": 2023,
+  "text": "POP YOURS 2日目の大トリ、Awichのライブは今日もハンパなかった🔥🔥🔥\nあれほど豪華なゲスト陣を招いても一切食われない圧倒的なカリスマ性で、「グラミーを獲る」という宣言さえも有言実行しそうに思えた。応援しよう。頼もしき日本のクイーンが世界のクイーンになる日まで。",
+  "youtube": "https://youtu.be/wL5fYvUd0b8",
+  "favs": 70,
+  "rts": 3
+ },
+ {
+  "id": "1665221845153349632",
+  "month": 6,
+  "day": 4,
+  "year": 2023,
+  "text": "SP-404を使ったビートライブ。ジャジーでメロウでゆるいビートが続く45分間。休日に垂れ流しにするのにちょうど良い動画です。このSZENTさんもチリの人。世界中にカッコいいアーティストがいますね。",
+  "youtube": "https://youtu.be/faFG_s16Ub4",
+  "favs": 65,
+  "rts": 8
+ },
+ {
+  "id": "1672915319499943937",
+  "month": 6,
+  "day": 25,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【93位】Fugees「Ready Or Not」(1996年)\n\nRolling Stoneはこの曲を「The Sourceによる前作に対する扱いへの返答」と解説。サンプリング許諾の問題で訴えられそうになるなど、困難を乗り越えて形になった曲と紹介した。",
+  "youtube": "https://youtu.be/aIXyKmElvv8",
+  "favs": 60,
+  "rts": 13
+ },
+ {
+  "id": "1837459688528789903",
+  "month": 9,
+  "day": 21,
+  "year": 2024,
+  "text": "いまだにGhostface Killahが他人のレコードの上でラップしただけみたいな曲を出してて「変わってないな〜」としみじみしてたら、数曲後にソウルフルなループに乗せて客演のKanye Westがラップする曲が流れてきて「Kanyeのこの感じ、懐かしい🐻」と感動した…🥹",
+  "youtube": "https://youtu.be/N5Av34vz2RY",
+  "favs": 69,
+  "rts": 4
+ },
+ {
+  "id": "1978435433164927262",
+  "month": 10,
+  "day": 15,
+  "year": 2025,
+  "text": "D’Angeloのサントラクラシック！！\n\n“I Found My Smile Again”",
+  "youtube": "https://youtu.be/8fEixwO4d9E",
+  "favs": 65,
+  "rts": 8
+ },
+ {
+  "id": "1654788097089974272",
+  "month": 5,
+  "day": 6,
+  "year": 2023,
+  "text": "ブレイクビーツにシャープな擦り。ただそれだけなのにカッコいい。Jurassic 5のChali 2naとUKのプロデューサー・Krafty Kutsのコラボアルバムに収録されたインストトラック。2分弱という短さもあり、繰り返し聴けてしまう小粒な良曲。",
+  "youtube": "https://youtu.be/iX_6onkjLEk",
+  "favs": 67,
+  "rts": 5
+ },
+ {
+  "id": "1664934956064440321",
+  "month": 6,
+  "day": 3,
+  "year": 2023,
+  "text": "ジャケのダサさでスルー厳禁！Crooklyn DodgersのSpecial EdとMasta Aceの声ネタを使ったJazzyなビートがめちゃくちゃ良い「Again Re Panic」🔥🔥🔥\n90年代ラップ好きにはドンピシャの客演陣が多数参加したAmadeus360のアルバム『THE MPC JEDI』は要チェックです。",
+  "youtube": "https://youtu.be/yLH1hldRktg",
+  "favs": 70,
+  "rts": 2
+ },
+ {
+  "id": "1750495813023981878",
+  "month": 1,
+  "day": 25,
+  "year": 2024,
+  "text": "DJ Premierプロデュースの「Animals feat. Anderson .Paak」を収録した、Dr. Dre『Compton』を聴き直し。Dreの鬼気迫るラップに震えた…\nいよいよ明日は『DJプレミア完全版📙』の発売日！！連日のプリモ関連ツイートも一旦ここまで。明日はみんなで楽しみましょう👋",
+  "youtube": "https://youtu.be/BcUutVO-b-8",
+  "favs": 68,
+  "rts": 4
+ },
+ {
+  "id": "1687418102659846144",
+  "month": 8,
+  "day": 4,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2016年のヒップホップ\nSTUTS『夜を使いはたして feat. PUNPEE』\n\n2016年リリースの名曲。MVに「OWL NITE」のアナログ盤がチラッと映っていたので、もしやと思って調べてみたら、DJ Kensawさんが亡くなったのもこの年のことでした。",
+  "youtube": "https://youtu.be/CUxIykX4hfw",
+  "favs": 65,
+  "rts": 6
+ },
+ {
+  "id": "1773643764797493394",
+  "month": 3,
+  "day": 29,
+  "year": 2024,
+  "text": "Jamiroquai「Virtual Insanity」といえば、12インチがプロモオンリーのSalaam RemiによるRemix！ドラムが太くなったDJユースなバージョンですが、曲としてはオリジナルバージョンの方が好みです。これってCDだと割と入手しやすい音源なんですね〜",
+  "youtube": "https://youtu.be/KVk1eG16Elo",
+  "favs": 67,
+  "rts": 4
+ },
+ {
+  "id": "1663500508278177793",
+  "month": 5,
+  "day": 30,
+  "year": 2023,
+  "text": "InI「Center of Attention」の元ネタ、Monty Alexander「Summer of '42」を聴くと、揺らいだピアノのフレーズをPete Rockがループに聴こえるようにフリップしていることが分かります。Nas「The World is Yours」でも見られた妙技ですね。ビートメイカー必聴🔥🔥🔥",
+  "youtube": "https://youtu.be/YfFC1ccJczc",
+  "favs": 65,
+  "rts": 5
+ },
+ {
+  "id": "1746138357225373959",
+  "month": 1,
+  "day": 13,
+  "year": 2024,
+  "text": "Talib Kweli & Madlib『Liberation 2』収録曲「One for Biz feat. Q-Tip』のビデオが公開。Q-Tipのラップを期待して聴きましたが、曲終盤でBiz Markie「Nobody Beats the Biz 」のTJ Swanのフレーズを歌うのみでした😢彼の新しいヴァースを聴ける日は来るのでしょうか…",
+  "youtube": "https://youtu.be/NewG1ZNR1_Y",
+  "favs": 64,
+  "rts": 6
+ },
+ {
+  "id": "1817138514175144348",
+  "month": 7,
+  "day": 27,
+  "year": 2024,
+  "text": "オリンピックに合わせてフランス🇫🇷の作品を紹介。1994年リリース、MC Solaarの2ndアルバムは日本盤も出ています。帯には「アメリカのラップ･シーンに対するフランスからの返答ともいえる傑作」とのコピーが。この曲のビート、本当にカッコいいので知らなかった方は是非。",
+  "youtube": "https://youtu.be/DMDVaaVrAMo",
+  "favs": 59,
+  "rts": 11
+ },
+ {
+  "id": "1835597298354847955",
+  "month": 9,
+  "day": 16,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は1999年リリースの4thアルバム『Nastradamus』です。4月に『i am…』が出て、7月にノストラダムスの大予言が外れて、11月に登場したのがナストラダムス！「Nas Is Like」に匹敵する熱きDJ Premierビートの「Come Get Me」がおすすめ！",
+  "youtube": "https://youtu.be/uFbwtTeOvR8",
+  "favs": 66,
+  "rts": 4
+ },
+ {
+  "id": "1822875667077439545",
+  "month": 8,
+  "day": 12,
+  "year": 2024,
+  "text": "オリンピックブレイキン男子、SHIGEKIXとHIRO10の日本人対決🇯🇵1本目のビートはLL Cool J「Mama Said Knock You Out」でしたね！Marley Marl自身がこの曲のビートメイクを振り返る動画もあります。Sly & The Family StoneのサンプルはLLのツアーDJが見つけてきたのだとか！",
+  "youtube": "https://youtu.be/c2bhfL342nY",
+  "favs": 64,
+  "rts": 5
+ },
+ {
+  "id": "1825015748865278301",
+  "month": 8,
+  "day": 18,
+  "year": 2024,
+  "text": "ネイティヴ・タンについてポストしたら、タイミングよくTalib Kweliが「Native Sons」という曲をリリースしていました！KweliやMos Defは「ネイティヴ・タンの息子たち」という捉え方はしっくり来ますね。これはShotGunDandyさんに解説をお願いしたい系の曲だ…",
+  "youtube": "https://youtu.be/QfOL1jT97L0",
+  "favs": 62,
+  "rts": 7
+ },
+ {
+  "id": "1703332968058462426",
+  "month": 9,
+  "day": 17,
+  "year": 2023,
+  "text": "Green Assassin Dollarが全曲を手掛けた、BIG-RE-MANのアルバム『四股』(2018年リリース、OMSBが客演で参加)\n\nおすすめは「M.A.D (Remix)」\n個性的なリリックがドリーミーなビートと絶妙にマッチする、他では聴けない不思議な魅力を持つ曲。要チェックです。",
+  "youtube": "https://youtu.be/XCzVYjS-YUE",
+  "favs": 63,
+  "rts": 5
+ },
+ {
+  "id": "1757736445652214177",
+  "month": 2,
+  "day": 14,
+  "year": 2024,
+  "text": "バレンタインデーといえば、50 Centの2ndアルバム『The Massacre』は元々『The Valentine's Massacre』というタイトルでリリースされる予定でした。(The Gameのアルバム広告の下にそのタイトルが書かれています)\nそのアルバムからメロウな推し曲「So Amazing」をどうぞ。",
+  "youtube": "https://youtu.be/9feQ635FkSM",
+  "favs": 59,
+  "rts": 9
+ },
+ {
+  "id": "1883999959487483927",
+  "month": 1,
+  "day": 27,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.71》\nCamp Lo - Uptown Saturday Night\n\n\"Black Nostaljack AKA Come On\"",
+  "youtube": "https://youtu.be/0e3KfnXsdtk",
+  "favs": 64,
+  "rts": 4
+ },
+ {
+  "id": "1832004375826583964",
+  "month": 9,
+  "day": 6,
+  "year": 2024,
+  "text": "来日公演に向けてNasのアルバムを新しい順に聴き直してる。Hit-Boyとタッグを組んだ近年作はどれもカッコいい曲が多いんだけど、改めて聴くと「Wave Gods」が別格に思えた。クラシックな佇まい、何かが宿っている感じ。DJ Premierのスクラッチ効果なのだろうか…",
+  "youtube": "https://youtu.be/PoK2m6Mu53A",
+  "favs": 63,
+  "rts": 4
+ },
+ {
+  "id": "1686693327003922432",
+  "month": 8,
+  "day": 2,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2014年のヒップホップ\n韻踏合組合『一網打尽 (REMIX) feat. NORIKIYO, SHINGO★西成, 漢』\n\n既存の楽曲をゲストラッパーがさらに盛り上げる、これぞリミックス！各人が勢力的な活動を続けた結果、この10年で曲の重みが確実に増しています👑",
+  "youtube": "https://youtu.be/9hJLzzmbQAY",
+  "favs": 58,
+  "rts": 8
+ },
+ {
+  "id": "1712045377212293142",
+  "month": 10,
+  "day": 11,
+  "year": 2023,
+  "text": "SEEDA「TERIYAKI BEEF」についてのRYO-Zの貴重な証言が聴ける動画がアップされました！その話にLITTLEが登場したのも面白かったです。この動画は「未公開トーク」ですが、先に公開された「本編」もかなり興味深かったので要チェック！！",
+  "youtube": "https://youtu.be/XF0gM9MBZzc",
+  "favs": 56,
+  "rts": 10
+ },
+ {
+  "id": "1791797633528598949",
+  "month": 5,
+  "day": 18,
+  "year": 2024,
+  "text": "George Clinton「Atomic Dog」のMVを発見！この曲といえば、Snoop Doggy Dogg「Who Am I (What’s My Name?)」でサンプリングされたあのフレーズ。「スヌープ・ド〜ギ・ド〜〜〜ッグ♪」の元ネタです！むちゃくちゃカッコいい🔥🔥🔥",
+  "youtube": "https://youtu.be/LuyS9M8T03A",
+  "favs": 63,
+  "rts": 3
+ },
+ {
+  "id": "1944955086255612307",
+  "month": 7,
+  "day": 15,
+  "year": 2025,
+  "text": "明日公開されるRZAプロデュースのAwich新曲を告知するビデオ。どうやってRZAとの共作が実現したかが語られていて、めちゃ面白かった。今日中にチェックして、明日の新曲に備えるのがおすすめ。",
+  "youtube": "https://youtu.be/gUJ2NLT6nUQ",
+  "favs": 60,
+  "rts": 6
+ },
+ {
+  "id": "1978780100041580665",
+  "month": 10,
+  "day": 16,
+  "year": 2025,
+  "text": "このD’Angeloもめちゃ好き。\n\nSlum Village\n“Tell Me feat. D’Angelo”",
+  "youtube": "https://youtu.be/A3OStc5i_hw",
+  "favs": 62,
+  "rts": 4
  },
  {
   "id": "1540630246927781889",
@@ -730,6 +2660,236 @@ const SCHEDULE_CANDIDATES = [
   "rts": 5
  },
  {
+  "id": "1679075630615523330",
+  "month": 7,
+  "day": 12,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【59位】A Tribe Called Quest「Bonita Applebum」(1990年)\n\nRolling Stoneは「Q-Tipはネオ･ソウルとエモ･ラップのテンプレートを作った。黒人女性をテーマにした曲でこの曲に勝るものはない」と評価した。",
+  "youtube": "https://youtu.be/_VOFzynbk9w",
+  "favs": 51,
+  "rts": 14
+ },
+ {
+  "id": "1804440174044356869",
+  "month": 6,
+  "day": 22,
+  "year": 2024,
+  "text": "「ニュースクール」も、現代の分類では「オールドスクール」なんだな… と痛感する『Old School Hiphop Mix』というタイトルの動画。Uptown「Dope On Plastic」なんて懐かしくて最高で、こういうミックスをもっと聴きたいのに、検索しにくい時代になってしまった。",
+  "youtube": "https://youtu.be/bP1hDhlycvk",
+  "favs": 57,
+  "rts": 8
+ },
+ {
+  "id": "1659869072790781954",
+  "month": 5,
+  "day": 20,
+  "year": 2023,
+  "text": "⏯スーパーマリオのゲームBGMを大胆にサンプリングした、Saigon「Get Busy」\nこれを聴いたら、映画『ザ・スーパーマリオブラザーズ・ムービー』が観たくなる。",
+  "youtube": "https://youtu.be/HNhvCmWi3VM",
+  "favs": 54,
+  "rts": 10
+ },
+ {
+  "id": "1687410549787869184",
+  "month": 8,
+  "day": 4,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【13位】Pete Rock and C.L. Smooth「They Reminisce Over You (T.R.O.Y.)」(1992年)\n\nRolling Stoneは「亡き友人に捧げた曲。Pete Rockは『ミックスダウン時に皆が泣き始めた』と語った」と紹介している。",
+  "youtube": "https://youtu.be/k6mdRv0ZdR8",
+  "favs": 56,
+  "rts": 8
+ },
+ {
+  "id": "1691313770004688896",
+  "month": 8,
+  "day": 15,
+  "year": 2023,
+  "text": "まさか2023年に Keith Murray「The Most Beautifullest Thing In This World」のライブが観れるとは！各所で行われた50周年を記念するパフォーマンスの中でも、意表を突いた個人的に嬉しい選曲。欲を言えばもっと長く聴きたかった... なぜか自転車で登場するRedmanにも注目。",
+  "youtube": "https://youtu.be/xGB2SsPJg34",
+  "favs": 55,
+  "rts": 9
+ },
+ {
+  "id": "1674369473221132289",
+  "month": 6,
+  "day": 29,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【86位】Jeru the Damaja「Come Clean」(1993年)\n\nRolling Stonesは、知性･フロウ･存在感によってストリートを席巻し、フェイクMCを攻撃したこの曲でミックステープとNYのラジオにおいて成功を収めたことを評価した。",
+  "youtube": "https://youtu.be/2B5dOCSBBEI",
+  "favs": 54,
+  "rts": 9
+ },
+ {
+  "id": "1784871511654040053",
+  "month": 4,
+  "day": 29,
+  "year": 2024,
+  "text": "新型MPCを使用したGradis Niceの即興ビートメイク！ノークオンタイズのドラム打ち込み、細切れのサンプルフリップ、ノリを生み出すベースラインの重ね方に至るまで、そのクオリティと手際の良さは圧巻！司会のAFRAによる「Sucker MC’s」ビートボックスも最高でした🔥🔥🔥",
+  "youtube": "https://youtu.be/B-j3S-47WH8",
+  "favs": 59,
+  "rts": 4
+ },
+ {
+  "id": "1675089364819275777",
+  "month": 7,
+  "day": 1,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【81位】MF DOOM「Rhymes Like Dimes」(1999年)\n\n米R.S.は「SFとストリートの間のどこかから濃密でドープな歌詞を連打する」と彼のスタイルを評価。不運を経て「５年ぶりに戻ってきた」とラップするこの曲を選出した。",
+  "youtube": "https://youtu.be/5TlZeem3FU8",
+  "favs": 59,
+  "rts": 2
+ },
+ {
+  "id": "1685968553344704512",
+  "month": 7,
+  "day": 31,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2012年のヒップホップ\nキエるマキュウ『Hakoniwa』\n\n2012年リリース。自分のミックスに収録した↓の曲がお気に入り。冒頭の２小節「俺のミルクをペロペロ舐めな子猫ちゃん、野良猫に愛をレクチャー」が強烈！",
+  "youtube": "https://youtu.be/pZHXMNlLGbk",
+  "favs": 54,
+  "rts": 7
+ },
+ {
+  "id": "1676168986357301248",
+  "month": 7,
+  "day": 4,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【76位】Nice & Smooth「Sometimes I Rhyme Slow」(1991年)\n\nRolling Stoneは「オールドスクールのパーティースタイルを保ってきたデュオの転機となった。長く過小評価されてきた彼らの最大のヒット曲」と評価した。",
+  "youtube": "https://youtu.be/MNOAM22yPAo",
+  "favs": 53,
+  "rts": 7
+ },
+ {
+  "id": "1688505262687256576",
+  "month": 8,
+  "day": 7,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2019年のヒップホップ\n舐達麻『GODBREATH BUDDHACESS』\n\n2019年リリース。舐達麻の3MCsと、ビートメイカーのGREEN ASSASSIN DOLLARが作り上げた、捨て曲なしの大名盤。YouTubeの「100MILLIONS (Remix)」には賽のヴァースが追加収録。",
+  "youtube": "https://youtu.be/Xh3QPjYAfaM",
+  "favs": 53,
+  "rts": 7
+ },
+ {
+  "id": "1664950051402047489",
+  "month": 6,
+  "day": 3,
+  "year": 2023,
+  "text": "BES x Gradis Niceのアルバム『STANCE』収録のインスト曲「INTERLUDE 3」🔥🔥🔥\nイントロで流れる和物をサンプリングしているのだと思いますが、そのネタをここまで熱いヒップホップビートに昇華させられるGradis Niceの手腕に脱帽。再生回数147回は少なすぎる名曲。",
+  "youtube": "https://youtu.be/35aJ3nDaD0I",
+  "favs": 54,
+  "rts": 5
+ },
+ {
+  "id": "1823997848712851862",
+  "month": 8,
+  "day": 15,
+  "year": 2024,
+  "text": "Double XX Posseのアルバム、どちらも日本盤CDが出ていないのでサブスクで聴く。95年リリースの2ndアルバム収録曲、Lord Finesseプロデュースの「Money Talks」は日本でも人気でしょう！ボーナストラック入りで国内盤化してほしいな〜",
+  "youtube": "https://youtu.be/mBkcnf5MlNY",
+  "favs": 54,
+  "rts": 5
+ },
+ {
+  "id": "1682699507409068032",
+  "month": 7,
+  "day": 22,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【39位】Big Pun feat. Joe「Still Not a Player」(1998年)\n\nRolling Stoneは「Ariana Grandeなど多様なアーティストによって再利用されていることが、ポップ・ラップの重要曲であることを示している」と評価。",
+  "youtube": "https://youtu.be/7Xue-dOOLiY",
+  "favs": 50,
+  "rts": 8
+ },
+ {
+  "id": "1710580733671354738",
+  "month": 10,
+  "day": 7,
+  "year": 2023,
+  "text": "Freddie Gibbs & Madlibのライブ。観客にしつこく「Fuck The Police!!」と言わせる曲間のMCを除けば、全編最高な50分間。Boiler Room特有の観客の近さと熱さも盛り上がりに繋がっています。このタッグが好きな人なら楽しめること間違いなし。",
+  "youtube": "https://youtu.be/U6ZREgdXgsQ",
+  "favs": 52,
+  "rts": 5
+ },
+ {
+  "id": "1724351470693134824",
+  "month": 11,
+  "day": 14,
+  "year": 2023,
+  "text": "久々に聴いたらめちゃカッコよかった！Organized Konfusionが97年にリリースしたアルバム『The Equinox』収録、Rockwilderプロデュースの「Somehow, Someway」はシンプルながら中毒性のあるベースライン、最小限で存在感を示す上ネタ、ラッパー2人の声質がマッチした名曲🎧🔥",
+  "youtube": "https://youtu.be/5sARWdJ3j94",
+  "favs": 53,
+  "rts": 4
+ },
+ {
+  "id": "1825850400131731748",
+  "month": 8,
+  "day": 20,
+  "year": 2024,
+  "text": "Swizz Beatzクラシックの一つ、Styles「Good Times」も披露されているThe LOXのTiny Desk Concertは個人的にかなりの当たり回！2000年代のヒップホップビートが大人な味わいのバンドサウンドに生まれ変わっているのはとても新鮮です！この感じでG-Unitとか観てみたいな〜！！",
+  "youtube": "https://youtu.be/yUBvP_Rj-SY",
+  "favs": 50,
+  "rts": 6
+ },
+ {
+  "id": "1683794223697391616",
+  "month": 7,
+  "day": 25,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2006年のヒップホップ\nNas「Hip Hop Is Dead」\n\n1979年のシュガーヒル･ギャングから一年ごとに辿ってきたこの企画。1992年に登場したNasが、2006年に「Hip Hop Is Dead」というタイトルの曲を出した...",
+  "youtube": "https://youtu.be/kAKxjTRV6ms",
+  "favs": 48,
+  "rts": 7
+ },
+ {
+  "id": "1751515456618324465",
+  "month": 1,
+  "day": 28,
+  "year": 2024,
+  "text": "CreativeDrugStore「Yo, My Ladies」のビートを聴いて、50 Cent「Best Friend」を思い出した。サンプルと弾きが絶妙にマッチしたHi-Tek制作のビートと、50 Centの歌フックは相性抜群。G-UnitのOlivia嬢が参加したRemixはさらに極上の仕上がり。泣けるやつ。",
+  "youtube": "https://youtu.be/b-Zw5A5NDLI",
+  "favs": 51,
+  "rts": 4
+ },
+ {
+  "id": "1768925175909687598",
+  "month": 3,
+  "day": 16,
+  "year": 2024,
+  "text": "Gang Starr「2 Deep」と同ネタをDiamond Dが調理した、\nShādz Of Lingo「Think I Give A F--k」をおすすめ。D.I.T.C.らしいホーンのフレーズが印象的な1994年作。アルバムにはErick Sermonのらしさ全開なビートに乗った一曲も収録されています。",
+  "youtube": "https://youtu.be/xb_p8Wf-GvM",
+  "favs": 50,
+  "rts": 4
+ },
+ {
+  "id": "1825045678135132386",
+  "month": 8,
+  "day": 18,
+  "year": 2024,
+  "text": "SGDさんのネイティヴ・タン解説といえば、A Tribe Called Quest「Award Tour」の回があります！先にWu-Tang ClanやNasといったストリート感溢れる回を観ていたので、その印象で余計に「ATCQのリリック、洒落てるな〜！」と感動したのを覚えています。",
+  "youtube": "https://youtu.be/eupVaHQhFfI",
+  "favs": 47,
+  "rts": 7
+ },
+ {
+  "id": "1846152886096687571",
+  "month": 10,
+  "day": 15,
+  "year": 2024,
+  "text": "名盤『2001』をリリースする前年のDr. Dreが、LL Cool Jとタッグを組んで作ったサントラ曲「Zoom」を紹介。『2001』の片鱗が見えるビートが面白い！DreとLLが2人揃って出演したMVもありますよ。\nしばらくサントラ特集を続けてみようと思います👍",
+  "youtube": "https://youtu.be/hctD2mwHpRc",
+  "favs": 49,
+  "rts": 5
+ },
+ {
+  "id": "1999787467285860767",
+  "month": 12,
+  "day": 13,
+  "year": 2025,
+  "text": "「Kool G Rap & DJ Polo」「Eric B. & Rakim」と並べて、「俺とプリモ」って言っても許される格があるのNasだけでしょ。カッコよすぎ…\n\nNas & DJ Premier\n“My Life Is Real” （0:34〜）",
+  "youtube": "https://youtu.be/bz6FEuN9qHM",
+  "favs": 51,
+  "rts": 3
+ },
+ {
   "id": "1639951550411079688",
   "month": 3,
   "day": 26,
@@ -738,6 +2898,56 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/u1ZzySIKdD4",
   "favs": 46,
   "rts": 7
+ },
+ {
+  "id": "1675806590476361728",
+  "month": 7,
+  "day": 3,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【78位】Audio Two「Top Billin」(1987年)\n\nRolling Stoneは、鼻声のラップや３小節区切りでループするビートなど、この曲独自の個性を評価。数多くのフレーズが声ネタとして引用されたことも功績として認めた。",
+  "youtube": "https://youtu.be/PcNL9WqbL2c",
+  "favs": 52,
+  "rts": 1
+ },
+ {
+  "id": "1751545656789873037",
+  "month": 1,
+  "day": 28,
+  "year": 2024,
+  "text": "先ほど紹介した 50 Cent「Best Friend」と同ネタ、Red Eye「I Wanna Be Alright feat. AKLO」も昨年のお気に入り曲。こういう温かみあるサンプリングビートでラップする曲をアルバムに１つでも入れてくれると、自分みたいなおじさんが若いラッパーを知るきっかけになります。",
+  "youtube": "https://youtu.be/d0ARerCxF8c",
+  "favs": 50,
+  "rts": 3
+ },
+ {
+  "id": "2070846519532741036",
+  "month": 6,
+  "day": 27,
+  "year": 2026,
+  "text": "De La Soulのライブを観るならやっぱり土曜日！\nNasが来なくても「Run It Back!!」は盛り上がるな〜。フェス公式映像・ライブフル尺のありがたい45分間。",
+  "youtube": "https://youtu.be/AiRfn8ylZGw",
+  "favs": 41,
+  "rts": 12
+ },
+ {
+  "id": "1685960999663546368",
+  "month": 7,
+  "day": 31,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【21位】M.O.P. feat. Remy Ma, Busta Rhymes, and Teflon「Ante Up (Remix)」(2000年)\n\n米R.S.は「00年代初頭における最もハードコアな存在。この曲は彼らの熱さの頂点で、ファンの内なる不良心を解き放った」と紹介。",
+  "youtube": "https://youtu.be/PLT68mI5Pwc",
+  "favs": 41,
+  "rts": 11
+ },
+ {
+  "id": "1689230045213085696",
+  "month": 8,
+  "day": 9,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2021年のヒップホップ\nSTUTS & 松たか子 with 3exes「Presence」\n\nSTUTSビートのドラマ主題歌に週ごとで違うラッパーが客演する、藤井健太郎さんが仕掛けた胸踊る企画。NENEと東京03角ちゃんがラップするバージョンが好きでした。",
+  "youtube": "https://youtu.be/-R2I3yMiz3k",
+  "favs": 49,
+  "rts": 3
  },
  {
   "id": "1628703715917168640",
@@ -750,6 +2960,96 @@ const SCHEDULE_CANDIDATES = [
   "rts": 7
  },
  {
+  "id": "1704469130483835305",
+  "month": 9,
+  "day": 20,
+  "year": 2023,
+  "text": "Nick WizのCellar Soundsシリーズ辺りが好きな人におすすめのDJミックス。タイトルは「90’sアングラ」だけど、マイナーに寄せ過ぎない選曲でGOOD。終盤にはMathematikなど自国のアーティストもプレイする、カナダのビートメイカー・Morti Viventearによるミックス作品。",
+  "youtube": "https://youtu.be/CG3VDj_fUHw",
+  "favs": 45,
+  "rts": 6
+ },
+ {
+  "id": "1978791599929950281",
+  "month": 10,
+  "day": 16,
+  "year": 2025,
+  "text": "このサントラのD’Angeloも良い。\n\nThe Roots\n“The ‘Notic feat. D’Angelo & Erykah Badu”",
+  "youtube": "https://youtu.be/behqXr-bdNU",
+  "favs": 46,
+  "rts": 5
+ },
+ {
+  "id": "1991800913909153832",
+  "month": 11,
+  "day": 21,
+  "year": 2025,
+  "text": "やばい！！\nDe La SoulとDJプレミアだ！！！！",
+  "youtube": "https://youtu.be/q8xpxRlu4YA",
+  "favs": 44,
+  "rts": 7
+ },
+ {
+  "id": "1660223912733736962",
+  "month": 5,
+  "day": 21,
+  "year": 2023,
+  "text": "MURO「Hall Of Famer」でも使われた哀愁漂うギターのフレーズをサンプリングした、@KAYTRANADA と @heyamine のユニット・KAYTRAMINÉによる「Rebuke」がドロっと夏っぽくて良い！！J Dillaが使ったあの声ネタも挿入されています。",
+  "youtube": "https://youtu.be/KqhZywEtSwo",
+  "favs": 47,
+  "rts": 3
+ },
+ {
+  "id": "1673269883306672128",
+  "month": 6,
+  "day": 26,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【92位】Funky 4+1「That's the Joint」(1980年)\n\nRolling Stoneは「最も陽気で楽観的なオールドスクールのラップソング」と評価。MCのSha-Rockについて「ラップのレコードに登場した最初の女性」と紹介している。",
+  "youtube": "https://youtu.be/SVxk9PW62Vk",
+  "favs": 44,
+  "rts": 6
+ },
+ {
+  "id": "1673658913978187786",
+  "month": 6,
+  "day": 27,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【89位】Organized Konfusion「Stress」(1994年)\n\nRolling Stoneはこの曲を「彼らの最も有名な曲」とし、2人のMCがストレスについて語る内容を「黒人男性の不安を描いた消えない肖像画」と評価している。",
+  "youtube": "https://youtu.be/vDWFq6BHsac",
+  "favs": 46,
+  "rts": 4
+ },
+ {
+  "id": "1675451752991305728",
+  "month": 7,
+  "day": 2,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【79位】Ol’ Dirty Bastard「Brooklyn Zoo」(1995年)\n\n米R.S.は「いとこのRZAとGZAのライムを借りることもあったODBが、この曲では自身による火花を散らす暴言を吐き、ソロ活動の口火を切った」と紹介している。",
+  "youtube": "https://youtu.be/GRblYfKwa88",
+  "favs": 45,
+  "rts": 5
+ },
+ {
+  "id": "1688497713346990080",
+  "month": 8,
+  "day": 7,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【7位】De La Soul「Plug Tunin'」(1988年)\n\nRolling Stoneは「前例のないサウンドで、誰もが一聴して理解できたわけではなかったが、やがて彼らが特別なものを生み出していたことに気付かされた」と紹介した。",
+  "youtube": "https://youtu.be/reNukHX3zB0",
+  "favs": 41,
+  "rts": 9
+ },
+ {
+  "id": "1773306774860280268",
+  "month": 3,
+  "day": 28,
+  "year": 2024,
+  "text": "Gang Starr「Mass Appeal」のリリック解説動画が出ました！カートゥーン ネットワークで見まくった『宇宙家族ジェットソン』ネタがリリックに盛り込まれていたことに驚き🫢以前から「1ヴァースずつ分けてアップしてくれないかな〜」と思っていたので、嬉しい仕様変更でした。",
+  "youtube": "https://youtu.be/vqporP8WBhY",
+  "favs": 45,
+  "rts": 5
+ },
+ {
   "id": "1639910407531040770",
   "month": 3,
   "day": 26,
@@ -758,6 +3058,66 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/hvUMn1QoR9k",
   "favs": 45,
   "rts": 4
+ },
+ {
+  "id": "1678728295452659712",
+  "month": 7,
+  "day": 11,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【62位】Westside Gunn「Hall」(2016年)\n\nRolling Stoneは「最先端の高級ファッションと刑務所内のエチケットについての知識が要求されるWestside Gunnの最高傑作」と紹介している。",
+  "youtube": "https://youtu.be/MVVhJ10YTiA",
+  "favs": 43,
+  "rts": 6
+ },
+ {
+  "id": "1859182400208585202",
+  "month": 11,
+  "day": 20,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.4》\nBeastie Boys - Check Your Head\n\n\"Jimmy James\"",
+  "youtube": "https://youtu.be/vw5i7TPkYfI",
+  "favs": 45,
+  "rts": 4
+ },
+ {
+  "id": "1676893761656291329",
+  "month": 7,
+  "day": 6,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【72位】Company Flow「8 Steps to Perfection」(1996年)\n\nRolling Stoneは「超科学的な熱意を持って緻密なライムを駆使し、NYの独立系・非商業的なムーブメントの中心となった」と評価した。",
+  "youtube": "https://youtu.be/5Ra3enj8zhQ",
+  "favs": 43,
+  "rts": 5
+ },
+ {
+  "id": "1844683778016636961",
+  "month": 10,
+  "day": 11,
+  "year": 2024,
+  "text": "GAGLEの新しいアルバムのジャケット、文字の部分が過去のアートワークを切り貼りして作られていて素敵！”G”は『3 MEN ON WAX』のGですね。来週リリースのアルバムを楽しみに先行カットを聴いています。中毒性のあるクラクラするようなビートが魅力の「壁 l 壁」をチェック！！",
+  "youtube": "https://youtu.be/LP0qSo29kIw",
+  "favs": 42,
+  "rts": 6
+ },
+ {
+  "id": "1673285870164799489",
+  "month": 6,
+  "day": 26,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【91位】Ghostface Killah「Nutmeg」(2000年)\n\nRolling Stoneは『キリンの肋骨』など印象的なパンチラインを引用して優れたラップを評価。「ほとんど存在しないビートをリボンのように切り裂いている」と表現した。",
+  "youtube": "https://youtu.be/JS0XhXsmCRs",
+  "favs": 43,
+  "rts": 4
+ },
+ {
+  "id": "1688135325540040704",
+  "month": 8,
+  "day": 6,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【9位】Lauryn Hill「Lost Ones」(1998年)\n\nRolling Stoneは「様々なスタイルがブレンドされたアルバムの中で、この曲は純粋なブーン･バップであり、彼女はさらりとリリカルなディスを放った」と紹介している。",
+  "youtube": "https://youtu.be/7siVSslHPMQ",
+  "favs": 41,
+  "rts": 6
  },
  {
   "id": "1537007338850201600",
@@ -770,6 +3130,196 @@ const SCHEDULE_CANDIDATES = [
   "rts": 6
  },
  {
+  "id": "1759892458106974655",
+  "month": 2,
+  "day": 20,
+  "year": 2024,
+  "text": "2006年にリリースされたRob-O『Rhyme Pro』に、Cookin' Soulによるリミックスが収録されているのを発見！Cookin' Soulのbandcampにある2005年リリースのリミックス集にも収録されているので、元々非公式だったものをオフィシャルに格上げする形で採用したのでしょうか。",
+  "youtube": "https://youtu.be/Raf5_gBwSFo",
+  "favs": 42,
+  "rts": 3
+ },
+ {
+  "id": "1684156620664881153",
+  "month": 7,
+  "day": 26,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2007年のヒップホップ\nCommon「The Game」\n\nKanye Westプロデュース、DJ Premierがスクラッチで参加。名盤『Be』に続く新作『Finding Forever』からのシングルカット。久々に聴いたけどカッコいいな...",
+  "youtube": "https://youtu.be/fXBbYqjsKLo",
+  "favs": 40,
+  "rts": 4
+ },
+ {
+  "id": "1859544787235504528",
+  "month": 11,
+  "day": 21,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.5》\nGroup Home - Livin' Proof\n\n\"Supa Star\"",
+  "youtube": "https://youtu.be/MZCNnDSKJsM",
+  "favs": 42,
+  "rts": 2
+ },
+ {
+  "id": "1658427070006034432",
+  "month": 5,
+  "day": 16,
+  "year": 2023,
+  "text": "Rhettmaticといえば、1995年リリース、Key-Kool & Rhettmatic「Can U Hear It?」も最高。メロウな上ネタを定番ドラムブレイク「It's A New Day」が補強した沁みる名曲です。ただ、この曲はRhettmaticのビートではなく、Mokiのビート。Mokiって誰だ？",
+  "youtube": "https://youtu.be/lQ1jsg2Ffsk",
+  "favs": 41,
+  "rts": 2
+ },
+ {
+  "id": "1674719432827101184",
+  "month": 6,
+  "day": 30,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【84位】D.I.T.C.「Day One」 (1999年)\n\nRolling Stoneは「彼らはポップなギミックよりもビートとライムにこだわる集団の手本となった」と評価し、この曲のBig Lのバースが特に素晴らしい、と歌詞を引用して説明した。",
+  "youtube": "https://youtu.be/uayrehVIwDo",
+  "favs": 42,
+  "rts": 1
+ },
+ {
+  "id": "1684511448582475778",
+  "month": 7,
+  "day": 27,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【29位】The Notorious B.I.G.「Hypnotize」(1997年)\n\nRolling Stoneは「ビギーの生涯で最後にリリースされた曲。技術的な器用さ、ポップスターとしてのカリスマ、そしてクラブを沸かせる能力を全て発揮した」と紹介。",
+  "youtube": "https://youtu.be/glEiPXAYE-U",
+  "favs": 34,
+  "rts": 9
+ },
+ {
+  "id": "1696100312698822673",
+  "month": 8,
+  "day": 28,
+  "year": 2023,
+  "text": "OMSBが2017年に大阪のクラブで行なったライブの動画を発見。バックDJのHi'Specとともに「Think Good」等を披露しています。こうしてライブ映像を高画質で残しておくことは意義のあることですね。当時の大阪の雰囲気を味わえる良質チャンネル、DAIKOKU FILMSを要チェック。",
+  "youtube": "https://youtu.be/z2MkCDz3USw",
+  "favs": 43,
+  "rts": 0
+ },
+ {
+  "id": "1662314890760171521",
+  "month": 5,
+  "day": 27,
+  "year": 2023,
+  "text": "今日と明日はPOP YOURS！YouTubeで生配信も見られます。タイムテーブルはこちら。MONJUは出ないのか…\n\n👇YouTube生配信リンク⬇️",
+  "youtube": "https://youtu.be/HfjVmsqKH5I",
+  "favs": 38,
+  "rts": 4
+ },
+ {
+  "id": "1663138125869207552",
+  "month": 5,
+  "day": 29,
+  "year": 2023,
+  "text": "これが先ほど紹介したHi-Tek「Long over Due」の元ネタ、Cal Tjader「Leyte」なのですが、2013年に出た日本のヒップホップでもこのネタが使われているので、その曲を知っている人なら「おっ！このフレーズは！」と元ネタ発見の快感を味わえるはず。既に知ってる人はごめんね〜",
+  "youtube": "https://youtu.be/DVFk6eGTCRk",
+  "favs": 39,
+  "rts": 3
+ },
+ {
+  "id": "1677299189435490304",
+  "month": 7,
+  "day": 7,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【69位】De La Soul「Stakes Is High」(1996年)\n\n米R.S.は「遊び心あるスキットを捨て去りシリアスな方向へと舵を切った彼らは、Dillaのホーンと共にスカーフェイス信者や大麻支持者などに反撃した」と評価した。",
+  "youtube": "https://youtu.be/BhJCMKXzGv8",
+  "favs": 36,
+  "rts": 6
+ },
+ {
+  "id": "1773670020452651498",
+  "month": 3,
+  "day": 29,
+  "year": 2024,
+  "text": "Jamiroquai「Black Capricorn Day」には2種類のJay Dee Remixが存在します。一つはJamiroquaiの別曲をサンプリングしたビートにSlum Villageのラップが乗ったバージョン。もう一つはDJ KiyoがMixに収録したことでおなじみのバージョン。久々に聴きましたがどちらも良い！",
+  "youtube": "https://youtu.be/3xYxFPnJ16A",
+  "favs": 37,
+  "rts": 5
+ },
+ {
+  "id": "1711338213129036144",
+  "month": 10,
+  "day": 9,
+  "year": 2023,
+  "text": "Ryuzoのインタビュー、昔の話も今の話も全部が興味深かった。話題に上がるアーティスト名がとにかく豪華で、もはや見どころしかないけど、個人的ハイライトは『24 Hour Karate School Japan』の話。Damon Dashから貰ったアルバム1枚分のSki Beatzビーツの使い方に痺れた！！",
+  "youtube": "https://youtu.be/OcQkvDbKExA",
+  "favs": 39,
+  "rts": 1
+ },
+ {
+  "id": "1794677709840515225",
+  "month": 5,
+  "day": 26,
+  "year": 2024,
+  "text": "サムネに「経営者・ビジネス」なんて書いてあるから、自分には楽しめない内容かな〜と思いながら再生したら、普通にヒップホップの良い話がいくつも聴けて面白かった！ジブさん🦓がKRS-Oneと曲を作ったそうなのでリリースが楽しみ！！",
+  "youtube": "https://youtu.be/j2oqUQahCNU",
+  "favs": 38,
+  "rts": 2
+ },
+ {
+  "id": "1846483725267427704",
+  "month": 10,
+  "day": 16,
+  "year": 2024,
+  "text": "A Tribe Called Quest『The Love Movement』が出る少し前、このサントラにAliプロデュースでPhifeがラップする曲、Adriana Evans「Never Say Goodbye」が収録されました。The Ummahとは違うオーガニックなサウンド。Q-Tipが実権を握り過ぎなければこんな曲をもっと聴けたのか？",
+  "youtube": "https://youtu.be/t_rRHZKWtt8",
+  "favs": 37,
+  "rts": 3
+ },
+ {
+  "id": "1688860102550282240",
+  "month": 8,
+  "day": 8,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【5位】Eric B. and Rakim「Eric B. Is President」(1986年)\n\nRolling Stoneは「この曲の出だしの一節はヒップホップ史で最も象徴的。ラップの構文を拡大した影響力のある曲。この曲ですべてが変わった」と評価した。",
+  "youtube": "https://youtu.be/c7T2BzVzrxA",
+  "favs": 35,
+  "rts": 4
+ },
+ {
+  "id": "1793605669415014807",
+  "month": 5,
+  "day": 23,
+  "year": 2024,
+  "text": "Apple Music 100 Best Albums、あれだけのヒップホップ作品が選出されながら、Run DMC『Raising Hell』が選外なことに驚いた。ヒップホップ史における超重要作なので絶対に入ると思っていた。",
+  "youtube": "https://youtu.be/4B_UYYPb-Gk",
+  "favs": 35,
+  "rts": 4
+ },
+ {
+  "id": "1814244268049109183",
+  "month": 7,
+  "day": 19,
+  "year": 2024,
+  "text": "Common, Pete Rock「All Kind Of Ideas」のスタジオライブが公開されました。2024年に昔の曲ではなく新曲を披露するPete Rockの姿が見れるとは… 感無量です。でもMVで聴けたあのイントロがこの動画にはなく、アルバムでも前曲のアウトロ扱いだったことはとても残念です😢",
+  "youtube": "https://youtu.be/fjUSnRGCCa8",
+  "favs": 38,
+  "rts": 1
+ },
+ {
+  "id": "1827671688269410350",
+  "month": 8,
+  "day": 25,
+  "year": 2024,
+  "text": "Jungle Brothers初期4作の帯付きが揃いました！手に入りにくいのは1stと2ndですが、3rdと4thはサブスク未配信なので違う意味で価値があるかと。5th以降は300円迄なら買っていこうかな…",
+  "youtube": "https://youtu.be/mOAUldvABIg",
+  "favs": 37,
+  "rts": 2
+ },
+ {
+  "id": "1878713599864328512",
+  "month": 1,
+  "day": 13,
+  "year": 2025,
+  "text": "「これが無料でいいの？」と思うほどクオリティの高いラガ･ヒップホップのミックス。コンセプトに振り切りすぎず、ATCQやNasといった定番アーティストの曲も織り交ぜてあり、バランスの取れた繰り返し聴きたくなる作品に仕上がっています。",
+  "youtube": "https://youtu.be/BE0O2sLX6z4",
+  "favs": 36,
+  "rts": 3
+ },
+ {
   "id": "1546092167382196226",
   "month": 7,
   "day": 10,
@@ -780,6 +3330,126 @@ const SCHEDULE_CANDIDATES = [
   "rts": 1
  },
  {
+  "id": "1688852554812403712",
+  "month": 8,
+  "day": 8,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【6位】Jay-Z「So Ghetto」(1999年)\n\nRolling Stoneは「ほとんどのラッパーがモデルたちとの豪華なバカンスをメインにする時期に、彼はこの痛烈なバンガーを生み出した」と紹介した。",
+  "youtube": "https://youtu.be/FDwnnf3xOes",
+  "favs": 34,
+  "rts": 4
+ },
+ {
+  "id": "1779453640807428458",
+  "month": 4,
+  "day": 14,
+  "year": 2024,
+  "text": "紹介したかった最高のDJミックス動画が削除されてた😭\nショート動画に残ってるSweet Williamに至るまでの展開とか本当に見事で、今日もリピート再生してたほど気に入っていたのに… 再アップ熱望🔥🔥🔥\nDJ LICKのミックスが聴けるサイトがあれば教えてほしい〜！",
+  "youtube": "https://youtu.be/wGVVn5azfqA",
+  "favs": 36,
+  "rts": 2
+ },
+ {
+  "id": "1891774659043152348",
+  "month": 2,
+  "day": 18,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.94》\nThe Roots - Things Fall Apart\n\n\"Dynamite\"",
+  "youtube": "https://youtu.be/f-YF924NWFg",
+  "favs": 35,
+  "rts": 3
+ },
+ {
+  "id": "1685591062687989761",
+  "month": 7,
+  "day": 30,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【24位】Public Enemy「Fight the Power」(1989年)\n\nRolling Stoneは「当時のニューヨークは爆発の危機に瀕した人種問題を抱えていた。この曲は音楽を通じて立ち上がる力の伝統を示している」と評価した。",
+  "youtube": "https://youtu.be/mmo3HFa2vjg",
+  "favs": 29,
+  "rts": 8
+ },
+ {
+  "id": "1754074818628964627",
+  "month": 2,
+  "day": 4,
+  "year": 2024,
+  "text": "Lord Finesseプロデュース、Brains「From Me 2 U (Funkyman Version)」\nいかにも1994年のフィネスって感じで良い曲なんだけど、調べても情報が全然出てこない。Brainsって、M.C. Brainsのことで合ってる？",
+  "youtube": "https://youtu.be/-PKMOL3OSy0",
+  "favs": 35,
+  "rts": 2
+ },
+ {
+  "id": "1798640980922650687",
+  "month": 6,
+  "day": 6,
+  "year": 2024,
+  "text": "Common & Pete Rock「Wise Up」の新しい動画が出ました。こうして2人並んで動いている姿を見ると、コラボアルバムへの期待が一気に高まりますね。いきなり樽の上に乗り始めるノリノリなCommonも面白いです。アルバムではPete Rockお得意の合いの手が聴きたいな〜",
+  "youtube": "https://youtu.be/JBXJqP2f_jA",
+  "favs": 33,
+  "rts": 4
+ },
+ {
+  "id": "1825661521088884995",
+  "month": 8,
+  "day": 19,
+  "year": 2024,
+  "text": "昨日のXは最高だった！チェルシーさん @_CHELSEA1010_ のblastに関するポストをきっかけに、Yusuke \"11\" Itoさん @11zero が当時の様子を語り、Zeebraさん @zeebrathedaddy が補足説明を加える激アツの展開🔥🔥🔥これぞXの醍醐味！！お三方、ありがとうございました！",
+  "youtube": "https://youtu.be/3hQmzSsJJac",
+  "favs": 31,
+  "rts": 6
+ },
+ {
+  "id": "1681271901782458368",
+  "month": 7,
+  "day": 18,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【47位】Busta Rhymes「Put Your Hands Where My Eyes Could See」(1997年)\n\nRolling Stoneは「彼のスタイルであった野生的な叫びを抑えたことにより、ラップの深みと複雑さが際立っている」と評価した。",
+  "youtube": "https://youtu.be/GSoQDaXh144",
+  "favs": 31,
+  "rts": 5
+ },
+ {
+  "id": "1681604804315951105",
+  "month": 7,
+  "day": 19,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【46位】The Roots「The Next Movement」(1999年)\n\nRolling Stoneは「Soulquariansの始まりの宣言。Black Thoughtは、Big Daddy Kaneにオマージュを捧げながらマイクの腕前を披露している」と紹介している。",
+  "youtube": "https://youtu.be/qm7Xt2Qsjcg",
+  "favs": 32,
+  "rts": 4
+ },
+ {
+  "id": "1688867656294658048",
+  "month": 8,
+  "day": 8,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2020年のヒップホップ\nPUNPEE『夢追人 feat. KREVA』\n\nMVのプレミア公開でノンクレジットだったKREVAが出てきた瞬間の興奮がいまだに忘れられない... そういえば「夜を使いはたして」のMVが2036年、この曲のMVが2037年の設定でした。",
+  "youtube": "https://youtu.be/WqP2vnILsZk",
+  "favs": 34,
+  "rts": 2
+ },
+ {
+  "id": "1774376094113595582",
+  "month": 3,
+  "day": 31,
+  "year": 2024,
+  "text": "先ほど紹介したゲーム音楽ミックスに収録されていた、Del The Funky Homosapien「Proto Culture」について調べていたら、1999年にUS西海岸で行われた『SEGA ドリームキャストのローンチ･パーティー』でのライブ映像を発見！ステージ上にはあの渦巻きロゴも。すごいな！！",
+  "youtube": "https://youtu.be/HexF_2cTuD8",
+  "favs": 31,
+  "rts": 5
+ },
+ {
+  "id": "1999624974437613822",
+  "month": 12,
+  "day": 12,
+  "year": 2025,
+  "text": "Ultimate Breaks & Beatsに入ってる曲をガッツリ使ったビートがあったりして、「illmatic」以前のデモ曲の空気感があったのも良かった。\n\nNas & DJ Premier\n“GiT Ready”",
+  "youtube": "https://youtu.be/XuCBPP0f9sc",
+  "favs": 34,
+  "rts": 2
+ },
+ {
   "id": "1516351317756637185",
   "month": 4,
   "day": 19,
@@ -788,6 +3458,66 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/T2ROX8SU0CY",
   "favs": 26,
   "rts": 9
+ },
+ {
+  "id": "1712826436103659937",
+  "month": 10,
+  "day": 13,
+  "year": 2023,
+  "text": "いつか忘れてしまいそうな情報なのでここに記しておきますが、Pitch Blackのメンバー・G.O.D.は、Kool G Rap「Fast Life feat. Nas」のフックを歌っているそうです。(言われてみれば確かにNasじゃない別の誰かの声が聴こえる…)",
+  "youtube": "https://youtu.be/zp5EOREHcuY",
+  "favs": 34,
+  "rts": 1
+ },
+ {
+  "id": "1658057132497940480",
+  "month": 5,
+  "day": 15,
+  "year": 2023,
+  "text": "Bluといえば、STUTSのアルバムに参加したのは衝撃的でしたね。しかも相性抜群。それこそコラボEPとか出してほしいレベルの完成度になっています。まさか本人出演でMVまで作られるなんて...\n⏯STUTS - Lights feat. Blu",
+  "youtube": "https://youtu.be/8aXQqFvmqsg",
+  "favs": 33,
+  "rts": 1
+ },
+ {
+  "id": "1674734536608063488",
+  "month": 6,
+  "day": 30,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#1981年のヒップホップ から１曲...\nGrandmaster Flash - The Adventures Of Grandmaster Flash On The Wheels Of Steel\n\nHIPHOP黎明期三大DJの一人・グランドマスターフラッシュによるDJイングが録音された曲。42年前とは思えない技術力。",
+  "youtube": "https://youtu.be/gXNzMVLqIHg",
+  "favs": 28,
+  "rts": 6
+ },
+ {
+  "id": "1685598611202347008",
+  "month": 7,
+  "day": 30,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【23位】Craig Mack「Flava in Ya Ear (Remix)」(1994年)\n\nRolling Stoneは「Puff Daddyはこの曲でラップ･リミックスの手法を完成させ、雷が二度落ちることを証明した」と評価している。",
+  "youtube": "https://youtu.be/PMbELEUfmIA",
+  "favs": 27,
+  "rts": 7
+ },
+ {
+  "id": "1835974694845170020",
+  "month": 9,
+  "day": 17,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は1999年リリースの3rdアルバム『i am…』です。顔ジャケシリーズ、少年→成年の次はなんとツタンカーメンでした。「キング」のつもりだったそうですが、王冠👑を被る程度に抑えてほしかった… 問答無用のクラシック「Nas Is Like」収録盤！",
+  "youtube": "https://youtu.be/tH9JTgfQFc8",
+  "favs": 32,
+  "rts": 2
+ },
+ {
+  "id": "1887433553144914369",
+  "month": 2,
+  "day": 6,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.82》\nJ Dilla - Donuts\n\n\"Bye\"",
+  "youtube": "https://youtu.be/2-hKtCCgIMw",
+  "favs": 30,
+  "rts": 4
  },
  {
   "id": "1533579392806313985",
@@ -810,6 +3540,146 @@ const SCHEDULE_CANDIDATES = [
   "rts": 2
  },
  {
+  "id": "1686685773557370881",
+  "month": 8,
+  "day": 2,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【17位】A Tribe Called Quest feat. Leaders of the New School「Scenario」(1991年)\n\nRolling Stoneは「ヒップホップでこの曲ほど刺激的で熱狂的なポッセカットを見つけることは難しい」と評価している。",
+  "youtube": "https://youtu.be/Q6TLWqn82J4",
+  "favs": 26,
+  "rts": 7
+ },
+ {
+  "id": "1710490127112585274",
+  "month": 10,
+  "day": 7,
+  "year": 2023,
+  "text": "OIL WORKS、2019年の作品。ソウルフルでドラマティックなビートは完全に世界レベル。グルーヴィーなILLNANDESのラップも癖になって、何周も連続で聴いてしまった。猛烈におすすめ🔥🔥🔥\n\nLAF「TURBO TENJIN feat. ILLNANDES」",
+  "youtube": "https://youtu.be/3xL1WjgkVcg",
+  "favs": 32,
+  "rts": 1
+ },
+ {
+  "id": "1892499447948452300",
+  "month": 2,
+  "day": 20,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.96》\nCommon - Like Water For Chocolate\n\n\"The Light\"",
+  "youtube": "https://youtu.be/OjHX7jf-znA",
+  "favs": 28,
+  "rts": 5
+ },
+ {
+  "id": "1678731982011006979",
+  "month": 7,
+  "day": 11,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【61位】Black Star「Definition」(1998年)\n\nRolling Stoneは「自然体で気楽な2人による楽しげなラガマフィンバイブスに溢れた曲。Puff Daddyのようなメインストリームの住人とは対照的だった」と紹介している。",
+  "youtube": "https://youtu.be/EuJaStSL0xM",
+  "favs": 26,
+  "rts": 6
+ },
+ {
+  "id": "1684503896599797760",
+  "month": 7,
+  "day": 27,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【30位】Cam’ron feat. Juelz Santana「Oh Boy」(2002年)\n\nRolling Stoneは「Cam’ronは単にパステルカラーを流行らせただけでなく、鮮やかな色彩に満ちた歌詞を私たちにもたらした」と評価している。",
+  "youtube": "https://youtu.be/9GvB9ySUJ3A",
+  "favs": 28,
+  "rts": 4
+ },
+ {
+  "id": "1684866289523961858",
+  "month": 7,
+  "day": 28,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【28位】Eric B. and Rakim「Paid in Full (Seven Minutes of Madness - The Coldcut Remix)」(1987年)\n\n米R.S.は「ベース、ドラム、ヴォーカルサンプルが、80年代後半のNYの活気ある姿を完璧に表現している」と評価。",
+  "youtube": "https://youtu.be/E7t8eoA_1jQ",
+  "favs": 29,
+  "rts": 3
+ },
+ {
+  "id": "1908733389634756760",
+  "month": 4,
+  "day": 6,
+  "year": 2025,
+  "text": "DJ RENA、23分間のDJプレイ。世界チャンピオンなのでスクラッチが上手いのは勿論なんだけど、選曲がHIPHOPクラシックに元ネタを織り交ぜた内容ですごく良い。おなじみの曲も圧巻のスキルで再構築されると新鮮に聴こえます。",
+  "youtube": "https://youtu.be/UgZ8AH897aA",
+  "favs": 23,
+  "rts": 9
+ },
+ {
+  "id": "1911759742470680584",
+  "month": 4,
+  "day": 14,
+  "year": 2025,
+  "text": "JJJを聴きます🕊️\nMedicine, 一番はミュージック\n\n“Sour Picture (starring jjj)”",
+  "youtube": "https://youtu.be/d4lx_1ck8uA",
+  "favs": 28,
+  "rts": 4
+ },
+ {
+  "id": "1988547302152421688",
+  "month": 11,
+  "day": 12,
+  "year": 2025,
+  "text": "LL Cool J feat. DABO “Queens Is (Remix)”\n\n\nこのアルバムにはJAPAN EDITIONがあり、ボーナストラックでDABOのラップが聴けます！\nただ、原曲のProdigyのヴァースを差し替えただけの仕様で、LLと一緒にスタジオに入ったわけではなさそう？\n当時のblastにも特に記述なし。",
+  "youtube": "https://youtu.be/YCjwnaEAsPQ",
+  "favs": 29,
+  "rts": 3
+ },
+ {
+  "id": "1662035859535974405",
+  "month": 5,
+  "day": 26,
+  "year": 2023,
+  "text": "Show & A.G.「Next Level (DJ Premier Remix)」同ネタのベースラインにシンセのフレーズを重ねたビート上で、Inspectah Deckと Fashawnがラップする、Meeco x DJ Access「Wreckless」がお洒落で良い！元々はJazzのアルバムを出していたMeeco、今後の作品に期待です🔥",
+  "youtube": "https://youtu.be/WvTqU3BPKas",
+  "favs": 31,
+  "rts": 0
+ },
+ {
+  "id": "1674726976442208257",
+  "month": 6,
+  "day": 30,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【83位】Redman「Time 4 Sum Aksion」(1993年)\n\nRolling Stoneは「アグレッシブかつ魅力的なパフォーマンス」「他のラッパーと一線を画す奇抜なリリック」と評価。Erick Sermonがビートを手がけたことも強調した。",
+  "youtube": "https://youtu.be/NiZMqVXVZgA",
+  "favs": 26,
+  "rts": 5
+ },
+ {
+  "id": "1680525179766849536",
+  "month": 7,
+  "day": 16,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【51位】Slick Rick「Children's Story」(1988年)\n\nRolling Stoneは「この曲は子どもを寝かしつける物語で、ヒップホップの黄金期においてこれほど有名で即座に引用できる歌詞を見つけるのは困難」と評価している。",
+  "youtube": "https://youtu.be/HjNTu8jdukA",
+  "favs": 28,
+  "rts": 3
+ },
+ {
+  "id": "1684149058703597569",
+  "month": 7,
+  "day": 26,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【31位】Raekwon feat. Ghostface Killah, Method Man, and Cappadonna「Ice Cream」(1995年)\n\nRolling Stoneは「ストリートを席巻するデビュー作からのシングル。すべてのラインが魅力的だ」と評価した。",
+  "youtube": "https://youtu.be/jgh10of6DKA",
+  "favs": 27,
+  "rts": 4
+ },
+ {
+  "id": "1723536100239757347",
+  "month": 11,
+  "day": 12,
+  "year": 2023,
+  "text": "ケンチンミン x illmore 『dialogue』収録の「Do The Right Things 2 feat. HUNGER」が気持ち良過ぎる。フィルターがかった柔らかなピアノの音色を使ったビートとHUNGERは、もはや鉄板の組み合わせ。GAGLE「屍を越えて」「若き匠たちへ」あたりが好きな人は要チェックです。",
+  "youtube": "https://youtu.be/pNX9nThfrL0",
+  "favs": 31,
+  "rts": 0
+ },
+ {
   "id": "1544282215332188161",
   "month": 7,
   "day": 5,
@@ -818,6 +3688,46 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/G6JpVvW-728",
   "favs": 27,
   "rts": 3
+ },
+ {
+  "id": "1683075805935726592",
+  "month": 7,
+  "day": 23,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2004年のヒップホップ\nKanye West「Jesus Walks」\n\nカニエ本人が「2004年はこれ以上ないほどグレイトな年だった。あまりにも素晴らしくて怖かった」と振り返るほど、自身の作品・外部提供作ともにカニエ大活躍の年でした。",
+  "youtube": "https://youtu.be/MYF7H_fpc-g",
+  "favs": 28,
+  "rts": 2
+ },
+ {
+  "id": "1852302989731713135",
+  "month": 11,
+  "day": 1,
+  "year": 2024,
+  "text": "Snoop & Dreに負けじとXzibitも健在！バンギンなビートが抜群にカッコいい！！",
+  "youtube": "https://youtu.be/5xQucJqdIWQ",
+  "favs": 28,
+  "rts": 2
+ },
+ {
+  "id": "1657695015970410496",
+  "month": 5,
+  "day": 14,
+  "year": 2023,
+  "text": "ジブリネタのインスト曲。誰もが知る元ネタのイルなフリップ具合にアガる🔥🔥🔥\nどの映画の曲を使っているかは聴いてからのお楽しみ...\n⏯Tuamie「See Spirits」",
+  "youtube": "https://youtu.be/U2cKnRxpmTg",
+  "favs": 28,
+  "rts": 1
+ },
+ {
+  "id": "1687772938164994048",
+  "month": 8,
+  "day": 5,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【11位】Run-D.M.C.「Peter Piper」(1994年)\n\nRolling Stoneは「レジェンドのCold Crush Brothersを思い起こさせるデリバリー。LL Cool Jは同じブレイクを使うことを諦めた」と紹介している。",
+  "youtube": "https://youtu.be/Sd5gFx001qg",
+  "favs": 24,
+  "rts": 5
  },
  {
   "id": "1521065561488527360",
@@ -830,6 +3740,166 @@ const SCHEDULE_CANDIDATES = [
   "rts": 7
  },
  {
+  "id": "1673656111117770753",
+  "month": 6,
+  "day": 27,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【90位】Kool G. Rap & DJ Polo「Road to the Riches」(1989年)\n\n米R.S.は「ストリートライフの獰猛さに新基準を作った。最もScarfaceに近い作品」と評価。その歌詞をNasが「聖書(バイブル)」と呼んだことも紹介した。",
+  "youtube": "https://youtu.be/-RVQeJPAW2U",
+  "favs": 27,
+  "rts": 1
+ },
+ {
+  "id": "1674012269980815361",
+  "month": 6,
+  "day": 28,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【87位】Nonchalant「5 O'Clock」(1996年)\n\nRolling Stoneは、ドラッグディーラーに向けて批判的ではなく同情的に訴えるリリックを評価。「彼女のフロウによってその歌詞がさらに効果的に聴こえる」と付け加えた。",
+  "youtube": "https://youtu.be/Pvrxord-sbM",
+  "favs": 28,
+  "rts": 0
+ },
+ {
+  "id": "1681270078892019713",
+  "month": 7,
+  "day": 18,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【48位】Terror Squad feat. Fat Joe and Remy Ma「Lean Back」(2004年)\n\nRolling Stoneは「Billboard Hot 100で3週間にわたり首位を獲得したクラブアンセム。ゾーンに入ったRemy Maがすべての注目を集める」と紹介。",
+  "youtube": "https://youtu.be/ajmI1P3r1w4",
+  "favs": 23,
+  "rts": 5
+ },
+ {
+  "id": "1689577337052864512",
+  "month": 8,
+  "day": 10,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【2位】Public Enemy「Rebel Without a Pause」(1987年)\n\nRolling Stoneは「Grandmaster Flashの\"The Message\"を除いて、この曲が出るまでコンシャスなラップは存在しなかった」と評価した。",
+  "youtube": "https://youtu.be/-fN5RX15Zhw",
+  "favs": 25,
+  "rts": 3
+ },
+ {
+  "id": "1759865482914779583",
+  "month": 2,
+  "day": 20,
+  "year": 2024,
+  "text": "「Feel Like Making Love」のカバーを調べていたら、2020年リリースの日本語カバーを発見。7インチでも発売され、即完売からのリプレスにまでなっていたようです。なんとB面は「Sing A Simple Song」のカバー。全く知らなかった。",
+  "youtube": "https://youtu.be/o9IbL6wWyMU",
+  "favs": 24,
+  "rts": 4
+ },
+ {
+  "id": "1679068087906344963",
+  "month": 7,
+  "day": 12,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【60位】Ice Spice「Munch」(2022年)\n\nRolling Stoneは「自信満々なブロンクスドリルの現女王は、寝室で約 1 時間で作ったこの曲で栄冠を掴んだ」と紹介している。",
+  "youtube": "https://youtu.be/yF-NC3eRsqc",
+  "favs": 26,
+  "rts": 1
+ },
+ {
+  "id": "1683424285203857408",
+  "month": 7,
+  "day": 24,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【35位】Queen Latifah feat. Monie Love「Ladies First」(1989年)\n\nRolling Stoneは「女性の優れた能力と技量に対して公平な認識を要求している。その方法は正義感に満ち、挑戦的で非常にキャッチーだ」と評価した。",
+  "youtube": "https://youtu.be/8Qimg_q7LbQ",
+  "favs": 25,
+  "rts": 2
+ },
+ {
+  "id": "1685236222103334912",
+  "month": 7,
+  "day": 29,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【25位】LL Cool J「Rock the Bells」(1985年)\n\nRolling Stoneは「今日でもターンテーブリストの定番曲。そのタイトルは今でも音楽フェスティバルとして生き続けている」と評価した。",
+  "youtube": "https://youtu.be/ZyswjkZJugI",
+  "favs": 25,
+  "rts": 2
+ },
+ {
+  "id": "1687040612401328128",
+  "month": 8,
+  "day": 3,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【16位】Run-D.M.C.「Sucker M.C.'s (Krush-Groove 1)」(1983年)\n\nRolling Stoneは「ディスコ･ラップを一掃したミニマリスト･ノイズ。このブームでヒップホップの新たな時代を切り拓いた」と評価した。",
+  "youtube": "https://youtu.be/iOKMWSR2Aio",
+  "favs": 23,
+  "rts": 4
+ },
+ {
+  "id": "1733071420824101281",
+  "month": 12,
+  "day": 8,
+  "year": 2023,
+  "text": "笑えるリリックと、泣けるビートと、可愛らしい映像。歩歩「おかんとニューエラ」のMVは、チグハグな要素が絶妙に一体化した、唯一無二の素晴らしい作品です。普段ラップを聴かない層にも受けそうな一曲。時折入るDJ SHARKのスクラッチも気持ち良い！",
+  "youtube": "https://youtu.be/2BSUHtIO03c",
+  "favs": 20,
+  "rts": 7
+ },
+ {
+  "id": "1657324812455358464",
+  "month": 5,
+  "day": 13,
+  "year": 2023,
+  "text": "ISSUGIがBACHLOGICのビートでかます64小節。それ以上の説明は不要でしょう。自分にとってはこれこそがリアルヒップホップ。",
+  "youtube": "https://youtu.be/EUDR10E8OXk",
+  "favs": 25,
+  "rts": 1
+ },
+ {
+  "id": "1691053215989858304",
+  "month": 8,
+  "day": 14,
+  "year": 2023,
+  "text": "「韓国の女性DJ」で思い出したDJ MIX動画。これかなりおすすめ。多様なジャンルの曲をテンポよく繋いでいくスタイルで、結構大胆な展開もあるのに絶妙なバランス感覚でグルーヴをキープし続けるのが凄い。韓国のプロデューサー、L-likeによるグッド・ミュージック・ミックス🎧",
+  "youtube": "https://youtu.be/Gs-QVjfmpbM",
+  "favs": 23,
+  "rts": 3
+ },
+ {
+  "id": "1882714960809083019",
+  "month": 1,
+  "day": 24,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.68》\nPete Rock - Petestrumentals\n\n\"Pete's Jazz\"",
+  "youtube": "https://youtu.be/Ns2hOiSGe90",
+  "favs": 22,
+  "rts": 4
+ },
+ {
+  "id": "1890707122800726081",
+  "month": 2,
+  "day": 15,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.91》\nThe Pharcyde - Labcabincalifornia\n\n\"Runnin'\"",
+  "youtube": "https://youtu.be/jQ-RrGCSa2M",
+  "favs": 23,
+  "rts": 3
+ },
+ {
+  "id": "1978213550817476688",
+  "month": 10,
+  "day": 14,
+  "year": 2025,
+  "text": "今日はD’Angeloを聴きます。",
+  "youtube": "https://youtu.be/SMuMMhfHaNw",
+  "favs": 24,
+  "rts": 2
+ },
+ {
+  "id": "2063923749192454296",
+  "month": 6,
+  "day": 8,
+  "year": 2026,
+  "text": "MUROさんが倉庫を掘りながら見つけたレコードにコメントしていく動画なんて一生観ていられる🤤\nノーカットの完全版も公開してください… テロップなしの未編集で構いませんので…",
+  "youtube": "https://youtu.be/GHt7iW8dlqE",
+  "favs": 25,
+  "rts": 1
+ },
+ {
   "id": "1541368732701732869",
   "month": 6,
   "day": 27,
@@ -838,6 +3908,56 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/IiCjOdDLpRQ",
   "favs": 25,
   "rts": 0
+ },
+ {
+  "id": "1667111222851047430",
+  "month": 6,
+  "day": 9,
+  "year": 2023,
+  "text": "Big Daddy Kane「Show & Prove」のMVPは？\n\n\n登場順に\n①DJ Premier（イントロのスクラッチ）\n②Scoob\n③Sauce Money\n④Shyheim\n⑤Big Daddy Kane\n⑥Jay-Z\n⑦Ol’ Dirty Bastard",
+  "youtube": "https://youtu.be/bpMpjrxNhB4",
+  "favs": 22,
+  "rts": 3
+ },
+ {
+  "id": "1684141510957191168",
+  "month": 7,
+  "day": 26,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【32位】The Sugarhill Gang「Rapper's Delight」(1979年)\n\n米R.S.は「世界はそれまでこのようなものを聞いたことがなく、無数のMCたちがラップを書くことにインスピレーションを受けた」と評価した。",
+  "youtube": "https://youtu.be/mcCK99wHrk0",
+  "favs": 20,
+  "rts": 5
+ },
+ {
+  "id": "1799365751725539473",
+  "month": 6,
+  "day": 8,
+  "year": 2024,
+  "text": "The Notorious B.I.G.「Mo Money Mo Problems」の元ネタ曲で超絶ダンスを披露し、観衆を沸かせまくる日本人ダンサー・THE D Sorakiの動画。Diana Ross「I'm Coming Out」をBiggieの元ネタとして知っていた彼は、小学１年生でCommon「Dooinit」が好きだったのだとか！！",
+  "youtube": "https://youtu.be/2C9sXDEYVjY",
+  "favs": 25,
+  "rts": 0
+ },
+ {
+  "id": "1858827566657806590",
+  "month": 11,
+  "day": 19,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.3》\nBlack Moon - Enta Da Stage\n\n\"Buck Em Down\"",
+  "youtube": "https://youtu.be/vAz00Ia9GvY",
+  "favs": 23,
+  "rts": 2
+ },
+ {
+  "id": "1873655270578004155",
+  "month": 12,
+  "day": 30,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.43》\nThe Roots - do you want more ?!!!??!\n\n\"Proceed\"",
+  "youtube": "https://youtu.be/O5TUqdxqHS0",
+  "favs": 24,
+  "rts": 1
  },
  {
   "id": "1527927633131864064",
@@ -870,6 +3990,66 @@ const SCHEDULE_CANDIDATES = [
   "rts": 2
  },
  {
+  "id": "1674387249050558464",
+  "month": 6,
+  "day": 29,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#1980年のヒップホップ から１曲...\nKurtis Blow - The Breaks\n\nメジャーレーベルとの契約、ソロラッパーとしてのリリース、サビのある楽曲構成。いくつもの「ヒップホップ業界初」を達成した男のヒット曲。冒頭の4小節は、もはや古典。",
+  "youtube": "https://youtu.be/heXlCbrVzcc",
+  "favs": 22,
+  "rts": 2
+ },
+ {
+  "id": "1731272829734420656",
+  "month": 12,
+  "day": 3,
+  "year": 2023,
+  "text": "「12月3日は韻踏合組合の日」ということで、この曲をチョイス。2010年リリース、全曲がEVIS BEATSプロデュースのアルバム『都市伝説』収録の「DREAMIN'」は、メロウなサンプリングビートと韻踏MCsのラップが完璧に融合した、アルバム終盤を彩る魅力的な一曲。",
+  "youtube": "https://youtu.be/yRwNY1Mbj3A",
+  "favs": 23,
+  "rts": 1
+ },
+ {
+  "id": "1819734003588673867",
+  "month": 8,
+  "day": 3,
+  "year": 2024,
+  "text": "スヌープがなでしこジャパン⚽️のアメリカ戦をスタジアムで観てる！後半からLady of Rageが出てきたらやばいな〜Dogg Poundの新曲でもバリバリかましてたからな〜（デニス・ロッドマン🏀の娘はマジでスタメンで出てます）",
+  "youtube": "https://youtu.be/Q2ipAYV_ZFM",
+  "favs": 23,
+  "rts": 1
+ },
+ {
+  "id": "1824047102185607369",
+  "month": 8,
+  "day": 15,
+  "year": 2024,
+  "text": "Double XX「Money Talks」のインストでPUNPEEとSEEDAがラップする、TAMU「金 (Remix)」も合わせて紹介。古い曲だからPUNPEEのフロウが今と違うのかと思ったけど「お嫁においで 2015」とそれほど時期は変わらないし、この曲が特殊なんですかね。",
+  "youtube": "https://youtu.be/xPWXUvel1U0",
+  "favs": 21,
+  "rts": 3
+ },
+ {
+  "id": "1853728220392440309",
+  "month": 11,
+  "day": 5,
+  "year": 2024,
+  "text": "昨日ポストしたO.C.「Far From Yours」ネタ、正しくはこちらでした！\n慎重に投稿しないとダメだなぁ… と反省。しばらく控えます。教えてくださった方々、ありがとうございました🙇\n誤情報すみませんでした🙏",
+  "youtube": "https://youtu.be/FOnNCZ3LhEg",
+  "favs": 24,
+  "rts": 0
+ },
+ {
+  "id": "1893224214229885220",
+  "month": 2,
+  "day": 22,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.98》\nCommon - Be\n\n\"Love Is...\"",
+  "youtube": "https://youtu.be/qpGT_h5SKDI",
+  "favs": 20,
+  "rts": 4
+ },
+ {
   "id": "1530494009944449024",
   "month": 5,
   "day": 28,
@@ -890,6 +4070,126 @@ const SCHEDULE_CANDIDATES = [
   "rts": 2
  },
  {
+  "id": "1688127781731696640",
+  "month": 8,
+  "day": 6,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【10位】Bobby Shmurda「Hot N*gga」(2014年)\n\nRolling Stoneは「この曲の騒々しいビデオは、YouTubeの再生回数が8億5000万回を超え、NYで広く普及しているドリル・サウンド台頭の先駆けとなった」と評価した。",
+  "youtube": "https://youtu.be/vJwKKKd2ZYE",
+  "favs": 21,
+  "rts": 2
+ },
+ {
+  "id": "1992882889063899536",
+  "month": 11,
+  "day": 24,
+  "year": 2025,
+  "text": "De La Soul の新作、全体的に良くて一番好きな曲を決めにくいアルバムだけど、一曲選ぶなら Nas とのコレかな…\n他にも捨てがたい曲があるし、みんなのチョイスも知りたい！",
+  "youtube": "https://youtu.be/57ZcN103sQk",
+  "favs": 21,
+  "rts": 2
+ },
+ {
+  "id": "1875499460668879069",
+  "month": 1,
+  "day": 4,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.48》\nKRS-One - KRS ONE\n\n\"Rappaz R.N. Dainja\"",
+  "youtube": "https://youtu.be/iIoGCToYQnQ",
+  "favs": 21,
+  "rts": 1
+ },
+ {
+  "id": "1980976501358239986",
+  "month": 10,
+  "day": 22,
+  "year": 2025,
+  "text": "DUSTY HUSKYとDJ BUNTAのB2B MIX SHOW！！！\n今から聴きますが、間違い無いでしょう🔥🔥🔥",
+  "youtube": "https://youtu.be/-2Fc9kj3pUI",
+  "favs": 17,
+  "rts": 5
+ },
+ {
+  "id": "2029083365371199701",
+  "month": 3,
+  "day": 4,
+  "year": 2026,
+  "text": "Wu-Tang Clanのドラマ、シーズン2を見終わった。初ライブのシーンで普通に泣いてしまったし、この「Wu-Tang Clan Ain't Nuthing Ta F'Wit」のシーンも良かった。アルバムがリリースされてハッピーエンドかと思いきや… ☔️☔️☔️",
+  "youtube": "https://youtu.be/RczuuweMRm4",
+  "favs": 20,
+  "rts": 2
+ },
+ {
+  "id": "1663485410129870849",
+  "month": 5,
+  "day": 30,
+  "year": 2023,
+  "text": "J. Sands feat. elZhi & SKYZOO「Find A Means」は、Pete Rockが手掛けた InI「Center of Attention」と同ネタ使い！動きのあるベースラインなど、単なる焼き直しに終わらず現代風にアップデートされているところがGOOD🔥🔥🔥",
+  "youtube": "https://youtu.be/SLDqZYB7Kg0",
+  "favs": 19,
+  "rts": 2
+ },
+ {
+  "id": "1677988466947158018",
+  "month": 7,
+  "day": 9,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【65位】Lord Tariq and Peter Gunz「Déjà Vu (Uptown Baby)」(1997年)\n\n米R.S.は「アップタウンや郊外の伝統を称えるアンセム。マウント･ヴァーノンやヨンカーズといった市外への敬意も表している」と評価した。",
+  "youtube": "https://youtu.be/mVnoNpncfh0",
+  "favs": 19,
+  "rts": 2
+ },
+ {
+  "id": "1687048163893358592",
+  "month": 8,
+  "day": 3,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【15位】DMX feat. Sheek Louch「Get at Me Dog」(1998年)\n\nRolling Stoneは「Bad Boy時代の贅沢志向の美学に対するタイムリーな応答。ストリートがヒップホップの本質であるとリスナーに思い出させた」と評価した。",
+  "youtube": "https://youtu.be/oM_lFtEFidA",
+  "favs": 19,
+  "rts": 2
+ },
+ {
+  "id": "1699753243323297876",
+  "month": 9,
+  "day": 7,
+  "year": 2023,
+  "text": "週末の🇯🇵vs🇩🇪に向けてドイツのヒップホップを紹介。\nドイツの要注目ビートメイカー・Figub BrazlevičがプロデュースしたMain Moe「Rap In Berlin」は、Roy Ayers「Everybody Loves the Sunshine」ネタのアッパーなビートで、90年代ヒップホップ好きにはたまらない仕上がり！",
+  "youtube": "https://youtu.be/IoIbYmoGUBE",
+  "favs": 17,
+  "rts": 4
+ },
+ {
+  "id": "1797553814980968672",
+  "month": 6,
+  "day": 3,
+  "year": 2024,
+  "text": "KieferのTiny Desk Concert、気持ち良すぎて何周でも聴いていられる...\nビルボードライブ大阪での来日公演は明日。東京公演はすでに完売ですが、大阪公演のチケットはまだあるようなので、この極上グルーヴを生で味わいたい方は是非どうぞ。(チケット情報はリプ欄に載せます)",
+  "youtube": "https://youtu.be/asZZrUFeM_8",
+  "favs": 19,
+  "rts": 2
+ },
+ {
+  "id": "1907002499044622568",
+  "month": 4,
+  "day": 1,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.136》\nCamp Lo - Uptown Saturday Night\n\n\"Rockin' It AKA Spanish Harlem\"",
+  "youtube": "https://youtu.be/IV9zn6_3EY8",
+  "favs": 19,
+  "rts": 2
+ },
+ {
+  "id": "1917880905630404716",
+  "month": 5,
+  "day": 1,
+  "year": 2025,
+  "text": "RIP SLYMEのMVが、らしさ全開で最高！！",
+  "youtube": "https://youtu.be/MzUq3Bd6ZMU",
+  "favs": 18,
+  "rts": 3
+ },
+ {
   "id": "1540655981377781760",
   "month": 6,
   "day": 25,
@@ -900,6 +4200,96 @@ const SCHEDULE_CANDIDATES = [
   "rts": 0
  },
  {
+  "id": "1675081813075832833",
+  "month": 7,
+  "day": 1,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【82位】EPMD「So Wat Cha Sayin」(1989年)\n\n米R.S.は「黄金期の最もファンキーな2人組」と称し、10代で売り上げ・チャートにおいて結果を出した2人が、自分たちの実力を疑った人々を攻撃するこの曲を選出した。",
+  "youtube": "https://youtu.be/Z4HJ-xvmSyo",
+  "favs": 20,
+  "rts": 0
+ },
+ {
+  "id": "1675444208155459584",
+  "month": 7,
+  "day": 2,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【80位】Freeway「What We Do」(2002年)\n\nRolling Stoneは「Just Blazeの技ありなサンプリングを軸に、最高のストリートリリシスト3人が、ドラッグについて世界一鋭いラップを披露している」と評価した。",
+  "youtube": "https://youtu.be/1swlUtEkXZ0",
+  "favs": 20,
+  "rts": 0
+ },
+ {
+  "id": "1682337122206859266",
+  "month": 7,
+  "day": 21,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【41位】Big Daddy Kane「Ain’t No Half Steppin」(1988年)\n\nRolling Stoneは「この曲は彼の激しい怒り。13日の金曜日のように、彼の王座に挑む愚かなライバルMCに容赦なく襲いかかる」と紹介した。",
+  "youtube": "https://youtu.be/wMpsKokgZu0",
+  "favs": 17,
+  "rts": 3
+ },
+ {
+  "id": "1683779132763828228",
+  "month": 7,
+  "day": 25,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【34位】Jadakiss feat. Styles P「We Gonna Make It」(2001年)\n\nRolling Stoneは「コカイン･ラップの歴史において、Jadakissが放つ冒頭の小節でこの曲と争えるものはほとんどない」と評価した。",
+  "youtube": "https://youtu.be/p6TrQzNTrRA",
+  "favs": 19,
+  "rts": 1
+ },
+ {
+  "id": "1699750558738071769",
+  "month": 9,
+  "day": 7,
+  "year": 2023,
+  "text": "週末の🇯🇵vs🇩🇪に向けてドイツのヒップホップを紹介。Pete Rockがビートを提供し、客演でも参加したCurse「Nimm's Leicht」\nPUNPEE「Bitch Planet feat. RAU DEF」同ネタ使いの可愛らしいビートが印象的。2005年のリリース当時は「Funky DL 同ネタ」と言われていたような...",
+  "youtube": "https://youtu.be/O3b-cS8MxfQ",
+  "favs": 20,
+  "rts": 0
+ },
+ {
+  "id": "1791803871653945732",
+  "month": 5,
+  "day": 18,
+  "year": 2024,
+  "text": "Nas「Just A Moment」も2004年のアルバム収録曲。改めて聴くとアルバムの中でもかなり異質なビート。奥まったところで鳴るサンプルソースや全体的なパツパツ具合に、後のSP-404使いビートメイカーの作風に通ずるものがあると感じるのは私だけ？",
+  "youtube": "https://youtu.be/_49iKyoQcfs",
+  "favs": 19,
+  "rts": 1
+ },
+ {
+  "id": "1824724880291664298",
+  "month": 8,
+  "day": 17,
+  "year": 2024,
+  "text": "Dev Largeとオカモトレイジの交流エピソードが面白かった！N.E.R.D.「She Wants To Move」の話をしながら、その曲のビデオに出てくる赤い犬のTシャツを着ているのも良い！！bape🐵とのコラボTが出ていたんですね〜",
+  "youtube": "https://youtu.be/ovdxdxNSpnk",
+  "favs": 16,
+  "rts": 4
+ },
+ {
+  "id": "1858132985263894637",
+  "month": 11,
+  "day": 17,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.1》\nIce Cube - The Predator\n\n“It Was A Good Day”",
+  "youtube": "https://youtu.be/h4UqMyldS7Q",
+  "favs": 19,
+  "rts": 1
+ },
+ {
+  "id": "1883077348020658532",
+  "month": 1,
+  "day": 25,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.69》\nD'Angelo - Voodoo\n\n\"Devil's Pie\"",
+  "youtube": "https://youtu.be/pB8HbMlptJE",
+  "favs": 19,
+  "rts": 1
+ },
+ {
   "id": "1537768332610310144",
   "month": 6,
   "day": 17,
@@ -908,6 +4298,146 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/J_I0fIz0XCQ",
   "favs": 19,
   "rts": 0
+ },
+ {
+  "id": "1679800407839899648",
+  "month": 7,
+  "day": 14,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【55位】Foxy Brown feat. Jay-Z「I'll Be」(1997年)\n\nRolling Stoneは「彼女は90年代半ばにヒップホップ界を虜にした。この曲ではピュアなリリシズムとカリスマ性でJay-Zを圧倒している」と評価した。",
+  "youtube": "https://youtu.be/eaTv9cGx7O4",
+  "favs": 16,
+  "rts": 3
+ },
+ {
+  "id": "1683431844325502977",
+  "month": 7,
+  "day": 24,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2005年のヒップホップ\nGhostface Killah「Be Easy」\n\nPete RockのソウルフルなビートでWu-Tang ClanのGhostfaceがスピット。熱い。レーベルはDef Jam。12インチ買ったな〜",
+  "youtube": "https://youtu.be/I3zeGGK0Diw",
+  "favs": 18,
+  "rts": 1
+ },
+ {
+  "id": "1683786672507613185",
+  "month": 7,
+  "day": 25,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【33位】Beastie Boys「Paul Revere」(1986年)\n\nRolling Stoneは「MCAの提案によりTR-808のシンプルなドラムパターンが逆再生された。斬新なサウンドで頭が永遠にぶっ飛ばされた」と紹介した。",
+  "youtube": "https://youtu.be/kdfF0cOC50w",
+  "favs": 18,
+  "rts": 1
+ },
+ {
+  "id": "1817529502245032079",
+  "month": 7,
+  "day": 28,
+  "year": 2024,
+  "text": "Kool G Rap & DJ Poloのアルバムはリリース時に日本での発売がなく、2006年にbmrとP-VINEの連動企画によって初めて国内盤化されました。Large Professorの初期仕事が聴けるこのアルバム。1曲目の↓のビートは特に「Main Source前夜！」って感じがします。",
+  "youtube": "https://youtu.be/EFTMjitEPnM",
+  "favs": 18,
+  "rts": 1
+ },
+ {
+  "id": "1817532219772031335",
+  "month": 7,
+  "day": 28,
+  "year": 2024,
+  "text": "Cold Chillin’だと↓の面々の作品は日本盤が出ているのに、Kool G Rap & DJ Poloが出ていないのはなんだか不思議。まぁBiz Markieもこのアルバム以降は出ていないんですが…",
+  "youtube": "https://youtu.be/XbsPTkwqWCI",
+  "favs": 18,
+  "rts": 1
+ },
+ {
+  "id": "1957394024622653818",
+  "month": 8,
+  "day": 18,
+  "year": 2025,
+  "text": "昨日も思った「さすがにJay-Zが出るわけないか…」を良い意味で裏切った日のライブ。Jay-Zの登場で一気に観客がヒートアップするのが熱い🔥それでも主役に見えるAlicia Keysの凄さよ。",
+  "youtube": "https://youtu.be/18YeCYI9nOg",
+  "favs": 19,
+  "rts": 0
+ },
+ {
+  "id": "2007026839588605965",
+  "month": 1,
+  "day": 2,
+  "year": 2026,
+  "text": "Smif-N-Wessunが車に乗りながらライブ。リラックスしたノリでかなり良い感じでした。",
+  "youtube": "https://youtu.be/YkFoTOp80Y4",
+  "favs": 17,
+  "rts": 2
+ },
+ {
+  "id": "1681612346270023680",
+  "month": 7,
+  "day": 19,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【45位】Salt-N-Pepa「Push It」(1986年)\n\nRolling Stoneは「Billboard Hot 100でトップ20にランクインし、デビューアルバムを女性ラップアーティストとして初のプラチナアルバムに押し上げた」と紹介している。",
+  "youtube": "https://youtu.be/vCadcBR95oU",
+  "favs": 15,
+  "rts": 3
+ },
+ {
+  "id": "1686315835931938816",
+  "month": 8,
+  "day": 1,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【20位】Puff Daddy and the Family「All About the Benjamins」(1997年)\n\nRolling Stoneは「バックパッカーとシャイニースーツが対立する中、彼は臆面もなく物質主義を謳歌する曲を作り上げた」と紹介した。",
+  "youtube": "https://youtu.be/lHok7RqmDvI",
+  "favs": 14,
+  "rts": 4
+ },
+ {
+  "id": "1748950327942947257",
+  "month": 1,
+  "day": 21,
+  "year": 2024,
+  "text": "1994年のYo! MTV Rapsでは「DJ Premiere」になっている。「e」が一つ多い。これは単なる間違い？それともこう表記していた時期があった？",
+  "youtube": "https://youtu.be/qV90fK-UtBQ",
+  "favs": 17,
+  "rts": 1
+ },
+ {
+  "id": "1846880057954128040",
+  "month": 10,
+  "day": 17,
+  "year": 2024,
+  "text": "2Pac「Dear Mama」同ネタのポップなビートに客演のJay-Zのラップが乗る曲、Jon B & Coko「Keep It Real」を紹介。その他、SWVとMissy ElliottによるMichael Jacksonカバーもナイスな良質サントラ『Hav Plenty』です。",
+  "youtube": "https://youtu.be/4wFaqiQdD0Q",
+  "favs": 18,
+  "rts": 0
+ },
+ {
+  "id": "1898525302302929234",
+  "month": 3,
+  "day": 9,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.112》\nThe Notorious B.I.G. - Ready To Die\n\n\"Big Poppa\"",
+  "youtube": "https://youtu.be/phaJXp_zMYM",
+  "favs": 17,
+  "rts": 1
+ },
+ {
+  "id": "1935306637482541534",
+  "month": 6,
+  "day": 18,
+  "year": 2025,
+  "text": "これはセットで🎧\n\n⬅️BLAHRMY, BAKU feat. MEGA-G\n\n\n➡️JUSWANNA",
+  "youtube": "https://youtu.be/WX5_thlWmhI",
+  "favs": 16,
+  "rts": 2
+ },
+ {
+  "id": "2048256932084085070",
+  "month": 4,
+  "day": 26,
+  "year": 2026,
+  "text": "DJ Nu-Markの「長いドライブをあっという間に過ぎさせる」ことをコンセプトにしたミックスが結構良かったのでシェア。「Jazzの演奏にNasのアカペラを重ねた後、マイケルジャクソンにつないでSWVのビートで補強」みたいなアイデアが詰まっている面白い作品です。",
+  "youtube": "https://youtu.be/w618P4Zm-VE",
+  "favs": 17,
+  "rts": 1
  },
  {
   "id": "1533050810913157120",
@@ -930,6 +4460,126 @@ const SCHEDULE_CANDIDATES = [
   "rts": 2
  },
  {
+  "id": "1662050950289162240",
+  "month": 5,
+  "day": 26,
+  "year": 2023,
+  "text": "Fashawnのオシャレな曲だったら「Celebration」もオススメ。プロデュースはLouie Lou。清涼感のあるビートは夏用のプレイリストで活きそうです🍹",
+  "youtube": "https://youtu.be/aNsBz2a_xvU",
+  "favs": 17,
+  "rts": 0
+ },
+ {
+  "id": "1679792868636884993",
+  "month": 7,
+  "day": 14,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【56位】The Diplomats「Dipset Anthem」(2003年)\n\nRolling Stoneは「2003年の2枚組アルバムは彼らにとっての戴冠式だった。Juelz Santanaは他のメンバーがクラブにいる間に、数時間でこの曲を書いた」と紹介した。",
+  "youtube": "https://youtu.be/eCvxC8rofjs",
+  "favs": 14,
+  "rts": 3
+ },
+ {
+  "id": "1682691964758548480",
+  "month": 7,
+  "day": 22,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【40位】Afrika Bambaataa and the Soulsonic Force「Planet Rock」(1982年)\n\n米R.S.は「最初のエレクトロ・ラップの名曲としてだけでなく、彼のキュレーションのセンスを表したものとしても称賛されている」と紹介。",
+  "youtube": "https://youtu.be/9J3lwZjHenA",
+  "favs": 15,
+  "rts": 2
+ },
+ {
+  "id": "1683416739499978752",
+  "month": 7,
+  "day": 24,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【36位】50 Cent「Wanksta」(2002年)\n\nRolling Stoneは「死と隣り合わせの状況を乗り越え、ザラっとした滑舌の悪い声を持った50 Centが、NYのストリートミックステープの新しいモデルとして復帰した」と紹介している。",
+  "youtube": "https://youtu.be/ShOQQOy5pf8",
+  "favs": 14,
+  "rts": 3
+ },
+ {
+  "id": "1702638189117407564",
+  "month": 9,
+  "day": 15,
+  "year": 2023,
+  "text": "black music review 95年3月号のArtifactsインタビューで、El Da Senseiが「Tame OneとRedmanは親戚じゃない」と言っているのを発見。いとこ説は真実？デマ？\n\nまぁそんなことは置いておいて、定番ネタ・Minnie Riperton「Inside My Love」使いのおすすめ曲を聴いてください。",
+  "youtube": "https://youtu.be/FnmRkJU--T0",
+  "favs": 17,
+  "rts": 0
+ },
+ {
+  "id": "1751439966964437462",
+  "month": 1,
+  "day": 28,
+  "year": 2024,
+  "text": "CreativeDrugStore『Wisteria』のプレ･リリース･ライブで披露された、アルバム全曲分のパフォーマンスがYouTubeにアップされています！太っ腹！！全国ツアー中なので、動画→現場で楽しむこともできますね。MV化されていない推し曲「Yo, My Ladies」のリンクをどうぞ。",
+  "youtube": "https://youtu.be/kKRJlLv4TAM",
+  "favs": 15,
+  "rts": 2
+ },
+ {
+  "id": "1833432571105161588",
+  "month": 9,
+  "day": 10,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は2008年リリースの9thアルバム『Untitled』です。元々は『Nワード』がタイトルになる予定でしたが物議を醸して変更に。帯にあるNasの言葉「このアルバムの本当のタイトルが何かを皆は分かっている」とはそういう意味。推し曲は「Hero」です！",
+  "youtube": "https://youtu.be/0xvcXkKzd7Y",
+  "favs": 17,
+  "rts": 0
+ },
+ {
+  "id": "1860624409918124531",
+  "month": 11,
+  "day": 24,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.8》\nThe Pharcyde - Bizarre Ride II The Pharcyde\n\n\"4 Better Or 4 Worse\"",
+  "youtube": "https://youtu.be/49PQ75u6WTQ",
+  "favs": 15,
+  "rts": 2
+ },
+ {
+  "id": "1866777446403674598",
+  "month": 12,
+  "day": 11,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.24》\nO.S.T. - How High\n\nLimp Bizkit \"N 2 Gether Now feat. Method Man\"",
+  "youtube": "https://youtu.be/tMLetx7SjCw",
+  "favs": 15,
+  "rts": 2
+ },
+ {
+  "id": "1877663858145247654",
+  "month": 1,
+  "day": 10,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.54》\nSmif-N-Wessun - Dah Shinin’\n\n\"Bucktown\"",
+  "youtube": "https://youtu.be/CwQSq5iZdpQ",
+  "favs": 15,
+  "rts": 2
+ },
+ {
+  "id": "2058590491978138076",
+  "month": 5,
+  "day": 24,
+  "year": 2026,
+  "text": "RZAもMethod ManもRaekwonも音源通りのキレがあって感動したけど、Ghostface Killahの元気がないように見えたのは自分だけ？\nPhifeと同じく糖尿病を公表していたはずなので、体調が悪くなければいいんだけど…",
+  "youtube": "https://youtu.be/lpayJn3Ch5M",
+  "favs": 15,
+  "rts": 2
+ },
+ {
+  "id": "2065405913553604991",
+  "month": 6,
+  "day": 12,
+  "year": 2026,
+  "text": "Eric B. & Rakim「Juice (Know The Ledge)」のビートでNORIKIYOとSHINGO★西成がラップする新曲なんて俺得過ぎる🤤",
+  "youtube": "https://youtu.be/BXpf-Y9p4yo",
+  "favs": 15,
+  "rts": 2
+ },
+ {
   "id": "1533363604447059968",
   "month": 6,
   "day": 5,
@@ -938,6 +4588,146 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/QbdNQ_mwlcI",
   "favs": 14,
   "rts": 2
+ },
+ {
+  "id": "1674379600925949952",
+  "month": 6,
+  "day": 29,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【85位】Roxanne Shante「Have a Nice Day」(1987年)\n\n米R.S.は「80年代のNYにおけるラップバトルの女王」と評価し、「伝説のバトル \"Roxanne Wars\" と \"Bridge Wars\" の両方を制覇した唯一のコマンド」と称した。",
+  "youtube": "https://youtu.be/5QkEHUMmpyM",
+  "favs": 15,
+  "rts": 1
+ },
+ {
+  "id": "1759503087247773857",
+  "month": 2,
+  "day": 19,
+  "year": 2024,
+  "text": "Rakim、2009年リリースの3rdアルバム『The Seventh Seal』の国内盤。裏ジャケットにはJadakiss、Styles P、Busta Rhymesが参加した「Euphoria」がボーナストラックとして収録されていると書いてあるのに、実際には入っていない。めちゃくちゃカッコいい曲なのに... 悲しい😢",
+  "youtube": "https://youtu.be/X-DxJpx3kNg",
+  "favs": 15,
+  "rts": 1
+ },
+ {
+  "id": "1897029286726656144",
+  "month": 3,
+  "day": 4,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.108》\nGrand Puba - 2000\n\n\"I Like It (I Wanna Be Where You Are) (Buckwild Remix)\"",
+  "youtube": "https://youtu.be/_WAC3pzLaxk",
+  "favs": 15,
+  "rts": 1
+ },
+ {
+  "id": "2007718978958077981",
+  "month": 1,
+  "day": 4,
+  "year": 2026,
+  "text": "通りがかったHUFの店内BGMで流れてた曲が思い出せなくて、Method Manの声ネタから辿ったらこれだった。こういう“ド定番”とは言い難い90s HIP HOPを忘れかけてるから、ミックス作ってまとめたいな〜",
+  "youtube": "https://youtu.be/j9DaLhd0QCk",
+  "favs": 16,
+  "rts": 0
+ },
+ {
+  "id": "2036053560065134670",
+  "month": 3,
+  "day": 23,
+  "year": 2026,
+  "text": "RIP SLYMEのライブ開演前に流れたらしい「DJ FUMIYAが18歳の時に作ったミックス」が気になり過ぎる。聴くのは無理でも、せめてトラックリストが知りたい… やっぱりThe Pharcydeは入ってるのかな… などと考えながら、YouTubeで見つけたDJプレイを聴いている。",
+  "youtube": "https://youtu.be/nNhLmhWz2Mw",
+  "favs": 14,
+  "rts": 2
+ },
+ {
+  "id": "2061387547817943193",
+  "month": 6,
+  "day": 1,
+  "year": 2026,
+  "text": "WU-TANGどうこう抜きにして、ヒップホップMIXとしてめちゃくちゃ良い作品だから未だに聴いてるしこれからも聴くよ。DJ R-MAN👐D.L.i.P.",
+  "youtube": "https://youtu.be/XpynjRyXc2g",
+  "favs": 13,
+  "rts": 3
+ },
+ {
+  "id": "1676531373526376448",
+  "month": 7,
+  "day": 5,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【74位】Slick Rick feat. Doug E Fresh「The Show」(1985年)\n\nRolling Stoneは「テレビアニメのテーマ曲やビートルズの曲を引用したこの曲は、\"Rapper's Delight\"以来なかった程に普及した」と評価している。",
+  "youtube": "https://youtu.be/bDkqz5C62SM",
+  "favs": 13,
+  "rts": 2
+ },
+ {
+  "id": "1682707056971882496",
+  "month": 7,
+  "day": 22,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2003年のヒップホップ\nOutkast『Speakerboxxx / The Love Below』\n\nビッグ･ボーイとアンドレ･3000のソロ作がセットになった2枚組アルバム。この年のグラミー賞で「Album Of The Year」を獲得した。WOWOWで録画した授賞式を観た思い出...",
+  "youtube": "https://youtu.be/cthy007wxjY",
+  "favs": 13,
+  "rts": 2
+ },
+ {
+  "id": "1891085858465272268",
+  "month": 2,
+  "day": 16,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.92》\nDe La Soul - Stakes Is High\n\n\"Stakes Is High\"",
+  "youtube": "https://youtu.be/radJQyaC5kY",
+  "favs": 14,
+  "rts": 1
+ },
+ {
+  "id": "1895928030964695414",
+  "month": 3,
+  "day": 1,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.105》\nPete Rock & C.L. Smooth - The Main Ingredient\n\n\"It's On You\"",
+  "youtube": "https://youtu.be/akrlrDTf2Yk",
+  "favs": 14,
+  "rts": 1
+ },
+ {
+  "id": "1900502169398165580",
+  "month": 3,
+  "day": 14,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.118》\n2Pac - Me Against The World\n\n\"Me Against The World\"",
+  "youtube": "https://youtu.be/hNXdOhwVAhk",
+  "favs": 15,
+  "rts": 0
+ },
+ {
+  "id": "1908841563289255997",
+  "month": 4,
+  "day": 6,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.140》\nThe Neptunes - Clones\n\n\"Frontin' feat. Jay-Z\"",
+  "youtube": "https://youtu.be/LOtkH5amC7s",
+  "favs": 15,
+  "rts": 0
+ },
+ {
+  "id": "2014674426491764913",
+  "month": 1,
+  "day": 23,
+  "year": 2026,
+  "text": "「どON」のRYO-Zヴァースの元ネタ見つけた！\nFAT BOYSのあのフレーズもこの曲に入ってた🍕",
+  "youtube": "https://youtu.be/imjgpi_sap0",
+  "favs": 14,
+  "rts": 1
+ },
+ {
+  "id": "2032060436133327142",
+  "month": 3,
+  "day": 12,
+  "year": 2026,
+  "text": "DJプレミアの良い意味でどうかしてるビート。feat. Afu-Raでさらにボーナスポイント！",
+  "youtube": "https://youtu.be/oxYMJ9AcsGE",
+  "favs": 15,
+  "rts": 0
  },
  {
   "id": "1515637511439015938",
@@ -970,12 +4760,382 @@ const SCHEDULE_CANDIDATES = [
   "rts": 0
  },
  {
+  "id": "1667139489955971072",
+  "month": 6,
+  "day": 9,
+  "year": 2023,
+  "text": "PRO ERAのCJ FLYが来日。今週は東京・来週は大阪でライブを行うようです。詳細は👇のフライヤーで確認できます。YouTubeリンクは Statik Selektahがプロデュースした CJ FLY「Block Party」のMV。ビデオのアニメーション通り、夕焼け感あるビートが沁みる良い曲です。",
+  "youtube": "https://youtu.be/hgW3obd73sA",
+  "favs": 13,
+  "rts": 1
+ },
+ {
+  "id": "1667622125119901696",
+  "month": 6,
+  "day": 10,
+  "year": 2023,
+  "text": "久々にじっくりサッカー見てるけど、今のストーンズはあんな仕事を任されているのか。しかも上手くてビックリ。というわけで、昔のストーンズ･スロウ･クラシックをどうぞ。\nLootpack - Whenimondamic",
+  "youtube": "https://youtu.be/e_EK3uYTIN0",
+  "favs": 14,
+  "rts": 0
+ },
+ {
+  "id": "1677626079790653440",
+  "month": 7,
+  "day": 8,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【67位】MC Shan「The Bridge」(1986年)\n\nRolling Stoneは「1985年から86年にかけてNYで最も熱いラッパーであり、伝説的なJuice Crewの中心人物。独特のフローで新世代のラップに多大な影響を与えた」と評価した。",
+  "youtube": "https://youtu.be/m2MgnKaB8Hw",
+  "favs": 12,
+  "rts": 2
+ },
+ {
+  "id": "1678373978275184641",
+  "month": 7,
+  "day": 10,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【63位】Kurtis Blow「The Breaks」(1980年)\n\nRolling Stoneは「\"Rapper's Delight\"とRun-D.M.C.の間の数年間、スターに君臨した。この曲が初めてラップレコードでゴールド認定された」と紹介した。",
+  "youtube": "https://youtu.be/5ZDUEilS5M4",
+  "favs": 11,
+  "rts": 3
+ },
+ {
+  "id": "1685953451090747392",
+  "month": 7,
+  "day": 31,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【22位】Jay-Z feat. Amil and Ja Rule「Can I Get A ...」(1998年)\n\nRolling Stoneは「Reasonable Doubtの荒々しいラップと、In My Lifetime, Volume 1の艶のあるポップさの間の完璧なバランス」と紹介した。",
+  "youtube": "https://youtu.be/5W1WirHKz0U",
+  "favs": 14,
+  "rts": 0
+ },
+ {
+  "id": "1697919799903277238",
+  "month": 9,
+  "day": 2,
+  "year": 2023,
+  "text": "DJ Koco Editを施して7インチ再発もされた、名門B-Boy Records発の1988年作品『Frozen Explosion』\n個性的なビートが多くて好みではないけれど、資料として購入。\nDJ Kocoが選出した「Mac Nife」は冒頭がドラムブレイクで、たしかにKocoさんっぽい。\n\n#1988年のヒップホップ",
+  "youtube": "https://youtu.be/0PFc6KJmeNw",
+  "favs": 14,
+  "rts": 0
+ },
+ {
+  "id": "1861349182834884645",
+  "month": 11,
+  "day": 26,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.10》\nThe Roots - Phrenology\n\n\"Thought @ Work\"",
+  "youtube": "https://youtu.be/trw6VTlADZA",
+  "favs": 14,
+  "rts": 0
+ },
+ {
+  "id": "1874742431511691280",
+  "month": 1,
+  "day": 2,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.46》\nBiz Markie - Biz’s Baddest Beats\n\n\"One Two\"",
+  "youtube": "https://youtu.be/btxpGpfmUOE",
+  "favs": 13,
+  "rts": 1
+ },
+ {
+  "id": "1911162625599447419",
+  "month": 4,
+  "day": 12,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.147》\nPete Rock - Return Of The SP1200\n\n\"Street Dreams\"",
+  "youtube": "https://youtu.be/EfI7mNXOxzI",
+  "favs": 13,
+  "rts": 1
+ },
+ {
+  "id": "1674011632752812033",
+  "month": 6,
+  "day": 28,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【88位】Roc Marciano「Panic」(2010年)\n\nRolling Stoneは「荒涼としたNYの街角で突然始まった銃撃戦の最中に取り残されたような錯覚を覚える韻の正確さ。まるでポロックの絵画のように濃密だ」と評価した。",
+  "youtube": "https://youtu.be/FmA1gVokGCU",
+  "favs": 13,
+  "rts": 0
+ },
+ {
+  "id": "1686678227912425472",
+  "month": 8,
+  "day": 2,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【18位】Pop Smoke「Dior」(2019年)\n\nRolling Stoneは「リスナーを惹きつけるこの曲は、彼が魅力的かつ複雑なクラブバンガーを届けることができるアーティストであることを示していた」と評価した。",
+  "youtube": "https://youtu.be/oorVWW9ywG0",
+  "favs": 10,
+  "rts": 3
+ },
+ {
+  "id": "1836180434943971403",
+  "month": 9,
+  "day": 17,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は1996年リリースの2ndアルバム『it was written』です。1stアルバムのプロデューサー陣も豪華でしたが、この2ndにはDr. Dreが参加してるんですよね！長くは続かなかったこのコンビ。Nasが『2001』に参加する世界線も見てみたかった…",
+  "youtube": "https://youtu.be/JDUvucdgNQ4",
+  "favs": 13,
+  "rts": 0
+ },
+ {
+  "id": "1880920078839087322",
+  "month": 1,
+  "day": 19,
+  "year": 2025,
+  "text": "この10年ぐらいで、日本のラッパーとUSアーティストが組んだ曲ってどんなのがありますか？\nよければ教えてください。",
+  "youtube": "https://youtu.be/WxfCeAgsww4",
+  "favs": 12,
+  "rts": 1
+ },
+ {
+  "id": "1883439745755414583",
+  "month": 1,
+  "day": 26,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.70》\nDe La Soul - The Grind Date\n\n\"Much More\"",
+  "youtube": "https://youtu.be/ipgwXHegISY",
+  "favs": 12,
+  "rts": 1
+ },
+ {
+  "id": "1884564635199709647",
+  "month": 1,
+  "day": 29,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.73》\nO.S.T. - The Show\n\n2Pac \"My Block\"",
+  "youtube": "https://youtu.be/O-snIyULfKc",
+  "favs": 13,
+  "rts": 0
+ },
+ {
+  "id": "1892172173412049070",
+  "month": 2,
+  "day": 19,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.95》\nQ-Tip - Amplified\n\n\"Let's Ride\"",
+  "youtube": "https://youtu.be/QVB5Q_bNcCY",
+  "favs": 11,
+  "rts": 2
+ },
+ {
+  "id": "1895071467295195551",
+  "month": 2,
+  "day": 27,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.103》\nCommon - Finding Forever\n\n\"So Far To Go feat. D'Angelo\"",
+  "youtube": "https://youtu.be/OsZrxcvjwhs",
+  "favs": 12,
+  "rts": 1
+ },
+ {
+  "id": "1901751655701647631",
+  "month": 3,
+  "day": 17,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.121》\nShowbiz & A.G. – Party Groove / Soul Clap\n\n\"Party Groove (Instrumental)\"",
+  "youtube": "https://youtu.be/U3asg9ETeNk",
+  "favs": 13,
+  "rts": 0
+ },
+ {
+  "id": "1975527591944855845",
+  "month": 10,
+  "day": 7,
+  "year": 2025,
+  "text": "2000年代前半、RIP SLYMEがインタビューで「影響を受けたアーティスト」として挙げていたLeaders Of The New School。\n後追い世代だったけど、そうした情報を通して90年代のヒップホップに自然と入ることができたのは幸運だったと思う。",
+  "youtube": "https://youtu.be/M_J55T0bG9U",
+  "favs": 13,
+  "rts": 0
+ },
+ {
+  "id": "1676901303799418883",
+  "month": 7,
+  "day": 6,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【71位】Schoolly D「P.S.K. What Does It Mean?」(1985年)\n\nRolling Stoneは「リアリティ･ラップはここから始まった。LAのIce-Tもこれに影響を受け、ギャングスタ･ラップを本格的に打ち出した」と評価している。",
+  "youtube": "https://youtu.be/fQc4A-XBzBY",
+  "favs": 12,
+  "rts": 0
+ },
+ {
+  "id": "1834907223094354354",
+  "month": 9,
+  "day": 14,
+  "year": 2024,
+  "text": "Nas来日公演に向けた復習。今日は2001年リリースの5thアルバム『Stillmatic』です。顔ジャケシリーズを終わらせつつ『Illmatic』を引用したタイトルをつけたのは、思い通りに進まなかったキャリアを仕切り直したい気持ちの表れ？DJ Premierとのタッグもこれで一旦聴き納めに…",
+  "youtube": "https://youtu.be/A5nM66F903I",
+  "favs": 12,
+  "rts": 0
+ },
+ {
+  "id": "1885976451910090817",
+  "month": 2,
+  "day": 2,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.78》\nSlum Village - Fantastic, vol. 2\n\n\"Once Upon a Time feat. Pete Rock\"",
+  "youtube": "https://youtu.be/J1hYLTrj_7A",
+  "favs": 9,
+  "rts": 3
+ },
+ {
+  "id": "1886338838932639883",
+  "month": 2,
+  "day": 3,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.79》\nSlum Village - Fantastic Volume 2.10\n\n\"Tell Me (Instrumental Mix)\"",
+  "youtube": "https://youtu.be/1kLxLkD8sO0",
+  "favs": 10,
+  "rts": 2
+ },
+ {
+  "id": "2003811176095085021",
+  "month": 12,
+  "day": 24,
+  "year": 2025,
+  "text": "リップスライムの冬ソングといえばこれ。ビートがThe Pharcyde「Runnin’」っぽくもある。",
+  "youtube": "https://youtu.be/VANCfG8I9PU",
+  "favs": 11,
+  "rts": 1
+ },
+ {
+  "id": "2050810286148559033",
+  "month": 5,
+  "day": 3,
+  "year": 2026,
+  "text": "90年代のメロウなヒップホップに魅了された人なら、MAHBIEのビートも大好きなはず。\nラストにD’Angelo「Brown Sugar」のリミックスに合わせてシンセを弾くのも良い！",
+  "youtube": "https://youtu.be/5RvCMMqF5Hg",
+  "favs": 11,
+  "rts": 1
+ },
+ {
   "id": "1540531867878715392",
   "month": 6,
   "day": 25,
   "year": 2022,
   "text": "ヒップホップ名盤を1分間で全曲試聴する動画の第３弾をアップしました。1分に凝縮してみると今回も超濃厚になりました。",
   "youtube": "https://youtu.be/qQllSwt5giQ",
+  "favs": 10,
+  "rts": 1
+ },
+ {
+  "id": "1658049592007573504",
+  "month": 5,
+  "day": 15,
+  "year": 2023,
+  "text": "⏯Cashus King feat. Blu - The Blu​(​e) Tape\n次々流れるクオリティーの高いビート上で、Bluがラップしまくる13分間！全部まとめて1曲になってるけど、バラしてEPにしても十分名作になったのでは？超粒揃いの幕の内弁当みたいな贅沢音源です！必聴🔥🔥🔥",
+  "youtube": "https://youtu.be/WrUmbqjebG8",
+  "favs": 10,
+  "rts": 1
+ },
+ {
+  "id": "1680169318468968450",
+  "month": 7,
+  "day": 15,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【53位】Rob Base and DJ E-Z Rock「It Takes Two」(1988年)\n\n米R.S.は「Lyn Collinsのドラムと２つの叫び声を利用したループは、シカゴ･ハウス、ドラムンベース、ボルチモア･クラブを席巻した」と評価した。",
+  "youtube": "https://youtu.be/phOW-CZJWT0",
+  "favs": 11,
+  "rts": 0
+ },
+ {
+  "id": "1683061896239513600",
+  "month": 7,
+  "day": 23,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【38位】MC Lyte「Paper Thin」(1988年)\n\nRolling Stoneは「そのライムは共感を呼び、時代を超越してBahamadiaやMissy Elliottによってリメイクされた」と紹介した。",
+  "youtube": "https://youtu.be/1POru2g5mQU",
+  "favs": 10,
+  "rts": 1
+ },
+ {
+  "id": "1684873836993331200",
+  "month": 7,
+  "day": 28,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【27位】Lil’ Kim feat. Jay-Z and Lil Cease「Big Momma Thang」(1996年)\n\nRolling Stoneは「強い意志を持ち、性的に解放された、新しい時代のフェミニストであり、その輝きは非常に強烈だった」と評価した。",
+  "youtube": "https://youtu.be/LuqcQrpRFcI",
+  "favs": 8,
+  "rts": 3
+ },
+ {
+  "id": "1798656078508642409",
+  "month": 6,
+  "day": 6,
+  "year": 2024,
+  "text": "Common & Pete Rock「Wise Up」の和訳解説動画。SGDさんが期待に応えてアップしてくれています。近年は歌詞対訳付きの国内盤が発売されるケースも少ないので非常にありがたいです。\"reservoirs ... dog\" \"scars ... face\"の部分、こんなのよく気付けますね！凄すぎる🔥🔥🔥",
+  "youtube": "https://youtu.be/jF8xw1SwzA4",
+  "favs": 9,
+  "rts": 2
+ },
+ {
+  "id": "1832343046924452207",
+  "month": 9,
+  "day": 7,
+  "year": 2024,
+  "text": "人生で初めてラップを聴いた時の『すげー！！なんだこれ！こんな歌、聴いたことない！ラップっておもしろいな！』という衝撃をこの歳になって再び感じさせてくれた、R-指定の強烈なラップ。こんなリリックが書ける、こんなフロウでラップできる、それを一発録りする... 怪物😈",
+  "youtube": "https://youtu.be/pQgWn77EXD4",
+  "favs": 11,
+  "rts": 0
+ },
+ {
+  "id": "1862066404360331417",
+  "month": 11,
+  "day": 28,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.12》\nThe Lox - Money, Power & Respect\n\n \"All for the Love\"",
+  "youtube": "https://youtu.be/sifS-gle0Qs",
+  "favs": 9,
+  "rts": 2
+ },
+ {
+  "id": "1862428792863461634",
+  "month": 11,
+  "day": 29,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.13》\nThe Game - The Documentary 2\n\n\"Circles feat. Q-Tip\"",
+  "youtube": "https://youtu.be/Y9ljZOSLQak",
+  "favs": 11,
+  "rts": 0
+ },
+ {
+  "id": "1891412271517347928",
+  "month": 2,
+  "day": 17,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.93》\nMad Skillz - From Where???\n\n\"The Jam\"",
+  "youtube": "https://youtu.be/tRy7H3ZgZXs",
+  "favs": 10,
+  "rts": 1
+ },
+ {
+  "id": "1907891968400830924",
+  "month": 4,
+  "day": 3,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.138》\nRun DMC - Crown Royal\n\n\"Queens Day feat. Nas, Prodigy\"",
+  "youtube": "https://youtu.be/BhvUJvpL4z4",
+  "favs": 9,
+  "rts": 2
+ },
+ {
+  "id": "1984222304948346906",
+  "month": 10,
+  "day": 31,
+  "year": 2025,
+  "text": "このリリース日とタイトルって、\nハロウィンにBIG Lが蘇るってことだったのかな〜🎃",
+  "youtube": "https://youtu.be/gB_04WG4inw",
+  "favs": 9,
+  "rts": 2
+ },
+ {
+  "id": "2007759110335537190",
+  "month": 1,
+  "day": 4,
+  "year": 2026,
+  "text": "RakimのアカペラだけBPMが違って苦労した話なんて全然知らなかった。\nAIが文字起こしと翻訳をしてくれるおかげで、DJ Premierのこのシリーズが楽しめるようになったのは嬉しい。",
+  "youtube": "https://youtu.be/GDaupEYSnDQ",
   "favs": 10,
   "rts": 1
  },
@@ -988,6 +5148,276 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/oAnqIbcwJcM",
   "favs": 9,
   "rts": 1
+ },
+ {
+  "id": "1672907963118538753",
+  "month": 6,
+  "day": 25,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【94位】Rowdy Rebel「Computers」(2014年)\n\nRolling Stoneはシカゴの現象だったドリルをニューヨークに持ち込んだ点について評価。Rowdyの「力むより自然体でいる方がスムーズに作品は生まれる」との発言も紹介した。",
+  "youtube": "https://youtu.be/k4tQGd65bqc",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1676538916432691200",
+  "month": 7,
+  "day": 5,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【73位】Cash Cobain and Chow Lee「Vacant」(2022年)\n\nRolling Stoneは「メローなコードと速いパーカッションがニュージャージークラブとスムースサンプルドリルを魅惑的にミックスしている」と評価した。",
+  "youtube": "https://youtu.be/Q9wy0jJBEs4",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1680887569456807936",
+  "month": 7,
+  "day": 17,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【49位】Boogie Down Productions「The Bridge Is Over」(1987年)\n\nRolling Stoneは「ブリッジ･ウォーズで最も残酷な曲。45分で録音された。Red Alertはテープからそれをラジオプレイし、NY中に広めた」と紹介した。",
+  "youtube": "https://youtu.be/r0Sy4twXSn0",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1814601141994320227",
+  "month": 7,
+  "day": 20,
+  "year": 2024,
+  "text": "お店で「このCD持ってたっけ...」と迷うことが増えてきたので、しばらくサボっていたジャケットのデータ化を再開。\n先日ゲットしたQueen Latifahのアルバムは何気にサブスク未配信。93年らしい耳心地の良いサンプリングビート多め。大ネタの使い方にも工夫があってGoodです。",
+  "youtube": "https://youtu.be/f8cHxydDb7o",
+  "favs": 8,
+  "rts": 2
+ },
+ {
+  "id": "1814948433364684902",
+  "month": 7,
+  "day": 21,
+  "year": 2024,
+  "text": "DJ BattlecatがトータルプロデュースしたDominoのデビューアルバムも1993年の作品。かつてSnoop Doggとコンビを組んでいたと国内盤の解説文に書いてありました。せっかくなので同年リリースの『Doggystyle』とセットで聴いてみます。",
+  "youtube": "https://youtu.be/eZxTTDlp63w",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1862791179458543928",
+  "month": 11,
+  "day": 30,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.14》\nRakim - The Master\n\n\"When I B On Tha Mic\"",
+  "youtube": "https://youtu.be/M34OelgSlKI",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1863153566996992054",
+  "month": 12,
+  "day": 1,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.15》\nO.S.T. - Wild Style",
+  "youtube": "https://youtu.be/UbGHPlWeLes",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1865682738701074826",
+  "month": 12,
+  "day": 8,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.22》\nMiles Davis - Doo-Bop\n\n \"The Doo-Bop Song\"",
+  "youtube": "https://youtu.be/-W7_rdNJDyk",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1871532222874038779",
+  "month": 12,
+  "day": 24,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.37》\nDe La Soul - De La Soul Is Dead\n\n\"Millie Pulled a Pistol on Santa\"",
+  "youtube": "https://youtu.be/1mB0IBiLQMQ",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1874380046875693456",
+  "month": 1,
+  "day": 1,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.45》\nGrandmaster Flash & The Furious Five - The Message\n\n\"The Message\"",
+  "youtube": "https://youtu.be/PobrSpMwKk4",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1878371416879284732",
+  "month": 1,
+  "day": 12,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.56》\nLord Finesse - Rare & Unreleased\n\nAK Skills - Check Tha Flava",
+  "youtube": "https://youtu.be/_tWldPhDNVo",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1879091091527315725",
+  "month": 1,
+  "day": 14,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.58》\nMadlib - Shades Of Blue\n\n\"Slim’s Return\"",
+  "youtube": "https://youtu.be/apN0AXjJxQE",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1880234983002108033",
+  "month": 1,
+  "day": 17,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.61》\nLittle Brother - The Minstrel Show\n\n\"Lovin' It\"",
+  "youtube": "https://youtu.be/vLReIhRgVS8",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1885614075264307380",
+  "month": 2,
+  "day": 1,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.77》\nSlum Village - Fan-Tas-Tic Vol 1\n\n\"Look Of Love (Remix)\"",
+  "youtube": "https://youtu.be/4AF_J2urmes",
+  "favs": 7,
+  "rts": 3
+ },
+ {
+  "id": "1887788395411226871",
+  "month": 2,
+  "day": 7,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.83》\nJ Dilla - The Shining\n\n\"So Far To Go Feat. Common & D'Angelo\"",
+  "youtube": "https://youtu.be/uBWMfhuKhEI",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1888919417368834305",
+  "month": 2,
+  "day": 10,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.86》\nJ Dilla - Rebirth Of Detroit\n\n\"Dillatroit\"",
+  "youtube": "https://youtu.be/pFKDecmgS5Q",
+  "favs": 8,
+  "rts": 2
+ },
+ {
+  "id": "1889638544659956063",
+  "month": 2,
+  "day": 12,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.88》\nJ Dilla - The Diary\n\n\"The Shining Pt. 1 (Diamonds)\"",
+  "youtube": "https://youtu.be/PhzR514WHwo",
+  "favs": 8,
+  "rts": 2
+ },
+ {
+  "id": "1893628521806803268",
+  "month": 2,
+  "day": 23,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.99》\nYancey Boys - Sunset Blvd.\n\n\"Lovin U\"",
+  "youtube": "https://youtu.be/enH9UeGjE9Y",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1894318925313445991",
+  "month": 2,
+  "day": 25,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.101》\nQ-Tip - The Renaissance\n\n\"Move\"",
+  "youtube": "https://youtu.be/uhumw8f_SB4",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "1906640111808151894",
+  "month": 3,
+  "day": 31,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.135》\nGang Starr - Moment Of Truth\n\n\"Royalty feat. K-Ci & JoJo\"",
+  "youtube": "https://youtu.be/2s85LjuatSg",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1951115679127707707",
+  "month": 8,
+  "day": 1,
+  "year": 2025,
+  "text": "KRS-Oneのアルバムが今年の3月にリリースされていたこと、全然知らなかった。Apple Musicには未配信、GENIUSにも未掲載。なぜこんなにひっそりと...（Spotifyにはありました）",
+  "youtube": "https://youtu.be/hvWf9yd_dQI",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "1964005025446756470",
+  "month": 9,
+  "day": 5,
+  "year": 2025,
+  "text": "藤井風、ニューアルバムの表題曲「Prema」でまさかの「Hihache🥁」使い？！！",
+  "youtube": "https://youtu.be/UJgPpzZcxGU",
+  "favs": 8,
+  "rts": 2
+ },
+ {
+  "id": "1993260354454077573",
+  "month": 11,
+  "day": 25,
+  "year": 2025,
+  "text": "RZAのこんなにも心地良いビートが聴けるなんて、Awichありがとう🙏\nRZAフルプロデュースのアルバムを出したラッパーなんて近年いたのかな？",
+  "youtube": "https://youtu.be/T64FBlW1vuo",
+  "favs": 10,
+  "rts": 0
+ },
+ {
+  "id": "2013193029679538376",
+  "month": 1,
+  "day": 19,
+  "year": 2026,
+  "text": "Black Sheep\n“North South East West”\nShowbiz Remix、CD出てないんかな？\nアナログ盤から取り込むしかないんかな…",
+  "youtube": "https://youtu.be/AcnlhrVAiuc",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "2050812659017396563",
+  "month": 5,
+  "day": 3,
+  "year": 2026,
+  "text": "GAGLEのアルバムリリース情報が流れてこなかった自分のXのタイムライン。本当に使えない。頑張れアルゴリズム。\n\nHUNGERもJambo Lacquerももちろん良かったけど、3番手で登場したチプルソのラップがとにかくエグすぎた…",
+  "youtube": "https://youtu.be/9r0BxmCBeSU",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "2053371920469709106",
+  "month": 5,
+  "day": 10,
+  "year": 2026,
+  "text": "Jay-Z「Izzo」の話。このチャンネルの動画は毎回手が込んでて面白い。",
+  "youtube": "https://youtu.be/YJDKeglCRrM",
+  "favs": 9,
+  "rts": 1
+ },
+ {
+  "id": "2066847542688825837",
+  "month": 6,
+  "day": 16,
+  "year": 2026,
+  "text": "Mummy-Dがビートメイカーとして『初めてUSヒップホップに近い音が出せた』と思えた曲は？\n\n正解は動画の最後。めちゃくちゃ興味深い内容でした↓",
+  "youtube": "https://youtu.be/G8CmCR4x2og",
+  "favs": 8,
+  "rts": 2
  },
  {
   "id": "1523941325715820546",
@@ -1020,12 +5450,282 @@ const SCHEDULE_CANDIDATES = [
   "rts": 1
  },
  {
+  "id": "1675814138453557249",
+  "month": 7,
+  "day": 3,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【77位】ELUCID feat. billy woods「Mangosteen」(2022年)\n\nRolling Stoneは「NYのアンダーグラウンドアートラップシーンをリードする2人」とし、「2分未満で両方が最高のパフォーマンスを見せている」と評価した。",
+  "youtube": "https://youtu.be/2PBAuJg4fcI",
+  "favs": 9,
+  "rts": 0
+ },
+ {
+  "id": "1680880023874707457",
+  "month": 7,
+  "day": 17,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【50位】Eve「Gotta Man」(1999年)\n\nRolling Stoneは「Ruff Rydersのファーストレディによる、脆さとタフさを同じくらいに放つトップ40入りのヒットシングル。もともとはAaliyahのために作られたビート」と紹介した。",
+  "youtube": "https://youtu.be/NUEQ7BmGh9k",
+  "favs": 8,
+  "rts": 1
+ },
+ {
+  "id": "1700456512420807049",
+  "month": 9,
+  "day": 9,
+  "year": 2023,
+  "text": "先ほどのCrimedanch Cartel「Money Is The Key」と同ネタで、The Loxにも「Life Shit」という名のUnreleased Trackがありました。ベースラインにストリート感が出ていて、こちらも実に良い。同ネタでも違った仕上がりになるのがサンプリングビートの面白いところ。",
+  "youtube": "https://youtu.be/ZbUeEMqcPeM",
+  "favs": 9,
+  "rts": 0
+ },
+ {
+  "id": "1799380854252474494",
+  "month": 6,
+  "day": 8,
+  "year": 2024,
+  "text": "ダンサー・THE D Soraki が『Redbull Dance Your Style 2022 World Final』の準決勝を突破した後、決勝までの4分間に聴いた曲が Cholie Jo「kamasereba」だったエピソードも最高🔥🔥🔥この曲が入ったアルバム、マジで名盤なので未聴の方は是非。",
+  "youtube": "https://youtu.be/EGo0I8KfjOs",
+  "favs": 8,
+  "rts": 1
+ },
+ {
+  "id": "1814865820859965874",
+  "month": 7,
+  "day": 21,
+  "year": 2024,
+  "text": "いつの間にかMobb Deep「Shook Ones Part ll」が2500円前後になっててビックリ。1000円以下で買えたイメージなのに…",
+  "youtube": "https://youtu.be/yoYZf-lBF_U",
+  "favs": 9,
+  "rts": 0
+ },
+ {
+  "id": "1819568875513827729",
+  "month": 8,
+  "day": 3,
+  "year": 2024,
+  "text": "スペイン🇪🇸強かった！解説の森岡・福西・中田浩二が2002年の日韓W杯を思い出させてくれたので、その年にあったW杯にも負けない熱戦、B-BOY PARK MC BATTLE 決勝『般若 vs 漢』を。サッカーもMCバトルもこの20年で確実に成長してる。その礎を築いたレジェンドにリスペクトを🇯🇵",
+  "youtube": "https://youtu.be/WwaPxIj7nFc",
+  "favs": 9,
+  "rts": 0
+ },
+ {
+  "id": "1863515955394949263",
+  "month": 12,
+  "day": 2,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.16》\nNaughty by Nature - 19 Naughty III\n\n\"Hip Hop Hooray\"",
+  "youtube": "https://youtu.be/Rz1Xn1vzOM4",
+  "favs": 8,
+  "rts": 1
+ },
+ {
+  "id": "1868619067554435307",
+  "month": 12,
+  "day": 16,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.29》\nThe RZA - Ghost Dog: The Way Of The Samurai\n\n\"Fast Shadow (Version 1) feat. Method Man & Ol' Dirty Bastard\"",
+  "youtube": "https://youtu.be/Gvt5VOm3wGI",
+  "favs": 9,
+  "rts": 0
+ },
+ {
+  "id": "1884918915043880976",
+  "month": 1,
+  "day": 30,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.74》\nBiz Markie - Goin' Off\n\n\"Vapors\"",
+  "youtube": "https://youtu.be/WpQjN7yQ_8c",
+  "favs": 7,
+  "rts": 2
+ },
+ {
+  "id": "1886701228102418615",
+  "month": 2,
+  "day": 4,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.80》\nJay Dee - Welcome 2 Detroit\n\n\"Think Twice\"",
+  "youtube": "https://youtu.be/mkA7pSatVE8",
+  "favs": 7,
+  "rts": 2
+ },
+ {
+  "id": "1896319608518304076",
+  "month": 3,
+  "day": 2,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.106》\nTrends Of Culture – Trendz…\n\n\"Off & On\"",
+  "youtube": "https://youtu.be/dbwTA50qd0Q",
+  "favs": 9,
+  "rts": 0
+ },
+ {
+  "id": "1909909151184228821",
+  "month": 4,
+  "day": 9,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.144》\nPublic Enemy - Fear Of A Black Planet\n\n\"Brothers Gonna Work It Out\"",
+  "youtube": "https://youtu.be/fIG1ItmFyb4",
+  "favs": 8,
+  "rts": 1
+ },
+ {
+  "id": "2000900710444224835",
+  "month": 12,
+  "day": 16,
+  "year": 2025,
+  "text": "長めのタイトルをヴァースの最初と最後に入れると、「It Ain’t Hard To Tell」っぽくなる。\n\nNas & DJ Premier\n\"Welcome To The Underground\"",
+  "youtube": "https://youtu.be/qjnCAsXt-Dk",
+  "favs": 8,
+  "rts": 1
+ },
+ {
   "id": "1536842658336739330",
   "month": 6,
   "day": 14,
   "year": 2022,
   "text": "メジャーな人物が絡んでいるのに全然知らなかった曲が未だに出てくるからヒップホップ人生は面白い。\n\nアーティスト：Uptown records\n曲名：Uptown's Kickin' It!",
   "youtube": "https://youtu.be/hX7naWUE0ns",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1672533835152777219",
+  "month": 6,
+  "day": 24,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【96位】Wale「Pretty Girls」(2009年)\n\nRolling Stoneは「ワシントンD.C.のヒップホップを世に知らしめた」と評価し、Mark Ronsonが手掛けたデビュー作から同年の主要人物・Gucci Maneを客演に迎えた曲を選出した。",
+  "youtube": "https://youtu.be/j8YxSzXnZ40",
+  "favs": 7,
+  "rts": 1
+ },
+ {
+  "id": "1677980920765349889",
+  "month": 7,
+  "day": 9,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【66位】Fivio Foreign「Big Drip」(2020年)\n\nRooling Stoneは「かろうじて存在するようなビートを、まばらだが重厚な個性あるリリックで駆け抜ける。NYドリルの第２波で最もバイラルな作品の一つ」と評価した。",
+  "youtube": "https://youtu.be/xf3eAb4l38Y",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1678343302934831108",
+  "month": 7,
+  "day": 10,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【64位】Lil Uzi Vert「XO Tour Llif3」(2017年)\n\nRolling Stoneは「ハードにビートに乗ることもできる彼が、恋人との別れを引き起こした口論により心の痛みを露わにするスタイルを解き放った」と紹介している。",
+  "youtube": "https://youtu.be/VcyFfcJbyeM",
+  "favs": 7,
+  "rts": 1
+ },
+ {
+  "id": "1679438019810701313",
+  "month": 7,
+  "day": 13,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【57位】Meek Mill「Dreams and Nightmares (Intro)」(2012年)\n\nRolling Stoneは「彼の成功への道程における試練や苦難を記録した日記のようなものであり、勝利を収めた弱者のアンセムとなっている」と評価した。",
+  "youtube": "https://youtu.be/S8gfqs1-NuE",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1682329573927841792",
+  "month": 7,
+  "day": 21,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【42位】Azealia Banks「212」(2011年)\n\nRolling Stoneは「フックがなかったにもかかわらず、特有のアクセントを駆使してラップと歌を交互に展開し、カオスに吠えるリフレインで大衆を虜にした」と評価した。",
+  "youtube": "https://youtu.be/i3Jv9fNPjgk",
+  "favs": 7,
+  "rts": 1
+ },
+ {
+  "id": "1683054346072920065",
+  "month": 7,
+  "day": 23,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【38位】A$AP Rocky feat. Yelawolf, Big K.R.I.T., Danny Brown, Kendrick Lamar, Action Bronson, Joey Bada$$「1 Train」(2013年)\n\n米R.S.は「東海岸ヒップホップのオンライン化する傾向を捉えている」と紹介した。",
+  "youtube": "https://youtu.be/nU4OIAYwo5g",
+  "favs": 6,
+  "rts": 2
+ },
+ {
+  "id": "1867502222499528788",
+  "month": 12,
+  "day": 13,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.26》\nNas - God's Son\n\n\"I Can\"",
+  "youtube": "https://youtu.be/RvVfgvHucRY",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1868255462036222299",
+  "month": 12,
+  "day": 15,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.28》\nDr. Dre - The Chronic\n\n\"Nuthin' But A \"G\" Thang\"",
+  "youtube": "https://youtu.be/8GliyDgAGQI",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1868951772351344747",
+  "month": 12,
+  "day": 17,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.30》\nRakim - The 18th Letter\n\n\"New York (Ya Out There)\"",
+  "youtube": "https://youtu.be/Mu13XhTDwyI",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1872606332827897928",
+  "month": 12,
+  "day": 27,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.40》\nKool G Rap - 4, 5, 6\n\n\"Blowin' Up In The World\"",
+  "youtube": "https://youtu.be/BHQZ3R6d2iw",
+  "favs": 7,
+  "rts": 1
+ },
+ {
+  "id": "1908089663413440671",
+  "month": 4,
+  "day": 4,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.139》\nBig Pun - Yeeeah Baby\n\n\"New York Giants feat. M.O.P.\"",
+  "youtube": "https://youtu.be/Te_3Oes-Jw0",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1909546761741607118",
+  "month": 4,
+  "day": 8,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.143》\nBiz Markie - The Biz Never Sleeps\n\n\"Just A Friend\"",
+  "youtube": "https://youtu.be/9aofoBrFNdg",
+  "favs": 7,
+  "rts": 1
+ },
+ {
+  "id": "1910296188148207631",
+  "month": 4,
+  "day": 10,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.145》\nA Tribe Called Quest - People’s Instinctive Travels And The Paths Of Rhythm\n\n\"Can I Kick It?\"",
+  "youtube": "https://youtu.be/O3pyCGnZzYA",
+  "favs": 8,
+  "rts": 0
+ },
+ {
+  "id": "1991621196312621264",
+  "month": 11,
+  "day": 20,
+  "year": 2025,
+  "text": "RZAもラップしてる！！！！\n\nAwich feat. Joey Bada$$\n“Fear Us”",
+  "youtube": "https://youtu.be/Pz09_ibB9S0",
   "favs": 8,
   "rts": 0
  },
@@ -1050,6 +5750,856 @@ const SCHEDULE_CANDIDATES = [
   "rts": 0
  },
  {
+  "id": "1677618534648778753",
+  "month": 7,
+  "day": 8,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【68位】22Gz「Suburban」(2018年)\n\nRolling Stoneは「荒廃した地が舞台の小説のような歌詞がシンセサイザーによって強調された恐ろしいドリルで、NYで最も人気あるサブジャンルの最初の一撃となった」と評価した。",
+  "youtube": "https://youtu.be/E5PXvCbmBYQ",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1852292652643062144",
+  "month": 11,
+  "day": 1,
+  "year": 2024,
+  "text": "Will Smithがチーム友達に参加したと聞いて、今夜はこのアルバムをチョイス。というかこんなキッカケでもないとなかなか手に取らない作品ですね… 右側が若き日のWill Smith。90年代ヒップホップの夏曲といえばコレ！！",
+  "youtube": "https://youtu.be/Kr0tTbTbmVA",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1860986801424421222",
+  "month": 11,
+  "day": 25,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.9》\nErick Sermon - No Pressure\n\n\"Stay Real\"",
+  "youtube": "https://youtu.be/hJIsqYFGXkg",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1863878343457992958",
+  "month": 12,
+  "day": 3,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.17》\nダイアモンド - 怒りの背信\n\n\"This One feat. Busta Rhymes\"",
+  "youtube": "https://youtu.be/HNF2oeDxTIA",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1864240729133912132",
+  "month": 12,
+  "day": 4,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.18》\nBrand Nubian - One For All\n\n\"Wake Up\"",
+  "youtube": "https://youtu.be/TE0J4Ewc1kA",
+  "favs": 6,
+  "rts": 1
+ },
+ {
+  "id": "1864983392624029812",
+  "month": 12,
+  "day": 6,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.20》\nO.S.T. - Street Fighter\n\nNas \"One On One\"",
+  "youtube": "https://youtu.be/lGUdSVMczGs",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1865327894572188126",
+  "month": 12,
+  "day": 7,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.21》\n The Notorious B.I.G. - Born Again\n\n\"Rap Phenomenon feat. Redman & Method Man\"",
+  "youtube": "https://youtu.be/4Ey8Kg-fhQc",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1867139834776592501",
+  "month": 12,
+  "day": 12,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.25》\nXzibit - Restless\n\n\"Rimz & Tirez ft. Defari, Goldie Loc & Kokane\"",
+  "youtube": "https://youtu.be/9mdYu-rF6Mw",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1870763711545397389",
+  "month": 12,
+  "day": 22,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.35》\nDMX - Flesh Of My Flesh Blood Of My Blood\n\n\"Blackout feat. Jay-Z, The Lox\"",
+  "youtube": "https://youtu.be/YvWYMSnTKy8",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1871126099318673841",
+  "month": 12,
+  "day": 23,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.36》\nQ.D. III - Soundlab\n\n\"Steppin' With The Sound\"",
+  "youtube": "https://youtu.be/n4IiLzCtv8k",
+  "favs": 6,
+  "rts": 1
+ },
+ {
+  "id": "1871872711506686325",
+  "month": 12,
+  "day": 25,
+  "year": 2024,
+  "text": "どの曲が好きでしたか？\nRedman - Muddy Waters Too\n\n私のおすすめは...\n\"Kush feat. Snoop Dogg\"",
+  "youtube": "https://youtu.be/HXuRIHMGxc4",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1874017662952480880",
+  "month": 12,
+  "day": 31,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.44》\nO.S.T. - Juice\n\nEric B. & Rakim \"Juice (Know The Ledge)\"",
+  "youtube": "https://youtu.be/OPkWYTUiPTo",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1877279146901979606",
+  "month": 1,
+  "day": 9,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.53》\nO.S.T. - Don’t Be A Menace\n\nErick Sermon - Maintain",
+  "youtube": "https://youtu.be/zNLC0f6A7dI",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1879453483339804792",
+  "month": 1,
+  "day": 15,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.59》\nAnderson .Paak - Malibu\n\n\"Room in Here feat. The Game\"",
+  "youtube": "https://youtu.be/QJBB3q0MDPQ",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1880577108034166984",
+  "month": 1,
+  "day": 18,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.62》\nThe Game - The Documentary\n\n\"Westside Story\"",
+  "youtube": "https://youtu.be/xfFXq2Zr0wU",
+  "favs": 5,
+  "rts": 2
+ },
+ {
+  "id": "1884212258353602992",
+  "month": 1,
+  "day": 28,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.72》\nRakim - The Seventh Seal\n\n\"Put It All To Music\"",
+  "youtube": "https://youtu.be/V9f49eihTds",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1897210482110464285",
+  "month": 3,
+  "day": 5,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.109》\nV.A. - The Best Of Hip Hop 1995\n\nTen Thieves - It Don't Matter",
+  "youtube": "https://youtu.be/mzDyMtE-AXE",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1899566001231888436",
+  "month": 3,
+  "day": 11,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.115》\nD.I.T.C. - D.I.T.C.\n\n\"Thick\"",
+  "youtube": "https://youtu.be/45LTk2dTgpo",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1901921528876548191",
+  "month": 3,
+  "day": 18,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.122》\nBlack Sheep - A Wolf In Sheep’s Clothing\n\n\"The Choice Is Yours (Revisited)\"",
+  "youtube": "https://youtu.be/O1JiYoUwoPA",
+  "favs": 5,
+  "rts": 2
+ },
+ {
+  "id": "1902666841677586615",
+  "month": 3,
+  "day": 20,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.123》\nR. Kelly & Jay-Z – The Best Of Both Worlds\n\n\"The Best Of Both Worlds\"",
+  "youtube": "https://youtu.be/DNeUVXvLpqc",
+  "favs": 6,
+  "rts": 1
+ },
+ {
+  "id": "1903415336332067262",
+  "month": 3,
+  "day": 22,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.125》\nLarge Professor - The LP\n\n\"I Juswanna Chill\"",
+  "youtube": "https://youtu.be/Kh0LFYa6InM",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1905364202958848334",
+  "month": 3,
+  "day": 27,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.132》\nBig L - Lifestylez Ov Da Poor & Dangerous\n\n\"Fed Up Wit the Bullshit\"",
+  "youtube": "https://youtu.be/yoPcocgW_dw",
+  "favs": 6,
+  "rts": 1
+ },
+ {
+  "id": "1909366303921782900",
+  "month": 4,
+  "day": 7,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.142》\nNas - i am...\n\n\"Album Intro\"",
+  "youtube": "https://youtu.be/NLpxDy2MjVQ",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1921505566452572318",
+  "month": 5,
+  "day": 11,
+  "year": 2025,
+  "text": "《今日の帯付きvol.152》\nHeavy D. & The Boyz - Nuttin’ But Love\n\n\"Black Coffee\"",
+  "youtube": "https://youtu.be/OPct_4LQzEM",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1926583397675073710",
+  "month": 5,
+  "day": 25,
+  "year": 2025,
+  "text": "19:30からJJJですよ！！",
+  "youtube": "https://youtu.be/akuYSyDd0D8",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "1946510489577750859",
+  "month": 7,
+  "day": 19,
+  "year": 2025,
+  "text": "XのDMで教えてもらった、8mileAliens「glow」が夜に合う感じですごく良かった。\nおすすめの曲でもDJミックスでもどんどん送ってください。どなたからでもありがたいです。",
+  "youtube": "https://youtu.be/rBmxSvJNl-4",
+  "favs": 5,
+  "rts": 2
+ },
+ {
+  "id": "1968256293371826205",
+  "month": 9,
+  "day": 17,
+  "year": 2025,
+  "text": "m-flo loves RIP SLYMEってだけで十分に「ありがとう〜！」って気持ちだったのに、まさかのサンプリングビートかつ元ネタが自分の大好きな曲だったので「ありがとう〜😭😭😭」って気持ちになった！！！\n\nm-flo loves RIP SLYME「ARIGATTO」",
+  "youtube": "https://youtu.be/7ju_cDBVlUI",
+  "favs": 7,
+  "rts": 0
+ },
+ {
+  "id": "2003805695339311526",
+  "month": 12,
+  "day": 24,
+  "year": 2025,
+  "text": "もっと「日本の定番クリスマスソング」として扱われてもいいと思うんだよな〜\nクリスマス・イブ Rap🎄",
+  "youtube": "https://youtu.be/L0kztbkg1DQ",
+  "favs": 6,
+  "rts": 1
+ },
+ {
+  "id": "1859899634816262512",
+  "month": 11,
+  "day": 22,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.6》\nRedman - Dare Iz A Darkside\n\n\"Can't Wait\"",
+  "youtube": "https://youtu.be/SWDazyPyjts",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1869676547067773087",
+  "month": 12,
+  "day": 19,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.32》\nNas - Hip Hop Is Dead\n\n\"Black Republican feat. Jay-Z\"",
+  "youtube": "https://youtu.be/8u2ir_5NsFw",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1870206815163846697",
+  "month": 12,
+  "day": 20,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.33》\nTimbaland - Tim’s Bio: From The Motion Picture: Life From Da Bassment\n\n\"Can't Nobody\"",
+  "youtube": "https://youtu.be/GxJIvcMdOs4",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1870401323994169690",
+  "month": 12,
+  "day": 21,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.34》\n2Pac + Outlawz - Still I Rise\n\n\"Baby Don't Cry (Keep Ya Head Up II)\"",
+  "youtube": "https://youtu.be/ZgQZENuDrBY",
+  "favs": 5,
+  "rts": 1
+ },
+ {
+  "id": "1885290742484263359",
+  "month": 1,
+  "day": 31,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.75》\nDJ Quik - Balance & Options\n\n\"Change da Game\"",
+  "youtube": "https://youtu.be/kD5bIgKSsaA",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1898116448117030999",
+  "month": 3,
+  "day": 7,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.111》\nA Tribe Called Quest - Midnight Marauders\n\n\"Keep It Rollin’ feat. Large Professor\"",
+  "youtube": "https://youtu.be/ArsY7a8Z1GQ",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1900143694441046196",
+  "month": 3,
+  "day": 13,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.116》\nHeltah Skeltah - Nocturnal\n\n\"Leflaur Leflah EshKoshka feat. O.G.C.\"",
+  "youtube": "https://youtu.be/U_dXcgKN-lQ",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1904103394576576819",
+  "month": 3,
+  "day": 24,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.128》\nChi-Ali - The Fabulous Chi-Ali\n\n\"Age Ain't Nothin But a #\"",
+  "youtube": "https://youtu.be/G9H0l2mVCl0",
+  "favs": 5,
+  "rts": 1
+ },
+ {
+  "id": "1910633932648829144",
+  "month": 4,
+  "day": 11,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.146》\nO.S.T. - Friday\n\nTha Alkaholiks \"Coast II Coast\"",
+  "youtube": "https://youtu.be/FO8zI-rn_xI",
+  "favs": 5,
+  "rts": 1
+ },
+ {
+  "id": "1911551678048047211",
+  "month": 4,
+  "day": 13,
+  "year": 2025,
+  "text": "《今夜の帯付きvol.148》\nDa Brat - Funkdafied\n\n“Funkdafied”",
+  "youtube": "https://youtu.be/zfpR9jKy0IQ",
+  "favs": 5,
+  "rts": 1
+ },
+ {
+  "id": "1950753290817589513",
+  "month": 7,
+  "day": 31,
+  "year": 2025,
+  "text": "Kid Fresino「Champion」同ネタ使いのビートで、Method ManとLudacrisがラップする曲を見つけたのでシェア。",
+  "youtube": "https://youtu.be/_jHFUl_rOFY",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1951221367572963696",
+  "month": 8,
+  "day": 1,
+  "year": 2025,
+  "text": "Rakimが今月末リリース予定のアルバムから先行でビデオを公開してた。プロデューサーはDem Jointz。クールに展開するビートが良い。Rakimが１ヴァースしかラップしないのは物足りないけど。",
+  "youtube": "https://youtu.be/et1IEh8AtYw",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1983503521505792371",
+  "month": 10,
+  "day": 29,
+  "year": 2025,
+  "text": "Olive Oilのビートで、FREEZ、MASS-HOLE、NAGAN SERVERがラップする「Groovenut Chill」は、12インチを2枚買いしていました。\nYouTubeや配信でもフルでは聴けない、貴重な一曲。",
+  "youtube": "https://youtu.be/Fh_flEcP51c",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "2050815562612396115",
+  "month": 5,
+  "day": 3,
+  "year": 2026,
+  "text": "ヒップホップクラシック連発の7インチオンリーミックス。\nグルーヴキープの能力がめちゃくちゃ高くてすごく勉強になる。\nこういうDJは大好き、Mr Thing👍",
+  "youtube": "https://youtu.be/KWhLqCamLhI",
+  "favs": 5,
+  "rts": 1
+ },
+ {
+  "id": "2065178132286775738",
+  "month": 6,
+  "day": 11,
+  "year": 2026,
+  "text": "ワールドカップ開幕！！\n日本代表のキャンプ地が「音楽の街・ナッシュビル」ということで、ナッシュビル出身のラッパーを調べてみたらG-UNITのYoung Buckでした。こんな曲あったな〜\n\nYoung Buck - Let Me In",
+  "youtube": "https://youtu.be/3zQoXjugxFU",
+  "favs": 5,
+  "rts": 1
+ },
+ {
+  "id": "2071555098090815972",
+  "month": 6,
+  "day": 29,
+  "year": 2026,
+  "text": "ブラジル戦に向けて聴く🇧🇷⚽️\n\nブラジル音楽界の大御所、Sérgio Mendes の名曲「Mas Que Nada」セルフリメイク版。\nThe Black Eyed Peas がゲスト参加。踊るファーギーが最高過ぎるライブ映像でどうぞ。",
+  "youtube": "https://youtu.be/PpIUQ5jwJqM",
+  "favs": 6,
+  "rts": 0
+ },
+ {
+  "id": "1679430475104788481",
+  "month": 7,
+  "day": 13,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【58位】French Montana feat. Charlie Rock「Shot Caller」(2011年)\n\nRolling Stoneは「東海岸のハードなラッパーがこれほどメロディアスなサウンドを奏でたのは、50セント以来である。」と評論した。",
+  "youtube": "https://youtu.be/p4HSmFLYCWU",
+  "favs": 4,
+  "rts": 1
+ },
+ {
+  "id": "1858480271714029842",
+  "month": 11,
+  "day": 18,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.2》\nThe Original Jazzy Jay – Cold Chillin’ In The Studio Live\n\nUltimate Force - I'm Not Playing",
+  "youtube": "https://youtu.be/DiMW7OvK3i4",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1864603119315038690",
+  "month": 12,
+  "day": 5,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.19》\nV.A. - タフ･シティ･ファット･ジョインツ Vol.1\n\nThe 45 King \"The 900 Number\"",
+  "youtube": "https://youtu.be/6b0mgjIOyG4",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1867864608444223704",
+  "month": 12,
+  "day": 14,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.27》\nThe Roots - Undun\n\n\"Lighthouse\"",
+  "youtube": "https://youtu.be/Pvaph3Yh8xs",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1872213264190558563",
+  "month": 12,
+  "day": 26,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.39》\nRedman - Dare Iz A Darkside\n\n\"Cosmic Slop feat. Erick Sermon, Keith Murray\"",
+  "youtube": "https://youtu.be/-VDPwWnKhHM",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1872930496851644854",
+  "month": 12,
+  "day": 28,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.41》\nJay-Z - Vol. 3… Life And Times Of S. Carter\n\n\"Anything\"",
+  "youtube": "https://youtu.be/odThhIA2gUM",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1875829593330082181",
+  "month": 1,
+  "day": 5,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.49》\nV.A. - Deeper Concentration\n\nRob Swift - The Age Of Television",
+  "youtube": "https://youtu.be/hOW9c6w7RIs",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1878043014242996407",
+  "month": 1,
+  "day": 11,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.55》\nO.S.T. - Posse\n\nIntelligent Hoodlum – Posse (Shoot ‘Em Up)",
+  "youtube": "https://youtu.be/P7renKK-CzU",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1881990193978265614",
+  "month": 1,
+  "day": 22,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.66》\nDJ Jazzy Jeff - The Magnificent\n\n\"Da Ntro\"",
+  "youtube": "https://youtu.be/r58JmVS_GnI",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1888197437837513013",
+  "month": 2,
+  "day": 8,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.84》\nJ Dilla - The Shining -The 15th Anniversary Edition-\n\n\"Baby (Instrumental)\"",
+  "youtube": "https://youtu.be/1xe8hmbza9s",
+  "favs": 3,
+  "rts": 2
+ },
+ {
+  "id": "1889970267507630470",
+  "month": 2,
+  "day": 13,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.89》\nJ-Dilla - The King of Beats\n\n\"Jay Dee 12 (Instrumental)\"",
+  "youtube": "https://youtu.be/8Xp13t6nSZU",
+  "favs": 4,
+  "rts": 1
+ },
+ {
+  "id": "1894673770255966517",
+  "month": 2,
+  "day": 26,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.102》\nHeavy D - Heavy\n\n\"Listen\"",
+  "youtube": "https://youtu.be/uTQzEfF18cA",
+  "favs": 4,
+  "rts": 1
+ },
+ {
+  "id": "1898660030406091137",
+  "month": 3,
+  "day": 9,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.113》\nThe Notorious B.I.G. - Life After Death\n\n\"Fuck You Tonight\"",
+  "youtube": "https://youtu.be/en0QN03qKeA",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1901244842736521528",
+  "month": 3,
+  "day": 16,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.120》\nPublic Enemy - It Takes A Nation Of Millions To Hold Us Back\n\n\"Don't Believe The Hype\"",
+  "youtube": "https://youtu.be/9vQaVIoEjOM",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1902853267648045084",
+  "month": 3,
+  "day": 20,
+  "year": 2025,
+  "text": "SeedaとVerbalの曲、最高でした〜💯",
+  "youtube": "https://youtu.be/m6JVGEFCYWQ",
+  "favs": 4,
+  "rts": 1
+ },
+ {
+  "id": "1905355101239492705",
+  "month": 3,
+  "day": 27,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.131》\nMain Source - Breaking Atoms 25周年記念エディション\n\n\"Looking At The Front Door\"",
+  "youtube": "https://youtu.be/k4ifvvqkWhw",
+  "favs": 4,
+  "rts": 1
+ },
+ {
+  "id": "1906277722663653779",
+  "month": 3,
+  "day": 30,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.134》\nLL Cool J - 14 Shots To The Dome\n\n\"Funkadelic Relic\"",
+  "youtube": "https://youtu.be/BfNFHVHMLLI",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1908844733553909793",
+  "month": 4,
+  "day": 6,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.141》\nPharrell Williams - In My Mind\n\n\"Number One feat. Kanye West\"",
+  "youtube": "https://youtu.be/hMNrmUh4bDA",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "1912464531525366167",
+  "month": 4,
+  "day": 16,
+  "year": 2025,
+  "text": "《今日の帯付きvol.150》\nRZA - As Bobby Digital In Stereo\n\n\"Kiss Of A Black Widow feat. Ol' Dirty Bastard\"",
+  "youtube": "https://youtu.be/T1j0jvEufiU",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "2071556305064775860",
+  "month": 6,
+  "day": 29,
+  "year": 2026,
+  "text": "ブラジル戦に向けて聴く🇧🇷\n\nStevie Wonderがハーモニカで参加した、ブラジルのシンガーソングライター Djavan のめちゃくちゃ良い曲。\nタイトルはなんと「Samurai」！\n\n頑張れSAMURAI BLUE!!🇯🇵⚽️",
+  "youtube": "https://youtu.be/3-qwqrQXsXQ",
+  "favs": 5,
+  "rts": 0
+ },
+ {
+  "id": "2075325027134910521",
+  "month": 7,
+  "day": 9,
+  "year": 2026,
+  "text": "フランス🇫🇷vsモロッコ🇲🇦\nあっという間に前半終わった…\n\nそういえばフランス産だった気がするし、アルバム聴き直したいヒップホップ、Jazz Liberatorz。",
+  "youtube": "https://youtu.be/wXipifwO9TU",
+  "favs": 4,
+  "rts": 1
+ },
+ {
+  "id": "1676176527824928768",
+  "month": 7,
+  "day": 4,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【75位】A Boogie Wit Da Hoodie feat. B-Lovee「Hit Different」(2022年)\n\nRolling Stoneは「メロディアスなフックと巧な皮肉で知られるA Boogieは、楽しく伝染力のある曲でNYに再び脚光を浴びせた」と評価した。",
+  "youtube": "https://youtu.be/3kwxNT9cI00",
+  "favs": 3,
+  "rts": 1
+ },
+ {
+  "id": "1681974733779406848",
+  "month": 7,
+  "day": 20,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【43位】Young M.A「OOOUUU」(2016年)\n\nRolling Stoneは「2015年にYouTubeのバイラル動画で話題を集めた彼女は、生まれながらのスターだった。シンプルさの中に複雑さを秘めた心地よいフロウを吐き出す」と評価した。",
+  "youtube": "https://youtu.be/gVf_4Ns3qLU",
+  "favs": 3,
+  "rts": 1
+ },
+ {
+  "id": "1685243776640733185",
+  "month": 7,
+  "day": 29,
+  "year": 2023,
+  "text": "🎉HIPHOP 50周年カウントダウン🍾\n\n#2010年のヒップホップ\nDamu The Fudgemunk「Bright Side 25th Bday Remix」\n\nこれも当時の自分のブログから発掘。Y SocietyのDamuによるソロ曲。Smif-N-Wessun「Bucktown」のアップデート版みたいなビート。DJでよくかけた懐かしい曲。",
+  "youtube": "https://youtu.be/vz8l8CyeVo4",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1687403001386774529",
+  "month": 8,
+  "day": 4,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【14位】Cardi B「Bodak Yellow」(2017年)\n\nRolling Stoneは「彼女はこの曲でリアリティTVの出演者から正真正銘のヒットメーカーへと転身した」と紹介している。",
+  "youtube": "https://youtu.be/PEGccV-NOm8",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1860277118988423217",
+  "month": 11,
+  "day": 23,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.7》\nSnoop Doggy Dogg - Doggystyle\n\nWho Am I (What's My Name)?",
+  "youtube": "https://youtu.be/2soGJXQAQec",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1861704014884487516",
+  "month": 11,
+  "day": 27,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.11》\nBusta Rhymes - Genesis\n\n\"Genesis\"",
+  "youtube": "https://youtu.be/6O8ij0TELJk",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1869314158845387074",
+  "month": 12,
+  "day": 18,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.31》\nJay-Z - Unplugged\n\n\"Izzo (H.O.V.A.)\"",
+  "youtube": "https://youtu.be/vS9zrec72ZU",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1875104814717108323",
+  "month": 1,
+  "day": 3,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.47》\nTim Dog - Do Or Die\n\n\"If I Was a Cop\"",
+  "youtube": "https://youtu.be/CO_kBrN32V0",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1876239000098505071",
+  "month": 1,
+  "day": 6,
+  "year": 2025,
+  "text": "IOと木梨ノリさんの会話が面白い、ABEMA番組の予告動画。",
+  "youtube": "https://youtu.be/k8OEh3HeDuk",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1876959458967884274",
+  "month": 1,
+  "day": 8,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.52》\nKid Capri - Soundtrack To The Streets\n\n\"Unify feat. Snoop Doggy Dogg, Slick Rick\"",
+  "youtube": "https://youtu.be/dcJtOQZEfS0",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1881265409976148431",
+  "month": 1,
+  "day": 20,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.64》\nV.A. - Fat Jam Hip Hop Vol.1\n\nBoss \"Deeper\"",
+  "youtube": "https://youtu.be/yYjwGXoXI8A",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1882526577826951300",
+  "month": 1,
+  "day": 23,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.67》\nDJ Spinna - Here To There\n\n\"Surely\"",
+  "youtube": "https://youtu.be/aoRZ6a8ONZs",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1887071165619015941",
+  "month": 2,
+  "day": 5,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.81》\nJ Dilla - Welcome 2 Detroit -The 20Th Anniversary Edition-\n\n\"Think Twice (DJ Muro's KG Mix)\"",
+  "youtube": "https://youtu.be/AUQ_m0hicC4",
+  "favs": 3,
+  "rts": 1
+ },
+ {
+  "id": "1889237950791303250",
+  "month": 2,
+  "day": 11,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.87》\nJ Dilla - Dillatronic\n\n\"Dillatronic 41\"",
+  "youtube": "https://youtu.be/gDVw595kJG4",
+  "favs": 3,
+  "rts": 1
+ },
+ {
+  "id": "1896485700712935895",
+  "month": 3,
+  "day": 3,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.107》\nV.A. - The Best Rap From Sugar Hill Vol. 1\n\nThe Sequence \"Funky Sound (Tear The Roof Off)\"",
+  "youtube": "https://youtu.be/Yc7oFnlAf0g",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1900881985347748259",
+  "month": 3,
+  "day": 15,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.119》\nKendrick Lamar - To Pimp A Butterfly\n\n\"Momma\"",
+  "youtube": "https://youtu.be/q1AOP6NtGuc",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1904828172337623232",
+  "month": 3,
+  "day": 26,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.130》\nBusta Rhymes - The Coming\n\n\"Woo-Hah!! Got You All In Check\"",
+  "youtube": "https://youtu.be/EQzvQO2LcA4",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1921143174762033571",
+  "month": 5,
+  "day": 10,
+  "year": 2025,
+  "text": "《今日の帯付きvol.151》\nDMX - …And Then There Was X\n\n\"One More Road To Cross\"",
+  "youtube": "https://youtu.be/xxJzOP9J7Fo",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "1989659244409602153",
+  "month": 11,
+  "day": 15,
+  "year": 2025,
+  "text": "【実験】\nXからYouTubeに飛ばなくても、Xのポスト上で動画再生できるようになった？\n\nGang Starr - Skills",
+  "youtube": "https://youtu.be/8KgtGs1ny0k",
+  "favs": 4,
+  "rts": 0
+ },
+ {
+  "id": "2050817980800655436",
+  "month": 5,
+  "day": 3,
+  "year": 2026,
+  "text": "マイケルジャクソンの映画公開に備えて、伝説のライブで復習。\nヒップホップを中心に音楽を聴いてきて、マイケルのアルバムをきちんと聴いたこともなかったのに、それでも知ってる曲ばかりだったのは衝撃だった。鬼セットリスト👹",
+  "youtube": "https://youtu.be/Hxgo-Qu-ZZE",
+  "favs": 4,
+  "rts": 0
+ },
+ {
   "id": "121490628210200576",
   "month": 10,
   "day": 5,
@@ -1070,6 +6620,236 @@ const SCHEDULE_CANDIDATES = [
   "rts": 0
  },
  {
+  "id": "1677293229711196161",
+  "month": 7,
+  "day": 7,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【70位】Rico Nasty「Smack a Bitch」(2018年)\n\nRolling Stoneは「80年代半ばのDef Jamの魅力を具現化したようなロック志向の楽曲で、2018年にYouTubeでバイラルヒットした」と紹介している。",
+  "youtube": "https://youtu.be/-D4happ4TQU",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1680167341148225536",
+  "month": 7,
+  "day": 15,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【54位】Fabolous「Cuffin' Season」(2013年)\n\nRolling Stoneは「彼はこの曲で新しくてオリジナルな面白いミームを連発している。先見の明とウィットによって一年中人気のある曲になった」と評価した。",
+  "youtube": "https://youtu.be/NUzh-9PyD4E",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1686323387663351808",
+  "month": 8,
+  "day": 1,
+  "year": 2023,
+  "text": "米Rolling Stone選出『東海岸HIPHOPソング・ベスト100』\n\n【19位】Nicki Minaj「Itty Bitty Piggy」(2009年)\n\n米R.S.は「彼女はBillboard Hot 100にランクインする以前からミックステープでセンセーションを巻き起こし、非常に技巧的で独自なラップを披露していた」と紹介。",
+  "youtube": "https://youtu.be/ImaEa8lH_eo",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1797568210566619271",
+  "month": 6,
+  "day": 3,
+  "year": 2024,
+  "text": "せっかくKieferさんに会えたのに、うまくコミュニケーションが取れなくて残念だったので、AIに翻訳を手伝ってもらってインスタでメッセージを送った。よく考えたらその場で翻訳機能を使えば、少しは話せたんじゃないか…\n\nKiefer Trioの新譜から「Montara」のカバーをどうぞ。",
+  "youtube": "https://youtu.be/zdgHFxowFnc",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1849745217060221039",
+  "month": 10,
+  "day": 25,
+  "year": 2024,
+  "text": "このサントラからのシングルカットしか正規リリースが残されていないMC、The Almighty Arrogant「Lay Tight (One for Money)」がおすすめ。レーベルがPerspectiveなので、Young ZeeやPudgeeと同じ運命を辿ったのかな。声がAndre 3000に似ていて「Outkastの曲？」と思いました。",
+  "youtube": "https://youtu.be/Ks6CjZTUrVc",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1866045129817272766",
+  "month": 12,
+  "day": 9,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.23》\nJ. Cole - 2014 Forest Hills Drive\n\n\"St. Tropez\"",
+  "youtube": "https://youtu.be/6AYt_FkJ8Aw",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1866415057548034413",
+  "month": 12,
+  "day": 10,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.24》\nRedman - Muddy Waters\n\n\"Rock Da Spot\"",
+  "youtube": "https://youtu.be/SJ1q6-z4yt4",
+  "favs": 2,
+  "rts": 1
+ },
+ {
+  "id": "1871850875242573855",
+  "month": 12,
+  "day": 25,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.38》\nAfrika Bambaataa - Death Mix\n\n\"Death Mix Part 1\"",
+  "youtube": "https://youtu.be/9EPZYtLWR4U",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1873292885690360094",
+  "month": 12,
+  "day": 29,
+  "year": 2024,
+  "text": "《今夜の帯付き💿vol.42》\nUGK - Underground Kingz\n\n\"Int'l Players Anthem (I Choose You) feat. Outkast\"",
+  "youtube": "https://youtu.be/WG3qnNkmqvU",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1876554366502523194",
+  "month": 1,
+  "day": 7,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.51》\nAfu-Ra - Life Force Radio\n\n\"Blvd. feat. Guru\"",
+  "youtube": "https://youtu.be/tk5BsISlL_o",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1881071673337844055",
+  "month": 1,
+  "day": 19,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.63》\nDJ Hollywood - Rarities\n\n\"Hollywood's Message\"",
+  "youtube": "https://youtu.be/90bHQtc5VYs",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1888513167044772105",
+  "month": 2,
+  "day": 9,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.85》\nJ Dilla - Jay Love Japan\n\n\"Say It\"",
+  "youtube": "https://youtu.be/9yIFSDD4kIM",
+  "favs": 2,
+  "rts": 1
+ },
+ {
+  "id": "1890325122365395026",
+  "month": 2,
+  "day": 14,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.90》\nJ Dilla - Motor City\n\n\"Motor City 15\"",
+  "youtube": "https://youtu.be/vQ7eSUlh5EE",
+  "favs": 2,
+  "rts": 1
+ },
+ {
+  "id": "1894145285385003056",
+  "month": 2,
+  "day": 24,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.100》\nIlla J - Yancey Boys\n\n\"Timeless\"",
+  "youtube": "https://youtu.be/jYR4RGKGeGU",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1899022423380697221",
+  "month": 3,
+  "day": 10,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.114》\nTimbaland - Shock Value\n\n\"Come And Get Me feat. 50 Cent, Tony Yayo\"",
+  "youtube": "https://youtu.be/blWTNUEUYdg",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1900147329749180801",
+  "month": 3,
+  "day": 13,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.117》\nV.A. - Guru Presents Illkid Records\n\nBig Shug \"Do What Pays Ya\"",
+  "youtube": "https://youtu.be/h-zk09BGMR8",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1903420142630904164",
+  "month": 3,
+  "day": 22,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.126》\nDred Scott – Breakin’ Combs\n\n\"Back In The Day\"",
+  "youtube": "https://youtu.be/1GNTFoWprOs",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1903766594318430417",
+  "month": 3,
+  "day": 23,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.127》\nMonie Love – In A Word Or 2\n\n\"Full Term Love\"",
+  "youtube": "https://youtu.be/EYX0w5KPcfI",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1904502701313961986",
+  "month": 3,
+  "day": 25,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.129》\nDomo Genesis - Genesis\n\n\"Faded in the Moment\"",
+  "youtube": "https://youtu.be/Ckz89r2WV_U",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1905915335620153569",
+  "month": 3,
+  "day": 29,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.133》\nDJ Jazzy Jeff & The Fresh Prince - He’s The DJ, I’m The Rapper\n\n\"Live At Union Square (November 1986)\"",
+  "youtube": "https://youtu.be/MoXlxQWKht0",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "1907364884615958913",
+  "month": 4,
+  "day": 2,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.137》\nLord Finesse - The SP 1200 Project: A Re-Awakening\n\n\"Electric Impression\"",
+  "youtube": "https://youtu.be/V_V6Z2CXjNY",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "2005809418378547354",
+  "month": 12,
+  "day": 30,
+  "year": 2025,
+  "text": "JJJの姿が見えるChangesだ…\nSTUTSありがとう。2025年の終わりを感じる",
+  "youtube": "https://youtu.be/1a4o6q5haZI",
+  "favs": 3,
+  "rts": 0
+ },
+ {
+  "id": "2011757344733217271",
+  "month": 1,
+  "day": 15,
+  "year": 2026,
+  "text": "嬉しい発見💡\nイントロがなくてDJで使いにくいと思っていた、MED, Blu & Madlibの「The Strip」\n2021年リリースのスペシャル・エディション収録バージョンだと、イントロがある！",
+  "youtube": "https://youtu.be/ubsqNk8tcpg",
+  "favs": 3,
+  "rts": 0
+ },
+ {
   "id": "1519903555439644672",
   "month": 4,
   "day": 29,
@@ -1078,6 +6858,106 @@ const SCHEDULE_CANDIDATES = [
   "youtube": "https://youtu.be/89QCzvwdHDE",
   "favs": 1,
   "rts": 1
+ },
+ {
+  "id": "1876191986522448082",
+  "month": 1,
+  "day": 6,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.50》\n50 Cent - Before I Self Destruct\n\n\"Death To My Enemies\"",
+  "youtube": "https://youtu.be/JOTHblk2jCM",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "1881627800110522835",
+  "month": 1,
+  "day": 21,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.65》\nJoey Bada$$ - B4.DA.$$\n\n\"On & On\"",
+  "youtube": "https://youtu.be/gPsDbbLsJMs",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "1893058304819314966",
+  "month": 2,
+  "day": 21,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.97》\nBusta Rhymes - Anarchy\n\n\"Enjoy Da Ride\"",
+  "youtube": "https://youtu.be/dkbPBZqihZI",
+  "favs": 1,
+  "rts": 1
+ },
+ {
+  "id": "1895398539083304982",
+  "month": 2,
+  "day": 28,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.104》\nO.S.T. - The Hurricane\n\nBlack Star \"Little Brother\"",
+  "youtube": "https://youtu.be/uxzTad1TuBU",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "1902668942218330466",
+  "month": 3,
+  "day": 20,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.124》\nM.C. Shan – Q.B. O.G. The Best Of M.C. Shan\n\n\"Down by Law\"",
+  "youtube": "https://youtu.be/MMvGaWHpvNQ",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "1911898104938545488",
+  "month": 4,
+  "day": 14,
+  "year": 2025,
+  "text": "《今日の帯付きvol.149》\nKendrick Lamar - Damn\n\n\"Duckworth\"",
+  "youtube": "https://youtu.be/Dm-foWGDBF0",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "1942196366119485807",
+  "month": 7,
+  "day": 7,
+  "year": 2025,
+  "text": "夏用のミックスでも作ろうかと自宅ディグ開始。想定していたBPMよりもだいぶ速いけど、これは爽やかで良い。\n\nLost Tribe Of Boodah「On The Blacktop」",
+  "youtube": "https://youtu.be/H9SH-y4vQac",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "2008145690426527999",
+  "month": 1,
+  "day": 5,
+  "year": 2026,
+  "text": "帯にダメージがあって購入は見送ったけど、J. ColeにA Tribe Called Questと同ネタ（Ronnie Foster「Mystic Brew」）使いの曲があるのを初めて知った。しかもfeat. Kendrick Lamar。嬉しい発見。",
+  "youtube": "https://youtu.be/4QcNZ0Kmw0E",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "2041480024893935960",
+  "month": 4,
+  "day": 7,
+  "year": 2026,
+  "text": "AwichがLupe Fiascoを連れてきてくれることも期待してる。",
+  "youtube": "https://youtu.be/P1EQVIxRQbU",
+  "favs": 2,
+  "rts": 0
+ },
+ {
+  "id": "2041481134757036072",
+  "month": 4,
+  "day": 7,
+  "year": 2026,
+  "text": "Lupe Fiascoが難しくても、Awich, R-指定, NENE, 鎮座DOPENESS, C.O.S.A.のマイクリレーは可能性がありそうで楽しみ。",
+  "youtube": "https://youtu.be/4gaeqtEONrQ",
+  "favs": 2,
+  "rts": 0
  },
  {
   "id": "1269460955605241856",
@@ -1136,6 +7016,36 @@ const SCHEDULE_CANDIDATES = [
   "year": 2022,
   "text": "Jadakissのソロデビューアルバムに収録された、クレジットを見なくてもDJプレミア作だと分かるビート",
   "youtube": "https://youtu.be/z3OKD-zbhGs",
+  "favs": 1,
+  "rts": 0
+ },
+ {
+  "id": "1878728694044496262",
+  "month": 1,
+  "day": 13,
+  "year": 2025,
+  "text": "《今夜の帯付き💿vol.57》\nJoe Budden - Joe Budden\n\n\"Pump It Up\"",
+  "youtube": "https://youtu.be/ySfwW_xSRU4",
+  "favs": 1,
+  "rts": 0
+ },
+ {
+  "id": "1995815753250160878",
+  "month": 12,
+  "day": 2,
+  "year": 2025,
+  "text": "これもHihacheブレイクだといまさら気付いた🥁",
+  "youtube": "https://youtu.be/A9Z-SB0ty2U",
+  "favs": 1,
+  "rts": 0
+ },
+ {
+  "id": "2035342425745654215",
+  "month": 3,
+  "day": 21,
+  "year": 2026,
+  "text": "緑ベースでゴールドがアクセントカラーのSL-1200が出るみたい。めちゃカッコいいけど、めちゃ高いんだろうな…",
+  "youtube": "https://youtu.be/cuKlkMfP4_Q",
   "favs": 1,
   "rts": 0
  },
@@ -1216,16 +7126,6 @@ const SCHEDULE_CANDIDATES = [
   "year": 2020,
   "text": "現在16分。毎日伸びていきます。\n\n【毎日更新 DJ MIX】 2020年4月27日（90s R&B Mix / Day 4）",
   "youtube": "https://youtu.be/aRHLKFZvsLg",
-  "favs": 0,
-  "rts": 0
- },
- {
-  "id": "1277938822446080001",
-  "month": 6,
-  "day": 30,
-  "year": 2020,
-  "text": "PUNPEE x KREVA x Nottz!!!",
-  "youtube": "https://youtu.be/WqP2vnILsZk",
   "favs": 0,
   "rts": 0
  },

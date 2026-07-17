@@ -7,8 +7,13 @@ them to schedule_candidates.js, which schedule.html shows as a pick list
 schedule draft).
 
 Usage:
-    python3 extract_tweet_candidates.py "/path/to/twitter-archive-folder"
+    python3 extract_tweet_candidates.py "/path/to/twitter-archive-folder" [more archives...]
     python3 extract_tweet_candidates.py "/path/to/tweets.js"
+
+Multiple archives are merged; list the newest first — when the same video
+appears in several archives, the first occurrence wins, so the newest
+archive's engagement counts are kept (and older archives only contribute
+tweets that were since deleted).
 
 Excluded: retweets, replies to other accounts, tweets without a YouTube URL.
 The original post date becomes the suggested month/day (anniversary reposts).
@@ -48,10 +53,14 @@ def clean_text(full_text: str, urls: list[dict], media: list[dict]) -> str:
 
 
 def main():
-    if len(sys.argv) != 2:
+    if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)
-    tweets = load_tweets(Path(sys.argv[1]))
+    tweets = []
+    for arg in sys.argv[1:]:
+        batch = load_tweets(Path(arg))
+        print(f"{arg}: {len(batch)} tweets")
+        tweets.extend(batch)
 
     candidates = []
     seen_videos = set()
