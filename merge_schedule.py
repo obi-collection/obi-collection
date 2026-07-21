@@ -8,7 +8,8 @@ Usage:
 The input is a JSON object of {entry_id: entry_or_null}.
   - entry: {"month": 1-12, "day": 1-31, "title": str, "text": str,
             "youtube": str, "image": str (optional), "enabled": bool,
-            "debut": "none" | "YYYY-MM-DD" (optional; absent = next weekend)}
+            "debut": "none" | "YYYY-MM-DD" (optional; absent = next weekend),
+            "category": "mix" | "live" | "interview" (optional)}
   - null (or "") removes the entry from schedule.js
 Entries are recurring: they fire every year on month/day (2/29 fires only
 in leap years). After merging, posts are sorted by (month, day, id).
@@ -23,6 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent
 SCHEDULE_JS = BASE_DIR / "schedule.js"
 
 DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+CATEGORIES = {"mix", "live", "interview"}  # DJ MIX / LIVE / INTERVIEW
 
 URL_RE = re.compile(r"https?://\S+")
 
@@ -87,6 +89,11 @@ def normalize(entry_id, value):
     image = str(value.get("image", "")).strip()
     if image:
         entry["image"] = image
+    category = str(value.get("category", "")).strip()
+    if category in CATEGORIES:
+        entry["category"] = category
+    elif category:
+        print(f"WARNING: entry {entry_id!r} has an unknown category {category!r}, dropped")
     debut = str(value.get("debut", "")).strip()
     if debut == "none":
         entry["debut"] = "none"

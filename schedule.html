@@ -167,6 +167,7 @@ a { color: var(--gold-obi); }
     background: var(--surface-2); color: var(--text-secondary); margin-right: 4px;
 }
 .tag.k-draft { color: var(--gold-obi); border: 1px dashed var(--gold-dim); background: transparent; }
+.tag.tag-cat { color: var(--black); background: var(--gold-obi); font-weight: 700; }
 .empty-note { color: var(--text-muted); font-size: 0.85rem; padding: 0.5rem 0 1rem; }
 
 /* ── archive candidates ── */
@@ -327,6 +328,15 @@ body.modal-open { overflow: hidden; }
                 <label for="fDay">日</label>
                 <select id="fDay"></select>
             </div>
+            <div class="field">
+                <label for="fCategory">種別</label>
+                <select id="fCategory">
+                    <option value="">未分類</option>
+                    <option value="mix">DJ MIX</option>
+                    <option value="live">LIVE</option>
+                    <option value="interview">INTERVIEW</option>
+                </select>
+            </div>
         </div>
         <div class="field">
             <label for="fTitle">タイトル（カレンダー表示用ラベル）</label>
@@ -397,6 +407,7 @@ document.write(`<script src="schedule_candidates.js?v=${Date.now()}"><\/script>`
 const LS_KEY = 'obi_schedule';
 const DAYS_IN_MONTH = [31,29,31,30,31,30,31,31,30,31,30,31];
 const DOW = ['日','月','火','水','木','金','土'];
+const CATEGORY_LABEL = { mix: 'DJ MIX', live: 'LIVE', interview: 'INTERVIEW' };
 
 const published = new Map(
     (typeof SCHEDULE_DATA !== 'undefined' ? (SCHEDULE_DATA.posts || []) : []).map(p => [p.id, p])
@@ -409,7 +420,8 @@ function normEntry(e) {
     return JSON.stringify({
         month: e.month, day: e.day,
         title: e.title || '', text: e.text || '', youtube: e.youtube || '',
-        image: e.image || '', debut: e.debut || '', enabled: e.enabled !== false,
+        image: e.image || '', debut: e.debut || '', category: e.category || '',
+        enabled: e.enabled !== false,
     });
 }
 // merge済みの下書きは自動掃除（公開データと一致したら消す）
@@ -576,6 +588,7 @@ function renderList(entries) {
                 <div class="title">${escapeHTML(e.title || '(無題)')}</div>
                 <div class="snippet">${escapeHTML(e.text || '')}</div>
                 <div class="tags">
+                    ${e.category ? `<span class="tag tag-cat">${CATEGORY_LABEL[e.category]}</span>` : ''}
                     <span class="tag">${debutLabel(e)}</span>
                     ${e.enabled === false ? '<span class="tag">無効</span>' : ''}
                     ${e.id in overrides ? '<span class="tag k-draft">下書き</span>' : ''}
@@ -686,7 +699,7 @@ function openEditor(id, month, day, prefill) {
         document.getElementById('btnDelete').style.display = '';
     } else {
         e = Object.assign(
-            { month, day, title: '', text: '', youtube: '', image: '', debut: '', enabled: true },
+            { month, day, title: '', text: '', youtube: '', image: '', debut: '', category: '', enabled: true },
             prefill || {});
         document.getElementById('editorTitle').textContent =
             prefill ? `候補から追加 — ${month}/${day}` : `投稿を追加 — ${month}/${day}`;
@@ -705,6 +718,7 @@ function openEditor(id, month, day, prefill) {
     document.getElementById('fText').value = e.text || '';
     document.getElementById('fYoutube').value = e.youtube || '';
     document.getElementById('fImage').value = e.image || '';
+    document.getElementById('fCategory').value = e.category || '';
     const debut = e.debut || '';
     document.getElementById('fDebutMode').value =
         debut === 'none' ? 'none' : (debut ? 'date' : 'auto');
@@ -737,6 +751,7 @@ function readForm() {
         text: document.getElementById('fText').value.trim(),
         youtube: document.getElementById('fYoutube').value.trim(),
         image: document.getElementById('fImage').value.trim(),
+        category: document.getElementById('fCategory').value,
         debut: debutMode === 'none' ? 'none'
              : debutMode === 'date' ? document.getElementById('fDebutDate').value : '',
         enabled: document.getElementById('fEnabled').checked,
@@ -769,6 +784,7 @@ document.getElementById('fDebutMode').addEventListener('change', () => {
     syncDebutField();
     updatePreview();
 });
+document.getElementById('fCategory').addEventListener('change', updatePreview);
 
 document.getElementById('btnSave').addEventListener('click', () => {
     const e = readForm();
@@ -783,6 +799,7 @@ document.getElementById('btnSave').addEventListener('click', () => {
         '\n下書きとして保存しますか？（あとで短く直せます）')) return;
     if (!e.image) delete e.image;
     if (!e.debut) delete e.debut;
+    if (!e.category) delete e.category;
     const id = editingId || ('sp' + Date.now().toString(36));
     overrides[id] = e;
     // 公開データと同一なら下書き扱いにしない

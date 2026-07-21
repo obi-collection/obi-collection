@@ -137,7 +137,7 @@ const COLLECTION_DATA = {
 
 毎年同じ月日に同じ内容（YouTube URL＋紹介文）を投稿する仕組み。リリース日・アーティスト誕生日などの記念日投稿用。
 
-- **データ:** `schedule.js` の `SCHEDULE_DATA.posts[]`（公開・Git管理）。エントリは `{id, month, day, title, text, youtube, image?, enabled}`。年は持たず**毎年繰り返し**（2/29はうるう年のみ発火）。種別（kind）フィールドは2026-07-16に廃止済み
+- **データ:** `schedule.js` の `SCHEDULE_DATA.posts[]`（公開・Git管理）。エントリは `{id, month, day, title, text, youtube, image?, category?, enabled}`。年は持たず**毎年繰り返し**（2/29はうるう年のみ発火）。旧「種別（kind）」（release/birthday/other）は2026-07-16に廃止。`category` は動画の内容分類（`mix`/`live`/`interview`＝DJ MIX/LIVE/INTERVIEW、省略可）でエディタの「種別」欄から設定、一覧にタグ表示（2026-07-21追加）
 - **管理UI:** `schedule.html`（公開ページ・noindex・サイトからリンクなし）。月カレンダー表示・追加・編集・日付変更・削除。下書きはlocalStorage（`obi_schedule`、`{id: entry|null}`形式、nullは削除指示）→「Export JSON」→ `pbpaste | python3 merge_schedule.py -` で schedule.js に反映（既存の?edit=1系と同じワークフロー）。エディタに投稿プレビュー＋X加重文字数カウンタ（URL=23字、CJK=2字、上限280）付き
 - **投稿:** `post_scheduled.py`（**ローカル限定・.gitignore登録**。post_to_x.py と同様Git管理外）。`run_post_to_x.sh` が post_to_x.py の**前に**実行し、今日の月日に一致する有効エントリがあれば投稿。YouTubeサムネイル（maxres→sd→hq の順で自動取得、`image` があればそれを優先）をネイティブ画像として添付し、本文は `text + 空行 + youtube URL`。**YouTube URLはXでは埋め込み再生されない**ため、サムネ添付が最もリーチが出る形（ユーザー確認済み設計）
 - **お披露目投稿（2026-07-16追加、2026-07-17に日付指定対応）:** 一度も投稿されたことのないエントリは「お披露目」として1回投稿され、以降は毎年指定日に投稿される。タイミングはエディタの「お披露目投稿」欄＝`debut` フィールドで決まる: **フィールドなし**＝次の土日（1日1件・ID順＝登録順）／**"YYYY-MM-DD"**＝その日（曜日不問。過ぎた日付は次回実行で追いつく）／**"none"**＝お披露目せず毎年の指定日のみ。お披露目から14日以内に指定日が来る場合、その年の年次分はスキップ（近接二重投稿の防止、`DEBUT_COOLDOWN_DAYS`）。日付指定は週末自動より優先
